@@ -23,7 +23,7 @@
 
 *2017年8月22日-至今*
 
-标签（空格分隔）： linux xyq [toc]
+标签（空格分隔）： linux xyq customeDirectoy [toc]
 
 ## 1、常用命令 <h2 id="commonCommand"></h2>
 ### 1.1、文件及目录 <h3 id="fileAndDir"></h3>
