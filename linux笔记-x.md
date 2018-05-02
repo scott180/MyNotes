@@ -1,13 +1,34 @@
-# linux笔记
-[toc]
+# linux笔记-x
+  
+*   [1、常用命令](#commonCommand)
+    *   [1.1、文件及目录](#fileAndDir)
+    *   [1.2、用户和组的管理](#userAndGroup)
+    *   [1.3、tomcat命令](#tomcatCommand)
+    *   [1.4、mysql命令](#mysqlCommand)
+    *   [1.5、其他命令](#otherCommand)
+*   [2、shell编程](#shell)
+    *   [2.1、shell概述及优势](#shellIntroduce)
+    *   [2.2、shell创建、执行](#shellExecute)
+    *   [2.3、shell 变量、引号、数组、传递参数](#shellParams)
+    *   [2.4、shell 运算符](#shellOperator)
+    *   [2.5、shell 常用命令](#shellCommonCommand)
+    *   [2.6、shell 流程控制](#shellFlow)
+    *   [2.7、shell 函数](#shellFunction)
+    *   [2.8、shell 输入、输出重定向](#shellIO)
+    *   [2.9、shell 文件包含](#shellFileContain)
+*   [3、vi命令详解](#viCommand)
+*   [4、其他](#endOther)
+    *   [4.1、修改linux时间](#updateLinuxTime)
+    *   [4.2、星期月份英语](#EnglishTranlator)
 
 *2017年8月22日-至今*
 
-标签（空格分隔）： linux xyq defaultDirectory
+标签（空格分隔）： linux xyq customeDirectoy [toc]
 
-## 1、常用命令
-### 1.1、文件及目录
+## 1、常用命令 <h2 id="commonCommand"></h2>
+### 1.1、文件及目录 <h3 id="fileAndDir"></h3>
 #### 1.1.1、文件及目录命令
+
 ```java
 ==============================================================
 进入目录         cd dir1
@@ -38,6 +59,9 @@ rm -rf  a/  强制删除目录a
 查找文件               find /home -name 'mysqld.log' -type f -print
 查找目录               find / -name 'tech' -type d -print
 查找当前目录及子目录文件（maxdepth指层数）  find . -name "*root*" -maxdepth 1
+查找大文件             find / -type f -size +400M | xargs ls -lh
+
+清空文件          cat /dev/null >json.log
 
 显示当前目录所有文件   ls
 显示当前目录所有文件及文件大小 ls -hl
@@ -50,7 +74,7 @@ wc testfile           # testfile文件的统计信息
 3 92 598 testfile     # testfile文件的行数为3、单词数92、字节数598 
 
 ls -lt  从新到旧       ls -hlt  从新到旧并显示大小
-ls -lrt 从旧到新
+ls -lrt 从旧到新       ls -hlrt  从旧到新并显示大小
 ls -hSlr 按大小升序
 ls -hSl  按大小降序
 
@@ -65,11 +89,35 @@ vi 操作:
 按「g」：移动到文章的开头。
 dd  : 删除当前行
 x   : 删除光标位置字符
+u   ：退回上一个操作
+
+/string 向前搜索指定字符串
+?string 向后搜索指定字符串
+n 搜索指定字符串的下一个出现位置
+N 搜索指定字符串的上一个出现位置
+:%s/old/new/g 全文替换指定字符串 
 
 [root @root /root]#cat /etc/passwd | more
 该命令使用了管道“|”，命令cat /etc/passwd的输出是管道的输入，经过管道后，成为了命令more的输入。
 
 使用命令“ls –l”可以显示文件的类别，每个输出行中的第一个字符表示的就是文件的类别，例如，“b”代表块设备，“p”代表管道文件，“c”代表字符设备，“d”代表目录文件。
+
+启动mongo    /opt/sudytech/mongodb           ./bin/mongod --config mongo.conf
+										     ./bin/mongod --config /opt/sudytech/mongodb/conf/mongo.conf 
+										   
+关闭集群中所有节点的防火墙，使用如下命令：
+       systemctl stop firewalld.service 关闭防火墙，centos7下。
+       systemctl disable firewalld.service 关闭开机启动
+       firewall-cmd --state 查看防火墙状态		
+
+查看端口占用
+	netstat -ntlp   //查看当前所有tcp端口·
+	netstat -ntulp |grep 80   //查看所有80端口使用情况·
+	netstat -an | grep 3306   //查看所有3306端口使用情况·
+	
+	
+cat >add.txt <<EOF   //cat 编辑文件
+EOF                 //cat 保存文件
 ==============================================================
 ```
 
@@ -95,7 +143,7 @@ less实际上是more的改进版，其命令的直接含义是more的反义。le
 #### 1.1.3、文件权限
 ```java
 ==============================================================
-改变文件属性（二进制）      chmod #chmod 664 chap1.txt	       110110010  
+改变文件属性（二进制）      chmod #chmod 664 chap1.txt	       110110100  
 改变文件属性（字母）        chmod u=rw,g=rw,o=r chap1.txt	   r w x
 改变文件所属用户		    chown user1 chap1.txt
 改变文件所属用户及所属组    chown user1:root chap1.txt
@@ -150,8 +198,8 @@ chgrp组 文件或目录——改变文件或目录的所属组
 ==============================================================
 ```
 
+### 1.2、用户和组的管理 <h3 id="userAndGroup"></h3>
 
-### 1.2、用户和组的管理
 ```java
 ==============================================================
 su         切换root
@@ -187,7 +235,8 @@ usermod -a -G groupA user
 
 ==============================================================
 ```
-### 1.3、tomcat命令
+
+### 1.3、tomcat命令 <h3 id="tomcatCommand"></h3>
 ```java
 ==============================================================
 Linux下Tomcat的启动、关闭、杀死进程   （进入tomcat的bin目录 启动 sh startup.sh）
@@ -221,7 +270,7 @@ Linux下Tomcat的启动、关闭、杀死进程   （进入tomcat的bin目录 �
 ```
 
 
-### 1.4、mysql命令
+### 1.4、mysql命令 <h3 id="mysqlCommand"></h3>
 ```java
 ==============================================================
 指令 ps -ef|grep mysql 得出结果
@@ -233,7 +282,12 @@ var/lib/mysql 是指：mysql数据库文件的存放路径
 usr/lib/mysql 是指：mysql的安装路径 
 
 
-导出mysql数据 /opt/tech/mysql/bin/mysqldump -uroot -1234 webpluspro> /opt/tech/20170814.sql
+导出mysql数据 /opt/tech/mysql/bin/mysqldump -uroot -p1234 webpro > /opt/tech/20170814.sql
+ 
+导入数据 mysql -uroot -pSudy.web123 UCPPLUS < /opt/sql/ucpplus_v4_0_5.sql
+
+创建数据库
+CREATE DATABASE UCPPLUS DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
  
 登录mysql  /opt/tech/mysql/bin/mysql -uroot -p1234 
            /opt/tech/mysql/bin/mysql -uroot -padmin
@@ -249,10 +303,22 @@ usr/lib/mysql 是指：mysql的安装路径
 mysql -u root -p12344
 
 linux 的mysql配置文件  /etc/my.cnf
+
+查看编码
+show variables like 'character%'; 
+
+设置编码
+set character_set_server='utf8';  
+
+查看sql_mode
+SELECT @@GLOBAL.sql_mode;
+
+识别大小写
+lower_case_table_names = 2
 ==============================================================
 ```
 
-### 1.5、其他命令
+### 1.5、其他命令 <h3 id="otherCommand"></h3>
 ```java
 ==============================================================
 查看系统空间容量       df -h 
@@ -318,8 +384,9 @@ linux虚拟机上传下载文件  打开虚拟机linux，使用命令 ifconfig �
 ==============================================================
 ```
 
-## 2、Shell编程
-### 2.1、shell概述及优势
+## 2、Shell编程 <h2 id="shell"></h2>
+
+### 2.1、shell概述及优势 <h3 id="shellIntroduce"></h3>
 ```java
 ==============================================================
   Shell是一个命令语言解释器，它拥有自己内建的Shell命令集，Shell也能被系统中其他应用程序调用。
@@ -366,7 +433,7 @@ linux虚拟机上传下载文件  打开虚拟机linux，使用命令 ifconfig �
 ==============================================================
 ```
 
-### 2.2、shell创建、执行
+### 2.2、shell创建、执行 <h3 id="shellExecute"></h3>
 ```java
 ==============================================================
 	Shell 脚本（shell script），是一种为 shell 编写的脚本程序。业界所说的 shell 通常都是指 shell 脚本。
@@ -406,7 +473,7 @@ linux虚拟机上传下载文件  打开虚拟机linux，使用命令 ifconfig �
 ```
 
 
-### 2.3、shell 变量、引号、数组、传递参数
+### 2.3、shell 变量、引号、数组、传递参数 <h3 id="shellParams"></h3>
 ```java
 ==============================================================
 http://www.runoob.com/linux/linux-shell-variable.html 转自菜鸟教程
@@ -502,7 +569,7 @@ $ ./test.sh 1 2 3
 ==============================================================
 ```
 
-### 2.4、shell 运算符
+### 2.4、shell 运算符 <h3 id="shellOperator"></h3>
 ```java
 ==============================================================
 
@@ -871,7 +938,8 @@ fi
 
 ==============================================================
 ```
-### 2.5、shell 常用命令
+
+### 2.5、shell 常用命令 <h3 id="shellCommonCommand"></h3>
 #### 2.5.1、shell echo命令
 ```java
 ==============================================================
@@ -1120,7 +1188,8 @@ fi
 有一个文件存在!
 ==============================================================
 ```
-### 2.6、shell 流程控制
+
+### 2.6、shell 流程控制 <h3 id="shellFlow"></h3>
 #### 2.6.1、if
 ```java
 ==============================================================
@@ -1382,9 +1451,9 @@ done
 esac
 case的语法和C family语言差别很大，它需要一个esac（就是case反过来）作为结束标记，每个case分支用右圆括号，用两个分号表示break。
 ==============================================================
-
 ```
-### 2.7、shell 函数
+
+### 2.7、shell 函数 <h3 id="shellFunction"></h3>
 ```java
 ==============================================================
 linux shell 可以用户定义函数，然后在shell脚本中可以随便调用。
@@ -1484,7 +1553,8 @@ $-	显示Shell使用的当前选项，与set命令功能相同。
 $?	显示最后命令的退出状态。0表示没有错误，其他任何值表明有错误。
 ==============================================================
 ```
-### 2.8、shell 输入、输出重定向
+
+### 2.8、shell 输入、输出重定向 <h3 id="shellIO"></h3>
 ```java
 ==============================================================
 http://www.runoob.com/linux/linux-shell-io-redirections.html
@@ -1637,7 +1707,8 @@ xxx 2>&1 > list
 先将要输出到stderr的内容重定向到stdout，此时会产生一个stdout的拷贝，作为程序的stderr，而程序原本要输出到stdout的内容，依然是对接在stdout原身上的，因此第二步重定向stdout，对stdout的拷贝不产生任何影响
 ==============================================================
 ```
-### 2.9、shell 文件包含
+
+### 2.9、shell 文件包含 <h3 id="shellFileContain"></h3>
 ```java
 ==============================================================
 和其他语言一样，Shell 也可以包含外部脚本。这样可以很方便的封装一些公用的代码作为一个独立的文件。
@@ -1674,7 +1745,8 @@ $ ./test2.sh
 注：被包含的文件 test1.sh 不需要可执行权限。
 ==============================================================
 ```
-## 3、vi命令详解
+
+## 3、vi命令详解 <h2 id="viCommand"></h2>
 ```java
 ==============================================================
  linux vi命令详解
@@ -1912,8 +1984,8 @@ n
 
 ```
 
-## 4、其他
-### 4.1、修改linux时间
+## 4、其他 <h2 id="endOther"></h2>
+### 4.1、修改linux时间 <h3 id="updateLinuxTime"></h3>
 ```java
 ==============================================================
 http://blog.chinaunix.net/uid-20672257-id-3013282.html
@@ -1940,10 +2012,15 @@ Tue 06 May 2008 03:49:37 PM CST  -0.039646 seconds
 同步BIOS时钟，强制把系统时间写入CMOS：
 # clock -w
 
+
+先使用 date -s 10/17/2008 修改日期
+然后 date -s 10:12:13 修改时间
+clock -w    写入bios
+
 ==============================================================
 ```
 
-### 4.2、星期月份英语
+### 4.2、星期月份英语 <h3 id="EnglishTranlator"></h3>
 ```java
 ==============================================================
 星期一： Mon.=Monday        Monday
@@ -1971,3 +2048,8 @@ Tue 06 May 2008 03:49:37 PM CST  -0.039646 seconds
 
 ==============================================================
 ```
+
+
+
+
+
