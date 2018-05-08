@@ -7,6 +7,7 @@ java  linux  javascript  jquery  mysql oracle and so on
     *   [1.2、tomcat](#tomcatSoft)
 *   [2、笔记](#note)
     *   [2.1、linux](#linuxNote)
+    *   [2.1、javascript](#javascriptNote)
 	
 	
 	
@@ -44,3 +45,17 @@ jdk-8u72-windows-i586.zip jdk-8u72-linux-i586.tar.gz   是32位软件
 - [x]  tomcat6-tomcat9 官网 https://archive.apache.org/dist/tomcat/
 
 ##### 链接: https://pan.baidu.com/s/1yPhAfIcACTGkpIOYlEds1g 密码: j9ug
+
+
+<h2 id="note"></h2>
+## 2、笔记 
+<h3 id="linuxNote"></h3>
+###  2.1、linux
+##### linux笔记 
+https://github.com/scott180/MyNotes/blob/master/linux%E7%AC%94%E8%AE%B0-x.md
+
+<h3 id="javascriptNote"></h3>
+###  2.2、javascriptNote
+##### 深入理解javascript原型和闭包
+https://github.com/scott180/MyNotes/tree/master/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3javascript%E5%8E%9F%E5%9E%8B%E5%92%8C%E9%97%AD%E5%8C%85
+
