@@ -59,6 +59,9 @@ rm -rf  a/  强制删除目录a
 查找文件               find /home -name 'mysqld.log' -type f -print
 查找目录               find / -name 'tech' -type d -print
 查找当前目录及子目录文件（maxdepth指层数）  find . -name "*root*" -maxdepth 1
+查找大文件             find / -type f -size +400M | xargs ls -lh
+
+清空文件          cat /dev/null >json.log
 
 显示当前目录所有文件   ls
 显示当前目录所有文件及文件大小 ls -hl
@@ -71,12 +74,14 @@ wc testfile           # testfile文件的统计信息
 3 92 598 testfile     # testfile文件的行数为3、单词数92、字节数598 
 
 ls -lt  从新到旧       ls -hlt  从新到旧并显示大小
-ls -lrt 从旧到新
+ls -lrt 从旧到新       ls -hlrt  从旧到新并显示大小
 ls -hSlr 按大小升序
 ls -hSl  按大小降序
 
 按时间降序 ll -t
 按时间升序 ll -t | tac
+
+ wget http://127.0.0.1:8080
 
 vi 操作:  
 : wq (输入「wq」，存盘并退出vi)
@@ -86,11 +91,60 @@ vi 操作:
 按「g」：移动到文章的开头。
 dd  : 删除当前行
 x   : 删除光标位置字符
+u   ：退回上一个操作
+
+/string 向前搜索指定字符串
+?string 向后搜索指定字符串
+n 搜索指定字符串的下一个出现位置
+N 搜索指定字符串的上一个出现位置
+:%s/old/new/g 全文替换指定字符串 
 
 [root @root /root]#cat /etc/passwd | more
 该命令使用了管道“|”，命令cat /etc/passwd的输出是管道的输入，经过管道后，成为了命令more的输入。
 
 使用命令“ls –l”可以显示文件的类别，每个输出行中的第一个字符表示的就是文件的类别，例如，“b”代表块设备，“p”代表管道文件，“c”代表字符设备，“d”代表目录文件。
+
+启动mongo    /opt/sudytech/mongodb           ./bin/mongod --config mongo.conf
+										     ./bin/mongod --config /opt/sudytech/mongodb/conf/mongo.conf 
+											 
+ 启动mongo
+  /opt/sudytech/mongodb/bin/mongod --dbpath=/opt/sudytech/mongodb/data --logpath=/opt/sudytech/mongodb/logs --logappend  --port=27017 --fork
+  
+登陆mongo
+cd /opt/sudytech/mongodb/bin
+mongo
+
+									   
+关闭集群中所有节点的防火墙，使用如下命令：
+       systemctl stop firewalld.service 关闭防火墙，centos7下。
+       systemctl disable firewalld.service 关闭开机启动
+       firewall-cmd --state 查看防火墙状态	
+
+	service iptables stop	   
+
+查看端口占用
+	netstat -ntlp   //查看当前所有tcp端口·
+	netstat -ntulp |grep 80   //查看所有80端口使用情况·
+	netstat -an | grep 3306   //查看所有3306端口使用情况·
+	
+	
+cat >add.txt <<EOF   //cat 编辑文件
+EOF                 //cat 保存文件
+
+
+
+为每个tomcat配置单独的jdk：
+一、安装jdk，如jdk-6u45-linux-x64.bin
+1、添加执行权限 
+	chmod u+x jdk-6u45-linux-x64.bin
+2、解压 
+	./jdk-6u45-linux-x64.bin
+
+二、配置tomcat的 ../bin/setclasspath.sh	在文件的开头添加以下
+export JAVA_HOME=/opt/sudytech/jdk1.6.0_45  
+export JRE_HOME=/opt/sudytech/jdk1.6.0_45/jre
+
+三、重启tomcat
 ==============================================================
 ```
 
@@ -116,7 +170,7 @@ less实际上是more的改进版，其命令的直接含义是more的反义。le
 #### 1.1.3、文件权限
 ```java
 ==============================================================
-改变文件属性（二进制）      chmod #chmod 664 chap1.txt	       110110010  
+改变文件属性（二进制）      chmod #chmod 664 chap1.txt	       110110100  
 改变文件属性（字母）        chmod u=rw,g=rw,o=r chap1.txt	   r w x
 改变文件所属用户		    chown user1 chap1.txt
 改变文件所属用户及所属组    chown user1:root chap1.txt
@@ -257,6 +311,11 @@ usr/lib/mysql 是指：mysql的安装路径
 
 导出mysql数据 /opt/tech/mysql/bin/mysqldump -uroot -p1234 webpro > /opt/tech/20170814.sql
  
+导入数据 mysql -uroot -pSudy.web123 UCPPLUS < /opt/sql/ucpplus_v4_0_5.sql
+
+创建数据库
+CREATE DATABASE UCPPLUS DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+ 
 登录mysql  /opt/tech/mysql/bin/mysql -uroot -p1234 
            /opt/tech/mysql/bin/mysql -uroot -padmin
 
@@ -271,6 +330,21 @@ usr/lib/mysql 是指：mysql的安装路径
 mysql -u root -p12344
 
 linux 的mysql配置文件  /etc/my.cnf
+
+查看编码
+show variables like 'character%'; 
+
+设置编码
+set character_set_server='utf8';  
+
+查看sql_mode
+SELECT @@GLOBAL.sql_mode;
+
+识别大小写
+lower_case_table_names = 2
+
+启动mysql
+  /opt/sudytech/mysql/support-files/mysql.server start
 ==============================================================
 ```
 
@@ -1967,6 +2041,11 @@ ARC=false
 Tue 06 May 2008 03:49:37 PM CST  -0.039646 seconds
 同步BIOS时钟，强制把系统时间写入CMOS：
 # clock -w
+
+
+先使用 date -s 10/17/2008 修改日期
+然后 date -s 10:12:13 修改时间
+clock -w    写入bios
 
 ==============================================================
 ```
