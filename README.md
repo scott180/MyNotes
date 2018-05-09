@@ -7,7 +7,7 @@ java  linux  javascript  jquery  mysql oracle and so on
     *   [1.2、tomcat](#tomcatSoft)
 *   [2、笔记](#note)
     *   [2.1、linux](#linuxNote)
-    *   [2.2、mongo](#mongoNote)
+    *   [2.1、mongo](#mongoNote)
     *   [2.3、docker](#dockerNote)
     *   [2.4、javascript](#javascriptNote)
 	
