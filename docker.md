@@ -105,7 +105,7 @@ docker inspect d49f922a0111
 镜像改名
 docker tag imageid name:tag
 
-- - -
+* * *
 
 参数设置
 /mnt/opt/data/ucp1.1.7/config/ucp/antx.properties
@@ -184,7 +184,7 @@ vi /etc/sysconfig/docker
 设置 --selinux-enabled=false
 
 然后systemctl start docker
-- - -
+* * *
 
 
 >Ubuntu 16.04（LTS）安装dockerI
@@ -202,7 +202,7 @@ $ systemctl status docker
 $ sudo systemctl start docker
 
 sudo apt-get update && sudo apt-get upgrade
-- - -
+* * *
 
  <h3 id="installMongo"></h3>	
 ###  2.2、安装mongo
@@ -225,14 +225,14 @@ chmod +x /usr/local/bin/docker-compose
 
 docker-compose -version
 ```
-- - -
+* * *
 
 卸载docker-compose
 https://yeasy.gitbooks.io/docker_practice/content/compose/install.html#%E5%8D%B8%E8%BD%BD
 如果是二进制包方式安装的，删除二进制文件即可。
 rm /usr/local/bin/docker-compose
 
-- - -
+* * *
 >报错 Unsupported config option for services service: 'ucp_db'  。docker-compose版本低了。
 https://stackoverflow.com/questions/36724948/docker-compose-unsupported-config-option-for-services-service-web
 
@@ -241,7 +241,8 @@ Support for the version 2 compose file format was introduced in docker-compose v
 You're using 1.3.3, from July 2015.
 
 You need to upgrade to a more recent version to use the version 2 format configuration files.
-- - -
+* * *
+
  <h3 id="pullAliyun"></h3>	
 ### 2.4、push镜像阿里云
   镜像上传阿里云 cr.console.aliyun.com
@@ -254,6 +255,8 @@ You need to upgrade to a more recent version to use the version 2 format configu
   sudo docker push registry.cn-hangzhou.aliyuncs.com/sudy/ucp:mysql_5.7.7
   sodu docker push registry.cn-hangzhou.aliyuncs.com/sudy/ucp:mongo_3.2.9
 ```  
+
+
 <h3 id="testRun"></h3>	
 ### 2.5、测试 run 运行容器
 dockcer pull tomcat:6.0.53
