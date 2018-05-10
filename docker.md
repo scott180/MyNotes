@@ -9,57 +9,59 @@
     *   [2.5、测试 run 运行容器](#testRun)
 *   [3、其他](#other)
 
-<h2 id="commonCommand"></h2>
-## 1、常用命令
 
-建立镜像  （ucp:1.1.7 .   后面有个点）
+### 1、常用命令 <h2 id="commonCommand"></h2>
+
+* 建立镜像  （ucp:1.1.7 .   后面有个点）
 cd /mnt/home/mobile/ucp1.1.7
 docker build -f docker/Dockerfile  -t ucp:1.1.7 .
 
 
-初始化设置（建立容器）
+* 初始化设置（建立容器）
 docker run -it -v /mnt/opt/data/ucp1.1.7/config/ucp/:/opt/sudytech/autoconfig/conf/ ucp:1.1.7 config -d
 
 
-启动容器
+* 启动容器
 cd /mnt/home/mobile
 docker-compose -f docker-compose-ucp1.1.7.yml up -d
 
-查看镜像信息
+* 查看镜像信息
 docker images 
 
-查看正在运行的容器
+* 查看正在运行的容器
 docker ps  
 
-查看所有容器
+* 查看所有容器
 docker ps -a
 
 
-进入容器
+* 进入容器
 docker exec -it 51b9527f1d88 /bin/bash
 
- 进入数据库
+ * 进入数据库
  mysql -uroot -pSudy.web123
- 
+
+```
 停止容器
 docker stop mobile_ucp_1 mobile_ucp_db_1 mobile_ucp_mongo_db_1
-
 docker start :启动一个或多少已经被停止的容器
 docker stop :停止一个运行中的容器
 docker restart :重启容器
 http://www.runoob.com/docker/docker-run-command.html
 
-请注意控制台输出，如果有错误，请按照错误信息修改配置，重新制作镜像
+```
+
+* 请注意控制台输出，如果有错误，请按照错误信息修改配置，重新制作镜像
 镜像删除操作
 docker rmi ucp:1.1.7
 如果发现有关联的容器未删除，请先停止容器后删除容器后，再次尝试删除镜像
 docker rm 【容器id】
 
-删除镜像后，重新制作镜像时，要把原来的mongo、mysql数据删掉
+* 删除镜像后，重新制作镜像时，要把原来的mongo、mysql数据删掉
 /mnt/opt/data/ucp1.1.7/mysql/data
 /mnt/opt/data/ucp1.1.7/mongo/data
 
-
+```
 提交镜像
 docker commit 678ae48535b1 ucp:1.1.7
 docker commit  -m "ucp1.1.7--20180428" -a "xyq" f54f18474f15 ucp:1.1.7
@@ -68,7 +70,9 @@ docker commit  -m "ucp1.1.7--20180428" -a "xyq" f54f18474f15 ucp:1.1.7
 	-m :提交时的说明文字；
 	-p :在commit时，将容器暂停。
 
-```	
+```
+
+```
 上传到170.18.10.40镜像仓库
 	登陆 docker login http://170.18.10.40 
 
@@ -81,32 +85,34 @@ docker commit  -m "ucp1.1.7--20180428" -a "xyq" f54f18474f15 ucp:1.1.7
 	账号/密码
 	徐永钦 yqxu Yqxu123456
 ```
-导出镜像
+
+- 导出镜像
 docker save -o ucp1.1.7.tar.gz ucp:1.1.7
 docker save -o /mnt/home/mobile/ucp1.1.7.tar.gz 303d0cc15269
 
-导入镜像
+- 导入镜像
 docker load -i xxx.tar.gz
 
-下载镜像
+- 下载镜像
 docker pull 170.18.10.40/ucpplus-b/ucp:1.1.7
 
-
+```
 查看容器日志
 docker logs --tail 50 --follow --timestamps 79921b85086b
 docker logs --tail 350 --follow --timestamps mobile_ucp_db_1 
+```
 
-查看容器
+- 查看容器
 docker run -ti <your_Container_image>
 
-查看镜像详细信息
+- 查看镜像详细信息
 docker inspect d49f922a0111
 
-镜像改名
+- 镜像改名
 docker tag imageid name:tag
 
 * * *
-
+```
 参数设置
 /mnt/opt/data/ucp1.1.7/config/ucp/antx.properties
 
@@ -127,13 +133,16 @@ mysql 添加配置文件 /mnt/opt/data/ucp1.1.7/mysql/conf/add.cnf
 
 [mysqld]
 sql_mode='NO_ENGINE_SUBSTITUTION' 
-	
-<h2 id="installQuestion"></h2>	
-## 2、docker安装问题
+```
 
- <h3 id="yumInstallCentos7"></h3>	
-###  2.1、使用 yum 安装（CentOS 7下）
- 
+<h2 id="installQuestion"></h2>	
+
+### 2、docker安装问题
+
+<h3 id="yumInstallCentos7"></h3>
+
+####  2.1、使用 yum 安装（CentOS 7下） 
+```
 http://www.runoob.com/docker/centos-docker-install.html
 Docker 要求 CentOS 系统的内核版本高于 3.10 ，查看本页面的前提条件来验证你的CentOS 版本是否支持 Docker 。
 通过 uname -r 命令查看你当前的内核版本
@@ -142,9 +151,9 @@ Docker 要求 CentOS 系统的内核版本高于 3.10 ，查看本页面的前�
 [root@runoob ~]# yum -y install docker-io
 
 [root@runoob ~]# service docker start
-
-
->镜像加速
+```
+```
+镜像加速
 
  /etc/docker/daemon.json
 {
@@ -168,9 +177,9 @@ docker info
 Dockers 服务开机启动：
 sudo systemctl enable docker.service
 
-
-* * *
->安装docker，启动不成功，报错信息  
+```
+```
+安装docker，启动不成功，报错信息  
 https://www.2cto.com/net/201803/730799.html
 
 Error starting daemon: SELinux is not supported with the overlay2 graph driver on this kernel. Either boot into a newer kernel or disable selinux in docker (--selinux-enabled=false)
@@ -184,10 +193,10 @@ vi /etc/sysconfig/docker
 设置 --selinux-enabled=false
 
 然后systemctl start docker
-* * *
 
-
->Ubuntu 16.04（LTS）安装dockerI
+```
+```
+Ubuntu 16.04（LTS）安装dockerI
 
 $ sudo apt-get update
 
@@ -202,38 +211,44 @@ $ systemctl status docker
 $ sudo systemctl start docker
 
 sudo apt-get update && sudo apt-get upgrade
-* * *
 
- <h3 id="installMongo"></h3>	
-###  2.2、安装mongo
+```
 
+ <h3 id="installMongo"></h3>
+ 
+####  2.2、安装mongo
+```
 http://www.runoob.com/docker/docker-install-mongodb.html
 docker search mongo    查找Docker Hub上的mongo镜像
 
 docker pull mongo:3.2
 
 docker pull mysql:5.7.7
-
-
- <h3 id="installCompose"></h3>	
-### 2.3、安装docker-compose
-http://www.cnblogs.com/52fhy/p/5991344.html
 ```
+
+ <h3 id="installCompose"></h3>
+ 
+####  2.3、安装docker-compose
+```
+http://www.cnblogs.com/52fhy/p/5991344.html
+
 curl -L https://github.com/docker/compose/releases/download/1.8.0/run.sh > /usr/local/bin/docker-compose
 
 chmod +x /usr/local/bin/docker-compose
 
 docker-compose -version
 ```
-* * *
+```
 
 卸载docker-compose
 https://yeasy.gitbooks.io/docker_practice/content/compose/install.html#%E5%8D%B8%E8%BD%BD
 如果是二进制包方式安装的，删除二进制文件即可。
 rm /usr/local/bin/docker-compose
+```
 
-* * *
->报错 Unsupported config option for services service: 'ucp_db'  。docker-compose版本低了。
+
+* 报错 Unsupported config option for services service: 'ucp_db'  。docker-compose版本低了。
+ ```
 https://stackoverflow.com/questions/36724948/docker-compose-unsupported-config-option-for-services-service-web
 
 Support for the version 2 compose file format was introduced in docker-compose version 1.6, released around February of this year.
@@ -241,11 +256,12 @@ Support for the version 2 compose file format was introduced in docker-compose v
 You're using 1.3.3, from July 2015.
 
 You need to upgrade to a more recent version to use the version 2 format configuration files.
-* * *
+```
 
  <h3 id="pullAliyun"></h3>	
-### 2.4、push镜像阿里云
-  镜像上传阿里云 cr.console.aliyun.com
+ 
+#### 2.4、push镜像阿里云
+  * 镜像上传阿里云 cr.console.aliyun.com
 ```
   $ sudo docker login --username=明明之明夜 registry.cn-hangzhou.aliyuncs.com
   $ sudo docker tag [ImageId] registry.cn-hangzhou.aliyuncs.com/sudy/ucp:[镜像版本号]
@@ -258,9 +274,11 @@ You need to upgrade to a more recent version to use the version 2 format configu
 
 
 <h3 id="testRun"></h3>	
-### 2.5、测试 run 运行容器
-dockcer pull tomcat:6.0.53
+
+#### 2.5、测试 run 运行容器
 ```
+dockcer pull tomcat:6.0.53
+
 docker run --name tomcat6.0.53 -p 8080:8080 -v $PWD/test:/usr/local/tomcat/webapps/test -d docker.io/tomcat:6.0.53
 
 docker run --name some-mysql -p 3306:3306 -e MYSQL_ROOT_PASSWORD=my-secret-pw -d mysql:tag
@@ -277,7 +295,8 @@ MYSQL_ROOT_PASSWORD=Sudy.web123 -d registry.cn-hangzhou.aliyuncs.com/sudy/ucp:my
 
 
 <h2 id="other"></h2>
-## 3、其他
+
+### 3、其他
 ```
 删除镜像
 root@SZX1000041894:/home# docker tag centos 10.229.43.217:4000/xcb/centos
@@ -308,7 +327,7 @@ curl -I -X DELETE http://170.18.10.40/v2/ucpplus-b/ucp/manifests/sha256:2ddac3e0
 
 ```
 
-
+```
   923  cd /mnt/home/mobile/ucp2.0/install/
   924  tar -xzvf coreplus.tar.gz 
   925  docker images
@@ -387,7 +406,7 @@ curl -I -X DELETE http://170.18.10.40/v2/ucpplus-b/ucp/manifests/sha256:2ddac3e0
   998  rm -rf /mnt/opt/data/ucp2.0/mysql/data
   999  docker ps
  1000  docker exec -it 15f0e8ed94d3 /bin/bas
- 
+``` 
  
  
  
