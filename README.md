@@ -58,7 +58,7 @@ https://github.com/scott180/MyNotes/blob/master/linux%E7%AC%94%E8%AE%B0-x.md
 
 ###  2.2、mongo <h3 id="mongoNote"></h3>
 #### mongo笔记 
-https://github.com/scott180/MyNotes/blob/master/mongo.txt
+https://github.com/scott180/MyNotes/blob/master/mongo.md
 
 
 ###  2.3、docker <h3 id="dockerNote"></h3>
