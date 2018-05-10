@@ -1,3 +1,14 @@
+## mongo
+  
+*   [1、说明](#introducer)
+*   [2、增删改查](#crud)
+*   [3、三种情况下mongo内嵌文档的查询与保存、](#innerDocument)
+
+
+ <h2 id="introducer"></h2>
+
+### 1、说明
+```
 SQL术语/概念 	MongoDB术语/概念 	解释/说明
 database 		database 			数据库
 table 			collection 			数据库表/集合
@@ -6,33 +17,53 @@ column 			field 				数据字段/域
 index 			index 				索引
 table 			joins 	  			表连接,MongoDB不支持
 primary 		key 	primary key 	主键,MongoDB自动将_id字段设置为主键
+```
 
-
+```
 启动mongo    /opt/sudytech/mongodb           ./bin/mongod --config mongo.conf
 										     ./bin/mongod --config /opt/sudytech/mongodb/conf/mongo.conf 
 											 
- 启动mongo
+启动mongo
   /opt/sudytech/mongodb/bin/mongod --dbpath=/opt/sudytech/mongodb/data --logpath=/opt/sudytech/mongodb/logs --logappend  --port=27017 --fork
   
 登陆mongo
 cd /opt/sudytech/mongodb/bin
 mongo
+```
+```
+创建数据库
+	use test
+	db.test.insert({"name":"111"})
+	
+删除数据库	
+	use test
+	db.dropDatabase()
+
+显示数据库      show dbs
+显示集合（表）  show collections
+显示文档（行）  db.test.find()
+复制数据库      db.copyDatabase(<from_dbname>, <to_dbname>, <from_hostname>);  例如：db.copyDatabase('test','test1');
+
+    
+```  
+
+```
+导出一个表（文档）  E:\Program Files (x86)\mongo\bin>mongoexport -d ucpplus1 -c mongomsgbody -o e:\mongomsgbody.bak.json
+导入一个表（文档）  E:\Program Files (x86)\mongo\bin>  mongoimport -d test -c mongo1 e:\mongomsgbody.bak.json
 
 
+导出数据库（备份）  E:\Program Files (x86)\mongo\bin>  mongodump -d ucpplus1 -o e:\my_mongodb_dump
+导入数据库（还原）  E:\Program Files (x86)\mongo\bin>mongorestore -d ucpplus3 e:\ucpplus1_dump\ucpplus1
+（还原时的数据目录必须是原来新建的目录与备份的数据库名称结合。数据库名称与原来一样是还原数据。数据库名称不一样会新建一个数据库）
+https://www.cnblogs.com/qingtianyu2015/p/5968400.html
 
-	创建数据库
-		use test
-		db.test.insert({"name":"111"})
-		
-	删除数据库	
-		use test
-		db.dropDatabase()
+./mongodump -d ucpplus -o /home/mongobak/ucpplus/
+```
 
-	显示数据库      show dbs
-	显示集合（表）  show collections
-	显示文档（行）  db.test.find()
-	复制数据库      db.copyDatabase(<from_dbname>, <to_dbname>, <from_hostname>);  例如：db.copyDatabase('test','test1');
+<h2 id="crud"></h2>
 
+### 2、增删改查 
+```
 1 列出并选用
 
 1.1 列出所有数据库
@@ -311,13 +342,15 @@ http://lhkzyz.iteye.com/blog/1669796
 	db.getCollection('channelmessagestate').find({"recipientBy.address":{ "$regex" : ".*uc_u:\\(2\\).*" , "$options" : "i"} } )
 
 http://www.runoob.com/mongodb/mongodb-query.html
-http://www.cnblogs.com/ginb/p/6200721.html
+```
 
 
+ <h2 id="innerDocument"></h2>
+
+### 3、三种情况下mongo内嵌文档的查询与保存
 
 
-三种情况下mongo内嵌文档的查询与保存
-
+```
 
 一、内嵌文档（一个对象）
 	"recipientBy" : {                                    // 发给用户时收件人类型、id、名称
@@ -339,8 +372,8 @@ db.demo.update({people_id:2, "albums.id":2}, { $set : {"albums.$.name":6 }})
 
 db.demo.update({ "_id" : { "$oid" : "5ac2de789e15ae8da0b49493"}},{ "$set" : { "recipientBy.address" : "uc_b:(12)张hezi"}})
 
-
-
+```
+```
 
 2、内嵌文档（数组内多个对象）
 "mongoChannelTargets" : [                         //收件对象              
@@ -383,8 +416,8 @@ https://blog.csdn.net/leshami/article/details/55192965
  db.demo.update(		
 { "mongoChannelTargets.address" : "uc_u:(2)组用户111" , "_id" : { "$oid" : "5ac2de779e15ae8da0b49400"}},{ "$set" : { "mongoChannelTargets.$.address" : "uc_u:(11)张name"}})
 
-
-
+```
+```
 
  3、内嵌文档（数组）		
 to" : [                                         //收件人类型、id、名称
@@ -403,3 +436,7 @@ https://blog.csdn.net/qingyuanluofeng/article/details/49148327
 
 db.fruitshop.find({"fruits":{"$all":["apple","banana"]}}); 
 { "boxIds" : { "$all" : [ 8]}}
+
+http://www.cnblogs.com/ginb/p/6200721.html
+
+```
