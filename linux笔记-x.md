@@ -1,11 +1,12 @@
 # linux笔记-x
   
 *   [1、常用命令](#commonCommand)
-    *   [1.1、文件及目录](#fileAndDir)
-    *   [1.2、用户和组的管理](#userAndGroup)
-    *   [1.3、tomcat命令](#tomcatCommand)
-    *   [1.4、mysql命令](#mysqlCommand)
-    *   [1.5、其他命令](#otherCommand)
+    *   [1.1、常用命令](#commonCommand1)
+    *   [1.2、文件权限](#userPermission)
+    *   [1.3、用户和组的管理](#userAndGroup)
+    *   [1.4、tomcat命令](#tomcatCommand)
+    *   [1.5、mysql命令](#mysqlCommand)
+    *   [1.6、其他命令](#otherCommand)
 *   [2、shell编程](#shell)
     *   [2.1、shell概述及优势](#shellIntroduce)
     *   [2.2、shell创建、执行](#shellExecute)
@@ -26,18 +27,20 @@
 标签（空格分隔）： linux xyq customeDirectoy [toc]
 
 ## 1、常用命令 <h2 id="commonCommand"></h2>
-### 1.1、文件及目录 <h3 id="fileAndDir"></h3>
-#### 1.1.1、文件及目录命令
+ <h3 id="commonCommand1"></h3>
+### 1.1、常用命令
 
-```java
-==============================================================
+``` 
 进入目录         cd dir1
 创建目录         mkdir dir1   
 创建多级目录     mkdir -p  d1/d2/d3   
 查看当前目录     pwd
 
 复制文件            cp srcname  targetname
+复制目录 			cp -r dir1/ dir2/
 修改名称(移动文件)  mv readme.txt readme.doc
+跨服务器复制  scp /data/sudytech/apache-tomcat-6.0.48/webapps/ROOT.tar.gz root@192.168.239.35:/opt/sudytech/db_backup
+
 
 rm a.txt  删除普通文件a.txt
 rm -r a/  删除目录a
@@ -55,11 +58,11 @@ rm -rf  a/  强制删除目录a
 解压zip:  unzip test.zip
 
 模糊查找当前目录文件   find *txt
-从根目录查找文件       find / -name mysqld 
-查找文件               find /home -name 'mysqld.log' -type f -print
+从根目录查找文件       find / -name test 
+查找文件               find /home -name 'test.log' -type f -print
 查找目录               find / -name 'tech' -type d -print
 查找当前目录及子目录文件（maxdepth指层数）  find . -name "*root*" -maxdepth 1
-查找大文件             find / -type f -size +400M | xargs ls -lh
+查找大文件             find / -type f -size +400M | xargs ls -hlrt
 
 清空文件          cat /dev/null >json.log
 
@@ -81,11 +84,12 @@ ls -hSl  按大小降序
 按时间降序 ll -t
 按时间升序 ll -t | tac
 
- wget http://127.0.0.1:8080
-
 vi 操作:  
-: wq (输入「wq」，存盘并退出vi)
-: q! (输入q!， 不存盘强制退出vi)
+:wq (输入「wq」，存盘并退出vi)
+:q! (输入q!， 不存盘强制退出vi)
+:set fileencoding  查看文件编码
+:set nu 显示行数
+
 查找  /关键字
 按「G」：移动到文章的最后。
 按「g」：移动到文章的开头。
@@ -114,13 +118,32 @@ N 搜索指定字符串的上一个出现位置
 cd /opt/sudytech/mongodb/bin
 mongo
 
-									   
-关闭集群中所有节点的防火墙，使用如下命令：
-       systemctl stop firewalld.service 关闭防火墙，centos7下。
-       systemctl disable firewalld.service 关闭开机启动
-       firewall-cmd --state 查看防火墙状态	
 
-	service iptables stop	   
+卸载yum安装的软件 
+
+yum安装：
+       # yum install 包名
+yum卸载：
+       # yum -y remove 包名
+	   
+[root@localhost openldap]# rpm -qa | grep openldap
+openldap-2.4.44-15.el7_5.x86_64
+openldap-servers-2.4.44-15.el7_5.x86_64
+compat-openldap-2.3.43-5.el7.x86_64
+
+[root@localhost openldap]# rpm -e --nodeps openldap-2.4.44-15.el7_5.x86_64
+[root@localhost openldap]# rpm -e --nodeps openldap-servers-2.4.44-15.el7_5.x86_64
+[root@localhost openldap]# rpm -e --nodeps compat-openldap-2.3.43-5.el7.x86_64
+
+
+
+ wget http://127.0.0.1:8080
+ 
+ ping + ip： 查看某一个ip地址是否能够连通，如： ping 114.80.67.193
+ 
+ telnet ip port ： 查看某一个机器上的某一个端口是否可以访问，如：telnet 114.80.67.193 8080
+ 
+netstat -nal  查看网络通信情况
 
 查看端口占用
 	netstat -ntlp   //查看当前所有tcp端口·
@@ -130,9 +153,123 @@ mongo
 	
 cat >add.txt <<EOF   //cat 编辑文件
 EOF                 //cat 保存文件
+``` 
+
+********************************************************************
+``` 
+关闭centos的防火墙，使用如下命令：
+       systemctl stop firewalld.service 关闭防火墙，centos7下。
+       systemctl disable firewalld.service 关闭开机启动
+       firewall-cmd --state 查看防火墙状态	
+	   
+	   
+防火墙存在以下两种方式：
+
+	一、service方式
+
+	查看防火墙状态： 
+
+	[root@centos6 ~]# service iptables status
+
+	iptables：未运行防火墙。
+
+	开启防火墙：
+
+	[root@centos6 ~]# service iptables start
+
+	关闭防火墙：
+
+	[root@centos6 ~]# service iptables stop
 
 
+	二、iptables方式
 
+	先进入init.d目录，命令如下：
+
+	[root@centos6 ~]# cd /etc/init.d/
+
+	[root@centos6 init.d]# 
+
+	然后
+
+	查看防火墙状态：
+
+	[root@centos6 init.d]# /etc/init.d/iptables status
+
+	暂时关闭防火墙：
+
+	[root@centos6 init.d]# /etc/init.d/iptables stop
+
+	重启iptables：
+
+	[root@centos6 init.d]# /etc/init.d/iptables restart
+
+
+``` 
+
+********************************************************************
+``` 
+查看内存
+top
+free -m  
+cat /proc/meminfo 机器的内存使用信息
+cat /proc/pid/maps pid为进程号，显示当前进程所占用的虚拟地址。
+cat /proc/pid/statm 进程所占用的内存
+
+[root@localhost webapps]# free 
+             total       used       free     shared    buffers     cached
+Mem:       4043716    3783532     260184          0      31424     340132
+-/+ buffers/cache:    3411976     631740
+Swap:      2096472     993204    1103268
+
+输入：free
+
+total:总计物理内存的大小
+
+used:已使用多大
+
+free:可用有多少
+
+Shared:多个进程共享的内存总额
+
+Buffers/cached:磁盘缓存的大小
+
+第三行(-/+ buffers/cached)
+
+used:已使用多大
+
+free:可用有多少
+
+第四行就不多解释了。
+
+区别：第二行(mem)的used/free与第三行(-/+ buffers/cache) used/free的区别。 这两个的区别在于使用的角度来看，第一行是从OS的角度来看，因为对于OS，buffers/cached 都是属于被使用，所以他的可用内存是260184KB,已用内存是3783532KB,第三行所指的是从应用程序角度来看，对于应用程序来说，buffers/cached 是等于可用的，因为buffer/cached是为了提高文件读取的性能，当应用程序需在用到内存的时候，buffer/cached会很快地被回收。所以从应用程序的角度来说，可用内存=系统free memory+buffers+cached。
+
+ 如上例：631740=260184+31424+340132
+``` 
+********************************************************************
+``` 
+用于linux源码安装软件，一般下载源码包得到文件：xxxx.tgz
+
+1、解包软件
+tar zxf xxxx.tgz
+
+2、配置
+cd xxxx
+./configure ....
+
+3、编译
+make
+
+4、安装
+make install
+
+5、卸载
+make uninstall
+
+``` 
+
+********************************************************************
+``` 
 为每个tomcat配置单独的jdk：
 一、安装jdk，如jdk-6u45-linux-x64.bin
 1、添加执行权限 
@@ -145,12 +282,23 @@ export JAVA_HOME=/opt/sudytech/jdk1.6.0_45
 export JRE_HOME=/opt/sudytech/jdk1.6.0_45/jre
 
 三、重启tomcat
-==============================================================
-```
 
-#### 1.1.2、显示文件
-```java
-==============================================================
+``` 
+********************************************************************
+``` 
+1. 如果你只想看文件的前100行，可以使用head命令，如
+head -100  filename
+2. 如果你想查看文件的后100行，可以使用tail命令，如：
+tail -100  filename 或 tail -n 100  filename
+3. 查看文件中间一段，你可以使用sed命令，如：
+sed -n '100,200p' filename 
+这样你就可以只查看文件的第100行到第200行。
+
+截取的文件可以用重定向输入到新的文件中：
+head -100  filename >a.txt
+
+tail -f cata.log  打印日志
+
 cat  test.txt        显示文件开头
 tac  test.txt        显示文件结尾
 more test.txt        逐页显示文件 
@@ -164,10 +312,13 @@ tail -n 20 test.txt  显示文件后20行
 less实际上是more的改进版，其命令的直接含义是more的反义。less的功能比more更灵活。例如：用【Pgup】键可以向前移动一页，用【Pgdn】键可以向后移动一页，用向上光标键可以向前移动一行，用向下光标键可以向后移动一行。“q”键、【Enter】键、【Space】键的功能和more类似。
 
 用【G】键可以移动文件到结尾，用【g】键可以移动到文件开头。
-==============================================================
-```
+``` 
 
-#### 1.1.3、文件权限
+
+<h3 id="userPermission"></h3>
+
+### 1.2、文件权限 
+
 ```java
 ==============================================================
 改变文件属性（二进制）      chmod #chmod 664 chap1.txt	       110110100  
@@ -225,7 +376,9 @@ chgrp组 文件或目录——改变文件或目录的所属组
 ==============================================================
 ```
 
-### 1.2、用户和组的管理 <h3 id="userAndGroup"></h3>
+ <h3 id="userAndGroup"></h3>
+ 
+### 1.3、用户和组的管理
 
 ```java
 ==============================================================
@@ -263,7 +416,7 @@ usermod -a -G groupA user
 ==============================================================
 ```
 
-### 1.3、tomcat命令 <h3 id="tomcatCommand"></h3>
+### 1.4、tomcat命令 <h3 id="tomcatCommand"></h3>
 ```java
 ==============================================================
 Linux下Tomcat的启动、关闭、杀死进程   （进入tomcat的bin目录 启动 sh startup.sh）
@@ -297,7 +450,7 @@ Linux下Tomcat的启动、关闭、杀死进程   （进入tomcat的bin目录 �
 ```
 
 
-### 1.4、mysql命令 <h3 id="mysqlCommand"></h3>
+### 1.5、mysql命令 <h3 id="mysqlCommand"></h3>
 ```java
 ==============================================================
 指令 ps -ef|grep mysql 得出结果
@@ -313,8 +466,13 @@ usr/lib/mysql 是指：mysql的安装路径
  
 导入数据 mysql -uroot -pSudy.web123 UCPPLUS < /opt/sql/ucpplus_v4_0_5.sql
 
+mysql导入时出现"ERROR at line : Unknown command '\''."的解决办法
+		 mysql -uroot -p12344  --default-character-set=utf8 IMP_V12_1 < E:\ids-1.1.2.sql
+
+
 创建数据库
 CREATE DATABASE UCPPLUS DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+use UCPPLUS;
  
 登录mysql  /opt/tech/mysql/bin/mysql -uroot -p1234 
            /opt/tech/mysql/bin/mysql -uroot -padmin
@@ -329,6 +487,12 @@ CREATE DATABASE UCPPLUS DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
 58.246.98.94
 mysql -u root -p12344
 
+navicat连接mysql失败，授权：
+GRANT ALL PRIVILEGES ON `db1`.* TO 'user1'@'192.171.1.18' identified by 'pwd1' WITH GRANT OPTION;
+GRANT ALL PRIVILEGES ON `IDSPLUS`.* TO 'sudy'@'192.171.1.18' identified by 'shhg12344' WITH GRANT OPTION;
+
+grant all privileges on *.* to root@'%' identified by 'Sudy.web123' with grant option;
+ 
 linux 的mysql配置文件  /etc/my.cnf
 
 查看编码
@@ -345,10 +509,30 @@ lower_case_table_names = 2
 
 启动mysql
   /opt/sudytech/mysql/support-files/mysql.server start
+  
+  /opt/sudytech/mysql/bin/mysqld_safe --user=mysql --basedir=/opt/sudytech/mysql --datadir=/opt/sudytech/mysql/data & 
+  
+  cd /opt/sudytech/mysql/
+  ./bin/mysqld_safe &
+  
+  
+  chmod -R 775 mysql
+  
+  
+  cd /data/sudytech/mysql/&&./bin/mysqld_safe &
+  cd /opt/sudytech/mysql/ && bin/mysqld_safe --user=root &
+  
+  
+微信企业号连接超时： connect timed out
+  wget https://qyapi.weixin.qq.com/cgi-bin/gettoken
+  ping qyapi.weixin.qq.com
+  
+  1、可能是防火墙打开了
+  2、/etc/hosts  策略配置错了
 ==============================================================
 ```
 
-### 1.5、其他命令 <h3 id="otherCommand"></h3>
+### 1.6、其他命令 <h3 id="otherCommand"></h3>
 ```java
 ==============================================================
 查看系统空间容量       df -h 
@@ -358,6 +542,7 @@ lower_case_table_names = 2
 
 查看linux版本      cat /proc/version      lsb_release -a
 查看linux内核版本  uname -a
+查看centos版本 	   cat /etc/redhat-release
 
 建立链接 ln -fs /opt/tech/mysql/bin/mysql /usr/local/bin/mysql
 删除链接 rm -rf name
