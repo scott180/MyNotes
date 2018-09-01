@@ -69,3 +69,15 @@ https://github.com/scott180/MyNotes/blob/master/docker.md
 #### 深入理解javascript原型和闭包
 https://github.com/scott180/MyNotes/tree/master/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3javascript%E5%8E%9F%E5%9E%8B%E5%92%8C%E9%97%AD%E5%8C%85
 
+
+
+github添加ssh公钥
+
+ssh-keygen -t rsa 
+
+cat ~/.ssh/id_rsa.pub
+
+https://github.com/settings/keys
+依次点击"Setting -> SSH Keys"->"New SSH key"
+
+ssh -T git@github.com
