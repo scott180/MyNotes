@@ -81,3 +81,5 @@ https://github.com/settings/keys
 依次点击"Setting -> SSH Keys"->"New SSH key"
 
 ssh -T git@github.com
+ 
+git
