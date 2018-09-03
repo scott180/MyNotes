@@ -78,6 +78,7 @@ vi /etc/ssh/sshd_config
 
 删除配置：
 	git config --global --unset pack.deltacachesize
+	
 
 === 分支 branch =======================================================================================
 https://edu.aliyun.com/jiaocheng/1834?spm=5176.11182473.menu.7.k6ksTN
@@ -101,13 +102,18 @@ https://edu.aliyun.com/jiaocheng/1834?spm=5176.11182473.menu.7.k6ksTN
 	git checkout -b newtest
 
 	
+合并分支：
+	git checkout master
+	git meger test   // test分支合并到master分支
+	git push origin master
+	
+	
 展示文件  ls
 删除文件  git rm test2.txt 
 
 查看分支：git branch -a
 删除本地分支 git branch -D branch-name
-删除远程分支：git branch -r -d origin/branch-name
-			  git push origin --delete branch-name
+删除远程分支：git push origin --delete branch-name
 			  
 			  
 查看当前配置有哪些远程仓库
