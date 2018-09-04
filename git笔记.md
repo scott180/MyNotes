@@ -73,6 +73,7 @@ git merge  合并 使用fetch 可以在merge之前可以看清楚更新情况，
 ```
 
  <h2 id="config"></h2>
+ 
 ### 2、配置
 
 ```
@@ -97,6 +98,7 @@ vi /etc/ssh/sshd_config
 ```
 
  <h2 id="branch"></h2>
+ 
 ### 3、分支
 
 ```
@@ -141,6 +143,7 @@ https://edu.aliyun.com/jiaocheng/1834?spm=5176.11182473.menu.7.k6ksTN
 	
 ```
  <h2 id="other"></h2>
+ 
 ### 4、其他	
 ```
 	
@@ -178,6 +181,7 @@ git diff 有两个主要的应用场景。
 	git log --branches --not --remotes --simplify-by-decoration --decorate --online
 
 ```
+
 
 ```
 ## github添加ssh公钥

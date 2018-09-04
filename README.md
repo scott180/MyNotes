@@ -11,7 +11,11 @@ java  linux  javascript  jquery  mysql oracle and so on
 *   [2、常用软件](#commonSoft)
     *   [2.1、jdk](#jdkSoft)
     *   [2.2、tomcat](#tomcatSoft)
-	
+    
+*****************************************************************
+
+>* [作业部落 markdown](https://www.zybuluo.com/mdeditor)
+>* [github markdown](https://jbt.github.io/markdown-editor/)
 
 
 ## 1、笔记 <h2 id="note"></h2>
@@ -72,4 +76,5 @@ jdk-8u72-windows-i586.zip jdk-8u72-linux-i586.tar.gz   是32位软件
 - [x]  tomcat6-tomcat9 官网 https://archive.apache.org/dist/tomcat/
 
 #### 链接: https://pan.baidu.com/s/1yPhAfIcACTGkpIOYlEds1g 密码: j9ug
+
 
