@@ -190,13 +190,18 @@ git diff 有两个主要的应用场景。
 **********************************************************************************
 
 ```
-## github添加ssh公钥
+## github添加ssh公钥  git clone
+
+打开 git bash
 
 ssh-keygen -t rsa
 
 cat ~/.ssh/id_rsa.pub
 
-https://github.com/settings/keys   依次点击"Setting -> SSH Keys"->"New SSH key"
+添加到 https://github.com/settings/keys   依次点击"Setting -> SSH Keys"->"New SSH key"
 
 ssh -T git@github.com
+
+git clone git@github.com:scott180/MyNotes.git
+
 ```
