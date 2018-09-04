@@ -35,7 +35,7 @@ https://github.com/scott180/MyNotes/tree/master/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A
 
 ###  1.5、git <h3 id="gitNote"></h3>
 #### git笔记 
-https://github.com/scott180/MyNotes/blob/master/docker.md
+https://github.com/scott180/MyNotes/blob/master/git%E7%AC%94%E8%AE%B0.md
 	
 	
 ## 2、常用软件 <h2 id="commonSoft"></h2>
