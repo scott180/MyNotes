@@ -2,21 +2,46 @@
 > 个人笔记
 java  linux  javascript  jquery  mysql oracle and so on
   
-*   [1、常用软件](#commonSoft)
-    *   [1.1、jdk](#jdkSoft)
-    *   [1.2、tomcat](#tomcatSoft)
-*   [2、笔记](#note)
-    *   [2.1、linux](#linuxNote)
-    *   [2.1、mongo](#mongoNote)
-    *   [2.3、docker](#dockerNote)
-    *   [2.4、javascript](#javascriptNote)
+*   [1、笔记](#note)
+    *   [1.1、linux](#linuxNote)
+    *   [1.1、mongo](#mongoNote)
+    *   [1.3、docker](#dockerNote)
+    *   [1.4、javascript](#javascriptNote)
+    *   [1.5、git](#gitNote)
+*   [2、常用软件](#commonSoft)
+    *   [2.1、jdk](#jdkSoft)
+    *   [2.2、tomcat](#tomcatSoft)
+	
+
+
+## 1、笔记 <h2 id="note"></h2>
+
+###  1.1、linux <h3 id="linuxNote"></h3>
+#### linux笔记 
+https://github.com/scott180/MyNotes/blob/master/linux%E7%AC%94%E8%AE%B0-x.md
+
+###  1.2、mongo <h3 id="mongoNote"></h3>
+#### mongo笔记 
+https://github.com/scott180/MyNotes/blob/master/mongo.md
+
+
+###  1.3、docker <h3 id="dockerNote"></h3>
+#### docker笔记 
+https://github.com/scott180/MyNotes/blob/master/docker.md
+
+###  1.4、javascriptNote <h3 id="javascriptNote"></h3>
+#### 深入理解javascript原型和闭包
+https://github.com/scott180/MyNotes/tree/master/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3javascript%E5%8E%9F%E5%9E%8B%E5%92%8C%E9%97%AD%E5%8C%85
+
+###  1.5、git <h3 id="gitNote"></h3>
+#### git笔记 
+https://github.com/scott180/MyNotes/blob/master/docker.md
 	
 	
-	
-## 1、常用软件 <h2 id="commonSoft"></h2>
+## 2、常用软件 <h2 id="commonSoft"></h2>
 <h3 id="jdkSoft"></h3>
 
-### 1.1、jdk 
+### 2.1、jdk 
 
 #### jdk6 链接: https://pan.baidu.com/s/1z3p1DecyBVugP7cECIupyg 密码: 829h
 #### jdk7 链接: https://pan.baidu.com/s/17ik9x-g3RkYEu6vah9CZVw 密码: muvr
@@ -43,43 +68,8 @@ jdk-8u72-windows-i586.zip jdk-8u72-linux-i586.tar.gz   是32位软件
 
 <h3 id="tomcatSoft"></h3>
 
-### 1.2、tomcat
+### 2.2、tomcat
 - [x]  tomcat6-tomcat9 官网 https://archive.apache.org/dist/tomcat/
 
 #### 链接: https://pan.baidu.com/s/1yPhAfIcACTGkpIOYlEds1g 密码: j9ug
 
-
-
-## 2、笔记 <h2 id="note"></h2>
-
-###  2.1、linux <h3 id="linuxNote"></h3>
-#### linux笔记 
-https://github.com/scott180/MyNotes/blob/master/linux%E7%AC%94%E8%AE%B0-x.md
-
-###  2.2、mongo <h3 id="mongoNote"></h3>
-#### mongo笔记 
-https://github.com/scott180/MyNotes/blob/master/mongo.md
-
-
-###  2.3、docker <h3 id="dockerNote"></h3>
-#### docker笔记 
-https://github.com/scott180/MyNotes/blob/master/docker.md
-
-###  2.4、javascriptNote <h3 id="javascriptNote"></h3>
-#### 深入理解javascript原型和闭包
-https://github.com/scott180/MyNotes/tree/master/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3javascript%E5%8E%9F%E5%9E%8B%E5%92%8C%E9%97%AD%E5%8C%85
-
-
-
-github添加ssh公钥
-
-ssh-keygen -t rsa 
-
-cat ~/.ssh/id_rsa.pub
-
-https://github.com/settings/keys
-依次点击"Setting -> SSH Keys"->"New SSH key"
-
-ssh -T git@github.com
- 
-git

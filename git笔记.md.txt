@@ -1,14 +1,24 @@
-git笔记
+## git笔记
+  
+*   [1、上传下载](#pull)
+*   [2、配置](#config)
+*   [3、分支](#branch)
+*   [4、其他](#other)
 
+
+ <h2 id="pull"></h2>
+
+### 1、上传下载
+```
 http://170.18.10.134/diffusion/449/idsplus研发.git
 http://170.18.10.134/diffusion/450/idsplus发布.git
 
 git clone git@170.18.10.134:222/diffusion/449/idsplus研发.git
 
 ssh://git@170.18.10.134:222/diffusion/449/idsplus研发.git
+```
 
-=== 上传下载 =======================================================================================
-	
+```
 添加文件到缓存：
 	git add test.txt    单个文件
 	git add .           当前目录全部文件
@@ -32,9 +42,9 @@ git pull   拉取 从远程拉取最新版本到本地，并自动合并 merge
 
 git fetch  获取 从远程获取最新版本到本地，不会自动合并 merge，需要手动合并
 git merge  合并 使用fetch 可以在merge之前可以看清楚更新情况，再决定是否合并。
+```
 
-
-
+```
 撤销操作
 	git reset    
 		撤销git add 缓存的文件
@@ -59,8 +69,13 @@ git merge  合并 使用fetch 可以在merge之前可以看清楚更新情况，
 
 		HEAD^2 上一次的 上一次的提交（倒数第三次）
 		HEAD^3 倒数 第四次的 提交
+		
+```
 
-=== 配置 =======================================================================================
+ <h2 id="config"></h2>
+### 2、配置
+
+```
 vi /etc/ssh/sshd_config
 
 查看版本：
@@ -79,8 +94,13 @@ vi /etc/ssh/sshd_config
 删除配置：
 	git config --global --unset pack.deltacachesize
 	
+```
 
-=== 分支 branch =======================================================================================
+ <h2 id="branch"></h2>
+### 3、分支
+
+```
+
 https://edu.aliyun.com/jiaocheng/1834?spm=5176.11182473.menu.7.k6ksTN
 
 创建分支命令（复制当前分支下文件）：
@@ -119,9 +139,11 @@ https://edu.aliyun.com/jiaocheng/1834?spm=5176.11182473.menu.7.k6ksTN
 查看当前配置有哪些远程仓库
 	git remote -v
 	
+```
+ <h2 id="other"></h2>
+### 4、其他	
+```
 	
-=== 其他 =======================================================================================	
-
 类似linux
 	touch test.txt
 	vi   test.txt    // :wq  保存
@@ -155,7 +177,16 @@ git diff 有两个主要的应用场景。
 查看全部分支的全部的最近的commit：
 	git log --branches --not --remotes --simplify-by-decoration --decorate --online
 
+```
 
-git reset HEAD
+```
+## github添加ssh公钥
 
-git reset HEAD 命令用于取消已缓存的内容。
+ssh-keygen -t rsa
+
+cat ~/.ssh/id_rsa.pub
+
+https://github.com/settings/keys   依次点击"Setting -> SSH Keys"->"New SSH key"
+
+ssh -T git@github.com
+```
