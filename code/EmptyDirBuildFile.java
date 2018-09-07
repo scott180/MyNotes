@@ -5,7 +5,11 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
 
-public class ReadMe {
+/**
+空文件下建立README.txt文件
+*/
+
+public class EmptyDirBuildFile {
 
 	static String dir = "D:\\test";
 

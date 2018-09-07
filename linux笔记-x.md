@@ -151,8 +151,41 @@ netstat -nal  查看网络通信情况
 	netstat -an | grep 3306   //查看所有3306端口使用情况·
 	
 	
+	
 cat >add.txt <<EOF   //cat 编辑文件
-EOF                 //cat 保存文件
+EOF                 //
+
+ 保存文件
+
+
+``` 
+
+********************************************************************
+
+``` 
+redis
+[root@localhost src]# cd /opt/sudytech/custom/redis-2.8.17/
+[root@localhost redis-2.8.17]# redis-server redis.conf              //启动redis                 
+[root@localhost ~]# redis-cli                                       //进入redis客户端
+127.0.0.1:6379> keys *                                              //取出所有的key 
+(empty list or set)
+127.0.0.1:6379> quit                                                //退出客户端   
+
+127.0.0.1:6379> set key1 value1										//set  get
+OK
+127.0.0.1:6379> get key1
+"value1"
+127.0.0.1:6379> del k1												//删除一个key
+(integer) 1
+127.0.0.1:6379> 
+
+
+Exception in thread "main" redis.clients.jedis.exceptions.JedisDataException: DENIED Redis is running in protected mode because protected mode is enabled。。。。
+
+进入客户端设置模式：
+redis-cli
+config set protected-mode "no"
+
 ``` 
 
 ********************************************************************
@@ -303,8 +336,8 @@ cat  test.txt        显示文件开头
 tac  test.txt        显示文件结尾
 more test.txt        逐页显示文件 
 less test.txt        逐页显示文件（优化more）
-head -n 20 test.txt  显示文件前20行
-tail -n 20 test.txt  显示文件后20行
+head -n 20 test.txt  显示文件前20行  head -100  filename
+tail -n 20 test.txt  显示文件后20行  tail -100  filename 
 
 
 如果文件太长，用cat命令只能看到文件的最后一页，而用more命令时可以一页一页地显示。执行more命令后，进入more状态，用【Enter】键可以向后移动一行；用【Space】键可以向后移动一页；用“q”键可以退出。在more状态下还有许多功能，可用man more命令获得。
@@ -480,6 +513,11 @@ use UCPPLUS;
 创建、使用数据库   create database test;  use test;
 导入sql数据 	source /root/20151010.sql
 
+
+复制表数据到新表
+CREATE TABLE T_MENU1 LIKE T_MENU;
+INSERT INTO T_MENU1 SELECT * FROM T_MENU;
+
 /opt/tech/apache-tomcat-6.0.45/webapps/add20170814.sql
 
 修改max_allowed_packet  vi /etc/my.cnf
@@ -492,6 +530,7 @@ GRANT ALL PRIVILEGES ON `db1`.* TO 'user1'@'192.171.1.18' identified by 'pwd1' W
 GRANT ALL PRIVILEGES ON `IDSPLUS`.* TO 'sudy'@'192.171.1.18' identified by 'shhg12344' WITH GRANT OPTION;
 
 grant all privileges on *.* to root@'%' identified by 'Sudy.web123' with grant option;
+
  
 linux 的mysql配置文件  /etc/my.cnf
 
@@ -563,6 +602,7 @@ man ls  查看命令手册
 
 显示10行历史记录命令     history 10
 历史记录显示时间         在/etc/profile 中增加  export HISTTIMEFORMAT="%Y-%m-%d %H:%M:%S "
+写入操作				 source /etc/profile
 
 查看java版本         java -version
 查询所有安装软件     rpm -qa

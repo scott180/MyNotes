@@ -44,6 +44,15 @@ mongo
 显示文档（行）  db.test.find()
 复制数据库      db.copyDatabase(<from_dbname>, <to_dbname>, <from_hostname>);  例如：db.copyDatabase('test','test1');
 
+
+按时间查询
+db.getCollection('mongomessage').find({createTime:{$gt:ISODate("2018-06-28T22:00:00.000Z")}}).count
+
+db.getCollection('mongomessage').find({fromAddress:'uc_b:(71133)一卡通余额提醒',createTime:{$gt:ISODate("2018-06-28T22:00:00.000Z")}}).count()
+
+db.getCollection('mongomessage').find({fromAddress:'uc_b:(71135)学生课表信息提醒',createTime:{$gt:ISODate("2018-06-28")}}).count()
+
+db.getCollection('mongomessage').find({fromAddress:'uc_b:(71134)教师课表信息提醒',createTime:{$gt:ISODate("2018-06-28T22:00:00.000Z")}}).count()
     
 ```  
 
@@ -343,6 +352,12 @@ http://lhkzyz.iteye.com/blog/1669796
 
 http://www.runoob.com/mongodb/mongodb-query.html
 ```
+
+
+
+排序  sort()方法可以通过参数指定排序的字段，并使用 1 和 -1 来指定排序的方式，其中 1 为升序排列，而-1是用于降序排列。
+
+db.getCollection('mongomessage').find({}).sort({"createTime":-1})   
 
 
  <h2 id="innerDocument"></h2>

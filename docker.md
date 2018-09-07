@@ -75,6 +75,7 @@ docker commit  -m "ucp1.1.7--20180428" -a "xyq" f54f18474f15 ucp:1.1.7
 ```
 上传到170.18.10.40镜像仓库
 	登陆 docker login http://170.18.10.40 
+		 docker login http://registry.sudytech.com:35000
 
 	标记 docker tag ucp:1.1.7 170.18.10.40/ucpplus-b/ucp:1.1.7       （170.18.10.120 开发）
 		 docker tag ucp:1.1.7 170.18.10.40/mobile/ucp:1.1.7          （170.18.10.162 测试）
@@ -84,11 +85,25 @@ docker commit  -m "ucp1.1.7--20180428" -a "xyq" f54f18474f15 ucp:1.1.7
 	
 	账号/密码
 	徐永钦 yqxu Yqxu123456
+	
+	
+	docker login http://registry.sudytech.com:35000
+	yqxu Yqxu123456
+	
+	
+	现有docker仓库地址使用ip地址，导致外网无法正常下载镜像。
+	现在统一修改为registry.sudytech.com:35000
+
+	上传方式为：
+	docker push registry.sudytech.com:35000/mobile/IMAGE[:TAG]
+	下载方式：
+	docker pull registry.sudytech.com:35000/mobile/IMAGE[:TAG]
+	docker pull registry.sudytech.com:35000/library/mysql:5.7.7_sudy2
 ```
 
 - 导出镜像
 docker save -o ucp1.1.7.tar.gz ucp:1.1.7
-docker save -o /mnt/home/mobile/ucp1.1.7.tar.gz 303d0cc15269
+docker save -o /mnt/home/mobile/ucp1.1.7_docker_image.tar.gz 303d0cc15269
 
 - 导入镜像
 docker load -i xxx.tar.gz
@@ -194,6 +209,21 @@ vi /etc/sysconfig/docker
 
 然后systemctl start docker
 
+
+登陆仓库失败时：
+[root@localhost ~]# docker login http://registry.sudytech.com:35000
+Username: yqxu
+Password: 
+Error response from daemon: Get https://registry.sudytech.com:35000/v1/users/: http: server gave HTTP response to HTTPS client
+
+需要修改   
+	vi /lib/systemd/system/docker.service
+在ExecStart后添加     
+	ExecStart=/usr/bin/dockerd  --insecure-registry=registry.sudytech.com:35000 --insecure-registry=registry:35000
+再重启
+systemctl daemon-reload
+sudo systemctl restart docker
+
 ```
 ```
 Ubuntu 16.04（LTS）安装dockerI
@@ -277,9 +307,11 @@ You need to upgrade to a more recent version to use the version 2 format configu
 
 #### 2.5、测试 run 运行容器
 ```
+docker run --name base -tid 170.18.10.40/library/baseenv:base /bin/bash
+
 dockcer pull tomcat:6.0.53
 
-docker run --name tomcat6.0.53 -p 8080:8080 -v $PWD/test:/usr/local/tomcat/webapps/test -d docker.io/tomcat:6.0.53
+docker run --name tomcat6.0.53 -p 8081:8080 -v $PWD/test:/usr/local/tomcat/webapps/test -d docker.io/tomcat:6.0.53
 
 docker run --name some-mysql -p 3306:3306 -e MYSQL_ROOT_PASSWORD=my-secret-pw -d mysql:tag
 

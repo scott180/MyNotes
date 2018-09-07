@@ -185,6 +185,8 @@ git diff 有两个主要的应用场景。
 查看全部分支的全部的最近的commit：
 	git log --branches --not --remotes --simplify-by-decoration --decorate --online
 
+查看日志
+	git log
 ```
 
 **********************************************************************************
