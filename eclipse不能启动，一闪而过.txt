@@ -3,6 +3,7 @@
   （1）检查java环境变量是否配置好
   （2）查看eclipse的位数是否跟JDK位数相同（如：JDK 是64位，而eclipse是32位会有问题，应该让这两个位数保持一致，要么都是32位要么都是64位）
   （3）检查eclipse.ini配置文件是否有问题，具体的配置方法和参数信息网上很多，这里不细说（一般eclipse自带的即可）
+  
 2.上次eclipse异常关闭，workspace的问题，这种情况的问题稍微复杂，比较难解决，可以尝试以下几种方案：
    解决方案一：
       找到 YOUR_WORKSPACE/.metadata/.plugins/org.eclipse.core.resources/.snap 文件，将其删除试一下是否解决问题。
