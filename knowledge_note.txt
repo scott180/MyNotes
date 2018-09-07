@@ -2,10 +2,6 @@
 
 -Xms256m -Xmx512m -XX:MaxNewSize=256m -XX:MaxPermSize=256m
 
-
-url中文转换   encodeURI(encodeURI(name))    decodeURI(name)
-
-
 sudy加密
 String md5Pwd = IdsServerAux.encryptByMd5(new StringBuilder().append(user2.getLoginName()).append(oldpassword).toString());
 

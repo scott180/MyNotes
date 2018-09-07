@@ -3,7 +3,8 @@
 *   [1、上传下载](#pull)
 *   [2、配置](#config)
 *   [3、分支](#branch)
-*   [4、其他](#other)
+*   [4、查看文件提交状态](#status)
+*   [5、github添加ssh公钥](#github)
 
 
  <h2 id="pull"></h2>
@@ -147,20 +148,14 @@ https://edu.aliyun.com/jiaocheng/1834?spm=5176.11182473.menu.7.k6ksTN
 
 ****************************************************************************************************************************************
 
- <h2 id="other"></h2>
+ <h2 id="status"></h2>
  
-### 4、其他	
+### 4、查看文件提交状态
 ```
-	
-类似linux
-	touch test.txt
-	vi   test.txt    // :wq  保存
-	mkdir  dir
-	rm   test.txt
-
 	
 git status 命令用于查看项目的当前状态。
 git status -s  查看详情
+
 	
 git diff   
 git diff --stat
@@ -177,10 +172,12 @@ git diff 有两个主要的应用场景。
 退出git diff  : q
 
 
-查看未推送
-
 查看全部分支的已经commit但是没有push的：
 	git log --branches --not --remotes
+	
+	git cherry -v   只能查看未传送提交的描述/说明
+	git log master ^origin/master  则可以查看未传送提交的详细信息
+	
 
 查看全部分支的全部的最近的commit：
 	git log --branches --not --remotes --simplify-by-decoration --decorate --online
@@ -189,9 +186,15 @@ git diff 有两个主要的应用场景。
 	git log
 ```
 
-**********************************************************************************
 
-```
+****************************************************************************************************************************************
+
+ <h2 id="guthub"></h2>
+ 
+### 5、github添加ssh公钥
+
+```	
+	
 ## github添加ssh公钥  git clone
 
 打开 git bash
