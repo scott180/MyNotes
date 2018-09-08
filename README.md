@@ -14,8 +14,8 @@ java  linux  javascript  jquery  mysql oracle and so on
     
 *****************************************************************
 
->* [作业部落 markdown](https://www.zybuluo.com/mdeditor)
->* [github markdown](https://jbt.github.io/markdown-editor/)
+>* [作业部落 markdown]( https://www.zybuluo.com/mdeditor )
+>* [github markdown]( https://jbt.github.io/markdown-editor/ )
 
 
 ## 1、笔记 <h2 id="note"></h2>
