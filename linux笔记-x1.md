@@ -382,6 +382,7 @@ export JRE_HOME=/opt/sudytech/jdk1.6.0_45/jre
 ``` 
 ********************************************************************
 
+
 ####  head tail less more 
 
 ``` 
@@ -414,6 +415,77 @@ less实际上是more的改进版，其命令的直接含义是more的反义。le
 ``` 
 ********************************************************************
 
+
+####  cat详解
+```
+cat命令是linux下的一个文本输出命令，通常是用于观看某个文件的内容。
+cat主要有三大功能：
+	1.一次显示整个文件。
+		$ cat   filename
+		
+	2.从键盘创建一个文件。
+		$ cat  >  filename                                     
+		只能创建新文件,不能编辑已有文件
+		
+	3.将几个文件合并为一个文件。
+		$cat   file1   file2  > file
+
+
+	cat具体命令格式为 : cat [-AbeEnstTuv] [--help] [--version] fileName
+		说明：把档案串连接后传到基本输出(屏幕或加 > fileName 到另一个档案)
+		参数：
+		-n 或 –number 由 1 开始对所有输出的行数编号
+		-b 或 –number-nonblank 和 -n 相似，只不过对于空白行不编号
+		-s 或 –squeeze-blank 当遇到有连续两行以上的空白行，就代换为一行的空白行
+		-v 或 –show-nonprinting
+		范例：
+		cat -n linuxfile1 > linuxfile2 把 linuxfile1 的档案内容加上行号后输入 linuxfile2 这个档案里
+		cat -b linuxfile1 linuxfile2 >> linuxfile3 把 linuxfile1 和 linuxfile2 的档案内容加上行号(空白行不加)之后将内容附加到linuxfile3 里。
+		范例：
+		把 linuxfile1 的档案内容加上行号后输入 linuxfile2 这个档案里
+		cat -n linuxfile1 > linuxfile2
+		把 linuxfile1 和 linuxfile2 的档案内容加上行号(空白行不加)之后将内容附加到 linuxfile3 里。
+		cat -b linuxfile1 linuxfile2 >> linuxfile3
+	
+	
+	cat /dev/null > /etc/test.txt 此为清空/etc/test.txt档案内容
+		
+**********************************
+
+cat << EOF的语句说明
+	EOF是“end of file”，表示文本结束符。EOF在这里没有特殊的含义，你可以使用FOE或OOO等（当然也不限制在三个字符或大写字符）。
+
+简单描述一下常见的使用方式及其作用：
+	1、cat<<EOF，以EOF输入字符为标准输入结束：
+	2、cat>filename，创建文件，并把标准输入输出到filename文件中，以ctrl+d作为输入结束：
+	注意：输入时是没有'>'的。
+	3、cat>filename<<EOF，以EOF作为输入结束，和ctrl+d的作用一样。
+
+命令：
+	$ cat > test.txt << EOF
+	> 说明cat及EOF
+	> 测试
+	> EOF
+	
+	$ cat test.txt
+	说明cat及EOF
+	测试
+
+其他写法：
+	cat >> test.txt << EOF 在test.txt里追加内容，不会覆盖原有文件。
+
+	$ cat >> test.txt << END     //这里的“END”就代替了“EOF”的功能。结果是相同的。
+	> 追加内容
+	> END
+
+	$ cat test.txt
+	说明cat及EOF
+	测试
+	追加内容
+```		
+********************************************************************
+
+
 ####  问题
 ```
 	history 历史记录显示时间        
@@ -429,13 +501,6 @@ linux虚拟机上传下载文件
 	打开虚拟机linux，使用命令 ifconfig 查看ip，再使用xshell连接。
 ```
 	
-```	
-cat >add.txt <<EOF   //cat 编辑文件
-内容content			//内容
-EOF                 //结束 保存文件
-```
-
-
 
 <h3 id="userPermission"></h3>
 
