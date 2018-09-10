@@ -11,6 +11,7 @@ java  linux  javascript  jquery  mysql oracle and so on
 *   [2、常用软件](#commonSoft)
     *   [2.1、jdk](#jdkSoft)
     *   [2.2、tomcat](#tomcatSoft)
+    *   [2.3、eclipse](#eclipse)
     
 *****************************************************************
 
@@ -78,3 +79,8 @@ jdk-8u72-windows-i586.zip jdk-8u72-linux-i586.tar.gz   是32位软件
 #### 链接: https://pan.baidu.com/s/1yPhAfIcACTGkpIOYlEds1g 密码: j9ug
 
 
+<h3 id="eclipse"></h3>
+
+### 2.3、eclipse
+- [x] eclipse 下载及版本说明.md
+ https://github.com/scott180/MyNotes/blob/master/eclipse%20%E4%B8%8B%E8%BD%BD%E5%8F%8A%E7%89%88%E6%9C%AC%E8%AF%B4%E6%98%8E.md

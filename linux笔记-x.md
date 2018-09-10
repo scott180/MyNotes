@@ -1,12 +1,11 @@
 # linux笔记-x
   
-*   [1、常用命令](#commonCommand)
-    *   [1.1、常用命令](#commonCommand1)
+*   [1、命令说明](#command)
+    *   [1.1、常用命令](#commonCommand)
     *   [1.2、文件权限](#userPermission)
     *   [1.3、用户和组的管理](#userAndGroup)
     *   [1.4、tomcat命令](#tomcatCommand)
     *   [1.5、mysql命令](#mysqlCommand)
-    *   [1.6、其他命令](#otherCommand)
 *   [2、shell编程](#shell)
     *   [2.1、shell概述及优势](#shellIntroduce)
     *   [2.2、shell创建、执行](#shellExecute)
@@ -26,65 +25,90 @@
 
 标签（空格分隔）： linux xyq customeDirectoy [toc]
 
-## 1、常用命令 <h2 id="commonCommand"></h2>
- <h3 id="commonCommand1"></h3>
+<h2 id="command"></h2>
+
+## 1、命令说明 
+ <h3 id="commonCommand"></h3>
+ 
 ### 1.1、常用命令
 
-``` 
-进入目录         cd dir1
-创建目录         mkdir dir1   
-创建多级目录     mkdir -p  d1/d2/d3   
-查看当前目录     pwd
+说明                | 命令
+-----------------   | -----------------------------------------------------------------  
+进入目录       		| cd dir1
+创建目录       		| mkdir dir1   
+创建多级目录  		| mkdir -p  d1/d2/d3   
+查看当前目录		| pwd
+复制文件       		| cp srcname  targetname
+复制目录 			| cp -r dir1/ dir2/
+修改名称(移动文件)  | mv readme.txt readme.doc
+跨服务器复制        | scp /data/ROOT.tar.gz root@192.168.239.35:/opt/sudytech/db_backup
+删除普通文件a.txt   | rm a.txt (-f:表示强制)
+目录a删除           | rm -rf a       (-f:表示强制; -r:表示目录)
+建立新文件  		| touch test.txt
+清空文件            | cat /dev/null >json.log
+`-----------------` | `-----------------------------------------------------------------`  
+查看磁盘空间     	| df -h
+查看文件大小        | du -h filepath
+显示文件或目录类型	| file test
+查询程序的位置	    | which test
+统计文件信息	    | wc testfile
+3 92 598 testfile   | testfile文件的行数为3、单词数92、字节数598 
+`-----------------` | `-----------------------------------------------------------------`  
+压缩tar   | tar -zcvf /home/love.tar.gz /home/yx/love
+解压tar   | tar -zxvf /home/love.tar.gz
+压缩zip   | zip  test.zip  test
+解压zip   | unzip test.zip
+`-----------------` | `-----------------------------------------------------------------`  
+模糊查找当前目录文件   	 | find *txt
+从根目录查找文件         | find / -name test 
+查找文件               	 | find /home -name 'test.log' -type f -print
+查找目录                 | find / -name 'tech' -type d -print
+查找当前目录及子目录文件 | find . -name "*root*" -maxdepth 1  （maxdepth指层数）
+查找大文件               | find / -type f -size +400M | xargs ls -hlrt
+`-----------------` | `-----------------------------------------------------------------`  
+从旧到新并显示大小 | ls -hlrt （ls -lrt 从旧到新） 
+从新到旧并显示大小 | ls -hlt  （ls -lt  从新到旧 ）
+按大小升序		   | ls -hSlr
+按大小降序		   | ls -hSl
+模糊查找文件	   | ls name*  (ls /etc/rc.d/init.d/my*)
+显示当前目录文件   | ls
+`-----------------` | `-----------------------------------------------------------------`  
+查看linux版本      	| cat /proc/version      lsb_release -a
+查看linux内核版本   | uname -a
+查看centos版本 	    | cat /etc/redhat-release
+查看java版本        | java -version
+查看进程			| ps 
+查看tomcat进程      | ps -ef | grep tomcat
+`-----------------` | `-----------------------------------------------------------------` 
+上传				| sz filename   (安装上传下载 yum install lrzsz)
+下载    			| sz
+显示10行历史记录	| history 10
+查看ip             	| ifconfig
+清楚屏幕           	| clear
+查看时间           	| date
+查看指定年月日历   	| cal 3 2013
+建立链接 			| ln -fs /opt/tech/mysql/bin/mysql /usr/local/bin/mysql
+删除链接 			| rm -rf name
+查看所有别名   		| alias
+添加别名       		| alias test="tar -zcvf "
+删除别名       		| unalias test
+显示所有分区的信息	| fdisk -l 
+帮助				| help
+查看命令手册 		| man ls  
+树状结构展示目录	| tree   (安装tree命令 yum  install tree)  
+输出重定向(保存文件)| ls > dir.txt
+追加文件            | ls >> dir.txt 
+`-----------------` | `-----------------------------------------------------------------` 
+关机				| halt              
+重启       			| reboot  
+关机重启        	| shutdown -r
+关机不重启        	| shutdown -h
+立刻关机        	| shutdown now
+********************************************************
 
-复制文件            cp srcname  targetname
-复制目录 			cp -r dir1/ dir2/
-修改名称(移动文件)  mv readme.txt readme.doc
-跨服务器复制  scp /data/sudytech/apache-tomcat-6.0.48/webapps/ROOT.tar.gz root@192.168.239.35:/opt/sudytech/db_backup
 
-
-rm a.txt  删除普通文件a.txt
-rm -r a/  删除目录a
-rm -rf  a/  强制删除目录a
--f  表示强制
-
-查看磁盘空间     df-h
-查看文件大小     du -h filepath 
-查看文件夹中的文件大小  ls -lh
-
-压缩tar：tar -zcvf /home/love.tar.gz /home/yx/love
-解压tar: tar -zxvf /home/love.tar.gz
-
-压缩zip:  zip  test.zip  test
-解压zip:  unzip test.zip
-
-模糊查找当前目录文件   find *txt
-从根目录查找文件       find / -name test 
-查找文件               find /home -name 'test.log' -type f -print
-查找目录               find / -name 'tech' -type d -print
-查找当前目录及子目录文件（maxdepth指层数）  find . -name "*root*" -maxdepth 1
-查找大文件             find / -type f -size +400M | xargs ls -hlrt
-
-清空文件          cat /dev/null >json.log
-
-显示当前目录所有文件   ls
-显示当前目录所有文件及文件大小 ls -hl
-模糊查找文件 ls /etc/rc.d/init.d/my*      ls name*
-
-file test            显示文件或目录类型
-which test           查询程序的位置
-
-wc testfile           # testfile文件的统计信息  
-3 92 598 testfile     # testfile文件的行数为3、单词数92、字节数598 
-
-ls -lt  从新到旧       ls -hlt  从新到旧并显示大小
-ls -lrt 从旧到新       ls -hlrt  从旧到新并显示大小
-ls -hSlr 按大小升序
-ls -hSl  按大小降序
-
-按时间降序 ll -t
-按时间升序 ll -t | tac
-
-vi 操作:  
+#### vi操作
+```
 :wq (输入「wq」，存盘并退出vi)
 :q! (输入q!， 不存盘强制退出vi)
 :set fileencoding  查看文件编码
@@ -102,30 +126,73 @@ u   ：退回上一个操作
 n 搜索指定字符串的下一个出现位置
 N 搜索指定字符串的上一个出现位置
 :%s/old/new/g 全文替换指定字符串 
+```
+********************************************************
 
-[root @root /root]#cat /etc/passwd | more
-该命令使用了管道“|”，命令cat /etc/passwd的输出是管道的输入，经过管道后，成为了命令more的输入。
 
-使用命令“ls –l”可以显示文件的类别，每个输出行中的第一个字符表示的就是文件的类别，例如，“b”代表块设备，“p”代表管道文件，“c”代表字符设备，“d”代表目录文件。
+#### 环境变量export
+```
+查看所有环境变量    export
+查看环境变量 	    echo $PATH
+				    export $hello
+					
+设置临时环境变量    export PATH=$PATH:/usr/local/mysql/bin
+					export hello="hello world"
 
-启动mongo    /opt/sudytech/mongodb           ./bin/mongod --config mongo.conf
-										     ./bin/mongod --config /opt/sudytech/mongodb/conf/mongo.conf 
-											 
- 启动mongo
+设置系统环境变量	
+	vi /etc/profile
+
+		export PATH=$PATH:/usr/local/mysql/bin  # 在配置文件中加入此行配置
+		export hello="hello world"  # 在配置文件中加入此行配置
+
+	需要注意的是：修改完这个文件必须要使用 以下命令在不用重启系统的情况下使修改的内容生效。
+
+	source /etc/profile
+
+	或者是用 ‘.’：
+
+	. /etc/profile
+
+	查看：
+	echo $PATH
+		/usr/kerberos/sbin:/usr/kerberos/bin:/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin:/root/bin:/usr/local/mysql/bin
+	
+	echo $hello
+		hello world
+	
+	配置已经生效
+	
+```
+********************************************************
+
+
+#### 启动mongo   
+```
+配置文件启动
+cd /opt/sudytech/mongodb           
+./bin/mongod --config /opt/mongodb/conf/mongo.conf 
+	
+自定义路径启动										 
   /opt/sudytech/mongodb/bin/mongod --dbpath=/opt/sudytech/mongodb/data --logpath=/opt/sudytech/mongodb/logs --logappend  --port=27017 --fork
   
 登陆mongo
 cd /opt/sudytech/mongodb/bin
 mongo
+```
+********************************************************
 
 
-卸载yum安装的软件 
-
+#### yum rpm安装卸载软件 
+```
 yum安装：
        # yum install 包名
 yum卸载：
        # yum -y remove 包名
 	   
+查询所有安装软件     rpm -qa
+查看是否安装软件     rpm -qa | grep java	  
+卸载软件			 rpm -e    如果提示有依赖，可以加上 --nodeps 
+
 [root@localhost openldap]# rpm -qa | grep openldap
 openldap-2.4.44-15.el7_5.x86_64
 openldap-servers-2.4.44-15.el7_5.x86_64
@@ -134,9 +201,34 @@ compat-openldap-2.3.43-5.el7.x86_64
 [root@localhost openldap]# rpm -e --nodeps openldap-2.4.44-15.el7_5.x86_64
 [root@localhost openldap]# rpm -e --nodeps openldap-servers-2.4.44-15.el7_5.x86_64
 [root@localhost openldap]# rpm -e --nodeps compat-openldap-2.3.43-5.el7.x86_64
+```
+
+####  make安装卸载软件
+``` 
+用于linux源码安装软件，一般下载源码包得到文件：xxxx.tgz
+
+1、解包软件
+tar zxf xxxx.tgz
+
+2、配置
+cd xxxx
+./configure ....
+
+3、编译
+make
+
+4、安装
+make install
+
+5、卸载
+make uninstall
+
+``` 
+********************************************************************
 
 
-
+####  查看ip及端口是否可以访问
+```
  wget http://127.0.0.1:8080
  
  ping + ip： 查看某一个ip地址是否能够连通，如： ping 114.80.67.193
@@ -149,21 +241,12 @@ netstat -nal  查看网络通信情况
 	netstat -ntlp   //查看当前所有tcp端口·
 	netstat -ntulp |grep 80   //查看所有80端口使用情况·
 	netstat -an | grep 3306   //查看所有3306端口使用情况·
-	
-	
-	
-cat >add.txt <<EOF   //cat 编辑文件
-EOF                 //
-
- 保存文件
-
-
-``` 
-
+```	
 ********************************************************************
 
+
+####  redis
 ``` 
-redis
 [root@localhost src]# cd /opt/sudytech/custom/redis-2.8.17/
 [root@localhost redis-2.8.17]# redis-server redis.conf              //启动redis                 
 [root@localhost ~]# redis-cli                                       //进入redis客户端
@@ -187,14 +270,14 @@ redis-cli
 config set protected-mode "no"
 
 ``` 
-
 ********************************************************************
+
+
+####  关闭centos的防火墙
 ``` 
-关闭centos的防火墙，使用如下命令：
-       systemctl stop firewalld.service 关闭防火墙，centos7下。
-       systemctl disable firewalld.service 关闭开机启动
-       firewall-cmd --state 查看防火墙状态	
-	   
+systemctl stop firewalld.service 关闭防火墙，centos7下。
+systemctl disable firewalld.service 关闭开机启动
+firewall-cmd --state 查看防火墙状态	
 	   
 防火墙存在以下两种方式：
 
@@ -239,10 +322,11 @@ config set protected-mode "no"
 
 
 ``` 
-
 ********************************************************************
+
+
+####  查看内存
 ``` 
-查看内存
 top
 free -m  
 cat /proc/meminfo 机器的内存使用信息
@@ -280,30 +364,10 @@ free:可用有多少
  如上例：631740=260184+31424+340132
 ``` 
 ********************************************************************
+
+
+####  为每个tomcat配置单独的jdk
 ``` 
-用于linux源码安装软件，一般下载源码包得到文件：xxxx.tgz
-
-1、解包软件
-tar zxf xxxx.tgz
-
-2、配置
-cd xxxx
-./configure ....
-
-3、编译
-make
-
-4、安装
-make install
-
-5、卸载
-make uninstall
-
-``` 
-
-********************************************************************
-``` 
-为每个tomcat配置单独的jdk：
 一、安装jdk，如jdk-6u45-linux-x64.bin
 1、添加执行权限 
 	chmod u+x jdk-6u45-linux-x64.bin
@@ -315,9 +379,12 @@ export JAVA_HOME=/opt/sudytech/jdk1.6.0_45
 export JRE_HOME=/opt/sudytech/jdk1.6.0_45/jre
 
 三、重启tomcat
-
 ``` 
 ********************************************************************
+
+
+####  head tail less more 
+
 ``` 
 1. 如果你只想看文件的前100行，可以使用head命令，如
 head -100  filename
@@ -346,7 +413,94 @@ less实际上是more的改进版，其命令的直接含义是more的反义。le
 
 用【G】键可以移动文件到结尾，用【g】键可以移动到文件开头。
 ``` 
+********************************************************************
 
+
+####  cat详解
+```
+cat命令是linux下的一个文本输出命令，通常是用于观看某个文件的内容。
+cat主要有三大功能：
+	1.一次显示整个文件。
+		$ cat   filename
+		
+	2.从键盘创建一个文件。
+		$ cat  >  filename                                     
+		只能创建新文件,不能编辑已有文件
+		
+	3.将几个文件合并为一个文件。
+		$cat   file1   file2  > file
+
+
+	cat具体命令格式为 : cat [-AbeEnstTuv] [--help] [--version] fileName
+		说明：把档案串连接后传到基本输出(屏幕或加 > fileName 到另一个档案)
+		参数：
+		-n 或 –number 由 1 开始对所有输出的行数编号
+		-b 或 –number-nonblank 和 -n 相似，只不过对于空白行不编号
+		-s 或 –squeeze-blank 当遇到有连续两行以上的空白行，就代换为一行的空白行
+		-v 或 –show-nonprinting
+		范例：
+		cat -n linuxfile1 > linuxfile2 把 linuxfile1 的档案内容加上行号后输入 linuxfile2 这个档案里
+		cat -b linuxfile1 linuxfile2 >> linuxfile3 把 linuxfile1 和 linuxfile2 的档案内容加上行号(空白行不加)之后将内容附加到linuxfile3 里。
+		范例：
+		把 linuxfile1 的档案内容加上行号后输入 linuxfile2 这个档案里
+		cat -n linuxfile1 > linuxfile2
+		把 linuxfile1 和 linuxfile2 的档案内容加上行号(空白行不加)之后将内容附加到 linuxfile3 里。
+		cat -b linuxfile1 linuxfile2 >> linuxfile3
+	
+	
+	cat /dev/null > /etc/test.txt 此为清空/etc/test.txt档案内容
+		
+**********************************
+
+cat << EOF的语句说明
+	EOF是“end of file”，表示文本结束符。EOF在这里没有特殊的含义，你可以使用FOE或OOO等（当然也不限制在三个字符或大写字符）。
+
+简单描述一下常见的使用方式及其作用：
+	1、cat<<EOF，以EOF输入字符为标准输入结束：
+	2、cat>filename，创建文件，并把标准输入输出到filename文件中，以ctrl+d作为输入结束：
+	注意：输入时是没有'>'的。
+	3、cat>filename<<EOF，以EOF作为输入结束，和ctrl+d的作用一样。
+
+命令：
+	$ cat > test.txt << EOF
+	> 说明cat及EOF
+	> 测试
+	> EOF
+	
+	$ cat test.txt
+	说明cat及EOF
+	测试
+
+其他写法：
+	cat >> test.txt << EOF 在test.txt里追加内容，不会覆盖原有文件。
+
+	$ cat >> test.txt << END     //这里的“END”就代替了“EOF”的功能。结果是相同的。
+	> 追加内容
+	> END
+
+	$ cat test.txt
+	说明cat及EOF
+	测试
+	追加内容
+```		
+********************************************************************
+
+
+####  问题
+```
+	history 历史记录显示时间        
+	在/etc/profile 中增加  export HISTTIMEFORMAT="%Y-%m-%d %H:%M:%S "
+	写入环境变量		   source /etc/profile
+```	
+	
+```
+centos7虚拟机不能上网    
+	在存储linux目录的CentOS.vmx文件加入  ethernet0.virtualDev = "e1000"  再重启虚拟机
+	
+linux虚拟机上传下载文件  
+	打开虚拟机linux，使用命令 ifconfig 查看ip，再使用xshell连接。
+```
+	
 
 <h3 id="userPermission"></h3>
 
@@ -354,6 +508,10 @@ less实际上是more的改进版，其命令的直接含义是more的反义。le
 
 ```java
 ==============================================================
+查看文件属性 	ls -l test.sh
+赋予执行权限    chmod +x test.sh
+赋予全部权限    chmod 777 test.sh
+
 改变文件属性（二进制）      chmod #chmod 664 chap1.txt	       110110100  
 改变文件属性（字母）        chmod u=rw,g=rw,o=r chap1.txt	   r w x
 改变文件所属用户		    chown user1 chap1.txt
@@ -571,73 +729,6 @@ lower_case_table_names = 2
 ==============================================================
 ```
 
-### 1.6、其他命令 <h3 id="otherCommand"></h3>
-```java
-==============================================================
-查看系统空间容量       df -h 
-树状结构展示目录       tree         
-    yum  install tree  安装tree命令  
-    man tree           查询tree命令
-
-查看linux版本      cat /proc/version      lsb_release -a
-查看linux内核版本  uname -a
-查看centos版本 	   cat /etc/redhat-release
-
-建立链接 ln -fs /opt/tech/mysql/bin/mysql /usr/local/bin/mysql
-删除链接 rm -rf name
-
-查看时间           date
-查看指定年月日历   cal 3 2013
-查看ip             ifconfig
-清楚屏幕           clear
-
-help
-man ls  查看命令手册
-
-输出重定向 ls>dir.txt
-
-查看所有别名   alias
-添加别名       alias test="tar -zcvf "
-删除别名       unalias test
-
-显示10行历史记录命令     history 10
-历史记录显示时间         在/etc/profile 中增加  export HISTTIMEFORMAT="%Y-%m-%d %H:%M:%S "
-写入操作				 source /etc/profile
-
-查看java版本         java -version
-查询所有安装软件     rpm -qa
-查看是否安装软件     rpm -qa | grep java
-
-关机/重启机器
-shutdown
-     -r             关机重启
-     -h             关机不重启
-     now          立刻关机
-halt               关机
-reboot          重启
-
-fdisk -l——显示所有分区的信息
-
-touch
-创建空白的新文件. 
-更新已有文件的时间戳. 
-用法是一样的, touch 文件名
-
-xshell5上传下载
-安装命令：
-yum install lrzsz（安装此命令linux需要能上网）
-从服务端发送文件到客户端（下载）：sz filename
-从客户端上传文件到服务端（上传）：rz 
-
-centos7虚拟机不能上网    在存储linux目录的CentOS.vmx文件加入  ethernet0.virtualDev = "e1000"  再重启虚拟机
-linux虚拟机上传下载文件  打开虚拟机linux，使用命令 ifconfig 查看ip，再使用xshell连接。
-
-查看环境变量 echo $PATH
-[root@localhost bin]# echo $PATH
-/opt/jdk1.6.0_26/bin:/opt/jdk1.6.0_26/jre/bin:/usr/lib64/qt-3.3/bin:/usr/kerberos/sbin:/usr/kerberos/bin:/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin:/root/bin:/bin
-
-==============================================================
-```
 
 ## 2、Shell编程 <h2 id="shell"></h2>
 
@@ -2303,8 +2394,3 @@ clock -w    写入bios
 
 ==============================================================
 ```
-
-
-
-
-
