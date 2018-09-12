@@ -62,22 +62,27 @@ http://www.oracle.com/technetwork/java/archive-139210.html
 - jdk-8u162-windows-x64.zip  jdk-8u162-linux-x64.tar.gz  是64位软件
 - jdk-8u72-windows-i586.zip jdk-8u72-linux-i586.tar.gz   是32位软件
 
-> jdk6 链接: https://pan.baidu.com/s/1z3p1DecyBVugP7cECIupyg 密码: 829h
- jdk7 链接: https://pan.baidu.com/s/17ik9x-g3RkYEu6vah9CZVw 密码: muvr
- jdk8 链接: https://pan.baidu.com/s/1MT8zldLnH9PuZsVR77DEAw 密码: mv5i
- jdk9 链接: https://pan.baidu.com/s/1SMGJqedJKR3hULrpWn4eLA 密码: hai6
- jdk10 链接: https://pan.baidu.com/s/1SHA7XNoPxBdOkaed3cunow 密码: hgyn
+>  jdk6 链接: https://pan.baidu.com/s/1z3p1DecyBVugP7cECIupyg 密码: 829h
+
+>  jdk7 链接: https://pan.baidu.com/s/17ik9x-g3RkYEu6vah9CZVw 密码: muvr
+
+>  jdk8 链接: https://pan.baidu.com/s/1MT8zldLnH9PuZsVR77DEAw 密码: mv5i
+
+>  jdk9 链接: https://pan.baidu.com/s/1SMGJqedJKR3hULrpWn4eLA 密码: hai6
+
+>  jdk10 链接: https://pan.baidu.com/s/1SHA7XNoPxBdOkaed3cunow 密码: hgyn
 
 <h3 id="tomcatSoft"></h3>
 
 ### 2.2、tomcat
-- [ ] tomcat6-tomcat9 官网 https://archive.apache.org/dist/tomcat/
+> tomcat6-tomcat9 
+官网 https://archive.apache.org/dist/tomcat/
 
-> 链接: https://pan.baidu.com/s/1yPhAfIcACTGkpIOYlEds1g 密码: j9ug
+云盘 https://pan.baidu.com/s/1yPhAfIcACTGkpIOYlEds1g 密码: j9ug
 
 
 <h3 id="eclipse"></h3>
 
 ### 2.3、eclipse
-- [ ] eclipse 下载及版本说明.md
-> https://github.com/scott180/MyNotes/blob/master/eclipse%20%E4%B8%8B%E8%BD%BD%E5%8F%8A%E7%89%88%E6%9C%AC%E8%AF%B4%E6%98%8E.md
+> eclipse 下载及版本说明
+https://github.com/scott180/MyNotes/blob/master/eclipse%20%E4%B8%8B%E8%BD%BD%E5%8F%8A%E7%89%88%E6%9C%AC%E8%AF%B4%E6%98%8E.md
