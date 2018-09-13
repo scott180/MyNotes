@@ -38,8 +38,11 @@ docker ps -a
 * 进入容器
 docker exec -it 51b9527f1d88 /bin/bash
 
- * 进入数据库
- mysql -uroot -pSudy.web123
+* 进入数据库
+mysql -uroot -pSudy.web123
+ 
+* 创建并进入容器
+docker run -it --entrypoint /bin/bash registry.sudytech.com:35000/library/tomcat:7.0_1.7
 
 ```
 停止容器

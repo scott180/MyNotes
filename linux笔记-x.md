@@ -227,20 +227,35 @@ make uninstall
 ********************************************************************
 
 
-####  查看ip及端口是否可以访问
+####  查看ip及端口是否可以访问、开放端口
 ```
- wget http://127.0.0.1:8080
+	wget http://127.0.0.1:8080
  
- ping + ip： 查看某一个ip地址是否能够连通，如： ping 114.80.67.193
+	ping + ip： 查看某一个ip地址是否能够连通，如： ping 114.80.67.193
  
- telnet ip port ： 查看某一个机器上的某一个端口是否可以访问，如：telnet 114.80.67.193 8080
+	telnet ip port ： 查看某一个机器上的某一个端口是否可以访问，如：telnet 114.80.67.193 8080
  
-netstat -nal  查看网络通信情况
+	netstat -nal  查看网络通信情况
+ 
 
 查看端口占用
 	netstat -ntlp   //查看当前所有tcp端口·
 	netstat -ntulp |grep 80   //查看所有80端口使用情况·
 	netstat -an | grep 3306   //查看所有3306端口使用情况·
+	
+	
+查看开放的端口	
+firewall-cmd --list-all
+
+开放端口
+firewall-cmd --zone=public --add-port=4789/udp --permanent
+firewall-cmd --zone=public --add-port=80/tcp --permanent  
+firewall-cmd --zone=public --add-port=80/udp –permanen
+firewall-cmd --zone=public --add-port=8060/tcp --permanent
+
+刷新
+firewall-cmd --reload
+
 ```	
 ********************************************************************
 
@@ -249,18 +264,19 @@ netstat -nal  查看网络通信情况
 ``` 
 [root@localhost src]# cd /opt/sudytech/custom/redis-2.8.17/
 [root@localhost redis-2.8.17]# redis-server redis.conf              //启动redis                 
-[root@localhost ~]# redis-cli                                       //进入redis客户端
-127.0.0.1:6379> keys *                                              //取出所有的key 
+[root@localhost ~]# redis-cli       //进入redis客户端
+127.0.0.1:6379> keys *              //取出所有的key 
 (empty list or set)
-127.0.0.1:6379> quit                                                //退出客户端   
+127.0.0.1:6379> quit                //退出客户端   
 
-127.0.0.1:6379> set key1 value1										//set  get
+127.0.0.1:6379> set key1 value1		//set
 OK
-127.0.0.1:6379> get key1
+127.0.0.1:6379> get key1			//get
 "value1"
-127.0.0.1:6379> del k1												//删除一个key
+127.0.0.1:6379> del k1				//删除一个key
 (integer) 1
-127.0.0.1:6379> 
+127.0.0.1:6379> flushdb				//清空所有数据
+
 
 
 Exception in thread "main" redis.clients.jedis.exceptions.JedisDataException: DENIED Redis is running in protected mode because protected mode is enabled。。。。
@@ -275,13 +291,16 @@ config set protected-mode "no"
 
 ####  关闭centos的防火墙
 ``` 
-systemctl stop firewalld.service 关闭防火墙，centos7下。
-systemctl disable firewalld.service 关闭开机启动
-firewall-cmd --state 查看防火墙状态	
-	   
-防火墙存在以下两种方式：
+一、firewall方式
 
-	一、service方式
+	firewall-cmd --state    查看防火墙状态
+	
+	systemctl stop firewalld.service     关闭防火墙，centos7下
+	
+	systemctl disable firewalld.service    关闭开机启动
+
+
+二、service方式
 
 	查看防火墙状态： 
 
@@ -298,7 +317,7 @@ firewall-cmd --state 查看防火墙状态
 	[root@centos6 ~]# service iptables stop
 
 
-	二、iptables方式
+三、iptables方式
 
 	先进入init.d目录，命令如下：
 
