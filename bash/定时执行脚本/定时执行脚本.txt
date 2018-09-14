@@ -1,0 +1,25 @@
+
+定时执行脚本
+
+crontab -uroot -e
+
+#十分钟执行一次
+*/10 * * * * /bin/bash /home/share/timerSearch/timerSearchDB.sh
+
+
+说明：
+
+分钟   小时   日   月   星期   命令
+*        *      *    *     *       *
+
+第1列表示分钟1～59 每分钟用*或者 */1表示
+第2列表示小时1～23（0表示0点）
+第3列表示日期1～31
+第4列 表示月份1～12
+第5列标识号星期0～6（0表示星期天）
+第6列要运行的命令
+
+https://blog.csdn.net/sukangshen/article/details/78900147
+https://blog.csdn.net/fangyuying128825/article/details/71600969
+
+/etc/crontab
