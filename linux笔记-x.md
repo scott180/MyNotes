@@ -86,6 +86,7 @@
 查看ip             	| ifconfig
 清楚屏幕           	| clear
 查看时间           	| date
+时间格式化          | date "+%Y-%m-%d %H:%M:%S"
 查看指定年月日历   	| cal 3 2013
 建立链接 			| ln -fs /opt/tech/mysql/bin/mysql /usr/local/bin/mysql
 删除链接 			| rm -rf name
@@ -119,7 +120,7 @@
 按「g」：移动到文章的开头。
 dd  : 删除当前行
 x   : 删除光标位置字符
-u   ：退回上一个操作
+u   ：后退 返回 上一步
 
 /string 向前搜索指定字符串
 ?string 向后搜索指定字符串
@@ -672,12 +673,14 @@ var/lib/mysql 是指：mysql数据库文件的存放路径
 usr/lib/mysql 是指：mysql的安装路径 
 
 
-导出mysql数据 /opt/tech/mysql/bin/mysqldump -uroot -p1234 webpro > /opt/tech/20170814.sql
+导出数据库 /opt/tech/mysql/bin/mysqldump -uroot -p1234 webpro > /opt/tech/20170814.sql
  
-导入数据 mysql -uroot -pSudy.web123 UCPPLUS < /opt/sql/ucpplus_v4_0_5.sql
+导入数据  mysql -uroot -pSudy.web123 UCPPLUS < /opt/sql/ucpplus_v4_0_5.sql
 
 mysql导入时出现"ERROR at line : Unknown command '\''."的解决办法
 		 mysql -uroot -p12344  --default-character-set=utf8 IMP_V12_1 < E:\ids-1.1.2.sql
+
+导出查询语句 /opt/sudytech/mysql/bin/mysql -uroot -p12344 -e "use IDSPLUS;select id,loginName from T_USER where id=1\G;" >> /opt/test.txt
 
 
 创建数据库
