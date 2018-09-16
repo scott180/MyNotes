@@ -21,5 +21,76 @@ crontab -uroot -e
 
 https://blog.csdn.net/sukangshen/article/details/78900147
 https://blog.csdn.net/fangyuying128825/article/details/71600969
+http://www.cnblogs.com/peida/archive/2013/01/08/2850483.html
 
 /etc/crontab
+
+
+=======================================================================================================================
+
+功能：mysql 每天定时备份， 并删除7天以前的备份
+#!/bin/bash
+docker_name = mysql57
+data_dir="/path/to/save/data/"
+docker exec-it ${docker_name} mysqldump -uroot -ppasswd --all-databases > "$data_dir/data_`date +%Y%m%d`.sql"
+if [ $? -ne 0 ];then
+    # 任务失败，发送邮件
+    echo -e "邮件正文" | mail -s '标题' 123456@gmail.com
+    exit -1
+fi
+find $data_dir -mtime +7 -name 'data_[1-9].sql' -exec rm -rf {} \;
+
+
+作者：isovu
+链接：https://www.jianshu.com/p/be1e581acb8e
+來源：简书
+简书著作权归作者所有，任何形式的转载都请联系作者获得授权并注明出处。
+	
+	
+0 2 * * * sh /absolute/path/to/mysql_dumps.sh > /absolute/path/to/mysql_dumps.log 2>&1
+
+
+=======================================================================================================================
+报错 /bin/sh^M: bad interpreter: No such file or directory   临时文件夹
+	原因：这是不同系统编码格式引起的：在windows系统中编辑的.sh文件可能有不可见字符，所以在Linux系统下执行会报以上异常信息。
+	解决：
+	1）在windows下转换：
+	利用一些编辑器如UltraEdit或EditPlus等工具先将脚本编码转换，再放到Linux中执行。转换方式如下（UltraEdit）：File-->Conversions-->DOS->UNIX即可。
+	2）在linux中编写改脚本。
+
+	
+报错the input device is not a TTY
+	https://blog.csdn.net/u011328417/article/details/77177904
+	去掉命令中去掉t 错误解决
+
+	命令改为：docker exec -i 。。。。。
+
+	
+	
+不执行sql原因可能是环境变量问题：
+	1、写成绝对路径
+	2、脚本添加环境变量
+	#!/bin/bash
+	. /etc/profile
+	. ~/.bash_profile
+
+	https://blog.csdn.net/cy309173854/article/details/53186516
+	
+
+=======================================================================================================================
+定时查询docker的mysql数据库并保存
+#!/bin/bash
+#file=/home/share/timerSearch/record.txt
+#crontab -uroot -e
+#*/1 * * * * /bin/bash /home/share/timerSearch/timerSearchDB.sh >> /home/share/timerSearch/record.txt 2>&1
+echo "===============begin=========================" 
+echo "定时查询脚本启动了。。。" 
+date "+%Y-%m-%d %H:%M:%S" 
+
+docker_name=mobile_ucp_db_1
+sql="use UCPPLUS;select id,loginName,name,password,idcard,field29 from T_USER where loginName='admin'\G;"
+#docker exec -it ${docker_name} mysql -uroot -pSudy.web123 -e $sql  >> $file
+docker exec -i mobile_ucp_db_1 mysql -uroot -pSudy.web123 -e "select now();use UCPPLUS;select id,loginName,name,password,idcard,field29 from T_USER where loginName='admin'\G;"  >> /home/share/timerSearch/recordDB.txt
+
+echo "" 
+echo "" 

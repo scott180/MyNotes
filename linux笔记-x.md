@@ -436,6 +436,42 @@ less实际上是more的改进版，其命令的直接含义是more的反义。le
 ********************************************************************
 
 
+
+####  linux标准输入输出2>&1
+```
+linux标准输入输出2>&1
+
+ /home/share/timerSearch/timerSearchDB.sh >> /home/share/timerSearch/record.txt 2>&1
+ 
+linux中有三种标准输入输出，分别是STDIN，STDOUT，STDERR，对应的数字是0，1，2。
+     STDIN是标准输入，默认从键盘读取信息；STDOUT是标准输出，默认将输出结果输出至终端；STDERR是标准错误，默认将输出结果输出至终端。
+     由于STDOUT与STDERR都会默认显示在终端上，为了区分二者的信息，就有了编号的0，1，2的定义，用1表示STDOUT，2表示STDERR。
+     2>&1，指将标准输出、标准错误指定为同一输出路径
+
+eg1:cat >>filetest 2>&1 <<END      -------建立filetest文件，当输入遇到END时，退出
+
+eg2:
+     1、以普通用户执行 find /etc -name passwd 命令，默认会将命令的执行结果（STDOUT）与错误信息（STDERR）都输出至终端显示器。
+     2、执行find /etc -name passwd >find.out 2>find.err，会将STDOUT与STDERR分别存放至find.out和find.err中。该命令也可以写成下面三种形式
+          find /etc -name passwd 1>find.out 2>find.err
+          find /etc -name passwd 2>find.err >find.out
+          find /etc -name passwd 2>find.err 1>find.out
+     3、若要将所有标准输出及标准错误都输出至文件，可用&表示全部1和2的信息，eg：
+          find /etc -name passwd &>find.all 或 find /etc -name passwd >find.all 2>&1
+     4、2>&1 ---标准错误重新定向到标准输出
+     5、用法：find /etc -name passwd &2>&1 |less
+          可分解成
+          find /etc -name passwd & 表示前面的命令放到后台执行。
+          2>&1 |less 表示将标准错误重定向至标准输出，并用less进行分页显示
+		  
+https://www.cnblogs.com/jacob-tian/p/6110606.html
+
+
+
+```
+
+********************************************************************
+
 ####  cat详解
 ```
 cat命令是linux下的一个文本输出命令，通常是用于观看某个文件的内容。

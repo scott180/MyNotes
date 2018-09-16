@@ -1,11 +1,15 @@
 #!/bin/bash
-#mkdir -p /home/share/timerSearch
-file=/home/share/timerSearch/record.txt
-echo "========================================" >> $file
-echo "定时查询脚本启动了。。。" >> $file
-date "+%Y-%m-%d %H:%M:%S"  >> $file
-docker exec -it sudy_casdb_ids_db.1.bdpuc69ybmlu4x6d6zxmyemps /bin/bash /home/share/timerSearch/select
+#file=/home/share/timerSearch/record.txt
+#crontab -uroot -e
+#*/1 * * * * /bin/bash /home/share/timerSearch/timerSearchDB.sh >> /home/share/timerSearch/record.txt 2>&1
+echo "===============begin=========================" 
+echo "定时查询脚本启动了。。。" 
+date "+%Y-%m-%d %H:%M:%S" 
 
-echo "" >> $file
-echo "" >> $file
+docker_name=mobile_ucp_db_1
+sql="use UCPPLUS;select id,loginName,name,password,idcard,field29 from T_USER where loginName='admin'\G;"
+#docker exec -it ${docker_name} mysql -uroot -pSudy.web123 -e $sql  >> $file
+docker exec -i mobile_ucp_db_1 mysql -uroot -pSudy.web123 -e "select now();use UCPPLUS;select id,loginName,name,password,idcard,field29 from T_USER where loginName='admin'\G;"  >> /home/share/timerSearch/recordDB.txt
 
+echo "" 
+echo "" 
