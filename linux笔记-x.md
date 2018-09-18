@@ -25,6 +25,8 @@
 
 标签（空格分隔）： linux xyq customeDirectoy [toc]
 
+> [马克飞象]( https://maxiang.io )      [作业部落]( https://www.zybuluo.com/mdeditor )    [markdown]( https://jbt.github.io/markdown-editor/ )
+
 <h2 id="command"></h2>
 
 ## 1、命令说明 
@@ -663,7 +665,9 @@ usermod -a -G groupA user
 ==============================================================
 ```
 
-### 1.4、tomcat命令 <h3 id="tomcatCommand"></h3>
+<h3 id="tomcatCommand"></h3>
+
+### 1.4、tomcat命令 
 ```java
 ==============================================================
 Linux下Tomcat的启动、关闭、杀死进程   （进入tomcat的bin目录 启动 sh startup.sh）
@@ -696,8 +700,9 @@ Linux下Tomcat的启动、关闭、杀死进程   （进入tomcat的bin目录 �
 ==============================================================
 ```
 
+<h3 id="mysqlCommand"></h3>
 
-### 1.5、mysql命令 <h3 id="mysqlCommand"></h3>
+### 1.5、mysql命令 
 ```java
 ==============================================================
 指令 ps -ef|grep mysql 得出结果
