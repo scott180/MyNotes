@@ -25,7 +25,7 @@
 
 标签（空格分隔）： linux xyq customeDirectoy [toc]
 
-> [马克飞象]( https://maxiang.io )      [作业部落]( https://www.zybuluo.com/mdeditor )    [markdown]( https://jbt.github.io/markdown-editor/ )
+> [马克飞象]( https://maxiang.io )      [作业部落]( https://www.zybuluo.com/mdeditor )    [markdown]( https://jbt.github.io/markdown-editor/ )  [linux]( https://github.com/scott180/MyNotes/blob/master/linux%E7%AC%94%E8%AE%B0-x.md )
 
 <h2 id="command"></h2>
 
