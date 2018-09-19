@@ -109,8 +109,8 @@
 立刻关机        	| shutdown now
 ********************************************************
 
-
-#### vi操作
+#### 命令
+##### vi操作
 ```
 :wq (输入「wq」，存盘并退出vi)
 :q! (输入q!， 不存盘强制退出vi)
@@ -133,7 +133,7 @@ N 搜索指定字符串的上一个出现位置
 ********************************************************
 
 
-#### 环境变量export
+##### 环境变量export
 ```
 查看所有环境变量    export
 查看环境变量 	    echo $PATH
@@ -168,8 +168,108 @@ N 搜索指定字符串的上一个出现位置
 ```
 ********************************************************
 
+#####  head tail less more 
+``` 
+1. 如果你只想看文件的前100行，可以使用head命令，如
+head -100  filename
+2. 如果你想查看文件的后100行，可以使用tail命令，如：
+tail -100  filename 或 tail -n 100  filename
+3. 查看文件中间一段，你可以使用sed命令，如：
+sed -n '100,200p' filename 
+这样你就可以只查看文件的第100行到第200行。
 
-#### 启动mongo   
+截取的文件可以用重定向输入到新的文件中：
+head -100  filename >a.txt
+
+tail -f cata.log  打印日志
+
+cat  test.txt        显示文件开头
+tac  test.txt        显示文件结尾
+more test.txt        逐页显示文件 
+less test.txt        逐页显示文件（优化more）
+head -n 20 test.txt  显示文件前20行  head -100  filename
+tail -n 20 test.txt  显示文件后20行  tail -100  filename 
+
+
+如果文件太长，用cat命令只能看到文件的最后一页，而用more命令时可以一页一页地显示。执行more命令后，进入more状态，用【Enter】键可以向后移动一行；用【Space】键可以向后移动一页；用“q”键可以退出。在more状态下还有许多功能，可用man more命令获得。
+
+less实际上是more的改进版，其命令的直接含义是more的反义。less的功能比more更灵活。例如：用【Pgup】键可以向前移动一页，用【Pgdn】键可以向后移动一页，用向上光标键可以向前移动一行，用向下光标键可以向后移动一行。“q”键、【Enter】键、【Space】键的功能和more类似。
+
+用【G】键可以移动文件到结尾，用【g】键可以移动到文件开头。
+``` 
+********************************************************************
+
+#####  cat详解
+```
+cat命令是linux下的一个文本输出命令，通常是用于观看某个文件的内容。
+cat主要有三大功能：
+	1.一次显示整个文件。
+		$ cat   filename
+		
+	2.从键盘创建一个文件。
+		$ cat  >  filename                                     
+		只能创建新文件,不能编辑已有文件
+		
+	3.将几个文件合并为一个文件。
+		$cat   file1   file2  > file
+
+
+	cat具体命令格式为 : cat [-AbeEnstTuv] [--help] [--version] fileName
+		说明：把档案串连接后传到基本输出(屏幕或加 > fileName 到另一个档案)
+		参数：
+		-n 或 –number 由 1 开始对所有输出的行数编号
+		-b 或 –number-nonblank 和 -n 相似，只不过对于空白行不编号
+		-s 或 –squeeze-blank 当遇到有连续两行以上的空白行，就代换为一行的空白行
+		-v 或 –show-nonprinting
+		范例：
+		cat -n linuxfile1 > linuxfile2 把 linuxfile1 的档案内容加上行号后输入 linuxfile2 这个档案里
+		cat -b linuxfile1 linuxfile2 >> linuxfile3 把 linuxfile1 和 linuxfile2 的档案内容加上行号(空白行不加)之后将内容附加到linuxfile3 里。
+		范例：
+		把 linuxfile1 的档案内容加上行号后输入 linuxfile2 这个档案里
+		cat -n linuxfile1 > linuxfile2
+		把 linuxfile1 和 linuxfile2 的档案内容加上行号(空白行不加)之后将内容附加到 linuxfile3 里。
+		cat -b linuxfile1 linuxfile2 >> linuxfile3
+	
+	
+	cat /dev/null > /etc/test.txt 此为清空/etc/test.txt档案内容
+		
+----------------------------------------------------------
+
+cat << EOF的语句说明
+	EOF是“end of file”，表示文本结束符。EOF在这里没有特殊的含义，你可以使用FOE或OOO等（当然也不限制在三个字符或大写字符）。
+
+简单描述一下常见的使用方式及其作用：
+	1、cat<<EOF，以EOF输入字符为标准输入结束：
+	2、cat>filename，创建文件，并把标准输入输出到filename文件中，以ctrl+d作为输入结束：
+	注意：输入时是没有'>'的。
+	3、cat>filename<<EOF，以EOF作为输入结束，和ctrl+d的作用一样。
+
+命令：
+	$ cat > test.txt << EOF
+	> 说明cat及EOF
+	> 测试
+	> EOF
+	
+	$ cat test.txt
+	说明cat及EOF
+	测试
+
+其他写法：
+	cat >> test.txt << EOF 在test.txt里追加内容，不会覆盖原有文件。
+
+	$ cat >> test.txt << END     //这里的“END”就代替了“EOF”的功能。结果是相同的。
+	> 追加内容
+	> END
+
+	$ cat test.txt
+	说明cat及EOF
+	测试
+	追加内容
+```		
+********************************************************************
+
+#### 软件操作及安装  
+##### 启动mongo   
 ```
 配置文件启动
 cd /opt/sudytech/mongodb           
@@ -182,10 +282,53 @@ cd /opt/sudytech/mongodb
 cd /opt/sudytech/mongodb/bin
 mongo
 ```
+********************************************************************
+
+#####  redis
+``` 
+[root@localhost src]# cd /opt/sudytech/custom/redis-2.8.17/
+[root@localhost redis-2.8.17]# redis-server redis.conf              //启动redis                 
+[root@localhost ~]# redis-cli       //进入redis客户端
+127.0.0.1:6379> keys *              //取出所有的key 
+(empty list or set)
+127.0.0.1:6379> quit                //退出客户端   
+
+127.0.0.1:6379> set key1 value1		//set
+OK
+127.0.0.1:6379> get key1			//get
+"value1"
+127.0.0.1:6379> del k1				//删除一个key
+(integer) 1
+127.0.0.1:6379> flushdb				//清空所有数据
+
+
+
+Exception in thread "main" redis.clients.jedis.exceptions.JedisDataException: DENIED Redis is running in protected mode because protected mode is enabled。。。。
+
+进入客户端设置模式：
+redis-cli
+config set protected-mode "no"
+
+``` 
 ********************************************************
 
+#####  为每个tomcat配置单独的jdk
+``` 
+一、安装jdk，如jdk-6u45-linux-x64.bin
+1、添加执行权限 
+	chmod u+x jdk-6u45-linux-x64.bin
+2、解压 
+	./jdk-6u45-linux-x64.bin
 
-#### yum rpm安装卸载软件 
+二、配置tomcat的 ../bin/setclasspath.sh	在文件的开头添加以下
+export JAVA_HOME=/opt/sudytech/jdk1.6.0_45  
+export JRE_HOME=/opt/sudytech/jdk1.6.0_45/jre
+
+三、重启tomcat
+``` 
+********************************************************************
+
+##### yum rpm安装卸载软件 
 ```
 yum安装：
        # yum install 包名
@@ -206,7 +349,7 @@ compat-openldap-2.3.43-5.el7.x86_64
 [root@localhost openldap]# rpm -e --nodeps compat-openldap-2.3.43-5.el7.x86_64
 ```
 
-####  make安装卸载软件
+#####  make安装卸载软件
 ``` 
 用于linux源码安装软件，一般下载源码包得到文件：xxxx.tgz
 
@@ -229,8 +372,8 @@ make uninstall
 ``` 
 ********************************************************************
 
-
-####  查看ip及端口是否可以访问、开放端口
+####  ip及防火墙
+#####  查看ip及端口是否可以访问、开放端口
 ```
 	wget http://127.0.0.1:8080
  
@@ -260,39 +403,11 @@ firewall-cmd --zone=public --add-port=8060/tcp --permanent
 firewall-cmd --reload
 
 ```	
+
 ********************************************************************
 
 
-####  redis
-``` 
-[root@localhost src]# cd /opt/sudytech/custom/redis-2.8.17/
-[root@localhost redis-2.8.17]# redis-server redis.conf              //启动redis                 
-[root@localhost ~]# redis-cli       //进入redis客户端
-127.0.0.1:6379> keys *              //取出所有的key 
-(empty list or set)
-127.0.0.1:6379> quit                //退出客户端   
-
-127.0.0.1:6379> set key1 value1		//set
-OK
-127.0.0.1:6379> get key1			//get
-"value1"
-127.0.0.1:6379> del k1				//删除一个key
-(integer) 1
-127.0.0.1:6379> flushdb				//清空所有数据
-
-
-
-Exception in thread "main" redis.clients.jedis.exceptions.JedisDataException: DENIED Redis is running in protected mode because protected mode is enabled。。。。
-
-进入客户端设置模式：
-redis-cli
-config set protected-mode "no"
-
-``` 
-********************************************************************
-
-
-####  关闭centos的防火墙
+#####  关闭centos的防火墙
 ``` 
 一、firewall方式
 
@@ -346,8 +461,8 @@ config set protected-mode "no"
 ``` 
 ********************************************************************
 
-
-####  查看内存
+####  知识点
+#####  查看内存
 ``` 
 top
 free -m  
@@ -387,59 +502,7 @@ free:可用有多少
 ``` 
 ********************************************************************
 
-
-####  为每个tomcat配置单独的jdk
-``` 
-一、安装jdk，如jdk-6u45-linux-x64.bin
-1、添加执行权限 
-	chmod u+x jdk-6u45-linux-x64.bin
-2、解压 
-	./jdk-6u45-linux-x64.bin
-
-二、配置tomcat的 ../bin/setclasspath.sh	在文件的开头添加以下
-export JAVA_HOME=/opt/sudytech/jdk1.6.0_45  
-export JRE_HOME=/opt/sudytech/jdk1.6.0_45/jre
-
-三、重启tomcat
-``` 
-********************************************************************
-
-
-####  head tail less more 
-
-``` 
-1. 如果你只想看文件的前100行，可以使用head命令，如
-head -100  filename
-2. 如果你想查看文件的后100行，可以使用tail命令，如：
-tail -100  filename 或 tail -n 100  filename
-3. 查看文件中间一段，你可以使用sed命令，如：
-sed -n '100,200p' filename 
-这样你就可以只查看文件的第100行到第200行。
-
-截取的文件可以用重定向输入到新的文件中：
-head -100  filename >a.txt
-
-tail -f cata.log  打印日志
-
-cat  test.txt        显示文件开头
-tac  test.txt        显示文件结尾
-more test.txt        逐页显示文件 
-less test.txt        逐页显示文件（优化more）
-head -n 20 test.txt  显示文件前20行  head -100  filename
-tail -n 20 test.txt  显示文件后20行  tail -100  filename 
-
-
-如果文件太长，用cat命令只能看到文件的最后一页，而用more命令时可以一页一页地显示。执行more命令后，进入more状态，用【Enter】键可以向后移动一行；用【Space】键可以向后移动一页；用“q”键可以退出。在more状态下还有许多功能，可用man more命令获得。
-
-less实际上是more的改进版，其命令的直接含义是more的反义。less的功能比more更灵活。例如：用【Pgup】键可以向前移动一页，用【Pgdn】键可以向后移动一页，用向上光标键可以向前移动一行，用向下光标键可以向后移动一行。“q”键、【Enter】键、【Space】键的功能和more类似。
-
-用【G】键可以移动文件到结尾，用【g】键可以移动到文件开头。
-``` 
-********************************************************************
-
-
-
-####  linux标准输入输出2>&1
+#####  linux标准输入输出2>&1
 ```
 linux标准输入输出2>&1
 
@@ -474,77 +537,30 @@ https://www.cnblogs.com/jacob-tian/p/6110606.html
 
 ********************************************************************
 
-####  cat详解
+#####  定时执行脚本[链接](https://github.com/scott180/MyNotes/blob/master/bash/%E5%AE%9A%E6%97%B6%E6%89%A7%E8%A1%8C%E8%84%9A%E6%9C%AC/%E5%AE%9A%E6%97%B6%E6%89%A7%E8%A1%8C%E8%84%9A%E6%9C%AC.txt)
 ```
-cat命令是linux下的一个文本输出命令，通常是用于观看某个文件的内容。
-cat主要有三大功能：
-	1.一次显示整个文件。
-		$ cat   filename
-		
-	2.从键盘创建一个文件。
-		$ cat  >  filename                                     
-		只能创建新文件,不能编辑已有文件
-		
-	3.将几个文件合并为一个文件。
-		$cat   file1   file2  > file
+定时查询docker的mysql数据库并保存
+#!/bin/bash
+#file=/home/share/timerSearch/record.txt
+#crontab -uroot -e
+#*/1 * * * * /bin/bash /home/share/timerSearch/timerSearchDB.sh >> /home/share/timerSearch/record.txt 2>&1
+echo "===============begin=========================" 
+echo "定时查询脚本启动了。。。" 
+date "+%Y-%m-%d %H:%M:%S" 
 
+docker_name=mobile_ucp_db_1
+sql="use UCPPLUS;select id,loginName,name,password,idcard,field29 from T_USER where loginName='admin'\G;"
+#docker exec -it ${docker_name} mysql -uroot -pSudy.web123 -e $sql  >> $file
+docker exec -i mobile_ucp_db_1 mysql -uroot -pSudy.web123 -e "select now();use UCPPLUS;select id,loginName,name,password,idcard,field29 from T_USER where loginName='admin'\G;"  >> /home/share/timerSearch/recordDB.txt
 
-	cat具体命令格式为 : cat [-AbeEnstTuv] [--help] [--version] fileName
-		说明：把档案串连接后传到基本输出(屏幕或加 > fileName 到另一个档案)
-		参数：
-		-n 或 –number 由 1 开始对所有输出的行数编号
-		-b 或 –number-nonblank 和 -n 相似，只不过对于空白行不编号
-		-s 或 –squeeze-blank 当遇到有连续两行以上的空白行，就代换为一行的空白行
-		-v 或 –show-nonprinting
-		范例：
-		cat -n linuxfile1 > linuxfile2 把 linuxfile1 的档案内容加上行号后输入 linuxfile2 这个档案里
-		cat -b linuxfile1 linuxfile2 >> linuxfile3 把 linuxfile1 和 linuxfile2 的档案内容加上行号(空白行不加)之后将内容附加到linuxfile3 里。
-		范例：
-		把 linuxfile1 的档案内容加上行号后输入 linuxfile2 这个档案里
-		cat -n linuxfile1 > linuxfile2
-		把 linuxfile1 和 linuxfile2 的档案内容加上行号(空白行不加)之后将内容附加到 linuxfile3 里。
-		cat -b linuxfile1 linuxfile2 >> linuxfile3
-	
-	
-	cat /dev/null > /etc/test.txt 此为清空/etc/test.txt档案内容
-		
-**********************************
+echo "" 
+echo "" 
 
-cat << EOF的语句说明
-	EOF是“end of file”，表示文本结束符。EOF在这里没有特殊的含义，你可以使用FOE或OOO等（当然也不限制在三个字符或大写字符）。
+```
 
-简单描述一下常见的使用方式及其作用：
-	1、cat<<EOF，以EOF输入字符为标准输入结束：
-	2、cat>filename，创建文件，并把标准输入输出到filename文件中，以ctrl+d作为输入结束：
-	注意：输入时是没有'>'的。
-	3、cat>filename<<EOF，以EOF作为输入结束，和ctrl+d的作用一样。
-
-命令：
-	$ cat > test.txt << EOF
-	> 说明cat及EOF
-	> 测试
-	> EOF
-	
-	$ cat test.txt
-	说明cat及EOF
-	测试
-
-其他写法：
-	cat >> test.txt << EOF 在test.txt里追加内容，不会覆盖原有文件。
-
-	$ cat >> test.txt << END     //这里的“END”就代替了“EOF”的功能。结果是相同的。
-	> 追加内容
-	> END
-
-	$ cat test.txt
-	说明cat及EOF
-	测试
-	追加内容
-```		
 ********************************************************************
 
-
-####  问题
+#####  问题
 ```
 	history 历史记录显示时间        
 	在/etc/profile 中增加  export HISTTIMEFORMAT="%Y-%m-%d %H:%M:%S "
