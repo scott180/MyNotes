@@ -1,11 +1,11 @@
 # linux笔记-x
   
-*   [1、命令说明](#command)
+*   [1、命令](#command)
     *   [1.1、常用命令](#commonCommand)
-    *   [1.2、文件权限](#userPermission)
-    *   [1.3、用户和组的管理](#userAndGroup)
-    *   [1.4、tomcat命令](#tomcatCommand)
-    *   [1.5、mysql命令](#mysqlCommand)
+    *   [1.2、命令说明](#commonIntroduce)
+    *   [1.3、软件操作及安装](#soft)
+    *   [1.4、IP及防火墙](#IP)
+    *   [1.5、知识点](#knowledge)
 *   [2、shell编程](#shell)
     *   [2.1、shell概述及优势](#shellIntroduce)
     *   [2.2、shell创建、执行](#shellExecute)
@@ -32,7 +32,7 @@
 ## 1、命令说明 
  <h3 id="commonCommand"></h3>
  
-### 1.1、常用命令
+### 1.1 常用命令
 
 说明                | 命令
 -----------------   | -----------------------------------------------------------------  
@@ -109,8 +109,11 @@
 立刻关机        	| shutdown now
 ********************************************************
 
-#### 命令
-##### vi操作
+
+ <h3 id="commonIntroduce"></h3>
+ 
+### 1.2 命令说明
+#### 1.2.1 vi操作
 ```
 :wq (输入「wq」，存盘并退出vi)
 :q! (输入q!， 不存盘强制退出vi)
@@ -133,7 +136,7 @@ N 搜索指定字符串的上一个出现位置
 ********************************************************
 
 
-##### 环境变量export
+#### 1.2.2 环境变量export
 ```
 查看所有环境变量    export
 查看环境变量 	    echo $PATH
@@ -168,7 +171,8 @@ N 搜索指定字符串的上一个出现位置
 ```
 ********************************************************
 
-#####  head tail less more 
+
+#### 1.2.3  head tail less more 
 ``` 
 1. 如果你只想看文件的前100行，可以使用head命令，如
 head -100  filename
@@ -199,7 +203,8 @@ less实际上是more的改进版，其命令的直接含义是more的反义。le
 ``` 
 ********************************************************************
 
-#####  cat详解
+
+#### 1.2.4 cat详解
 ```
 cat命令是linux下的一个文本输出命令，通常是用于观看某个文件的内容。
 cat主要有三大功能：
@@ -267,460 +272,51 @@ cat << EOF的语句说明
 	追加内容
 ```		
 ********************************************************************
-
-#### 软件操作及安装  
-##### 启动mongo   
-```
-配置文件启动
-cd /opt/sudytech/mongodb           
-./bin/mongod --config /opt/mongodb/conf/mongo.conf 
-	
-自定义路径启动										 
-  /opt/sudytech/mongodb/bin/mongod --dbpath=/opt/sudytech/mongodb/data --logpath=/opt/sudytech/mongodb/logs --logappend  --port=27017 --fork
-  
-登陆mongo
-cd /opt/sudytech/mongodb/bin
-mongo
-```
-********************************************************************
-
-#####  redis
-``` 
-[root@localhost src]# cd /opt/sudytech/custom/redis-2.8.17/
-[root@localhost redis-2.8.17]# redis-server redis.conf              //启动redis                 
-[root@localhost ~]# redis-cli       //进入redis客户端
-127.0.0.1:6379> keys *              //取出所有的key 
-(empty list or set)
-127.0.0.1:6379> quit                //退出客户端   
-
-127.0.0.1:6379> set key1 value1		//set
-OK
-127.0.0.1:6379> get key1			//get
-"value1"
-127.0.0.1:6379> del k1				//删除一个key
-(integer) 1
-127.0.0.1:6379> flushdb				//清空所有数据
-
-
-
-Exception in thread "main" redis.clients.jedis.exceptions.JedisDataException: DENIED Redis is running in protected mode because protected mode is enabled。。。。
-
-进入客户端设置模式：
-redis-cli
-config set protected-mode "no"
-
-``` 
-********************************************************
-
-#####  为每个tomcat配置单独的jdk
-``` 
-一、安装jdk，如jdk-6u45-linux-x64.bin
-1、添加执行权限 
-	chmod u+x jdk-6u45-linux-x64.bin
-2、解压 
-	./jdk-6u45-linux-x64.bin
-
-二、配置tomcat的 ../bin/setclasspath.sh	在文件的开头添加以下
-export JAVA_HOME=/opt/sudytech/jdk1.6.0_45  
-export JRE_HOME=/opt/sudytech/jdk1.6.0_45/jre
-
-三、重启tomcat
-``` 
-********************************************************************
-
-##### yum rpm安装卸载软件 
-```
-yum安装：
-       # yum install 包名
-yum卸载：
-       # yum -y remove 包名
-	   
-查询所有安装软件     rpm -qa
-查看是否安装软件     rpm -qa | grep java	  
-卸载软件			 rpm -e    如果提示有依赖，可以加上 --nodeps 
-
-[root@localhost openldap]# rpm -qa | grep openldap
-openldap-2.4.44-15.el7_5.x86_64
-openldap-servers-2.4.44-15.el7_5.x86_64
-compat-openldap-2.3.43-5.el7.x86_64
-
-[root@localhost openldap]# rpm -e --nodeps openldap-2.4.44-15.el7_5.x86_64
-[root@localhost openldap]# rpm -e --nodeps openldap-servers-2.4.44-15.el7_5.x86_64
-[root@localhost openldap]# rpm -e --nodeps compat-openldap-2.3.43-5.el7.x86_64
-```
-
-#####  make安装卸载软件
-``` 
-用于linux源码安装软件，一般下载源码包得到文件：xxxx.tgz
-
-1、解包软件
-tar zxf xxxx.tgz
-
-2、配置
-cd xxxx
-./configure ....
-
-3、编译
-make
-
-4、安装
-make install
-
-5、卸载
-make uninstall
-
-``` 
-********************************************************************
-
-####  ip及防火墙
-#####  查看ip及端口是否可以访问、开放端口
-```
-	wget http://127.0.0.1:8080
  
-	ping + ip： 查看某一个ip地址是否能够连通，如： ping 114.80.67.193
+#### 1.2.5 grep 
  
-	telnet ip port ： 查看某一个机器上的某一个端口是否可以访问，如：telnet 114.80.67.193 8080
- 
-	netstat -nal  查看网络通信情况
- 
-
-查看端口占用
-	netstat -ntlp   //查看当前所有tcp端口·
-	netstat -ntulp |grep 80   //查看所有80端口使用情况·
-	netstat -an | grep 3306   //查看所有3306端口使用情况·
-	
-	
-查看开放的端口	
-firewall-cmd --list-all
-
-开放端口
-firewall-cmd --zone=public --add-port=4789/udp --permanent
-firewall-cmd --zone=public --add-port=80/tcp --permanent  
-firewall-cmd --zone=public --add-port=80/udp –permanen
-firewall-cmd --zone=public --add-port=8060/tcp --permanent
-
-刷新
-firewall-cmd --reload
-
-```	
-
-********************************************************************
-
-
-#####  关闭centos的防火墙
+ [链接]( http://www.cnblogs.com/end/archive/2012/02/21/2360965.html )
 ``` 
-一、firewall方式
-
-	firewall-cmd --state    查看防火墙状态
+查询文件中内容并保存
+	more linux.txt | grep mysql > test.txt      // > 创建新文件
+	cat linux.txt | grep 软件 >> test.txt      // >> 是在文件中追加内容
 	
-	systemctl stop firewalld.service     关闭防火墙，centos7下
+	grep mysql linux.txt > test.txt
 	
-	systemctl disable firewalld.service    关闭开机启动
-
-
-二、service方式
-
-	查看防火墙状态： 
-
-	[root@centos6 ~]# service iptables status
-
-	iptables：未运行防火墙。
-
-	开启防火墙：
-
-	[root@centos6 ~]# service iptables start
-
-	关闭防火墙：
-
-	[root@centos6 ~]# service iptables stop
-
-
-三、iptables方式
-
-	先进入init.d目录，命令如下：
-
-	[root@centos6 ~]# cd /etc/init.d/
-
-	[root@centos6 init.d]# 
-
-	然后
-
-	查看防火墙状态：
-
-	[root@centos6 init.d]# /etc/init.d/iptables status
-
-	暂时关闭防火墙：
-
-	[root@centos6 init.d]# /etc/init.d/iptables stop
-
-	重启iptables：
-
-	[root@centos6 init.d]# /etc/init.d/iptables restart
-
-
-``` 
-********************************************************************
-
-####  知识点
-#####  查看内存
-``` 
-top
-free -m  
-cat /proc/meminfo 机器的内存使用信息
-cat /proc/pid/maps pid为进程号，显示当前进程所占用的虚拟地址。
-cat /proc/pid/statm 进程所占用的内存
-
-[root@localhost webapps]# free 
-             total       used       free     shared    buffers     cached
-Mem:       4043716    3783532     260184          0      31424     340132
--/+ buffers/cache:    3411976     631740
-Swap:      2096472     993204    1103268
-
-输入：free
-
-total:总计物理内存的大小
-
-used:已使用多大
-
-free:可用有多少
-
-Shared:多个进程共享的内存总额
-
-Buffers/cached:磁盘缓存的大小
-
-第三行(-/+ buffers/cached)
-
-used:已使用多大
-
-free:可用有多少
-
-第四行就不多解释了。
-
-区别：第二行(mem)的used/free与第三行(-/+ buffers/cache) used/free的区别。 这两个的区别在于使用的角度来看，第一行是从OS的角度来看，因为对于OS，buffers/cached 都是属于被使用，所以他的可用内存是260184KB,已用内存是3783532KB,第三行所指的是从应用程序角度来看，对于应用程序来说，buffers/cached 是等于可用的，因为buffer/cached是为了提高文件读取的性能，当应用程序需在用到内存的时候，buffer/cached会很快地被回收。所以从应用程序的角度来说，可用内存=系统free memory+buffers+cached。
-
- 如上例：631740=260184+31424+340132
-``` 
-********************************************************************
-
-#####  linux标准输入输出2>&1
-```
-linux标准输入输出2>&1
-
- /home/share/timerSearch/timerSearchDB.sh >> /home/share/timerSearch/record.txt 2>&1
- 
-linux中有三种标准输入输出，分别是STDIN，STDOUT，STDERR，对应的数字是0，1，2。
-     STDIN是标准输入，默认从键盘读取信息；STDOUT是标准输出，默认将输出结果输出至终端；STDERR是标准错误，默认将输出结果输出至终端。
-     由于STDOUT与STDERR都会默认显示在终端上，为了区分二者的信息，就有了编号的0，1，2的定义，用1表示STDOUT，2表示STDERR。
-     2>&1，指将标准输出、标准错误指定为同一输出路径
-
-eg1:cat >>filetest 2>&1 <<END      -------建立filetest文件，当输入遇到END时，退出
-
-eg2:
-     1、以普通用户执行 find /etc -name passwd 命令，默认会将命令的执行结果（STDOUT）与错误信息（STDERR）都输出至终端显示器。
-     2、执行find /etc -name passwd >find.out 2>find.err，会将STDOUT与STDERR分别存放至find.out和find.err中。该命令也可以写成下面三种形式
-          find /etc -name passwd 1>find.out 2>find.err
-          find /etc -name passwd 2>find.err >find.out
-          find /etc -name passwd 2>find.err 1>find.out
-     3、若要将所有标准输出及标准错误都输出至文件，可用&表示全部1和2的信息，eg：
-          find /etc -name passwd &>find.all 或 find /etc -name passwd >find.all 2>&1
-     4、2>&1 ---标准错误重新定向到标准输出
-     5、用法：find /etc -name passwd &2>&1 |less
-          可分解成
-          find /etc -name passwd & 表示前面的命令放到后台执行。
-          2>&1 |less 表示将标准错误重定向至标准输出，并用less进行分页显示
-		  
-https://www.cnblogs.com/jacob-tian/p/6110606.html
-
-
-
-```
-
-********************************************************************
-
-#####  定时执行脚本[链接](https://github.com/scott180/MyNotes/blob/master/bash/%E5%AE%9A%E6%97%B6%E6%89%A7%E8%A1%8C%E8%84%9A%E6%9C%AC/%E5%AE%9A%E6%97%B6%E6%89%A7%E8%A1%8C%E8%84%9A%E6%9C%AC.txt)
-```
-定时查询docker的mysql数据库并保存
-#!/bin/bash
-#file=/home/share/timerSearch/record.txt
-#crontab -uroot -e
-#*/1 * * * * /bin/bash /home/share/timerSearch/timerSearchDB.sh >> /home/share/timerSearch/record.txt 2>&1
-echo "===============begin=========================" 
-echo "定时查询脚本启动了。。。" 
-date "+%Y-%m-%d %H:%M:%S" 
-
-docker_name=mobile_ucp_db_1
-sql="use UCPPLUS;select id,loginName,name,password,idcard,field29 from T_USER where loginName='admin'\G;"
-#docker exec -it ${docker_name} mysql -uroot -pSudy.web123 -e $sql  >> $file
-docker exec -i mobile_ucp_db_1 mysql -uroot -pSudy.web123 -e "select now();use UCPPLUS;select id,loginName,name,password,idcard,field29 from T_USER where loginName='admin'\G;"  >> /home/share/timerSearch/recordDB.txt
-
-echo "" 
-echo "" 
-
-```
-
-********************************************************************
-
-#####  问题
-```
-	history 历史记录显示时间        
-	在/etc/profile 中增加  export HISTTIMEFORMAT="%Y-%m-%d %H:%M:%S "
-	写入环境变量		   source /etc/profile
-```	
+查询文件内容行数
+	cat linux.txt | grep mysql | w -l
 	
-```
-centos7虚拟机不能上网    
-	在存储linux目录的CentOS.vmx文件加入  ethernet0.virtualDev = "e1000"  再重启虚拟机
 	
-linux虚拟机上传下载文件  
-	打开虚拟机linux，使用命令 ifconfig 查看ip，再使用xshell连接。
-```
-	
-
-<h3 id="userPermission"></h3>
-
-### 1.2、文件权限 
-
-```java
-==============================================================
-查看文件属性 	ls -l test.sh
-赋予执行权限    chmod +x test.sh
-赋予全部权限    chmod 777 test.sh
-
-改变文件属性（二进制）      chmod #chmod 664 chap1.txt	       110110100  
-改变文件属性（字母）        chmod u=rw,g=rw,o=r chap1.txt	   r w x
-改变文件所属用户		    chown user1 chap1.txt
-改变文件所属用户及所属组    chown user1:root chap1.txt
-改变文件所属组              chgrp root chap1.txt
-
-
-Linux系统是个多用户系统，应该能做到不同的用户能同时访问不同的文件，因此一定要有文件权限控制机制。Linux系统的权限控制机制和Windows的权限控制机制有着很大的差别。Linux的文件或目录都被一个用户拥有时，这个用户称为文件的拥有者(或所有者)，同时文件还被指定的用户组所拥有，这个用户组称为文件所属组。 
-
-用户 u --所属组 g --其他用户 o -- 所有用户 a
- user - group - other - all
-
-要说明的是，一个用户可以是不同组的成员，这可以由管理员控制，我们将在用户管理这一章介绍如何控制的问题。文件的权限由权限标志来决定，权限标志决定了文件的拥有者、文件的所属组、其他用户对文件访问的能力。可以使用“ls –l”命令来显示权限标志。例如：
-[test @redflag test]$ls -l
--rw-rw-r-- 1 longkey root 16 20A 24 22:23 chap1.txt
-本例中，文件chap1.txt的拥有者是longkey，所属组是root。这里我们特别关心的是输出行前面的第1～10个字符。第1个字符代表文件类别，第2～4个字符“rw-”是文件拥有者的权限，第5～7个字符“rw-”是文件所属组的权限，第8～10个字符“r--”是其他用户(即除了root用户和longkey用户组里的用户之外的用户)文件拥有者的权限。而权限均用三个字符表示，依次为读(r)、写(w)、执行(x)，如果某一位为“-”，则表示没有相应的权限，例如：“rw-”表示有读、写的权限，没有执行的权限。在本例中，文件拥有者longkey用户对文件有读、写的权限，root组的所有用户对文件也有读、写的权限，而其他用户对文件只有读的权限。
-
-设定文件权限时，在模式中常用以下的字母代表用户或用户组：
-u——文件的拥有者；
-g——文件的所属组；
-o——其他用户；
-a——代表所有用户(即u+g+o)。
-权限用以下字符表示：
-r ——读权限；
-w——写权限；
-x——执行权限；
-最后要指明是增加(+)还是减少(-)权限，或是绝对权限(=)。
-
- [root @redflag /root]chmod o+w chap1.txt
-chap1.txt的权限由原来的“rw-rw-r--”变为“rw-rw-rw-”，表示增加其他用户对文件的写权限。
- 
- [root @redflag /root]chmod u=rw,g=rw,o=r chap1.txt  chap1.txt的权限变为“rwxrw-r---”，不论原来的权限是什么，这表示拥有者对文件有读、写的权限，所属组的用户对文件也有读、写的权限，而其他用户只有读的权限。
-
-我们在以上设置权限时，用字符表示权限和用户，实际上我们也经常使用八进制来表示。读、写、执行依次各自对应一个二进制位“???”，如果某位为“0”，则表示无权限；如果某位为“1”，则表示有权限。例如：文件权限为r---w---x时，用二进制表示为100010001，用十进制可以表示为421。例如：
-         [root @redflag /root]#chmod 664 chap1.txt 
- 等同于：
-  [root @redflag /root]#chmod u=rw,g=rw,o=r chap1.txt
+查询运行的进程
+	ps -ef | grep mysql
+	ps -ef | grep java
+		-e   显示所有进程。
+		-f    全格式。
 		
-
-chown 用户名 文件或目录名——改变文件(或目录)的拥有者或所属组
-       例如：
-     [root @redflag /root]#chown longkey chap1.txt
-把文件chap1.txt的拥有者改为longkey用户。
-     [root @redflag /root]#chown longkey:root chap1.txt
-把文件的拥有者改为longkey用户，同时文件的所属组改为root组。
-
-
-chgrp组 文件或目录——改变文件或目录的所属组
-	 chown可以同时改变文件拥有者和所属者，chgrp只具有改变所属组的功能。例如：
-	[root @redflag /root]#chgrp root chap1.txt
-		文件chap1.txt的所属组设为root组。
 		
-==============================================================
-```
+grep '^root' /etc/group 匹配正则表达式的开始行 
+grep 'root$' /etc/group 匹配正则表达式的结束行 
 
- <h3 id="userAndGroup"></h3>
+RE（正则表达式） 
+\ 忽略正则表达式中特殊字符的原有含义 
+^ 匹配正则表达式的开始行 
+$ 匹配正则表达式的结束行 
+\< 从匹配正则表达式的行开始 
+\> 到匹配正则表达式的行结束 
+[ ] 单个字符；如[A] 即A符合要求 
+[ - ] 范围 ；如[A-Z]即A，B，C一直到Z都符合要求 
+. 所有的单个字符 
+* 所有字符，长度可以为0 
+``` 
+********************************************************************
+
+
+ <h3 id="soft"></h3>
  
-### 1.3、用户和组的管理
+### 1.3 软件操作及安装  
 
+#### 1.3.1  mysql 
 ```java
-==============================================================
-su         切换root
-su user1   切换用户
-
-groups         查看当前用户所在组
-groups  user1  查看user1用户所在的组
-whoami         查看当前登录用户名
-
-/etc/group  文件包含所有组及用户
-/etc/shadow和/etc/passwd系统存在的所有用户名
-
-创建用户      useradd  user1;
-设置用户密码  passwd user1;
-删除用户      userdel user1;
-删除用户（包括主目录文件 /home/user1）  userdel -r user1;
-
-groupadd testgroup  组的添加
-groupdel testgroup  组的删除
-
-只有root和组管理员能够改变组的成员：
-gpasswd –a user1 users    把 user1加入users组
-gpasswd –d user1 users    把 user1退出users组
-groupmod –n user users    修改组名user为users
-
-锁定用户  passwd -l user1
-解锁用户  passwd -u user1
-
-用户添加到组
-usermod -a -G groupA user
--a 代表 append， 也就是 将自己添加到 用户组groupA 中，而不必离开 其他用户组
- 
-
-==============================================================
-```
-
-<h3 id="tomcatCommand"></h3>
-
-### 1.4、tomcat命令 
-```java
-==============================================================
-Linux下Tomcat的启动、关闭、杀死进程   （进入tomcat的bin目录 启动 sh startup.sh）
-	打开终端
-	进入tomcat目录
-	cd /Java/tomcat
-	#执行
-	bin/startup.sh #启动tomcat
-	bin/shutdown.sh #停止tomcat
-	tail -f logs/catalina.out #看tomcat的控制台输出；
-
-	#看是否已经有tomcat在运行了
-	ps -ef |grep tomcat 
-	#如果有，用kill;
-	kill -9 pid #pid 为相应的进程号
-
-	例如 ps -ef |grep tomcat 输出如下
-
-	sun 5144 1 0 10:21 pts/1 00:00:06 /java/jdk/bin/java -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager -Djava.endorsed.dirs=/java/tomcat/common/endorsed -classpath :/java/tomcat/bin/bootstrap.jar:/java/tomcat/bin/commons-logging-api.jar -Dcatalina.base=/java/tomcat -Dcatalina.home=/java/tomcat -Djava.io.tmpdir=/java/tomcat/temp org.apache.catalina.startup.Bootstrap start
-
-	则 5144 就为进程号 pid = 5144
-	kill -9 5144 就可以彻底杀死tomcat
-	
-查看tomcat
-	ps -ef |grep tomcat 
-杀死tomcat 
-	kill -9 pid        //pid 为相应的进程号
-启动tomcat
-    /opt/tech/appStore/apache-tomcat-6.0.35/bin/startup.sh
-==============================================================
-```
-
-<h3 id="mysqlCommand"></h3>
-
-### 1.5、mysql命令 
-```java
-==============================================================
 指令 ps -ef|grep mysql 得出结果
     root     17659     1  0  2011 ?        00:00:00 /bin/sh /usr/bin/mysqld_safe --datadir=/var/lib/mysql --socket=/var/lib/mysql/mysql.sock --log-error=/var/log/mysqld.log --pid-file=/var/run/mysqld/mysqld.pid   
     mysql    17719 17659  0  2011 ?        03:14:57 /usr/libexec/mysqld --basedir=/usr --datadir=/var/lib/mysql --user=mysql --pid-file=/var/run/mysqld/mysqld.pid --skip-external-locking --socket=/var/lib/mysql/mysql.sock  
@@ -798,15 +394,465 @@ lower_case_table_names = 2
   cd /data/sudytech/mysql/&&./bin/mysqld_safe &
   cd /opt/sudytech/mysql/ && bin/mysqld_safe --user=root &
   
+```
+********************************************************************
+
+
+#### 1.3.2 mongo   
+[链接]( https://github.com/scott180/MyNotes/blob/master/mongo.md )
+```
+配置文件启动
+cd /opt/sudytech/mongodb           
+./bin/mongod --config /opt/mongodb/conf/mongo.conf 
+	
+自定义路径启动										 
+  /opt/sudytech/mongodb/bin/mongod --dbpath=/opt/sudytech/mongodb/data --logpath=/opt/sudytech/mongodb/logs --logappend  --port=27017 --fork
   
+登陆mongo
+cd /opt/sudytech/mongodb/bin
+mongo
+```
+********************************************************************
+
+
+#### 1.3.3 redis
+``` 
+[root@localhost src]# cd /opt/sudytech/custom/redis-2.8.17/
+[root@localhost redis-2.8.17]# redis-server redis.conf              //启动redis                 
+[root@localhost ~]# redis-cli       //进入redis客户端
+127.0.0.1:6379> keys *              //取出所有的key 
+(empty list or set)
+127.0.0.1:6379> quit                //退出客户端   
+
+127.0.0.1:6379> set key1 value1		//set
+OK
+127.0.0.1:6379> get key1			//get
+"value1"
+127.0.0.1:6379> del k1				//删除一个key
+(integer) 1
+127.0.0.1:6379> flushdb				//清空所有数据
+
+
+
+Exception in thread "main" redis.clients.jedis.exceptions.JedisDataException: DENIED Redis is running in protected mode because protected mode is enabled。。。。
+
+进入客户端设置模式：
+redis-cli
+config set protected-mode "no"
+
+``` 
+********************************************************
+
+
+#### 1.3.4 tomcat命令 
+```
+Linux下Tomcat的启动、关闭、杀死进程   （进入tomcat的bin目录 启动 sh startup.sh）
+	打开终端
+	进入tomcat目录
+	cd /Java/tomcat
+	#执行
+	bin/startup.sh #启动tomcat
+	bin/shutdown.sh #停止tomcat
+	tail -f logs/catalina.out #看tomcat的控制台输出；
+
+	#看是否已经有tomcat在运行了
+	ps -ef |grep tomcat 
+	#如果有，用kill;
+	kill -9 pid #pid 为相应的进程号
+
+	例如 ps -ef |grep tomcat 输出如下
+
+	sun 5144 1 0 10:21 pts/1 00:00:06 /java/jdk/bin/java -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager -Djava.endorsed.dirs=/java/tomcat/common/endorsed -classpath :/java/tomcat/bin/bootstrap.jar:/java/tomcat/bin/commons-logging-api.jar -Dcatalina.base=/java/tomcat -Dcatalina.home=/java/tomcat -Djava.io.tmpdir=/java/tomcat/temp org.apache.catalina.startup.Bootstrap start
+
+	则 5144 就为进程号 pid = 5144
+	kill -9 5144 就可以彻底杀死tomcat
+	
+查看tomcat
+	ps -ef |grep tomcat 
+杀死tomcat 
+	kill -9 pid        //pid 为相应的进程号
+启动tomcat
+    /opt/tech/appStore/apache-tomcat-6.0.35/bin/startup.sh
+
+```
+********************************************************************
+
+
+#### 1.3.5 为每个tomcat配置单独的jdk
+``` 
+一、安装jdk，如jdk-6u45-linux-x64.bin
+1、添加执行权限 
+	chmod u+x jdk-6u45-linux-x64.bin
+2、解压 
+	./jdk-6u45-linux-x64.bin
+
+二、配置tomcat的 ../bin/setclasspath.sh	在文件的开头添加以下
+export JAVA_HOME=/opt/sudytech/jdk1.6.0_45  
+export JRE_HOME=/opt/sudytech/jdk1.6.0_45/jre
+
+三、重启tomcat
+``` 
+********************************************************************
+
+
+#### 1.3.6 yum rpm安装卸载软件 
+```
+yum安装：
+       # yum install 包名
+yum卸载：
+       # yum -y remove 包名
+	   
+查询所有安装软件     rpm -qa
+查看是否安装软件     rpm -qa | grep java	  
+卸载软件			 rpm -e    如果提示有依赖，可以加上 --nodeps 
+
+[root@localhost openldap]# rpm -qa | grep openldap
+openldap-2.4.44-15.el7_5.x86_64
+openldap-servers-2.4.44-15.el7_5.x86_64
+compat-openldap-2.3.43-5.el7.x86_64
+
+[root@localhost openldap]# rpm -e --nodeps openldap-2.4.44-15.el7_5.x86_64
+[root@localhost openldap]# rpm -e --nodeps openldap-servers-2.4.44-15.el7_5.x86_64
+[root@localhost openldap]# rpm -e --nodeps compat-openldap-2.3.43-5.el7.x86_64
+```
+********************************************************************
+
+
+#### 1.3.7 make安装卸载软件
+``` 
+用于linux源码安装软件，一般下载源码包得到文件：xxxx.tgz
+
+1、解包软件
+tar zxf xxxx.tgz
+
+2、配置
+cd xxxx
+./configure ....
+
+3、编译
+make
+
+4、安装
+make install
+
+5、卸载
+make uninstall
+
+``` 
+********************************************************************
+
+
+ <h3 id="IP"></h3>
+ 
+### 1.4  IP及防火墙
+#### 1.4.1 查看ip及端口是否可以访问、开放端口
+```
+	wget http://127.0.0.1:8080
+ 
+	ping + ip： 查看某一个ip地址是否能够连通，如： ping 114.80.67.193
+ 
+	telnet ip port ： 查看某一个机器上的某一个端口是否可以访问，如：telnet 114.80.67.193 8080
+ 
+	netstat -nal  查看网络通信情况
+ 
+
+查看端口占用
+	netstat -ntlp   //查看当前所有tcp端口·
+	netstat -ntulp |grep 80   //查看所有80端口使用情况·
+	netstat -an | grep 3306   //查看所有3306端口使用情况·
+	
+	
+查看开放的端口	
+firewall-cmd --list-all
+
+开放端口
+firewall-cmd --zone=public --add-port=4789/udp --permanent
+firewall-cmd --zone=public --add-port=80/tcp --permanent  
+firewall-cmd --zone=public --add-port=80/udp –permanen
+firewall-cmd --zone=public --add-port=8060/tcp --permanent
+
+刷新
+firewall-cmd --reload
+
+```	
+********************************************************************
+
+
+#### 1.4.2 关闭centos的防火墙
+``` 
+一、firewall方式
+
+	firewall-cmd --state    查看防火墙状态
+	
+	systemctl stop firewalld.service     关闭防火墙，centos7下
+	
+	systemctl disable firewalld.service    关闭开机启动
+
+
+二、service方式
+
+	查看防火墙状态： 
+
+	[root@centos6 ~]# service iptables status
+
+	iptables：未运行防火墙。
+
+	开启防火墙：
+
+	[root@centos6 ~]# service iptables start
+
+	关闭防火墙：
+
+	[root@centos6 ~]# service iptables stop
+
+
+三、iptables方式
+
+	先进入init.d目录，命令如下：
+
+	[root@centos6 ~]# cd /etc/init.d/
+
+	[root@centos6 init.d]# 
+
+	然后
+
+	查看防火墙状态：
+
+	[root@centos6 init.d]# /etc/init.d/iptables status
+
+	暂时关闭防火墙：
+
+	[root@centos6 init.d]# /etc/init.d/iptables stop
+
+	重启iptables：
+
+	[root@centos6 init.d]# /etc/init.d/iptables restart
+
+
+``` 
+********************************************************************
+
+
+ <h3 id="knowledge"></h3>
+ 
+### 1.5  知识点
+#### 1.5.1  查看内存
+
+``` 
+top
+free -m  
+cat /proc/meminfo 机器的内存使用信息
+cat /proc/pid/maps pid为进程号，显示当前进程所占用的虚拟地址。
+cat /proc/pid/statm 进程所占用的内存
+
+[root@localhost webapps]# free 
+             total       used       free     shared    buffers     cached
+Mem:       4043716    3783532     260184          0      31424     340132
+-/+ buffers/cache:    3411976     631740
+Swap:      2096472     993204    1103268
+
+输入：free
+
+total:总计物理内存的大小
+
+used:已使用多大
+
+free:可用有多少
+
+Shared:多个进程共享的内存总额
+
+Buffers/cached:磁盘缓存的大小
+
+第三行(-/+ buffers/cached)
+
+used:已使用多大
+
+free:可用有多少
+
+第四行就不多解释了。
+
+区别：第二行(mem)的used/free与第三行(-/+ buffers/cache) used/free的区别。 这两个的区别在于使用的角度来看，第一行是从OS的角度来看，因为对于OS，buffers/cached 都是属于被使用，所以他的可用内存是260184KB,已用内存是3783532KB,第三行所指的是从应用程序角度来看，对于应用程序来说，buffers/cached 是等于可用的，因为buffer/cached是为了提高文件读取的性能，当应用程序需在用到内存的时候，buffer/cached会很快地被回收。所以从应用程序的角度来说，可用内存=系统free memory+buffers+cached。
+
+ 如上例：631740=260184+31424+340132
+``` 
+********************************************************************
+
+
+#### 1.5.2  linux标准输入输出2>&1
+```
+linux标准输入输出2>&1
+
+ /home/share/timerSearch/timerSearchDB.sh >> /home/share/timerSearch/record.txt 2>&1
+ 
+linux中有三种标准输入输出，分别是STDIN，STDOUT，STDERR，对应的数字是0，1，2。
+     STDIN是标准输入，默认从键盘读取信息；STDOUT是标准输出，默认将输出结果输出至终端；STDERR是标准错误，默认将输出结果输出至终端。
+     由于STDOUT与STDERR都会默认显示在终端上，为了区分二者的信息，就有了编号的0，1，2的定义，用1表示STDOUT，2表示STDERR。
+     2>&1，指将标准输出、标准错误指定为同一输出路径
+
+eg1:cat >>filetest 2>&1 <<END      -------建立filetest文件，当输入遇到END时，退出
+
+eg2:
+     1、以普通用户执行 find /etc -name passwd 命令，默认会将命令的执行结果（STDOUT）与错误信息（STDERR）都输出至终端显示器。
+     2、执行find /etc -name passwd >find.out 2>find.err，会将STDOUT与STDERR分别存放至find.out和find.err中。该命令也可以写成下面三种形式
+          find /etc -name passwd 1>find.out 2>find.err
+          find /etc -name passwd 2>find.err >find.out
+          find /etc -name passwd 2>find.err 1>find.out
+     3、若要将所有标准输出及标准错误都输出至文件，可用&表示全部1和2的信息，eg：
+          find /etc -name passwd &>find.all 或 find /etc -name passwd >find.all 2>&1
+     4、2>&1 ---标准错误重新定向到标准输出
+     5、用法：find /etc -name passwd &2>&1 |less
+          可分解成
+          find /etc -name passwd & 表示前面的命令放到后台执行。
+          2>&1 |less 表示将标准错误重定向至标准输出，并用less进行分页显示
+		  
+https://www.cnblogs.com/jacob-tian/p/6110606.html
+
+```
+********************************************************************
+
+
+#### 1.5.3  定时执行脚本[链接](https://github.com/scott180/MyNotes/blob/master/bash/%E5%AE%9A%E6%97%B6%E6%89%A7%E8%A1%8C%E8%84%9A%E6%9C%AC/%E5%AE%9A%E6%97%B6%E6%89%A7%E8%A1%8C%E8%84%9A%E6%9C%AC.txt)
+```
+定时查询docker的mysql数据库并保存
+#!/bin/bash
+#file=/home/share/timerSearch/record.txt
+#crontab -uroot -e
+#*/1 * * * * /bin/bash /home/share/timerSearch/timerSearchDB.sh >> /home/share/timerSearch/record.txt 2>&1
+echo "===============begin=========================" 
+echo "定时查询脚本启动了。。。" 
+date "+%Y-%m-%d %H:%M:%S" 
+
+docker_name=mobile_ucp_db_1
+sql="use UCPPLUS;select id,loginName,name,password,idcard,field29 from T_USER where loginName='admin'\G;"
+#docker exec -it ${docker_name} mysql -uroot -pSudy.web123 -e $sql  >> $file
+docker exec -i mobile_ucp_db_1 mysql -uroot -pSudy.web123 -e "select now();use UCPPLUS;select id,loginName,name,password,idcard,field29 from T_USER where loginName='admin'\G;"  >> /home/share/timerSearch/recordDB.txt
+
+echo "" 
+echo "" 
+
+```
+********************************************************************
+
+
+#### 1.5.4 文件权限 
+```
+查看文件属性 	ls -l test.sh
+赋予执行权限    chmod +x test.sh
+赋予全部权限    chmod 777 test.sh
+
+改变文件属性（二进制）      chmod #chmod 664 chap1.txt	       110110100  
+改变文件属性（字母）        chmod u=rw,g=rw,o=r chap1.txt	   r w x
+改变文件所属用户		    chown user1 chap1.txt
+改变文件所属用户及所属组    chown user1:root chap1.txt
+改变文件所属组              chgrp root chap1.txt
+
+
+Linux系统是个多用户系统，应该能做到不同的用户能同时访问不同的文件，因此一定要有文件权限控制机制。Linux系统的权限控制机制和Windows的权限控制机制有着很大的差别。Linux的文件或目录都被一个用户拥有时，这个用户称为文件的拥有者(或所有者)，同时文件还被指定的用户组所拥有，这个用户组称为文件所属组。 
+
+用户 u --所属组 g --其他用户 o -- 所有用户 a
+ user - group - other - all
+
+要说明的是，一个用户可以是不同组的成员，这可以由管理员控制，我们将在用户管理这一章介绍如何控制的问题。文件的权限由权限标志来决定，权限标志决定了文件的拥有者、文件的所属组、其他用户对文件访问的能力。可以使用“ls –l”命令来显示权限标志。例如：
+[test @redflag test]$ls -l
+-rw-rw-r-- 1 longkey root 16 20A 24 22:23 chap1.txt
+本例中，文件chap1.txt的拥有者是longkey，所属组是root。这里我们特别关心的是输出行前面的第1～10个字符。第1个字符代表文件类别，第2～4个字符“rw-”是文件拥有者的权限，第5～7个字符“rw-”是文件所属组的权限，第8～10个字符“r--”是其他用户(即除了root用户和longkey用户组里的用户之外的用户)文件拥有者的权限。而权限均用三个字符表示，依次为读(r)、写(w)、执行(x)，如果某一位为“-”，则表示没有相应的权限，例如：“rw-”表示有读、写的权限，没有执行的权限。在本例中，文件拥有者longkey用户对文件有读、写的权限，root组的所有用户对文件也有读、写的权限，而其他用户对文件只有读的权限。
+
+设定文件权限时，在模式中常用以下的字母代表用户或用户组：
+u——文件的拥有者；
+g——文件的所属组；
+o——其他用户；
+a——代表所有用户(即u+g+o)。
+权限用以下字符表示：
+r ——读权限；
+w——写权限；
+x——执行权限；
+最后要指明是增加(+)还是减少(-)权限，或是绝对权限(=)。
+
+ [root @redflag /root]chmod o+w chap1.txt
+chap1.txt的权限由原来的“rw-rw-r--”变为“rw-rw-rw-”，表示增加其他用户对文件的写权限。
+ 
+ [root @redflag /root]chmod u=rw,g=rw,o=r chap1.txt  chap1.txt的权限变为“rwxrw-r---”，不论原来的权限是什么，这表示拥有者对文件有读、写的权限，所属组的用户对文件也有读、写的权限，而其他用户只有读的权限。
+
+我们在以上设置权限时，用字符表示权限和用户，实际上我们也经常使用八进制来表示。读、写、执行依次各自对应一个二进制位“???”，如果某位为“0”，则表示无权限；如果某位为“1”，则表示有权限。例如：文件权限为r---w---x时，用二进制表示为100010001，用十进制可以表示为421。例如：
+         [root @redflag /root]#chmod 664 chap1.txt 
+ 等同于：
+  [root @redflag /root]#chmod u=rw,g=rw,o=r chap1.txt
+		
+
+chown 用户名 文件或目录名——改变文件(或目录)的拥有者或所属组
+       例如：
+     [root @redflag /root]#chown longkey chap1.txt
+把文件chap1.txt的拥有者改为longkey用户。
+     [root @redflag /root]#chown longkey:root chap1.txt
+把文件的拥有者改为longkey用户，同时文件的所属组改为root组。
+
+
+chgrp组 文件或目录——改变文件或目录的所属组
+	 chown可以同时改变文件拥有者和所属者，chgrp只具有改变所属组的功能。例如：
+	[root @redflag /root]#chgrp root chap1.txt
+		文件chap1.txt的所属组设为root组。
+		
+```
+********************************************************************
+ 
+ 
+####  1.5.5 用户和组的管理
+```
+su         切换root
+su user1   切换用户
+
+groups         查看当前用户所在组
+groups  user1  查看user1用户所在的组
+whoami         查看当前登录用户名
+
+/etc/group  文件包含所有组及用户
+/etc/shadow和/etc/passwd系统存在的所有用户名
+
+创建用户      useradd  user1;
+设置用户密码  passwd user1;
+删除用户      userdel user1;
+删除用户（包括主目录文件 /home/user1）  userdel -r user1;
+
+groupadd testgroup  组的添加
+groupdel testgroup  组的删除
+
+只有root和组管理员能够改变组的成员：
+gpasswd –a user1 users    把 user1加入users组
+gpasswd –d user1 users    把 user1退出users组
+groupmod –n user users    修改组名user为users
+
+锁定用户  passwd -l user1
+解锁用户  passwd -u user1
+
+用户添加到组
+usermod -a -G groupA user
+-a 代表 append， 也就是 将自己添加到 用户组groupA 中，而不必离开 其他用户组
+ 
+```
+#### 1.5.6 问题
+```
+	history 历史记录显示时间        
+	在/etc/profile 中增加  export HISTTIMEFORMAT="%Y-%m-%d %H:%M:%S "
+	写入环境变量		   source /etc/profile
+```	
+	
+```
+centos7虚拟机不能上网    
+	在存储linux目录的CentOS.vmx文件加入  ethernet0.virtualDev = "e1000"  再重启虚拟机
+	
+linux虚拟机上传下载文件  
+	打开虚拟机linux，使用命令 ifconfig 查看ip，再使用xshell连接。
+```
+	
+```
 微信企业号连接超时： connect timed out
   wget https://qyapi.weixin.qq.com/cgi-bin/gettoken
   ping qyapi.weixin.qq.com
   
   1、可能是防火墙打开了
   2、/etc/hosts  策略配置错了
-==============================================================
 ```
+********************************************************************
 
 
 ## 2、Shell编程 <h2 id="shell"></h2>
@@ -854,8 +900,7 @@ lower_case_table_names = 2
     [root@redflag /root]# echo $SHELL
     /bin/bash
 	
- 
-==============================================================
+
 ```
 
 ### 2.2、shell创建、执行 <h3 id="shellExecute"></h3>
