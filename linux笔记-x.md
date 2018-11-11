@@ -831,6 +831,20 @@ usermod -a -G groupA user
 ```
 #### 1.5.6 问题
 ```
+查看句柄
+	    ulimit -n  
+	    
+修改句柄    
+	vi /etc/security/limits.conf 添加
+*　　soft　　nofile　　65536
+
+*　　hard　　nofile　　65536
+
+修改以后保存，注销当前用户，重新登录，执行ulimit -a ,ok ,参数生效了。
+
+```
+
+```
 	history 历史记录显示时间        
 	在/etc/profile 中增加  export HISTTIMEFORMAT="%Y-%m-%d %H:%M:%S "
 	写入环境变量		   source /etc/profile
@@ -2514,7 +2528,7 @@ clock -w    写入bios
 十一月份＝NOV. Nov.=November  November
 十二月份＝DEC. Dec.=December  December
 
-东西南北  West East South North  ===  w e s n
+东西南北  East West South North  ===  e w s n
 
 ==============================================================
 ```
