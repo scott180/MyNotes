@@ -31,7 +31,7 @@ ssh://git@170.18.10.134:222/diffusion/449/idsplus研发.git
 上传文件到远程仓库：
 	git push origin [本地分支名]:[远端分支名]  
 	当然如果你的本地分支名和远端分支名是一样的，那么就只需要git push origin [分支名称]就可以了。 
-    git push origin master
+    git push 
 
 恢复最近版本文件
 	git fetch
@@ -55,6 +55,7 @@ git merge  合并 使用fetch 可以在merge之前可以看清楚更新情况，
 		git reset --soft HEAD^
 		
 	git reset —hard + 版本号
+	    git reset --hard orgin
 		彻底回退到某个版本，本地的代码也会改变上一个版本内容。
 		
 		
@@ -129,7 +130,7 @@ https://edu.aliyun.com/jiaocheng/1834?spm=5176.11182473.menu.7.k6ksTN
 	
 合并分支：
 	git checkout master
-	git meger test   // test分支合并到master分支
+	git merge test   // test分支合并到master分支
 	git push origin master
 	
 	
