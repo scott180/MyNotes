@@ -11,12 +11,8 @@
 
 ### 1、上传下载
 ```
-http://170.18.10.134/diffusion/449/idsplus研发.git
-http://170.18.10.134/diffusion/450/idsplus发布.git
+git clone git@github.com:scott180/MyNotes.git
 
-git clone git@170.18.10.134:222/diffusion/449/idsplus研发.git
-
-ssh://git@170.18.10.134:222/diffusion/449/idsplus研发.git
 ```
 
 ```
@@ -57,21 +53,10 @@ git merge  合并 使用fetch 可以在merge之前可以看清楚更新情况，
 	git reset —hard + 版本号
 	    git reset --hard orgin
 		彻底回退到某个版本，本地的代码也会改变上一个版本内容。
-		
-		
-		HEAD 最近一个提交
-		HEAD^ 上一次提交
-		HEAD^^ 上一次的 上一次的提交（倒数第三次）
-		HEAD^^^ 倒数 第四次的 提交
 
-	----------------------
-
-		HEAD~0 最近一个提交
-		HEAD~1 上一次提交
-
-		HEAD^2 上一次的 上一次的提交（倒数第三次）
-		HEAD^3 倒数 第四次的 提交
-		
+	#本地仓库回退到某个版本  
+	git reset –hard bae168 	
+	
 ```
 
 ****************************************************************************************************************************************
