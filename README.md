@@ -57,6 +57,8 @@ java  linux  javascript  jquery  mysql oracle and so on
 ###  1.7、layui <h3 id="layui"></h3>
 [layui官网]( https://www.layui.com/ )
 
+[layuimini]( https://github.com/zhongshaofa/layuimini/tree/onepage )
+
 [LayUI后台管理与综合示例]( https://www.cnblogs.com/best/p/9150271.html )
 
 ###  1.8、springCloud <h3 id="springCloud"></h3>

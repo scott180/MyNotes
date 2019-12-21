@@ -51,4 +51,18 @@ npm config set disturl https://npm.taobao.org/dist --global
 安装模块
 npm install -g vue
 npm install express -g
+
+
+
+npm命令失效
+https://blog.csdn.net/qq_39085705/article/details/81134453
+
+找到  C:\Users\Super\.npmrc  （根据个人电脑找到 .npmrc文件）
+删除 这个 .npmrc文件即可
+
+重启 explorer.exe 即时生效环境变量
+1，调出任务管理器：CTRL+ALT+DEL三键同时按；
+2，在进程选项卡选中explorer.exe，点击下方的结束任务，确认；
+3，在应用程序选项卡，最下面点新任务，输入explorer.exe，就是重启了explorer.exe.
+
 ```
