@@ -2,16 +2,17 @@
   
 *   [1、说明](#introducer)
 *   [2、安装](#install)
+*   [3、常用命令](#usually)
+*   [4、vue](#vue)
 
 
  <h2 id="introducer"></h2>
 
 ### 1、说明
-```
-官方下载  https://nodejs.org/en/download/
-安装参考  https://blog.csdn.net/qq_44894359/article/details/89283325
-教程     https://www.runoob.com/nodejs/nodejs-tutorial.html
-```
+[nodejs官方下载](  https://nodejs.org/en/download/ )
+[安装参考](  https://blog.csdn.net/qq_44894359/article/details/89283325 )
+[教程](  https://www.runoob.com/nodejs/nodejs-tutorial.html )
+
 
 <h2 id="install"></h2>
 
@@ -66,3 +67,38 @@ https://blog.csdn.net/qq_39085705/article/details/81134453
 3，在应用程序选项卡，最下面点新任务，输入explorer.exe，就是重启了explorer.exe.
 
 ```
+
+
+
+<h2 id="usually"></h2>
+
+### 3、常用命令 
+[npm使用介绍](  https://www.runoob.com/nodejs/nodejs-npm.html )
+[Webpack 入门教程]( https://www.runoob.com/w3cnote/webpack-tutorial.html )
+
+
+
+
+<h2 id="vue"></h2>
+
+### 4、vue
+
+<h2 id="document"></h2>
+
+#### 4.1、vue教程 
+
+[vue官网]( https://cn.vuejs.org/ )
+
+[教程]( https://www.runoob.com/vue2/vue-tutorial.html )
+
+<h2 id="project"></h2>
+
+#### 4.2、vue项目 
+
+
+| git项目                                              | 地址    | demo  | 
+| --------                                             | -----   | ----  |
+| git@github.com:lin-xin/vue-manage-system.git         | [地址]( https://github.com/lin-xin/vue-manage-system )       | [演示]( https://lin-xin.gitee.io/example/work/#/dashboard ) |
+| git@github.com:wdlhao/vue2-element-touzi-admin.git   | [地址]( https://github.com/wdlhao/vue2-element-touzi-admin ) | [演示]( http://www.jiouai.com/permission/index/index )      |
+
+
