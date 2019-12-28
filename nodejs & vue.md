@@ -53,7 +53,11 @@ npm config set disturl https://npm.taobao.org/dist --global
 npm install -g vue
 npm install express -g
 
+使用淘宝定制的 cnpm (gzip 压缩支持) 命令行工具代替默认的 npm
+npm install -g cnpm --registry=https://registry.npm.taobao.org
 
+全局安装vue-cli
+cnpm install --global vue-cli
 
 -------------------------------
 npm命令失效
