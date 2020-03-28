@@ -3,6 +3,7 @@
 *   [1、版本号](#version)
 *   [2、下载地址](#url)
 *   [3、类型说明](#category)
+*   [4、eclipse快捷键](#shortcuts)
  
 <h2 id="version"></h>
 
@@ -78,76 +79,32 @@ Eclipse 4.8 | Photon[光子]				| 2018	| http://www.eclipse.org/downloads/packag
 作为一名初学者，或者非企业环境开发者/自学者。推荐1，即JavaDeveloper。或者（因为现在纯单机Java应用较少，都是联网工作的）即推荐2，即Java EE。
 *********************************************
 
+<h2 id="shortcuts"></h>
 
-### Eclipse Photon R Packages
-`Windows 32-bit 64-bit` `Mac Cocoa 64-bit` `Linux 32-bit 64-bit `
+### 4、eclipse 快捷键
+```
+eclipse 快捷键
 
+syso+Alt+/       输出
+Ctrl+shift+f     整理代码格式
+Ctrl+Alt+方向键  往上或下复制当前内容
+Alt+shift+s      快速生成get和set方法
+Ctrl+shift+o 导入所有包
+Alt+/        导入一个包
+Ctrl+m       编辑器窗口最大化
+ctrl+o：     快速outline，查找方法
+ctrl+e：     快速转换编辑器
+ctrl+f：     查找、替换
+Alt+方向键   将当前行的内容往上或下移动
 
-- **Eclipse IDE for Eclipse Committers**                      
-`318 MB  139,554 DOWNLOADS`
-Package suited for development of Eclipse itself at Eclipse.org; based on the Eclipse Platform adding PDE, Git, Marketplace Client, source code and developer documentation.
-
-
-- **Eclipse IDE for C/C++ Developers**                        
-`223 MB  124,349 DOWNLOADS`
-An IDE for C/C++ developers with Mylyn integration.
-
-
-- **Eclipse IDE for Java and DSL Developers**                                   
-`348 MB  63,061 DOWNLOADS`
-The essential tools for Java and DSL developers, including a Java & Xtend IDE, a DSL Framework (Xtext), a Git client, XML Editor, and Maven integration.
-
-
-- **Eclipse IDE for Java Developers**                            
-`195 MB  366,975 DOWNLOADS`
-The essential tools for any Java developer, including a Java IDE, a Git client, XML Editor, Mylyn, Maven and Gradle integration
-
-
-- **Eclipse IDE for JavaScript and Web Developers**                     
-`172 MB  21,179 DOWNLOADS`
-The essential tools for any JavaScript developer, including JavaScript, HTML, CSS, XML languages support, Git client, and Mylyn.
-
-
-- **Eclipse IDE for Java EE Developers**               
-`345 MB  577,286 DOWNLOADS`
-Tools for Java developers creating Java EE and Web applications, including a Java IDE, tools for Java EE, JPA, JSF, Mylyn, EGit and others.
-
-
-- **Eclipse IDE for Scientific Computing**                                          
-`300 MB  4,258 DOWNLOADS`
-Tools for C, C++, Fortran, and UPC, including MPI, OpenMP, OpenACC, a parallel debugger, and remotely building, running and monitoring applications.
-
-
-- **Eclipse IDE for PHP Developers**                                    
-`205 MB  43,805 DOWNLOADS`
-The essential tools for any PHP developer, including PHP language support, Git client, Mylyn and editors for JavaScript, HTML, CSS and XML.
-
-
-- **Eclipse IDE for RCP and RAP Developers**                                       
-`296 MB  6,816 DOWNLOADS`
-A complete set of tools for developers who want to create Eclipse plug-ins, Rich Client Applications or Remote Application Platform (RCP+RAP), plus Maven and Gradle tooling, and an XML editor. It contains the EGit tooling for accessing Git version control systems.
-
-
-- **Eclipse IDE for Java and Report Developers**                       
-`355 MB  5,697 DOWNLOADS`
-Java EE tools and BIRT reporting tool for Java developers to create Java EE and Web applications that also have reporting needs.
-
-
-- **Eclipse IDE for Rust Developers (includes Incubating components)**                
-`157 MB  2,450 DOWNLOADS`
-The essential tools for any Rust developer, including Rust language support, Git client, command-line integration, Mylyn and editors.
-
-
-- **Eclipse IDE for Scout Developers**                        
-`252 MB  1,942 DOWNLOADS`
-Eclipse Scout is a Java/HTML5 framework to develop business applications that run on the desktop, on tablets and mobile devices. This package includes Eclipse IDE support for Scout developers and source code.
-
-
-- **Eclipse IDE for Testers**               
-`153 MB  2,838 DOWNLOADS`
-This package contains Eclipse features that support the software development quality assurance process, such as Jubula and Mylyn.
-
-
-- **Eclipse Modeling Tools**                                 
-`432 MB  6,357 DOWNLOADS`
-The Modeling package provides tools and runtimes for building model-based applications. You can use it to graphically design domain models, to leverage those models at design time by creating and editing dynamic instances, to collaborate via Eclipse's team support with facilities for comparing and merging models and model instances structurally, and finally to generate Java code from those models to produce complete applications. In addition, via the package's discover catalog, you can easily install a wide range of additional powerful, model-based tools and runtimes to suit your specific needs.
+1. ctrl+shift+r：打开资源
+2. ctrl+o：快速outline
+3. ctrl+e：快速转换编辑器
+4. ctrl+2，L：为本地变量赋值
+5. alt+shift+r：重命名
+6. alt+shift+l以及alt+shift+m：提取本地变量及方法
+7. shift+enter及ctrl+shift+enter
+8. Alt+方向键
+9. ctrl+m
+10. ctrl+.及ctrl+1：下一个错误及快速修改
+```
