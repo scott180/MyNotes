@@ -1,7 +1,7 @@
 ## README
 > 个人仓库
 
-java  linux  javascript  jquery  mysql oracle and so on
+java  linux  javascript  jquery  mysql oracle ...
 
 *   [序](#preface)
 *   [1、笔记](#note)
@@ -24,13 +24,16 @@ java  linux  javascript  jquery  mysql oracle and so on
 
 *****************************************************************
 
+
 <h2 id="preface"></h2>
 
 ### 序 
 
-> [markdown]( https://jbt.github.io/markdown-editor/ )    [dillinger]( https://dillinger.io/ )   [作业部落]( https://www.zybuluo.com/mdeditor )    
+> [markdown]( https://jbt.github.io/markdown-editor/ )   [dillinger]( https://dillinger.io/ )   [作业部落]( https://www.zybuluo.com/mdeditor )    
 
 > [github]( https://github.com/scott180 )  [gitlab]( https://git.lug.ustc.edu.cn/ja )     [gitee]( https://gitee.com )
+
+
 
  <h2 id="note"></h2>
 
@@ -68,6 +71,8 @@ java  linux  javascript  jquery  mysql oracle and so on
 
 ###  1.5、其他 
 >[本地安装zookeeper]( https://blog.csdn.net/xu180/article/details/105235397 ) 
+
+
 
  <h2 id="commonSoft"></h2>
  
@@ -112,6 +117,7 @@ java  linux  javascript  jquery  mysql oracle and so on
 | eclipse  | [eclipse官方下载]( http://www.eclipse.org/downloads/packages ) & [版本说明]( https://github.com/scott180/MyNotes/blob/master/eclipse%20download.md ) |
 | maven    | [maven官方下载]( https://archive.apache.org/dist/maven/maven-3/ )    |
 | idea     | [idea官方下载]( https://www.jetbrains.com/idea/download/other.html ) |
+
 
 
  <h2 id="domesticMirror"></h2>
