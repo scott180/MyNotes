@@ -13,6 +13,8 @@ java  linux  javascript  jquery  mysql oracle and so on
          *  [mongo ldap mysql](#database)
     *   [1.4、前端](#front)
         *  [nodejs  vue  layui](#front)
+    *   [1.5、其他](#other)
+        *  [zookeeper](#other)
 	
 *   [2、常用软件](#commonSoft)
     *   [2.1、jdk](#jdkSoft)
@@ -26,7 +28,7 @@ java  linux  javascript  jquery  mysql oracle and so on
 
 ### 序 
 
-> [markdown]( https://jbt.github.io/markdown-editor/ )    [马克飞象]( https://maxiang.io )   [作业部落]( https://www.zybuluo.com/mdeditor )    
+> [markdown]( https://jbt.github.io/markdown-editor/ )    [dillinger]( https://dillinger.io/ )   [作业部落]( https://www.zybuluo.com/mdeditor )    
 
 > [github]( https://github.com/scott180 )  [gitlab]( https://git.lug.ustc.edu.cn/ja )     [gitee]( https://gitee.com )
 
@@ -38,30 +40,34 @@ java  linux  javascript  jquery  mysql oracle and so on
  
 ###  1.1、运维
 
-> [linux笔记]( https://github.com/scott180/MyNotes/blob/master/linuxNote-x.md ) # [git笔记]( https://github.com/scott180/MyNotes/blob/master/gitNote.md ) # [docker笔记]( https://github.com/scott180/MyNotes/blob/master/docker.md )
+> [linux笔记]( https://github.com/scott180/MyNotes/blob/master/linuxNote-x.md ) &ensp; [git笔记]( https://github.com/scott180/MyNotes/blob/master/gitNote.md ) &ensp; [docker笔记]( https://github.com/scott180/MyNotes/blob/master/docker.md )
 
 <h3 id="back"></h3>
 
 ###  1.2、后端 
->[springboot初始化]( https://start.spring.io/ ) &  [2小时学会springboot]( https://blog.csdn.net/forezp/article/details/61472783 )  &  [springCloud教程]( https://blog.csdn.net/forezp/article/details/70148833 )
+>[springboot初始化]( https://start.spring.io/ ) &ensp; [2小时学会springboot]( https://blog.csdn.net/forezp/article/details/61472783 )  &ensp; [springCloud教程]( https://blog.csdn.net/forezp/article/details/70148833 )
 
 <h3 id="database"></h3>
 
 ###  1.3、数据库 
->[mongo笔记]( https://github.com/scott180/MyNotes/blob/master/mongo.md ) #  [ldap]( https://github.com/scott180/MyNotes/blob/master/ldapNote.txt ) #  [mysql]( https://github.com/scott180/MyNotes/blob/master/mysql.txt )
+>[mongo笔记]( https://github.com/scott180/MyNotes/blob/master/mongo.md ) &ensp; [ldap]( https://github.com/scott180/MyNotes/blob/master/ldapNote.txt ) &ensp;  [mysql]( https://github.com/scott180/MyNotes/blob/master/mysql.txt )
 
 <h3 id="front"></h3>
 
 ###  1.4、前端 
->[nodejs & vue.md]( https://github.com/scott180/MyNotes/blob/master/nodejs%20%26%20vue.md )
+>[nodejs &ensp; vue.md]( https://github.com/scott180/MyNotes/blob/master/nodejs%20%26%20vue.md )
 ***
 >[深入理解javascript原型和闭包]( https://github.com/scott180/MyNotes/tree/master/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3javascript%E5%8E%9F%E5%9E%8B%E5%92%8C%E9%97%AD%E5%8C%85 )
 ***
->[layui官网]( https://www.layui.com/ )  &    [layuimini]( https://github.com/zhongshaofa/layuimini/tree/onepage )    &  [LayUI后台管理与综合示例]( https://www.cnblogs.com/best/p/9150271.html )
+>[layui官网]( https://www.layui.com/ )  &ensp;    [layuimini]( https://github.com/zhongshaofa/layuimini/tree/onepage )    &ensp;  [LayUI后台管理与综合示例]( https://www.cnblogs.com/best/p/9150271.html )
 ***
->[react入门实例教程]( http://www.ruanyifeng.com/blog/2015/03/react.html )  &   [react官方文档]( https://reactjs.org/docs/forms.html )
+>[react入门实例教程]( http://www.ruanyifeng.com/blog/2015/03/react.html )  &ensp;   [react官方文档]( https://reactjs.org/docs/forms.html )
 
 
+<h3 id="other"></h3>
+
+###  1.5、其他 
+>[本地安装zookeeper]( https://blog.csdn.net/xu180/article/details/105235397 ) 
 
  <h2 id="commonSoft"></h2>
  
