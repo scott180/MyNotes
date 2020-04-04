@@ -29,7 +29,7 @@ java  linux  javascript  jquery  mysql oracle ...
 
 ### 序 
 
-> [markdown]( https://jbt.github.io/markdown-editor/ )   [dillinger]( https://dillinger.io/ )   [作业部落]( https://www.zybuluo.com/mdeditor )    
+> [dillinger]( https://dillinger.io/ )   [作业部落]( https://www.zybuluo.com/mdeditor )    
 
 > [github]( https://github.com/scott180 )  [gitlab]( https://git.lug.ustc.edu.cn/ja )     [gitee]( https://gitee.com )
 

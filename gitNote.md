@@ -8,7 +8,8 @@
 *   [6、github添加ssh公钥](#github)
 *   [7、stash暂存](#stash)
 
-[马克飞象]( https://maxiang.io )
+> [dillinger]( https://dillinger.io/ )   [作业部落]( https://www.zybuluo.com/mdeditor )   
+
  <h2 id="pull"></h2>
 
 ### 1、上传下载
