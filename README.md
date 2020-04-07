@@ -8,7 +8,9 @@ java  linux  javascript  jquery  mysql oracle ...
     *   [1.1、运维](#operation)
          *  [linux  git  docker](#operation)
     *   [1.1、后端](#back)
-         *  [spring](#back)
+         *  [springcloud](#springcloud)
+         *  [dubbo](#dubbo)
+         *  [RabbitMQ](#rabbitMQ)
     *   [1.3、数据库](#database)
          *  [mongo ldap mysql](#database)
     *   [1.4、前端](#front)
@@ -48,7 +50,21 @@ java  linux  javascript  jquery  mysql oracle ...
 <h3 id="back"></h3>
 
 ###  1.2、后端 
->[springboot初始化]( https://start.spring.io/ ) &ensp; [2小时学会springboot]( https://blog.csdn.net/forezp/article/details/61472783 )  &ensp; [springCloud教程]( https://blog.csdn.net/forezp/article/details/70148833 )
+
+
+<h3 id="springcloud"></h3>
+
+>[springcloud-test]( https://github.com/scott180/springcloud-test ) &ensp; [springboot初始化]( https://start.spring.io/ ) &ensp; [2小时学会springboot]( https://blog.csdn.net/forezp/article/details/61472783 )  &ensp; [springCloud教程]( https://www.cnblogs.com/ityouknow/category/994104.html )
+
+<h3 id="dubbo"></h3>
+
+>[dubbo]( https://github.com/scott180/dubbo-test )
+
+<h3 id="rabbitMQ"></h3>
+
+>[RabbitMQ]( https://github.com/scott180/RabbitMQ-test )
+
+
 
 <h3 id="database"></h3>
 
