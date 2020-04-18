@@ -33,7 +33,7 @@ java  linux  javascript  jquery  mysql oracle ...
 
 > [dillinger]( https://dillinger.io/ )   [作业部落]( https://www.zybuluo.com/mdeditor )    
 
-> [github]( https://github.com/scott180 )  [gitlab]( https://git.lug.ustc.edu.cn/ja )     [gitee]( https://gitee.com )
+> [github]( https://github.com/scott180/MyNotes )  [gitlab]( https://git.lug.ustc.edu.cn/ja )     [gitee]( https://gitee.com )
 
 
 
@@ -42,7 +42,7 @@ java  linux  javascript  jquery  mysql oracle ...
 ## 1、笔记
 
  <h3 id="operation"></h3>
- 
+
 ###  1.1、运维
 
 > [linux笔记]( https://github.com/scott180/MyNotes/blob/master/linuxNote-x.md ) &ensp; [git笔记]( https://github.com/scott180/MyNotes/blob/master/gitNote.md ) &ensp; [docker笔记]( https://github.com/scott180/MyNotes/blob/master/docker.md )
@@ -91,7 +91,7 @@ java  linux  javascript  jquery  mysql oracle ...
 
 
  <h2 id="commonSoft"></h2>
- 
+
 ## 2、常用软件
 
 <h3 id="jdkSoft"></h3>
@@ -107,15 +107,15 @@ java  linux  javascript  jquery  mysql oracle ...
     chmod u+x jdk-6u45-linux-x64.bin
    - 解压 
     ./jdk-6u45-linux-x64.bin
-    
+   
 - [ ] 软件名称里含有x64则是64位软件，32位为则没有。如下：
 - jdk-8u162-windows-x64.zip  jdk-8u162-linux-x64.tar.gz  是64位软件
 - jdk-8u72-windows-i586.zip jdk-8u72-linux-i586.tar.gz   是32位软件
 
 ***
 
-| 云盘链接                              | 密码   | 
-| --------                              | -----  | 
+| 云盘链接                              | 密码   |
+| --------                              | -----  |
 | [jdk6]( https://pan.baidu.com/s/1z3p1DecyBVugP7cECIupyg )     | 829h |
 | [jdk7]( https://pan.baidu.com/s/17ik9x-g3RkYEu6vah9CZVw )     | muvr |
 | [jdk8]( https://pan.baidu.com/s/1MT8zldLnH9PuZsVR77DEAw )     | mv5i |
@@ -127,8 +127,8 @@ java  linux  javascript  jquery  mysql oracle ...
 <h3 id="otherSoft"></h3>
 
 ### 2.2、tomcat   eclipse   maven  idea
-| 软件                              | 下载地址   | 
-| --------                          | -----  | 
+| 软件                              | 下载地址   |
+| --------                          | -----  |
 | tomcat   | [tomcat官网]( https://archive.apache.org/dist/tomcat/ )        & ([云盘]( https://pan.baidu.com/s/1yPhAfIcACTGkpIOYlEds1g )   密码: j9ug ) |
 | eclipse  | [eclipse官方下载]( http://www.eclipse.org/downloads/packages ) & [版本说明]( https://github.com/scott180/MyNotes/blob/master/eclipse%20download.md ) |
 | maven    | [maven官方下载]( https://archive.apache.org/dist/maven/maven-3/ )    |
@@ -140,10 +140,10 @@ java  linux  javascript  jquery  mysql oracle ...
 
 ## 3、国内镜像
 
-| 学校												   |  下载地址
-| ------------    									   |  -------------   
-| [北京理工大学]( http://mirror.bit.edu.cn )           |  [download]( http://mirror.bit.edu.cn/eclipse/technology/epp/downloads/release/ )
-| [华中科技大学]( http://mirrors.hust.edu.cn/ ) 	   |  [download]( http://mirrors.hust.edu.cn/eclipse/technology/epp/downloads/release/ )
-| [大连东软信息学院]( http://mirrors.neusoft.edu.cn/)  |  [download]( http://mirrors.neusoft.edu.cn/eclipse/technology/epp/downloads/release/ )
-| [清华大学]( https://mirrors.tuna.tsinghua.edu.cn/ )  |  [download]( https://mirrors.tuna.tsinghua.edu.cn/eclipse/technology/epp/downloads/release/ )
-| [中科大]( http://mirrors.ustc.edu.cn/ )		 	   |  [download]( http://mirrors.ustc.edu.cn/eclipse/technology/epp/downloads/release/ )
+| 学校												   |  下载地址        |
+| ------------    									   |  -------------   |
+| [北京理工大学]( http://mirror.bit.edu.cn )           |  [download]( http://mirror.bit.edu.cn/eclipse/technology/epp/downloads/release/ )             |
+| [华中科技大学]( http://mirrors.hust.edu.cn/ ) 	   |  [download]( http://mirrors.hust.edu.cn/eclipse/technology/epp/downloads/release/ )           |
+| [大连东软信息学院]( http://mirrors.neusoft.edu.cn/)  |  [download]( http://mirrors.neusoft.edu.cn/eclipse/technology/epp/downloads/release/ )        |
+| [清华大学]( https://mirrors.tuna.tsinghua.edu.cn/ )  |  [download]( https://mirrors.tuna.tsinghua.edu.cn/eclipse/technology/epp/downloads/release/ ) |
+| [中科大]( http://mirrors.ustc.edu.cn/ )		 	   |  [download]( http://mirrors.ustc.edu.cn/eclipse/technology/epp/downloads/release/ )           |
