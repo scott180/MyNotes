@@ -9,33 +9,32 @@
  * WeiBo :	http://www.weibo.com/xiaohulunb  	@GourdErwa
  * Email :	gourderwa@163.com
  */
- 
-package com.sudytech.core.web.monitor.servlet;
- 
- 
+
+package com.test.demo;
+
 import com.jcraft.jsch.*;
- 
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.HashMap;
 import java.util.Map;
- 
+
 /**
  * 远程调用Linux shell 命令
  *
  * @author wei.Li by 14-9-2.
  */
 public class ConnectLinux {
- 
- 
+
+
     public static final String CPU_MEM_SHELL = "top -b -n 1";
     public static final String FILES_SHELL = "df -hl";
     public static final String[] COMMANDS = {CPU_MEM_SHELL, FILES_SHELL};
     public static final String LINE_SEPARATOR = System.getProperty("line.separator");
     private static Session session;
- 
+
     /**
      * 连接到指定的HOST
      *
@@ -47,11 +46,11 @@ public class ConnectLinux {
         try {
             session = jsch.getSession(user, host, 22);
             session.setPassword(passwd);
- 
+
             java.util.Properties config = new java.util.Properties();
             config.put("StrictHostKeyChecking", "no");
             session.setConfig(config);
- 
+
             session.connect();
         } catch (JSchException e) {
             e.printStackTrace();
@@ -60,7 +59,7 @@ public class ConnectLinux {
         }
         return true;
     }
- 
+
     /**
      * 远程连接Linux 服务器 执行相关的命令
      *
@@ -76,7 +75,7 @@ public class ConnectLinux {
         }
         Map<String, String> map = new HashMap<String, String>();
         StringBuilder stringBuffer;
- 
+
         BufferedReader reader = null;
         Channel channel = null;
         try {
@@ -84,16 +83,16 @@ public class ConnectLinux {
                 stringBuffer = new StringBuilder();
                 channel = session.openChannel("exec");
                 ((ChannelExec) channel).setCommand(command);
- 
+
                 channel.setInputStream(null);
                 ((ChannelExec) channel).setErrStream(System.err);
- 
+
                 channel.connect();
                 InputStream in = channel.getInputStream();
                 reader = new BufferedReader(new InputStreamReader(in));
                 String buf;
                 while ((buf = reader.readLine()) != null) {
- 
+
                     //舍弃PID 进程信息
                     if (buf.contains("PID")) {
                         break;
@@ -105,10 +104,9 @@ public class ConnectLinux {
             }
         } catch (IOException e) {
             e.printStackTrace();
-        } catch(JSchException e){
-        	e.printStackTrace();
-        }
-        finally {
+        } catch (JSchException e) {
+            e.printStackTrace();
+        } finally {
             try {
                 if (reader != null) {
                     reader.close();
@@ -123,8 +121,8 @@ public class ConnectLinux {
         }
         return map;
     }
- 
- 
+
+
     /**
      * 直接在本地执行 shell
      *
@@ -133,10 +131,10 @@ public class ConnectLinux {
      */
     public static Map<String, String> runLocalShell(String[] commands) {
         Runtime runtime = Runtime.getRuntime();
- 
+
         Map<String, String> map = new HashMap<String, String>();
         StringBuilder stringBuffer;
- 
+
         BufferedReader reader;
         Process process;
         for (String command : commands) {
@@ -153,7 +151,7 @@ public class ConnectLinux {
                     }
                     stringBuffer.append(buf.trim()).append(LINE_SEPARATOR);
                 }
- 
+
             } catch (IOException e) {
                 e.printStackTrace();
                 return null;
@@ -163,8 +161,8 @@ public class ConnectLinux {
         }
         return map;
     }
- 
- 
+
+
     /**
      * 处理 shell 返回的信息
      * <p>
@@ -175,19 +173,19 @@ public class ConnectLinux {
      * @return 最终处理后的信息
      */
     private static String disposeResultMessage(Map<String, String> result) {
- 
+
         StringBuilder buffer = new StringBuilder();
- 
+
         for (String command : COMMANDS) {
             String commandResult = result.get(command);
             if (null == commandResult) continue;
- 
+
             if (command.equals(CPU_MEM_SHELL)) {
                 String[] strings = commandResult.split(LINE_SEPARATOR);
                 //将返回结果按换行符分割
                 for (String line : strings) {
                     line = line.toUpperCase();//转大写处理
- 
+
                     //处理CPU Cpu(s): 10.8%us,  0.9%sy,  0.0%ni, 87.6%id,  0.7%wa,  0.0%hi,  0.0%si,  0.0%st
                     if (line.startsWith("CPU(S):")) {
                         String cpuStr = "CPU 用户使用占有率:";
@@ -198,7 +196,7 @@ public class ConnectLinux {
                             cpuStr += "计算过程出错";
                         }
                         buffer.append(cpuStr).append(LINE_SEPARATOR);
- 
+
                         //处理内存 Mem:  66100704k total, 65323404k used,   777300k free,    89940k buffers
                     } else if (line.startsWith("MEM")) {
                         String memStr = "内存使用情况:";
@@ -208,7 +206,7 @@ public class ConnectLinux {
                                     .replace("USED", "已使用")
                                     .replace("FREE", "空闲")
                                     .replace("BUFFERS", "缓存");
- 
+
                         } catch (Exception e) {
                             e.printStackTrace();
                             memStr += "计算过程出错";
@@ -216,7 +214,7 @@ public class ConnectLinux {
                             continue;
                         }
                         buffer.append(memStr).append(LINE_SEPARATOR);
- 
+
                     }
                 }
             } else if (command.equals(FILES_SHELL)) {
@@ -230,12 +228,12 @@ public class ConnectLinux {
                 }
             }
         }
- 
+
         return buffer.toString();
     }
- 
+
     //处理系统磁盘状态
- 
+
     /**
      * Filesystem            Size  Used Avail Use% Mounted on
      * /dev/sda3             442G  327G   93G  78% /
@@ -248,13 +246,13 @@ public class ConnectLinux {
      */
     private static String disposeFilesSystem(String commandResult) {
         String[] strings = commandResult.split(LINE_SEPARATOR);
- 
+
         // final String PATTERN_TEMPLATE = "([a-zA-Z0-9%_/]*)\\s";
         int size = 0;
         int used = 0;
         for (int i = 0; i < strings.length - 1; i++) {
             if (i == 0) continue;
- 
+
             int temp = 0;
             for (String s : strings[i].split("\\b")) {
                 if (temp == 0) {
@@ -275,7 +273,7 @@ public class ConnectLinux {
         return new StringBuilder().append("大小 ").append(size).append("G , 已使用").append(used).append("G ,空闲")
                 .append(size - used).append("G").toString();
     }
- 
+
     /**
      * 处理单位转换
      * K/KB/M/T 最终转换为G 处理
@@ -284,7 +282,7 @@ public class ConnectLinux {
      * @return 以G 为单位处理后的数值
      */
     private static int disposeUnit(String s) {
- 
+
         try {
             s = s.toUpperCase();
             String lastIndex = s.substring(s.length() - 1);
@@ -305,13 +303,13 @@ public class ConnectLinux {
         }
         return 0;
     }
- 
+
     public static void main(String[] args) {
         Map<String, String> result = runDistanceShell(COMMANDS, "root", "Sudy12#$", "170.18.10.70");
         System.out.println(disposeResultMessage(result));
         //runLocalShell(COMMANDS);
     }
- 
+
     /**
      *
      最终处理结果模板为
@@ -321,8 +319,8 @@ public class ConnectLinux {
      系统磁盘状态:大小 474G , 已使用327G ,空闲147G
      =============================================================================
      */
- 
- 
+
+
     /**
      * 返回原始数据
      *
@@ -340,7 +338,7 @@ public class ConnectLinux {
      /dev/sda1             788M   60M  689M   8% /boot
      /dev/md0              1.9T  483G  1.4T  26% /ezsonar
      */
- 
+
     /**
      * 字段说明
      *

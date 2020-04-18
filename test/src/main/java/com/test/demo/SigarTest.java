@@ -1,21 +1,11 @@
-package com.sudytech.core.web.monitor.servlet;
+package com.test.demo;
+
+import org.hyperic.sigar.*;
+
 import java.net.InetAddress;
 import java.net.UnknownHostException;
 import java.util.Map;
 import java.util.Properties;
-import org.hyperic.sigar.CpuInfo;
-import org.hyperic.sigar.CpuPerc;
-import org.hyperic.sigar.FileSystem;
-import org.hyperic.sigar.FileSystemUsage;
-import org.hyperic.sigar.Mem;
-import org.hyperic.sigar.NetFlags;
-import org.hyperic.sigar.NetInterfaceConfig;
-import org.hyperic.sigar.NetInterfaceStat;
-import org.hyperic.sigar.OperatingSystem;
-import org.hyperic.sigar.Sigar;
-import org.hyperic.sigar.SigarException;
-import org.hyperic.sigar.Swap;
-import org.hyperic.sigar.Who;
 
 public class SigarTest {
     public static void main(String[] args) {
@@ -36,7 +26,7 @@ public class SigarTest {
             who();
             System.out.println("----------------------------------");
             // 文件系统信息
- //           file();
+            //           file();
             System.out.println("----------------------------------");
             // 网络信息
             net();
@@ -198,31 +188,31 @@ public class SigarTest {
             FileSystemUsage usage = null;
             usage = sigar.getFileSystemUsage(fs.getDirName());
             switch (fs.getType()) {
-            case 0: // TYPE_UNKNOWN ：未知
-                break;
-            case 1: // TYPE_NONE
-                break;
-            case 2: // TYPE_LOCAL_DISK : 本地硬盘
-                // 文件系统总大小
-                System.out.println(fs.getDevName() + "总大小:    " + usage.getTotal() + "KB");
-                // 文件系统剩余大小
-                System.out.println(fs.getDevName() + "剩余大小:    " + usage.getFree() + "KB");
-                // 文件系统可用大小
-                System.out.println(fs.getDevName() + "可用大小:    " + usage.getAvail() + "KB");
-                // 文件系统已经使用量
-                System.out.println(fs.getDevName() + "已经使用量:    " + usage.getUsed() + "KB");
-                double usePercent = usage.getUsePercent() * 100D;
-                // 文件系统资源的利用率
-                System.out.println(fs.getDevName() + "资源的利用率:    " + usePercent + "%");
-                break;
-            case 3:// TYPE_NETWORK ：网络
-                break;
-            case 4:// TYPE_RAM_DISK ：闪存
-                break;
-            case 5:// TYPE_CDROM ：光驱
-                break;
-            case 6:// TYPE_SWAP ：页面交换
-                break;
+                case 0: // TYPE_UNKNOWN ：未知
+                    break;
+                case 1: // TYPE_NONE
+                    break;
+                case 2: // TYPE_LOCAL_DISK : 本地硬盘
+                    // 文件系统总大小
+                    System.out.println(fs.getDevName() + "总大小:    " + usage.getTotal() + "KB");
+                    // 文件系统剩余大小
+                    System.out.println(fs.getDevName() + "剩余大小:    " + usage.getFree() + "KB");
+                    // 文件系统可用大小
+                    System.out.println(fs.getDevName() + "可用大小:    " + usage.getAvail() + "KB");
+                    // 文件系统已经使用量
+                    System.out.println(fs.getDevName() + "已经使用量:    " + usage.getUsed() + "KB");
+                    double usePercent = usage.getUsePercent() * 100D;
+                    // 文件系统资源的利用率
+                    System.out.println(fs.getDevName() + "资源的利用率:    " + usePercent + "%");
+                    break;
+                case 3:// TYPE_NETWORK ：网络
+                    break;
+                case 4:// TYPE_RAM_DISK ：闪存
+                    break;
+                case 5:// TYPE_CDROM ：光驱
+                    break;
+                case 6:// TYPE_SWAP ：页面交换
+                    break;
             }
             System.out.println(fs.getDevName() + "读出：    " + usage.getDiskReads());
             System.out.println(fs.getDevName() + "写入：    " + usage.getDiskWrites());
