@@ -33,7 +33,7 @@ java  linux  javascript  jquery  mysql oracle ...
 
 > [dillinger]( https://dillinger.io/ )   [作业部落]( https://www.zybuluo.com/mdeditor )    
 
-> [github]( https://github.com/scott180/MyNotes )  [gitlab]( https://git.lug.ustc.edu.cn/ja )     [gitee]( https://gitee.com )
+> [github]( https://github.com/scott180/MyNotes ) &ensp; [gitlab]( https://git.lug.ustc.edu.cn/ja ) &ensp; [gitee]( https://gitee.com )
 
 
 
