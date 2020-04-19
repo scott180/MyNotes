@@ -129,8 +129,8 @@ java  linux  javascript  jquery  mysql oracle ...
 ### 2.2、tomcat   eclipse   maven  idea
 | 软件                              | 下载地址   |
 | --------                          | -----  |
-| tomcat   | [tomcat官网]( https://archive.apache.org/dist/tomcat/ )        & ([云盘]( https://pan.baidu.com/s/1yPhAfIcACTGkpIOYlEds1g )   密码: j9ug ) |
-| eclipse  | [eclipse官方下载]( http://www.eclipse.org/downloads/packages ) & [版本说明]( https://github.com/scott180/MyNotes/blob/master/eclipse%20download.md ) |
+| tomcat   | [tomcat官网]( https://archive.apache.org/dist/tomcat/ )    ([云盘]( https://pan.baidu.com/s/1yPhAfIcACTGkpIOYlEds1g )   密码: j9ug ) |
+| eclipse  | [eclipse官方下载]( http://www.eclipse.org/downloads/packages )    [版本说明]( https://github.com/scott180/MyNotes/blob/master/eclipse%20download.md ) |
 | maven    | [maven官方下载]( https://archive.apache.org/dist/maven/maven-3/ )    |
 | idea     | [idea官方下载]( https://www.jetbrains.com/idea/download/other.html ) |
 
@@ -147,3 +147,6 @@ java  linux  javascript  jquery  mysql oracle ...
 | [大连东软信息学院]( http://mirrors.neusoft.edu.cn/)  |  [download]( http://mirrors.neusoft.edu.cn/eclipse/technology/epp/downloads/release/ )        |
 | [清华大学]( https://mirrors.tuna.tsinghua.edu.cn/ )  |  [download]( https://mirrors.tuna.tsinghua.edu.cn/eclipse/technology/epp/downloads/release/ ) |
 | [中科大]( http://mirrors.ustc.edu.cn/ )		 	   |  [download]( http://mirrors.ustc.edu.cn/eclipse/technology/epp/downloads/release/ )           |
+
+
+

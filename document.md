@@ -37,7 +37,9 @@
 
   ​                                            https://www.cnblogs.com/qlqwjy/p/7550609.html
 
-  
+- TCP UDP   https://zhuanlan.zhihu.com/p/24860273  
+
+  ​			       https://www.cnblogs.com/fundebug/p/differences-of-tcp-and-udp.html
 
 
 
