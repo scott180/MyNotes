@@ -8,6 +8,12 @@
 
 ### 1、资料
 
+- 学习路线                  https://blog.csdn.net/m0_37907797/article/details/102885087
+
+- 算法说明                  https://blog.csdn.net/m0_37907797/article/details/102661778
+
+  
+
 - Class对象及反射	 https://blog.csdn.net/javazejian/article/details/70768369
 
 - jvm						   https://baijiahao.baidu.com/s?id=1632503816780923946&wfr=spider&for=pc
