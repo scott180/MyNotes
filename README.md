@@ -1,7 +1,7 @@
 ## README
 > 个人仓库
 
-java  linux  javascript  jquery  mysql oracle ...
+java  linux  mysql oracle ...
 
 *   [序](#preface)
 *   [1、笔记](#note)
