@@ -1,22 +1,30 @@
 ## git笔记
-  
-*   [1、上传下载](#pull)
+
+*   [1、基础操作](#pull)
 *   [2、配置](#config)
 *   [3、分支](#branch)
 *   [4、查看文件提交状态](#status)
 *   [5、修改注释信息、恢复已删除分支](#commit)
 *   [6、github添加ssh公钥](#github)
 *   [7、stash暂存](#stash)
+*   [8、提交问题](#conflict)
 
-> [dillinger]( https://dillinger.io/ )   [作业部落]( https://www.zybuluo.com/mdeditor )   
+> [gitee]( https://gitee.com/xy180/MyNotes )   [github]( https://github.com/scott180 )   
 
  <h2 id="pull"></h2>
 
-### 1、上传下载
-```
-git clone git@github.com:scott180/MyNotes.git
-```
-```
+### 1、基础操作
+[git知识大全]( https://gitee.com/help/articles/4122 )
+```vb
+提交代码
+ git status -sb
+ git add .
+ git commit -m "fix"
+ git push origin dev_20190510001
+
+查询状态
+git status
+
 查看日志
  git log --stat
  git reflog --date=iso
@@ -27,14 +35,13 @@ git clone git@github.com:scott180/MyNotes.git
  git push
  git push --set-upstream origin dev_20190510001
 
-提交代码
- git status -sb
- git add .
- git commit -m "fix"
- git push origin dev_20190510001
 ```
 
-```
+```basic
+展示文件  ls
+删除文件  git rm test2.txt 
+撤销操作  git checkout -- test.txt
+
 添加文件到缓存：
  git add test.txt    单个文件
  git add .           当前目录全部文件
@@ -61,14 +68,14 @@ git merge  合并 使用fetch 可以在merge之前可以看清楚更新情况，
 ```
 
 **************************************************************************
-```
-撤销操作
- git checkout -- test.txt
-  还原文件
-  
- git reset    
-  撤销git add 缓存的文件
- 
+```haskell
+git回滚之前的版本  http://www.cnblogs.com/yu-hailong/p/10681905.html
+git log   查询日历记录
+git reset --hard 5fa86ae3758e7e2a86825452977da40f34b6dd58   回滚到之前的版本
+git push origin HEAD --force   强制提交
+
+还原本地文件 git reset -hard 
+
  git reset —soft + 版本号
   回退到某个版本，只回退了commit的信息，不会改变已经修改过的代码。
   git reset --soft HEAD^
@@ -94,24 +101,21 @@ git merge  合并 使用fetch 可以在merge之前可以看清楚更新情况，
  回退到当前版本之前的100个版本
  git reset --hard HEAD~100
  
- 
- 
+
  丢弃本地提交，强制回到线上最新版本
  git fetch --all
  git reset --hard origin/你需要下拉的分支(默认master) 
  git fetch
 
-展示文件  ls
-删除文件  git rm test2.txt 
  
 ```
 
 ****************************************************************************************************************************************
  <h2 id="config"></h2>
- 
+
 ### 2、配置
 
-```
+```vb
 vi /etc/ssh/sshd_config
 
 查看版本：
@@ -134,10 +138,10 @@ vi /etc/ssh/sshd_config
 
 ****************************************************************************************************************************************
  <h2 id="branch"></h2>
- 
+
 ### 3、分支
 
-```
+```sql
 https://edu.aliyun.com/jiaocheng/1834?spm=5176.11182473.menu.7.k6ksTN
 
 创建分支命令（复制当前分支下文件）：
@@ -181,14 +185,39 @@ https://edu.aliyun.com/jiaocheng/1834?spm=5176.11182473.menu.7.k6ksTN
 查看当前配置有哪些远程仓库
  git remote -v
  
+
+彻底删除文件--会删除对应提交记录（包含正常文件的提交历史）
+git filter-branch --force --index-filter 'git \
+rm --cached --ignore-unmatch test彻底删除.txt' \
+--prune-empty --tag-name-filter cat -- --all
+git push --all --force
+ 
+```
+
+```vb
+修改分支名称 https://www.jianshu.com/p/cc740394faf5
+
+a. 重命名远程分支对应的本地分支
+git branch -m oldName newName
+
+b. 删除远程分支
+git push --delete origin oldName
+
+c. 上传新命名的本地分支
+git push origin newName
+
+d.把修改后的本地分支与远程分支关联
+git branch --set-upstream-to origin/newName
+
+
 ```
 
 ****************************************************************************************************************************************
 
  <h2 id="status"></h2>
- 
+
 ### 4、查看文件提交状态
-```
+```vb
  
 git status 命令用于查看项目的当前状态。
 git status -s  查看详情
@@ -230,9 +259,10 @@ git diff 有两个主要的应用场景。
  git reflog --date=iso 
 ```
 
-
 ****************************************************************************************************************************************
+
  <h2 id="commit"></h2>
+
 ### 5、修改注释信息
 
 ```
@@ -260,6 +290,7 @@ git commit --amend
 修改完了之后，要回来对不对？ 
 
 使用git rebase --continue 
+git rebase --abort
 
 OK，一切都搞定了。 
   
@@ -278,10 +309,10 @@ git checkout -b reback_remove_branch ddd94a4
 ****************************************************************************************************************************************
 
  <h2 id="github"></h2>
- 
+
 ### 6、github添加ssh公钥
 
-``` 
+``` vb
  
 ## github添加ssh公钥  git clone
 
@@ -297,32 +328,21 @@ ssh -T git@github.com
 
 git clone git@github.com:scott180/MyNotes.git
 
+
+
+GIT拉取代码的时候提示AUTHENTICATION FAILED FOR []
+输入 git config --global credential.helper store  
+然后 git pull  输入账号密码
+
 ```
 
 ****************************************************************************************************************************************
 
  <h2 id="stash"></h2>
- 
+
 ### 7、stash暂存
 
-``` 
-用git pull来更新代码的时候，遇到了下面的问题：
-
-error: Your local changes to the following files would be overwritten by merge:  
-    xxx/xxx/xxx.php  
-Please, commit your changes or stash them before you can merge.  
-Aborting
-
-```
-
->  通过git stash将工作区恢复到上次提交的内容，同时备份本地所做的修改，之后就可以正常git pull了，git pull完成后，执行git stash pop将之前本地做的修改应用到当前工作区。
-git stash
-git pull
-git stash pop
-https://www.cnblogs.com/xd502djj/p/6973477.html
-
-
-```
+```vb
 git stash:       备份当前的工作区的内容，从最近的一次提交中读取相关内容，让工作区保证和上次提交的内容一致。同时，将当前的工作区内容保存到Git栈中。
 
 git stash pop:   从Git栈中读取最近一次保存的内容，恢复工作区的相关内容。由于可能存在多个Stash的内容，所以用栈来管理，pop会从最近的一个stash中读取内容并恢复。
@@ -336,5 +356,51 @@ git stash apply  恢复暂存之后不删除暂存
 git stash pop   恢复暂存之后删除暂存
 git stash drop   从Git栈删除最旧的一个暂存
 
+
+```
+
+ <h2 id="conflict"></h2>
+
+### 8、提交问题
+``` java
+用git pull来更新代码的时候，遇到了下面的问题：
+
+error: Your local changes to the following files would be overwritten by merge:  
+    xxx/xxx/xxx.php  
+Please, commit your changes or stash them before you can merge.  
+Aborting
+
+
+https://www.cnblogs.com/xd502djj/p/6973477.html
+   
+方法1、暂存本地文件，下载最新代码。恢复本地修改的代码，修改冲突的文件，提交代码。      
+git stash           //暂存
+git pull			//下载最新代码
+git stash pop		//恢复暂存文件
+
+git status                      //查询状态
+git add xxx/xxx/Test.java       //提交文件   不能使用全部提交:（git add .）
+git commit -m "fix"             //注释
+git push					    //提交文件
+
+
+方法2、 放弃本地修改文件，下载最新代码
+git reset --hard
+git pull
+
+```
+
+```
+
+在git（小乌龟）向github远程推送（push）文件是会报一个异常 no supported authentication methods avaiable         
+https://blog.csdn.net/Maxiao1204/article/details/81476618
+
+解决方法：因为git（小乌龟）和Git的冲突我们需要把乌龟git设置改正如下。
+
+找到TortoiseGit--》Settings--》Network
+
+将SSH client指向 D:\git\usr\bin\ssh.exe （我的Git工具安装在d盘）
+
+这里更改ssh 路径的时候，要把上面的“使用代理服务器” 勾打上，点击应用，再确定
 
 ```
