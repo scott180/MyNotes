@@ -11,16 +11,17 @@ java诞生已经三十年，这个行业已是一片红海，相当成熟以及�
 
 - [x] 1.[JavaGuide]( https://snailclimb.gitee.io/javaguide ) &ensp; [guide仓库]( https://gitee.com/SnailClimb/JavaGuide ) <br/>
 
-序号	    | 内容	
------------ | --------- 
-1|	[Java hashCode() 和 equals()的若干问题解答]( https://www.cnblogs.com/skywang12345/p/3324958.html )
-2|	[ArrayList源码+扩容机制分析]( https://snailclimb.gitee.io/javaguide/#/docs/java/collection/ArrayList%E6%BA%90%E7%A0%81+%E6%89%A9%E5%AE%B9%E6%9C%BA%E5%88%B6%E5%88%86%E6%9E%90 )
-3|	[害怕面试被问HashMap？]( https://blog.csdn.net/sinat_33921105/article/details/103847137 ) &ensp; [HashMap？相信看完没人能难住你]( https://blog.csdn.net/weixin_44460333/article/details/86770169 ) &ensp; [HashMap工作原理]( https://yikun.github.io/2015/04/01/Java-HashMap%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86%E5%8F%8A%E5%AE%9E%E7%8E%B0/) &ensp; [重新认识HashMap]( https://zhuanlan.zhihu.com/p/21673805 )
-4|	[来吧！一文彻底搞定哈希表！]( https://blog.csdn.net/sinat_33921105/article/details/103344078 )
-5|	[Java内存区域]( https://github.com/Snailclimb/JavaGuide/blob/3965c02cc0f294b0bd3580df4868d5e396959e2e/Java%E7%9B%B8%E5%85%B3/%E5%8F%AF%E8%83%BD%E6%98%AF%E6%8A%8AJava%E5%86%85%E5%AD%98%E5%8C%BA%E5%9F%9F%E8%AE%B2%E7%9A%84%E6%9C%80%E6%B8%85%E6%A5%9A%E7%9A%84%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0.md ) &ensp;  [Java8内存模型—永久代(PermGen)和元空间(Metaspace)]( https://www.cnblogs.com/paddix/p/5309550.html )
-6| [Java并发之AQS详解]( https://www.cnblogs.com/waterystone/p/4920797.html )
-7| [总览类加载的过程]( https://baijiahao.baidu.com/s?id=1666673832314942035&wfr=spider&for=pc )
-8| [漫画：什么是红黑树？]( https://juejin.cn/post/6844903519632228365 )
+
+- [Java hashCode() 和 equals()的若干问题解答]( https://www.cnblogs.com/skywang12345/p/3324958.html ) &ensp; [ArrayList源码+扩容机制分析]( https://snailclimb.gitee.io/javaguide/#/docs/java/collection/ArrayList%E6%BA%90%E7%A0%81+%E6%89%A9%E5%AE%B9%E6%9C%BA%E5%88%B6%E5%88%86%E6%9E%90 )
+- [害怕面试被问HashMap？]( https://blog.csdn.net/sinat_33921105/article/details/103847137 ) &ensp; [HashMap？相信看完没人能难住你]( https://blog.csdn.net/weixin_44460333/article/details/86770169 ) &ensp; [HashMap工作原理]( https://yikun.github.io/2015/04/01/Java-HashMap%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86%E5%8F%8A%E5%AE%9E%E7%8E%B0/) <br/> [重新认识HashMap]( https://zhuanlan.zhihu.com/p/21673805 ) &ensp; [来吧！一文彻底搞定哈希表！]( https://blog.csdn.net/sinat_33921105/article/details/103344078 )
+- [Java内存区域]( https://github.com/Snailclimb/JavaGuide/blob/3965c02cc0f294b0bd3580df4868d5e396959e2e/Java%E7%9B%B8%E5%85%B3/%E5%8F%AF%E8%83%BD%E6%98%AF%E6%8A%8AJava%E5%86%85%E5%AD%98%E5%8C%BA%E5%9F%9F%E8%AE%B2%E7%9A%84%E6%9C%80%E6%B8%85%E6%A5%9A%E7%9A%84%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0.md ) &ensp;  [Java8内存模型—永久代(PermGen)和元空间(Metaspace)]( https://www.cnblogs.com/paddix/p/5309550.html )  &ensp; [总览类加载的过程]( https://baijiahao.baidu.com/s?id=1666673832314942035&wfr=spider&for=pc )
+- [Java并发之AQS详解]( https://www.cnblogs.com/waterystone/p/4920797.html )  
+- [漫画：什么是红黑树？]( https://juejin.cn/post/6844903519632228365 ) &ensp; [什么是平衡二叉树（AVL）]( https://zhuanlan.zhihu.com/p/56066942 ) &ensp; [b+树图文详解
+]( https://blog.csdn.net/qq_26222859/article/details/80631121 )
+- [书写高质量SQL的30条建议](https://mp.weixin.qq.com/s?__biz=Mzg2OTA0Njk0OA==&mid=2247486461&idx=1&sn=60a22279196d084cc398936fe3b37772&chksm=cea24436f9d5cd20a4fa0e907590f3e700d7378b3f608d7b33bb52cfb96f503b7ccb65a1deed&token=1987003517&lang=zh_CN%23rd) &ensp; [MySQL高性能优化规范建议]( https://mp.weixin.qq.com/s?__biz=Mzg2OTA0Njk0OA==&mid=2247485117&idx=1&sn=92361755b7c3de488b415ec4c5f46d73&chksm=cea24976f9d5c060babe50c3747616cce63df5d50947903a262704988143c2eeb4069ae45420&token=79317275&lang=zh_CN%23rd ) &ensp; [聚集索引与非聚集索引的总结]( https://www.cnblogs.com/s-b-b/p/8334593.html )  <br/> [MySQL大表优化方案]( https://segmentfault.com/a/1190000006158186 ) &ensp; [Leaf——美团点评分布式ID生成系统]( https://tech.meituan.com/2017/04/21/mt-leaf.html ) 
+- [布隆过滤器]( https://github.com/Snailclimb/JavaGuide/blob/master/docs/dataStructures-algorithms/data-structure/bloom-filter.md )
+- [Spring IoC有什么好处呢]( https://www.zhihu.com/question/23277575/answer/169698662 ) &ensp; [Spring IOC 容器源码分析
+]( https://javadoop.com/post/spring-ioc#toc_20 ) &ensp; [Spring Bean的生命周期 ]( https://www.cnblogs.com/zrtqsk/p/3735273.html )
 ---
 
 - [x] 2.[Java知识体系最强总结(2020版)]( https://blog.csdn.net/ThinkWon/article/details/103592572 ) <br/>
