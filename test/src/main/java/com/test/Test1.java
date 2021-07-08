@@ -1,7 +1,9 @@
-package com.test;
+package cn.warehouse.common.vo;
 
-import java.util.HashSet;
-import java.util.Set;
+
+import com.alibaba.fastjson.JSON;
+
+import java.util.*;
 import java.util.regex.Pattern;
 
 /**
@@ -20,6 +22,15 @@ public class Test111 {
         // TODO 输出2个最长对称字符串：pop/upu，不会输出特殊字符的对称字符串p-p
         String input3 = "pop-upu";
         System.out.println(maxs(input3));
+
+        String text = "烟火尘埃落定\n" +
+                "明明之明夜、明明之夜夜、星夜无恒恒、秋水共长天、青青子衿天、明明如夜夜\n" +
+                "明明如夜、明如夜天、明来天明、明明夜夜、星夜无恒、如松之盛、天下有道、青青子襟、右耀去明、秋水长天、无为徐生、清风之明、昨夜星辰\n" +
+                "徐先生、明来其、名字清、一世界、雨中曲、天行健、明明了、明明夜\n" +
+                "博尔、古林、明天、深岸、甲方、龙光、知一、五湖、星名、源线、小明、长天、风云、老徐、迈克、改之、择之、星夜、一柏、小徐、风格、明业、明飞、问橐、明夜、明一、米明、明云、明也、玄明、斗米、明达\n" +
+                "徐、吾、风、明";
+        staticsNum(text);
+        // {"明":33,"夜":15,"天":9,"之":6,"徐":5,"星":5,"一":4,"如":4,"风":4,"青":4,"恒":3,"无":3,"长":3,"清":2,"名":2,"小":2,"云":2,"生":2,"水":2,"秋":2,"子":2,"来":2,"米":2,"耀":1,"老":1,"玄":1,"了":1,"有":1,"下":1,"源":1,"尔":1,"五":1,"世":1,"林":1,"斗":1,"尘":1,"龙":1,"定":1,"业":1,"昨":1,"中":1,"辰":1,"甲":1,"岸":1,"方":1,"改":1,"为":1,"去":1,"格":1,"落":1,"达":1,"吾":1,"线":1,"埃":1,"先":1,"迈":1,"光":1,"克":1,"界":1,"行":1,"柏":1,"橐":1,"道":1,"湖":1,"字":1,"博":1,"盛":1,"飞":1,"烟":1,"襟":1,"也":1,"古":1,"健":1,"知":1,"雨":1,"择":1,"火":1,"问":1,"共":1,"深":1,"曲":1,"右":1,"其":1,"松":1,"衿":1}
     }
 
     /**
@@ -124,6 +135,39 @@ public class Test111 {
             sb.append("/");
         }
         return sb.substring(0, sb.length() - 1);
+    }
+
+	// 统计文字频率
+    private static void staticsNum(String text) {
+        Map<String, Integer> map = new HashMap<>();
+
+        for (int i = 0; i < text.length(); i++) {
+            String val = text.substring(i, i + 1);
+            if ("、".equals(val) || "\n".equals(val)) {
+                continue;
+            }
+            map.put(val, map.get(val) == null ? 1 : map.get(val) + 1);
+        }
+        System.out.println(JSON.toJSONString(sortMap(map)));
+    }
+
+    public static Map<String, Integer> sortMap(Map<String, Integer> map) {
+        //利用Map的entrySet方法，转化为list进行排序
+        List<Map.Entry<String, Integer>> entryList = new ArrayList<>(map.entrySet());
+        //利用Collections的sort方法对list排序
+        Collections.sort(entryList, new Comparator<Map.Entry<String, Integer>>() {
+            @Override
+            public int compare(Map.Entry<String, Integer> o1, Map.Entry<String, Integer> o2) {
+                //正序排列，倒序反过来
+                return o2.getValue() - o1.getValue();
+            }
+        });
+        //遍历排序好的list，一定要放进LinkedHashMap，因为只有LinkedHashMap是根据插入顺序进行存储
+        LinkedHashMap<String, Integer> linkedHashMap = new LinkedHashMap<String, Integer>();
+        for (Map.Entry<String, Integer> e : entryList) {
+            linkedHashMap.put(e.getKey(), e.getValue());
+        }
+        return linkedHashMap;
     }
 
 }
