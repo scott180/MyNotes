@@ -6,7 +6,7 @@ java  linux  mysql  ...
 
 ### 序 
 
-- [ ] `仓库` &ensp;[gitee]( https://gitee.com/xy180/MyNotes ) &ensp; [github]( https://github.com/scott180/MyNotes ) &ensp; [csdn_code]( https://codechina.csdn.net/xu180/MyNotes ) 
+- [ ] `仓库` &ensp; [gitlab]( https://gitlab.com/xuyq123/mynotes ) &ensp; [gitee]( https://gitee.com/xy180/MyNotes ) &ensp; [github]( https://github.com/scott180/MyNotes ) &ensp; [csdn_code]( https://codechina.csdn.net/xu180/MyNotes ) 
 
 ******************************************
 ### 1、笔记
@@ -43,6 +43,7 @@ java  linux  mysql  ...
 
 ####  1.5、其他 
 - [本地安装zookeeper]( https://blog.csdn.net/xu180/article/details/105235397 ) 
+- [kafka本地安装方法]( https://blog.csdn.net/xu180/article/details/109309482 ) 
 - `markdown` &ensp;[typora]( https://typora.io/#windows )   [作业部落]( https://www.zybuluo.com/mdeditor )  
 
 ```

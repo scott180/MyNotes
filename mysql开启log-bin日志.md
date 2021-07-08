@@ -90,7 +90,7 @@ select * from mysql.general_log where argument like '%select%'   ORDER BY event_
 
 ```
 
-![1](http://xy180.gitee.io/pages/other/mysql.general_log.jpg )
+![1]( https://gitee.com/xy180/imgs/raw/master/other/mysql.general_log.jpg )
 
 
 

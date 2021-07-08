@@ -1,19 +1,16 @@
 ## git笔记
 
-*   [1、基础操作](#pull)
-*   [2、配置](#config)
-*   [3、分支](#branch)
-*   [4、查看文件提交状态](#status)
-*   [5、修改注释信息、恢复已删除分支](#commit)
-*   [6、github添加ssh公钥](#github)
-*   [7、stash暂存](#stash)
-*   [8、提交问题](#conflict)
 
 > [gitee]( https://gitee.com/xy180/MyNotes )   [github]( https://github.com/scott180 )   
 
- <h2 id="pull"></h2>
+
+------------------------
 
 ### 1、基础操作
+
+#### 1.1、常用命令
+
+
 [git知识大全]( https://gitee.com/help/articles/4122 )
 ```vb
 提交代码
@@ -67,7 +64,7 @@ git merge  合并 使用fetch 可以在merge之前可以看清楚更新情况，
 
 ```
 
-**************************************************************************
+
 ```haskell
 git回滚之前的版本  http://www.cnblogs.com/yu-hailong/p/10681905.html
 git log   查询日历记录
@@ -110,10 +107,8 @@ git push origin HEAD --force   强制提交
  
 ```
 
-****************************************************************************************************************************************
- <h2 id="config"></h2>
 
-### 2、配置
+#### 1.2、配置
 
 ```vb
 vi /etc/ssh/sshd_config
@@ -136,10 +131,8 @@ vi /etc/ssh/sshd_config
  
 ```
 
-****************************************************************************************************************************************
- <h2 id="branch"></h2>
 
-### 3、分支
+#### 1.3、分支
 
 ```sql
 https://edu.aliyun.com/jiaocheng/1834?spm=5176.11182473.menu.7.k6ksTN
@@ -212,11 +205,12 @@ git branch --set-upstream-to origin/newName
 
 ```
 
-****************************************************************************************************************************************
+------------------------
 
- <h2 id="status"></h2>
+### 2、高级操作
 
-### 4、查看文件提交状态
+#### 2.1、查看文件状态及日志
+
 ```vb
  
 git status 命令用于查看项目的当前状态。
@@ -259,11 +253,27 @@ git diff 有两个主要的应用场景。
  git reflog --date=iso 
 ```
 
-****************************************************************************************************************************************
 
- <h2 id="commit"></h2>
+#### 2.2、stash暂存
 
-### 5、修改注释信息
+```vb
+git stash:       备份当前的工作区的内容，从最近的一次提交中读取相关内容，让工作区保证和上次提交的内容一致。同时，将当前的工作区内容保存到Git栈中。
+
+git stash pop:   从Git栈中读取最近一次保存的内容，恢复工作区的相关内容。由于可能存在多个Stash的内容，所以用栈来管理，pop会从最近的一个stash中读取内容并恢复。
+
+git stash list:  显示Git栈内的所有备份，可以利用这个列表来决定从那个地方恢复。
+
+git stash clear: 清空Git栈。此时使用gitg等图形化工具会发现，原来stash的哪些节点都消失了。
+
+
+git stash apply  恢复暂存之后不删除暂存
+git stash pop   恢复暂存之后删除暂存
+git stash drop   从Git栈删除最旧的一个暂存
+
+
+```
+
+#### 2.3、修改注释信息
 
 ```
 git使用amend选项提供了最后一次commit的反悔。但是对于历史提交呢，就必须使用rebase了。 
@@ -306,11 +316,11 @@ git checkout -b reback_remove_branch ddd94a4
 
 ```
 
-****************************************************************************************************************************************
+------------------------
 
- <h2 id="github"></h2>
+### 3、问题
 
-### 6、github添加ssh公钥
+#### 3.1、github添加ssh公钥
 
 ``` vb
  
@@ -329,39 +339,11 @@ ssh -T git@github.com
 git clone git@github.com:scott180/MyNotes.git
 
 
-
-GIT拉取代码的时候提示AUTHENTICATION FAILED FOR []
-输入 git config --global credential.helper store  
-然后 git pull  输入账号密码
-
 ```
 
-****************************************************************************************************************************************
 
- <h2 id="stash"></h2>
+#### 3.2、提交及更新失败
 
-### 7、stash暂存
-
-```vb
-git stash:       备份当前的工作区的内容，从最近的一次提交中读取相关内容，让工作区保证和上次提交的内容一致。同时，将当前的工作区内容保存到Git栈中。
-
-git stash pop:   从Git栈中读取最近一次保存的内容，恢复工作区的相关内容。由于可能存在多个Stash的内容，所以用栈来管理，pop会从最近的一个stash中读取内容并恢复。
-
-git stash list:  显示Git栈内的所有备份，可以利用这个列表来决定从那个地方恢复。
-
-git stash clear: 清空Git栈。此时使用gitg等图形化工具会发现，原来stash的哪些节点都消失了。
-
-
-git stash apply  恢复暂存之后不删除暂存
-git stash pop   恢复暂存之后删除暂存
-git stash drop   从Git栈删除最旧的一个暂存
-
-
-```
-
- <h2 id="conflict"></h2>
-
-### 8、提交问题
 ``` java
 用git pull来更新代码的时候，遇到了下面的问题：
 
@@ -372,6 +354,8 @@ Aborting
 
 
 https://www.cnblogs.com/xd502djj/p/6973477.html
+
+解决方法：
    
 方法1、暂存本地文件，下载最新代码。恢复本地修改的代码，修改冲突的文件，提交代码。      
 git stash           //暂存
@@ -390,12 +374,27 @@ git pull
 
 ```
 
+
+```vb
+
+GIT拉取代码的时候提示AUTHENTICATION FAILED FOR []
+
+解决方法：
+输入 git config --global credential.helper store  
+然后 git pull  输入账号密码
+
+或者清除密码
+git config --system --unset credential.helper
+
 ```
+
+```sql
 
 在git（小乌龟）向github远程推送（push）文件是会报一个异常 no supported authentication methods avaiable         
 https://blog.csdn.net/Maxiao1204/article/details/81476618
 
-解决方法：因为git（小乌龟）和Git的冲突我们需要把乌龟git设置改正如下。
+解决方法：
+因为git（小乌龟）和Git的冲突我们需要把乌龟git设置改正如下。
 
 找到TortoiseGit--》Settings--》Network
 
