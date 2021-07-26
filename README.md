@@ -96,7 +96,8 @@ swagger
 ******************************************
 
 [书法练习轨迹--明月几时有]( https://gitee.com/xy180/calligraphy )
-![tag]( http://xy180.gitee.io/imgs/other/wzm-chibifu.jpg )
+![tag]( http://xy180.gitee.io/imgs/书法字帖/文徵明《小楷赤壁赋》.jpg )
+
 
 
 

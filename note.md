@@ -136,12 +136,16 @@ WLAN AutoConfig 启动此服务且启动类型改为自动
 #### 2.2、mysql logbin日志 
 
 ```mysql
-https://blog.csdn.net/xu180/article/details/107694417
-
+一 、logbin日志 记录新增、更新、删除的sql 
 show binary logs;
 show master status;
-
 show binlog events in 'mysql-bin.000090' from 242985028 limit 0,1000
+
+
+二、general_log 记录增删改查所有日志 
+select * from mysql.general_log where argument like '%select%'   ORDER BY event_time DESC limit 50;
+
+TRUNCATE table mysql.general_log
 
 ```
 
@@ -214,7 +218,9 @@ http://localhost:8080/druid/sql.html
 
 *************************
 
-#### 2.6、java常用集合方法
+### 3、java
+
+#### 3.1、java常用集合方法
 
 
 ```java
@@ -283,3 +289,99 @@ for(String key : map.keySet()){
 
 	
 ```
+
+---
+
+#### 3.2、idea基本配置与插件
+
+```java
+idea基本配置  File -- Settings
+
+1、修改快捷键
+Keymap  Eclipse
+
+2、调整字体
+font  - Size
+
+3、配置 maven
+Maven home directory:	D:/ProgramFiles/apache-maven-3.6.0
+User setting file:	    D:\ProgramFiles\apache-maven-3.6.0\conf\settings.xml
+Local repository:       D:\ProgramFiles\apache-maven-localRepository
+
+4、配置Git命令行
+Terminal - Shell path
+D:\ProgramFiles\git\Git\bin\bash.exe
+
+5、自动生成作者信息
+file and code Templates -- Includes -- File Header
+/**
+ * @author xu
+ * @date ${DATE} ${TIME}
+ */
+ 
+6、idea 常用插件 Plugins
+lombok
+Free Mybatis plugin    MybatisX
+Spring Assistant 
+
+Alibaba Java Coding Guidelines
+Markdown
+swagger
+
+7、代码自动定位文件
+Project - Show Options Menu (setting) - Autoscroll From Source
+
+8、初始化idea（删除所有配置及历史记录）
+删除目录 C:\Users\Administrator\.IdeaIC2019.1
+
+```
+
+---
+
+#### 3.3、java软件
+
+| 软件                              | 下载地址   |
+| --------                          | -----      |
+| tomcat   | [tomcat官网]( https://archive.apache.org/dist/tomcat/ ) &ensp; ([云盘]( https://pan.baidu.com/s/1yPhAfIcACTGkpIOYlEds1g )  密码: j9ug ) |
+| eclipse  | [eclipse官方下载]( http://www.eclipse.org/downloads/packages )    [版本说明]( https://github.com/scott180/MyNotes/blob/master/eclipse%20download.md ) |
+| maven    | [maven官方下载]( https://archive.apache.org/dist/maven/maven-3/ )            |
+| idea     | [idea官方下载]( https://www.jetbrains.com/idea/download/other.html ) &ensp; [idea2019]( https://www.aliyundrive.com/s/oWgxBBNqGj9 )|
+| jdk      | [Java Development Kit]( https://gitee.com/xy180/MyNotes/blob/master/jdk.md ) |
+| mysql    | [mysql_5.7]( https://www.aliyundrive.com/s/pymjQca3DbY )                     |
+| javaSoft    | [java软件]( https://www.aliyundrive.com/s/fWXemUwcsUs )  redis/mongo/Navicat/kafka/zookeeper/git/Xshell...                      |
+
+
+*************************
+
+### 4、书法练习轨迹
+
+> 若无意外，一般每周一在gitlab《**书法练习轨迹--明月几时有**》记录上周练习情况。其他渠道，不定时同步。
+
+| 序号 | 仓库                                                			      |  备注             			                 |
+| ---  | -------------------------------------------------------------        |  -----------------------------------         |
+| 1    | [**gitlab**]( https://gitlab.com/xuyq123/calligraphy ) &ensp; [imgs]( https://gitlab.com/xuyq123/imgs )                 		|  国外网站，网速较慢。                            |
+| 2    | [csdn_code]( https://codechina.csdn.net/xu180/calligraphy ) &ensp; [imgs]( https://codechina.csdn.net/xu180/imgs )  			|  备份，国内网站，速度快。用户较少。        	   |
+| 3    | [github]( https://github.com/scott180/calligraphy ) &ensp; [imgs]( https://github.com/scott180/imgs ) 			  			    |  备份，最流行git仓库。国外网站，但有时打不开。   |
+| 4    | [coding]( https://xyqin.coding.net/public/my/calligraphy/git ) &ensp; [imgs]( https://xyqin.coding.net/public/my/imgs/git )	|  备份，速度快。但仓库markdown文件不渲染。		   |
+| 5    | [gitee]( https://gitee.com/xy180/calligraphy ) &ensp; [imgs]( https://gitee.com/xy180/imgs )                        			|  备份，国内网站，速度快。但可能会被[屏蔽]。      |
+| -    | **社区**                        |                                    |
+| 6    | [csdn博客]( https://blog.csdn.net/xu180/article/details/113602103 ) &ensp; [ReadMe]( https://blog.csdn.net/xu180/article/details/118492424 )  |  程序员技术交流平台，发布文章，有删减。      |
+| 7    | [博客园]( https://www.cnblogs.com/scott123/p/14729493.html ) &ensp; [ReadMe]( https://www.cnblogs.com/scott123/p/14972979.html )              |  开发者知识分享社区。                        |
+| 8    | [语雀]( https://www.yuque.com/longguang123/ccgbto/cbq9u0 ) &ensp; [ReadMe]( https://www.yuque.com/longguang123/ccgbto/oby4hq )                |  文档与知识管理工具，无删减。                |
+| -    | **云盘**                        |                                    |
+| 9    | [坚果云]( https://www.jianguoyun.com/p/DTnLeQEQxP-NBhjNrfED ) &ensp; [markdown]( https://www.jianguoyun.com/p/DfYHsfUQxP-NBhjOrfED )          |  文件分享。        |
+| 10   | [百度网盘]( https://pan.baidu.com/s/1dOJMgeZAyCYolEflsKIOPQ )        | 提取码: zpxu 。pdf文件分享，需要登录。       |
+| 11   | [阿里云盘]( https://www.aliyundrive.com/s/dKE1SMhqdwn )              | pdf文件分享，需要登录。                      |
+| 12   | [天翼云]( https://cloud.189.cn/t/RRBbumb2MB7b )                      | pdf文件分享，需要登录。中国电信网盘。        |
+| 13   | [和彩云]( https://caiyun.139.com/m/i?125CmrCy7hU1y )                 | 提取码:WAmq 。pdf文件分享，需要登录。中国移动网盘。     |
+| 14   | [wps云盘]( https://www.kdocs.cn/l/cpUDGjX6765H )                     | pdf文件分享，需要登录。                      |
+| 15   | [微云]( https://share.weiyun.com/JKZ4ANJ5 )  &ensp; [腾讯文档]( https://docs.qq.com/pdf/DVmxKTG5YZHZBUGlx )         | pdf文件分享。                                |
+| 16   | [有道云]( http://note.youdao.com/s/V7b1jHjB )                        | 笔记分享，无删减。               	         |
+| 17   | [google云盘]( https://drive.google.com/file/d/1Ubx-Rz3Xwhn48PEXMx-BmWrJGyIAzNfn/view?usp=sharing )                  | 文件分享，无删减。                           |
+| -    | **网页**                        |                                    |
+| 18   | [作业部落]( https://www.zybuluo.com/scott180/note/1793757 ) &ensp; [ReadMe]( https://www.zybuluo.com/scott180/note/892814 )    | markdown编辑器，文件分享。        |
+| 19   | [gitee_pages]( http://xy180.gitee.io/imgs/calligraphy/%E4%B9%A6%E6%B3%95%E7%BB%83%E4%B9%A0%E8%BD%A8%E8%BF%B9--%E6%98%8E%E6%9C%88%E5%87%A0%E6%97%B6%E6%9C%89.html ) | gitee静态网页，markdown转html。 |
+| 20   | [**github_pages**]( https://scott180.github.io/calligraphy/%E4%B9%A6%E6%B3%95%E7%BB%83%E4%B9%A0%E8%BD%A8%E8%BF%B9--%E6%98%8E%E6%9C%88%E5%87%A0%E6%97%B6%E6%9C%89 ) | github静态网页，无删减。[主题1]( https://scott180.github.io/calligraphy1/%E4%B9%A6%E6%B3%95%E7%BB%83%E4%B9%A0%E8%BD%A8%E8%BF%B9--%E6%98%8E%E6%9C%88%E5%87%A0%E6%97%B6%E6%9C%89 ) &ensp; [主题2]( https://scott180.github.io/calligraphy2/%E4%B9%A6%E6%B3%95%E7%BB%83%E4%B9%A0%E8%BD%A8%E8%BF%B9--%E6%98%8E%E6%9C%88%E5%87%A0%E6%97%B6%E6%9C%89 )        |
+
+---
+
