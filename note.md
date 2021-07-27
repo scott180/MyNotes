@@ -1,6 +1,8 @@
-## note
+## [note]( https://gitlab.com/xuyq123/mynotes/-/blob/master/note.md )
 *   [1、日常](#note)
 *   [2、工作](#wrok)
+*   [3、java](#java)
+*   [4、git仓库项目](#git)
 
  <h2 id="note"></h2>
 
@@ -11,19 +13,41 @@
 ```
 修改文件的默认打开方式：
 
-1.选择默认方式
+1.修改属性
+右击--属性--常规--打开方式--选择默认程序
+
+2.选择默认方式
 右击--打开方式--选择默认程序
 
-2.注册表设置
+3.注册表设置
 在运行里面输入regedit（注册表编辑器），HEY_CLASS_ROOT下面是所有文件的后缀名文件，找到你想取消关联的后缀名，如.ppt，单击这个文件夹，右边出现的“数据”一项，双击“（默认）”，打开对话框，将“数据”下面可以填写的部分清除，保持空白，确定。你的电脑里面所有.ppt文件就没有了任何关联和默认程序，再按自己的想法重新关联或默认就行了。
 还有，要看你修改的是什么程序的默认打开方式，不一样的程序填写的数据不一样。
 如果用这个办法还不行就应该不单是这个软件的问题了，可能是系统其他设置的问题。 
 
-3.控制面板设置
+4.控制面板设置
 控制面板-----程序----默认程序----始终使用指定的程序打开此文件类型
 
 ```
 
+```
+无扩展名文件默认打开程序设置Notepad++
+
+在命令提示符cmd以管理员身份下输入
+assoc .="No Extension"
+ftype "No Extension"="D:\ProgramFiles\Notepadd++\Notepad++\notepad++.exe" "%1"
+
+```
+
+```
+notepad++常用插件：Compare、JSTool、Json Viewer、MIME Tools
+将dll文件放在如下目录，重启notepad即可
+D:\ProgramFiles\Notepadd++\Notepad++\plugins
+
+
+notepadd++ 文字高亮
+设置 - 语言格式设置 - 自定义扩展名
+
+```
 
 #### 1.2、红米笔记本
 ```
@@ -218,6 +242,8 @@ http://localhost:8080/druid/sql.html
 
 *************************
 
+ <h2 id="java"></h2>
+
 ### 3、java
 
 #### 3.1、java常用集合方法
@@ -303,7 +329,7 @@ Keymap  Eclipse
 2、调整字体
 font  - Size
 
-3、配置 maven
+3、配置 maven  （Setting For New Projects）
 Maven home directory:	D:/ProgramFiles/apache-maven-3.6.0
 User setting file:	    D:\ProgramFiles\apache-maven-3.6.0\conf\settings.xml
 Local repository:       D:\ProgramFiles\apache-maven-localRepository
@@ -350,10 +376,50 @@ Project - Show Options Menu (setting) - Autoscroll From Source
 | mysql    | [mysql_5.7]( https://www.aliyundrive.com/s/pymjQca3DbY )                     |
 | javaSoft    | [java软件]( https://www.aliyundrive.com/s/fWXemUwcsUs )  redis/mongo/Navicat/kafka/zookeeper/git/Xshell...                      |
 
+---
+
+#### 3.4、springboot项目打包布署
+
+```
+springboot项目打包布署
+https://gitlab.com/xuyq123/calligraphy-boot
+
+方法一：maven打包jar、运行jar
+
+Administrator@ho-xyq MINGW64 /e/Project/gitlab/calligraphy-boot (dev_2021072301)
+$ mvn clean package
+
+Administrator@ho-xyq MINGW64 /e/Project/gitlab/calligraphy-boot/calligraphy-boot-start/target (dev_2021072301)
+$ java -jar calligraphy-boot-start-1.0-SNAPSHOT.jar
+
+
+方法二：maven打包war、布署tomcat
+
+1、mvn clean package
+2、将 calligraphy-boot.war 复制到 E:\ProgramFiles\apache-tomcat-8.5.31\webapps
+3、启动tomcat   E:\ProgramFiles\apache-tomcat-8.5.31\bin\startup.bat
+
+
+----
+
+maven常用打包命令
+1、mvn compile 编译,将Java 源程序编译成 class 字节码文件。
+2、mvn test 测试，并生成测试报告
+3、mvn clean 将以前编译得到的旧的 class 字节码文件删除
+4、mvn pakage 打包,动态 web工程打 war包，Java工程打 jar 包。
+5、mvn install 将项目生成 jar 包放在仓库中，以便别的模块调用
+6、mvn clean install -Dmaven.test.skip=true  抛弃测试用例打包
+
+```
 
 *************************
 
-### 4、书法练习轨迹
+
+ <h2 id="git"></h2>
+ 
+### 4、git仓库项目
+
+#### 4.1、书法练习轨迹
 
 > 若无意外，一般每周一在gitlab《**书法练习轨迹--明月几时有**》记录上周练习情况。其他渠道，不定时同步。
 
@@ -364,24 +430,47 @@ Project - Show Options Menu (setting) - Autoscroll From Source
 | 3    | [github]( https://github.com/scott180/calligraphy ) &ensp; [imgs]( https://github.com/scott180/imgs ) 			  			    |  备份，最流行git仓库。国外网站，但有时打不开。   |
 | 4    | [coding]( https://xyqin.coding.net/public/my/calligraphy/git ) &ensp; [imgs]( https://xyqin.coding.net/public/my/imgs/git )	|  备份，速度快。但仓库markdown文件不渲染。		   |
 | 5    | [gitee]( https://gitee.com/xy180/calligraphy ) &ensp; [imgs]( https://gitee.com/xy180/imgs )                        			|  备份，国内网站，速度快。但可能会被[屏蔽]。      |
+| 6    | [bitbucket]( https://bitbucket.org/xu12345/calligraphy ) &ensp; [imgs]( https://bitbucket.org/xu12345/imgs )                   |  备份，国外网站。markdown渲染不太完善。          |
 | -    | **社区**                        |                                    |
-| 6    | [csdn博客]( https://blog.csdn.net/xu180/article/details/113602103 ) &ensp; [ReadMe]( https://blog.csdn.net/xu180/article/details/118492424 )  |  程序员技术交流平台，发布文章，有删减。      |
-| 7    | [博客园]( https://www.cnblogs.com/scott123/p/14729493.html ) &ensp; [ReadMe]( https://www.cnblogs.com/scott123/p/14972979.html )              |  开发者知识分享社区。                        |
-| 8    | [语雀]( https://www.yuque.com/longguang123/ccgbto/cbq9u0 ) &ensp; [ReadMe]( https://www.yuque.com/longguang123/ccgbto/oby4hq )                |  文档与知识管理工具，无删减。                |
+| 7    | [csdn博客]( https://blog.csdn.net/xu180/article/details/113602103 ) &ensp; [ReadMe]( https://blog.csdn.net/xu180/article/details/118492424 )  |  程序员技术交流平台，发布文章，有删减。      |
+| 8    | [博客园]( https://www.cnblogs.com/scott123/p/14729493.html ) &ensp; [ReadMe]( https://www.cnblogs.com/scott123/p/14972979.html )              |  开发者知识分享社区。                        |
+| 9    | [语雀]( https://www.yuque.com/longguang123/ccgbto/cbq9u0 ) &ensp; [ReadMe]( https://www.yuque.com/longguang123/ccgbto/oby4hq )                |  文档与知识管理工具，无删减。                |
 | -    | **云盘**                        |                                    |
-| 9    | [坚果云]( https://www.jianguoyun.com/p/DTnLeQEQxP-NBhjNrfED ) &ensp; [markdown]( https://www.jianguoyun.com/p/DfYHsfUQxP-NBhjOrfED )          |  文件分享。        |
-| 10   | [百度网盘]( https://pan.baidu.com/s/1dOJMgeZAyCYolEflsKIOPQ )        | 提取码: zpxu 。pdf文件分享，需要登录。       |
-| 11   | [阿里云盘]( https://www.aliyundrive.com/s/dKE1SMhqdwn )              | pdf文件分享，需要登录。                      |
-| 12   | [天翼云]( https://cloud.189.cn/t/RRBbumb2MB7b )                      | pdf文件分享，需要登录。中国电信网盘。        |
-| 13   | [和彩云]( https://caiyun.139.com/m/i?125CmrCy7hU1y )                 | 提取码:WAmq 。pdf文件分享，需要登录。中国移动网盘。     |
-| 14   | [wps云盘]( https://www.kdocs.cn/l/cpUDGjX6765H )                     | pdf文件分享，需要登录。                      |
-| 15   | [微云]( https://share.weiyun.com/JKZ4ANJ5 )  &ensp; [腾讯文档]( https://docs.qq.com/pdf/DVmxKTG5YZHZBUGlx )         | pdf文件分享。                                |
-| 16   | [有道云]( http://note.youdao.com/s/V7b1jHjB )                        | 笔记分享，无删减。               	         |
-| 17   | [google云盘]( https://drive.google.com/file/d/1Ubx-Rz3Xwhn48PEXMx-BmWrJGyIAzNfn/view?usp=sharing )                  | 文件分享，无删减。                           |
+| 10   | [坚果云]( https://www.jianguoyun.com/p/DTnLeQEQxP-NBhjNrfED ) &ensp; [markdown]( https://www.jianguoyun.com/p/DfYHsfUQxP-NBhjOrfED )          |  文件分享。        |
+| 11   | [百度网盘]( https://pan.baidu.com/s/1dOJMgeZAyCYolEflsKIOPQ )        | 提取码: zpxu 。pdf文件分享，需要登录。       |
+| 12   | [阿里云盘]( https://www.aliyundrive.com/s/dKE1SMhqdwn )              | pdf文件分享，需要登录。                      |
+| 13   | [天翼云]( https://cloud.189.cn/t/RRBbumb2MB7b )                      | pdf文件分享，需要登录。中国电信网盘。        |
+| 14   | [和彩云]( https://caiyun.139.com/m/i?125CmrCy7hU1y )                 | 提取码:WAmq 。pdf文件分享，需要登录。中国移动网盘。     |
+| 15   | [wps云盘]( https://www.kdocs.cn/l/cpUDGjX6765H )                     | pdf文件分享，需要登录。                      |
+| 16   | [微云]( https://share.weiyun.com/JKZ4ANJ5 )  &ensp; [腾讯文档]( https://docs.qq.com/pdf/DVmxKTG5YZHZBUGlx )         | pdf文件分享。                                |
+| 17   | [有道云]( http://note.youdao.com/s/V7b1jHjB )                        | 笔记分享，无删减。               	         |
+| 18   | [google云盘]( https://drive.google.com/file/d/1Ubx-Rz3Xwhn48PEXMx-BmWrJGyIAzNfn/view?usp=sharing )                  | 文件分享，无删减。                           |
 | -    | **网页**                        |                                    |
 | 18   | [作业部落]( https://www.zybuluo.com/scott180/note/1793757 ) &ensp; [ReadMe]( https://www.zybuluo.com/scott180/note/892814 )    | markdown编辑器，文件分享。        |
-| 19   | [gitee_pages]( http://xy180.gitee.io/imgs/calligraphy/%E4%B9%A6%E6%B3%95%E7%BB%83%E4%B9%A0%E8%BD%A8%E8%BF%B9--%E6%98%8E%E6%9C%88%E5%87%A0%E6%97%B6%E6%9C%89.html ) | gitee静态网页，markdown转html。 |
-| 20   | [**github_pages**]( https://scott180.github.io/calligraphy/%E4%B9%A6%E6%B3%95%E7%BB%83%E4%B9%A0%E8%BD%A8%E8%BF%B9--%E6%98%8E%E6%9C%88%E5%87%A0%E6%97%B6%E6%9C%89 ) | github静态网页，无删减。[主题1]( https://scott180.github.io/calligraphy1/%E4%B9%A6%E6%B3%95%E7%BB%83%E4%B9%A0%E8%BD%A8%E8%BF%B9--%E6%98%8E%E6%9C%88%E5%87%A0%E6%97%B6%E6%9C%89 ) &ensp; [主题2]( https://scott180.github.io/calligraphy2/%E4%B9%A6%E6%B3%95%E7%BB%83%E4%B9%A0%E8%BD%A8%E8%BF%B9--%E6%98%8E%E6%9C%88%E5%87%A0%E6%97%B6%E6%9C%89 )        |
+| 20   | [gitee_pages]( http://xy180.gitee.io/imgs/calligraphy/%E4%B9%A6%E6%B3%95%E7%BB%83%E4%B9%A0%E8%BD%A8%E8%BF%B9--%E6%98%8E%E6%9C%88%E5%87%A0%E6%97%B6%E6%9C%89.html ) | gitee静态网页，markdown转html。 |
+| 21   | [**github_pages**]( https://scott180.github.io/calligraphy/%E4%B9%A6%E6%B3%95%E7%BB%83%E4%B9%A0%E8%BD%A8%E8%BF%B9--%E6%98%8E%E6%9C%88%E5%87%A0%E6%97%B6%E6%9C%89 ) | github静态网页，无删减。[主题1]( https://scott180.github.io/calligraphy1/%E4%B9%A6%E6%B3%95%E7%BB%83%E4%B9%A0%E8%BD%A8%E8%BF%B9--%E6%98%8E%E6%9C%88%E5%87%A0%E6%97%B6%E6%9C%89 ) &ensp; [主题2]( https://scott180.github.io/calligraphy2/%E4%B9%A6%E6%B3%95%E7%BB%83%E4%B9%A0%E8%BD%A8%E8%BF%B9--%E6%98%8E%E6%9C%88%E5%87%A0%E6%97%B6%E6%9C%89 )        |
 
 ---
+
+#### 4.2、笔记&项目
+
+```
+个人资料一般保存在git平台及网盘，如下：
+git平台：gitlab、github、gitee、csdn_code、coding、bitbuket
+网盘：阿里云网盘、百度网盘、阿里云个人邮箱网盘、坚果云、天翼云、微云、wps云盘
+笔记：有道云笔记、qq邮箱记事本、语雀、csdn、博客园、作业部落、腾讯文档
+
+```
+
+| 名称       | 仓库                                                			        |  备注            |
+| ---------  | -------------------------------------------------------------        |  ----------      |
+| MyNotes    | [gitlab]( https://gitlab.com/xuyq123/mynotes ) &ensp; [gitee]( https://gitee.com/xy180/MyNotes ) &ensp; [github]( https://github.com/scott180/MyNotes ) &ensp; [csdn_code]( https://codechina.csdn.net/xu180/MyNotes )                    |  工作笔记  |
+| java-book  | [gitlab]( https://gitlab.com/xuyq123/java-book ) &ensp; [gitee]( https://gitee.com/xy180/java-book ) &ensp; [github]( https://github.com/scott180/java-book ) &ensp; [csdn_code]( https://codechina.csdn.net/xu180/java-book )     		|   java书籍 |
+| calligraphy-boot    | [gitlab]( https://gitlab.com/xuyq123/calligraphy-boot ) &ensp; [github]( https://github.com/scott180/calligraphy-boot ) &ensp; [gitee]( https://gitee.com/xy180/calligraphy-boot ) &ensp; [csdn_code]( https://codechina.csdn.net/xu180/calligraphy-boot )    |   java项目 |
+
+
+---
+
+
+
 
