@@ -6,12 +6,12 @@ java  linux  mysql  ...
 
 ### 序 
 
-- [ ] `仓库` &ensp; [gitlab]( https://gitlab.com/xuyq123/mynotes ) &ensp; [gitee]( https://gitee.com/xy180/MyNotes ) &ensp; [github]( https://github.com/scott180/MyNotes ) &ensp; [csdn_code]( https://codechina.csdn.net/xu180/MyNotes ) 
+- [ ] `仓库` &ensp; [gitlab]( https://gitlab.com/xuyq123/mynotes ) &ensp; [gitee]( https://gitee.com/xy180/MyNotes ) &ensp; [github]( https://github.com/scott180/MyNotes ) &ensp; [csdn_code]( https://codechina.csdn.net/xu180/MyNotes )  &ensp; [coding]( https://xyqin.coding.net/public/my/MyNotes/git/files ) &ensp; [bitbucket]( https://bitbucket.org/xu12345/mynotes )
 
 ******************************************
 ### 1、笔记
 
-> [java]( https://gitee.com/xy180/MyNotes/blob/master/java.md )
+> [**note**](./note.md) &ensp; [java]( https://gitee.com/xy180/MyNotes/blob/master/java.md )
 
 ####  1.1、运维
 - [linux笔记]( https://gitee.com/xy180/MyNotes/blob/master/linuxNote-x.md ) &ensp; [git笔记]( https://github.com/scott180/MyNotes/blob/master/gitNote.md ) &ensp; [docker笔记]( https://github.com/scott180/MyNotes/blob/master/docker.md )

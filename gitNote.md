@@ -58,9 +58,20 @@ git status
 
  
 git pull   拉取 从远程拉取最新版本到本地，并自动合并 merge
-
 git fetch  获取 从远程获取最新版本到本地，不会自动合并 merge，需要手动合并
 git merge  合并 使用fetch 可以在merge之前可以看清楚更新情况，再决定是否合并。
+git merge --abort  中止合并
+
+
+
+git 一个分支完全覆盖另一个分支 ，如下：dev_20210729覆盖develop
+$ git checkout develop
+$ git reset --hard dev_20210729
+$ git push origin develop --force
+
+
+不允许推送  You are not allowed to force push code to a protected branch on this project
+"Settings" -> "Repository" -> scroll down to "Protected branches".
 
 ```
 
