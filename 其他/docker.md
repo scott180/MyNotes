@@ -18,7 +18,7 @@ docker build -f docker/Dockerfile  -t ucp:1.1.7 .
 
 
 * 初始化设置（建立容器）
-docker run -it -v /mnt/opt/data/ucp1.1.7/config/ucp/:/opt/sudytech/autoconfig/conf/ ucp:1.1.7 config -d
+docker run -it -v /mnt/opt/data/ucp1.1.7/config/ucp/:/opt/saiwentech/autoconfig/conf/ ucp:1.1.7 config -d
 
 
 * 启动容器
@@ -39,10 +39,10 @@ docker ps -a
 docker exec -it 51b9527f1d88 /bin/bash
 
 * 进入数据库
-mysql -uroot -pSudy.web123
+mysql -uroot -pSaiwen.web123
  
 * 创建并进入容器
-docker run -it --entrypoint /bin/bash registry.sudytech.com:35000/library/tomcat:7.0_1.7
+docker run -it --entrypoint /bin/bash registry.saiwentech.com:35000/library/tomcat:7.0_1.7
 
 ```
 停止容器
@@ -78,7 +78,7 @@ docker commit  -m "ucp1.1.7--20180428" -a "xyq" f54f18474f15 ucp:1.1.7
 ```
 上传到170.18.10.40镜像仓库
 	登陆 docker login http://170.18.10.40 
-		 docker login http://registry.sudytech.com:35000
+		 docker login http://registry.saiwentech.com:35000
 
 	标记 docker tag ucp:1.1.7 170.18.10.40/ucpplus-b/ucp:1.1.7       （170.18.10.120 开发）
 		 docker tag ucp:1.1.7 170.18.10.40/mobile/ucp:1.1.7          （170.18.10.162 测试）
@@ -90,18 +90,18 @@ docker commit  -m "ucp1.1.7--20180428" -a "xyq" f54f18474f15 ucp:1.1.7
 	徐永钦 yqxu Yqxu123456
 	
 	
-	docker login http://registry.sudytech.com:35000
+	docker login http://registry.saiwentech.com:35000
 	yqxu Yqxu123456
 	
 	
 	现有docker仓库地址使用ip地址，导致外网无法正常下载镜像。
-	现在统一修改为registry.sudytech.com:35000
+	现在统一修改为registry.saiwentech.com:35000
 
 	上传方式为：
-	docker push registry.sudytech.com:35000/mobile/IMAGE[:TAG]
+	docker push registry.saiwentech.com:35000/mobile/IMAGE[:TAG]
 	下载方式：
-	docker pull registry.sudytech.com:35000/mobile/IMAGE[:TAG]
-	docker pull registry.sudytech.com:35000/library/mysql:5.7.7_sudy2
+	docker pull registry.saiwentech.com:35000/mobile/IMAGE[:TAG]
+	docker pull registry.saiwentech.com:35000/library/mysql:5.7.7_saiwen2
 ```
 
 - 导出镜像
@@ -214,15 +214,15 @@ vi /etc/sysconfig/docker
 
 
 登陆仓库失败时：
-[root@localhost ~]# docker login http://registry.sudytech.com:35000
+[root@localhost ~]# docker login http://registry.saiwentech.com:35000
 Username: yqxu
 Password: 
-Error response from daemon: Get https://registry.sudytech.com:35000/v1/users/: http: server gave HTTP response to HTTPS client
+Error response from daemon: Get https://registry.saiwentech.com:35000/v1/users/: http: server gave HTTP response to HTTPS client
 
 需要修改   
 	vi /lib/systemd/system/docker.service
 在ExecStart后添加     
-	ExecStart=/usr/bin/dockerd  --insecure-registry=registry.sudytech.com:35000 --insecure-registry=registry:35000
+	ExecStart=/usr/bin/dockerd  --insecure-registry=registry.saiwentech.com:35000 --insecure-registry=registry:35000
 再重启
 systemctl daemon-reload
 sudo systemctl restart docker
@@ -297,12 +297,12 @@ You need to upgrade to a more recent version to use the version 2 format configu
   * 镜像上传阿里云 cr.console.aliyun.com
 ```
   $ sudo docker login --username=明明之明夜 registry.cn-hangzhou.aliyuncs.com
-  $ sudo docker tag [ImageId] registry.cn-hangzhou.aliyuncs.com/sudy/ucp:[镜像版本号]
-  $ sudo docker push registry.cn-hangzhou.aliyuncs.com/sudy/ucp:[镜像版本号]
+  $ sudo docker tag [ImageId] registry.cn-hangzhou.aliyuncs.com/saiwen/ucp:[镜像版本号]
+  $ sudo docker push registry.cn-hangzhou.aliyuncs.com/saiwen/ucp:[镜像版本号]
 
-  sudo docker push registry.cn-hangzhou.aliyuncs.com/sudy/ucp:1.1.7
-  sudo docker push registry.cn-hangzhou.aliyuncs.com/sudy/ucp:mysql_5.7.7
-  sodu docker push registry.cn-hangzhou.aliyuncs.com/sudy/ucp:mongo_3.2.9
+  sudo docker push registry.cn-hangzhou.aliyuncs.com/saiwen/ucp:1.1.7
+  sudo docker push registry.cn-hangzhou.aliyuncs.com/saiwen/ucp:mysql_5.7.7
+  sodu docker push registry.cn-hangzhou.aliyuncs.com/saiwen/ucp:mongo_3.2.9
 ```  
 
 
@@ -325,7 +325,7 @@ docker run -p 3306:3306 --name mymysql -v
 /mnt/opt/data/ucp1.1.7/mysql/logs:/logs -v
 
 /mnt/opt/data/ucp1.1.7/mysql/data:/mysql_data -e
-MYSQL_ROOT_PASSWORD=Sudy.web123 -d registry.cn-hangzhou.aliyuncs.com/sudy/ucp:mysql_5.7.7
+MYSQL_ROOT_PASSWORD=Saiwen.web123 -d registry.cn-hangzhou.aliyuncs.com/saiwen/ucp:mysql_5.7.7
 ```
 
 
@@ -366,7 +366,7 @@ curl -I -X DELETE http://170.18.10.40/v2/ucpplus-b/ucp/manifests/sha256:2ddac3e0
   923  cd /mnt/home/mobile/ucp2.0/install/
   924  tar -xzvf coreplus.tar.gz 
   925  docker images
-  926  docker pull 170.18.10.40/library/mysql:5.7.7_sudy2
+  926  docker pull 170.18.10.40/library/mysql:5.7.7_saiwen2
   927  docker images
   928  docker rmi 02db488f8684
   929  docker images
@@ -374,25 +374,25 @@ curl -I -X DELETE http://170.18.10.40/v2/ucpplus-b/ucp/manifests/sha256:2ddac3e0
   931  场地
   932  cd /mnt/home/mobile/ucp2.0/
   933  docker build -f docker/Dockerfile  -t ucp:2.0 .
-  934  docker run -it -v /mnt/opt/data/ucp2.0/config/ucp/:/opt/sudytech/autoconfig/conf/ ucp:2.0 config -d
+  934  docker run -it -v /mnt/opt/data/ucp2.0/config/ucp/:/opt/saiwentech/autoconfig/conf/ ucp:2.0 config -d
   935  docker images
   936  cd ..
   937  docker ps
   938  docker-compose -f docker-compose-ucp2.yml up -d
   939  docker ps
   940  docker exec -it 859b4b980ab6 /bin/bash
-  941  docker run -it -v /mnt/opt/data/ucp2.0/config/ucp/:/opt/sudytech/autoconfig/conf/ ucp:2.0 config -d
+  941  docker run -it -v /mnt/opt/data/ucp2.0/config/ucp/:/opt/saiwentech/autoconfig/conf/ ucp:2.0 config -d
   942  docker exec -it 859b4b980ab6 /bin/bash
   943  docker commit 859b4b980ab6 ucp:2.0
-  944  docker run -it -v /mnt/opt/data/ucp2.0/config/ucp/:/opt/sudytech/autoconfig/conf/ ucp:2.0 config -d
+  944  docker run -it -v /mnt/opt/data/ucp2.0/config/ucp/:/opt/saiwentech/autoconfig/conf/ ucp:2.0 config -d
   945  docker ps
   946  docker exec -it 859b4b980ab6 /bin/bash
   947  docker commit 859b4b980ab6 ucp:2.0
-  948  docker run -it -v /mnt/opt/data/ucp2.0/config/ucp/:/opt/sudytech/autoconfig/conf/ ucp:2.0 config -d
+  948  docker run -it -v /mnt/opt/data/ucp2.0/config/ucp/:/opt/saiwentech/autoconfig/conf/ ucp:2.0 config -d
   949  docker exec -it 859b4b980ab6 /bin/bash
-  950  docker run -it -v /mnt/opt/data/ucp2.0/config/ucp/:/opt/sudytech/autoconfig/conf/ ucp:2.0 config -d
+  950  docker run -it -v /mnt/opt/data/ucp2.0/config/ucp/:/opt/saiwentech/autoconfig/conf/ ucp:2.0 config -d
   951  docker exec -it 859b4b980ab6 /bin/bash
-  952  docker run -it -v /mnt/opt/data/ucp2.0/config/ucp/:/opt/sudytech/autoconfig/conf/ ucp:2.0 config -d
+  952  docker run -it -v /mnt/opt/data/ucp2.0/config/ucp/:/opt/saiwentech/autoconfig/conf/ ucp:2.0 config -d
   953  docker stop mobile_ucp_db_1 mobile_ucp_mongo_db_1 mobile_ucp_1 
   954  docker rmi ucp:2.0
   955  docker rm 8e58c63d6a20
@@ -403,12 +403,12 @@ curl -I -X DELETE http://170.18.10.40/v2/ucpplus-b/ucp/manifests/sha256:2ddac3e0
   960  docker rmi ucp:2.0
   961  cd ucp2.0/
   962  docker build -f docker/Dockerfile  -t ucp:2.0 .
-  963  docker run -it -v /mnt/opt/data/ucp2.0/config/ucp/:/opt/sudytech/autoconfig/conf/ ucp:2.0 config -d
+  963  docker run -it -v /mnt/opt/data/ucp2.0/config/ucp/:/opt/saiwentech/autoconfig/conf/ ucp:2.0 config -d
   964  docker rmi ucp:2.0
   965  docker rm e9c4c426b598
   966  docker rmi ucp:2.0
   967  docker build -f docker/Dockerfile  -t ucp:2.0 .
-  968  docker run -it -v /mnt/opt/data/ucp2.0/config/ucp/:/opt/sudytech/autoconfig/conf/ ucp:2.0 config -d
+  968  docker run -it -v /mnt/opt/data/ucp2.0/config/ucp/:/opt/saiwentech/autoconfig/conf/ ucp:2.0 config -d
   969  cd ..
   970  docker-compose -f docker-compose-ucp2.yml up -d
   971  docker stop mobile_ucp_db_1 mobile_ucp_mongo_db_1 mobile_ucp_1 
@@ -464,5 +464,5 @@ curl -I -X DELETE http://170.18.10.40/v2/ucpplus-b/ucp/manifests/sha256:2ddac3e0
  docker exec -it 15f0e8ed94d3 /bin/bash
  
  进入数据库
- mysql -uroot -pSudy.web123
+ mysql -uroot -pSaiwen.web123
 

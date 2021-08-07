@@ -50,11 +50,26 @@ java  linux  mysql  ...
 markdown转pdf：使用typora打开md文件，导出为html，使用浏览器打开--打印--保存为pdf文件。
 ```
 
+```
+gitlab、github、gitee布署mkdocs主题仓库
+https://blog.csdn.net/xu180/article/details/119419599
+https://www.cnblogs.com/scott123/p/15103790.html
+https://www.zybuluo.com/scott180/note/1813723
+```
 ******************************************
 
  <h4 id="commonSoft"></h4>
 
 ### 2、常用软件
+
+```
+java  mysql  maven  
+idea  git  navicat notepad++  
+postman xshell fillder typora VMware
+redis mongo kafka zookeeper tomcat eclipse
+python  nodejs vue 
+火绒安全软件 向日葵 Everything
+```
 
 #### 2.1、jdk 
 
@@ -96,7 +111,7 @@ swagger
 ******************************************
 
 [书法练习轨迹--明月几时有]( https://gitee.com/xy180/calligraphy )
-![tag]( http://xy180.gitee.io/imgs/书法字帖/文徵明《小楷赤壁赋》.jpg )
+![tag]( https://xyqin.coding.net/p/my/d/imgs/git/raw/master/%E4%B9%A6%E6%B3%95%E5%AD%97%E5%B8%96/文徵明-小楷赤壁赋.jpg )
 
 
 
