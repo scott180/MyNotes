@@ -1,4 +1,4 @@
-## [note]( https://gitlab.com/xuyq123/mynotes/-/blob/master/note.md )
+# [note]( https://gitlab.com/xuyq123/mynotes/-/blob/master/note.md )
 *   [1、日常](#note)
 *   [2、工作](#wrok)
 *   [3、java](#java)
@@ -6,9 +6,9 @@
 
  <h2 id="note"></h2>
 
-### 1、日常
+## 1、日常
 
-#### 1.1、修改文件的默认打开方式
+### 1.1、修改文件的默认打开方式
 
 ```
 修改文件的默认打开方式：
@@ -44,12 +44,12 @@ notepad++常用插件：Compare、JSTool、Json Viewer、MIME Tools
 D:\ProgramFiles\Notepadd++\Notepad++\plugins
 
 
-notepadd++ 文字高亮
+notepadd++  txt,md格式 文字高亮
 设置 - 语言格式设置 - 自定义扩展名
 
 ```
 
-#### 1.2、windows常用快捷键
+### 1.2、windows常用快捷键
 
 ```
 
@@ -93,9 +93,9 @@ notepad竖向选择
 ```
 
 
-#### 1.3、网络&笔记本
+### 1.3、网络&笔记本
 
-##### 1.3.1、远程登录
+#### 1.3.1、远程登录
 
 ```
 远程登录
@@ -107,7 +107,7 @@ Administrator/123456
 
 ```
 
-##### 1.3.2、红米笔记本问题
+#### 1.3.2、红米笔记本问题
 ```
 
 红米笔记本触摸板失灵
@@ -120,7 +120,7 @@ redmibook的FN键没有作用,F1～F12功能键直接按就是调节音.
 ```
 
 
-##### 1.3.3、无线网连不上 & 代理连接失败
+#### 1.3.3、无线网连不上 & 代理连接失败
 
 ```java
 
@@ -155,9 +155,9 @@ Computer\HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\WinHttpAutoProxySv
 
 ```
 
-#### 1.4、其他
+### 1.4、其他
 
-##### 1.4.1、身高体重比例
+#### 1.4.1、身高体重比例
 
 ```
 
@@ -200,7 +200,9 @@ Computer\HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\WinHttpAutoProxySv
 
 ```
 
-##### 1.4.2、眼睛心理学
+#### 1.4.2、眼睛心理学
+
+`如果对方眼球处于右上方，表示正在创建视觉想象，也就是在脑海中创建一些现实中没有的事物。`
 
 ```
 
@@ -227,7 +229,7 @@ Computer\HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\WinHttpAutoProxySv
 ```
 
 
-##### 1.4.3、视频会员兑换渠道
+#### 1.4.3、视频会员兑换渠道
 
 ```java
 
@@ -246,12 +248,12 @@ Computer\HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\WinHttpAutoProxySv
 
  <h2 id="work"></h2>
 
- ### 2、工作
+## 2、工作
 
 *************************
 
 
-####  2.1、高德天气api
+###  2.1、高德天气api
 
 - 高德天气 &ensp; [api]( https://lbs.amap.com/api/webservice/guide/api/weatherinfo ) &ensp;  
 - 杭州天气 &ensp; [实时]( https://restapi.amap.com/v3/weather/weatherInfo?key=0481b33d14e9830d8903940cdab327e5&city=330100 ) &ensp; [预报]( https://restapi.amap.com/v3/weather/weatherInfo?key=0481b33d14e9830d8903940cdab327e5&city=330100&extensions=all ) &ensp;  
@@ -259,9 +261,11 @@ Computer\HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\WinHttpAutoProxySv
 
 *************************
 
-#### 2.2、mysql logbin日志 
+### 2.2、mysql logbin日志 
 
 ```mysql
+mysql开启log-bin日志.md  https://gitlab.com/xuyq123/mynotes/-/blob/master/mysql%E5%BC%80%E5%90%AFlog-bin%E6%97%A5%E5%BF%97.md
+
 一 、logbin日志 记录新增、更新、删除的sql 
 show binary logs;
 show master status;
@@ -277,7 +281,7 @@ TRUNCATE table mysql.general_log
 
 --------------------
 
-#### 2.3、端点已使用
+### 2.3、端点已使用
 
 ```sql
 C:\Users\Administrator>netstat -ano|findstr "8080"
@@ -294,7 +298,7 @@ C:\Users\Administrator>taskkill /f /t /im 11492
 
 *************************
 
-#### 2.4、druid 安全配置
+### 2.4、druid 安全配置
 
 ```vb
 
@@ -328,7 +332,7 @@ http://localhost:8080/druid/sql.html
 
 *************************
 
-#### 2.5、github登录不上解决办法
+### 2.5、github登录不上解决办法
 
 ```
 参考 https://blog.csdn.net/ych9527/article/details/114372201
@@ -346,34 +350,53 @@ http://localhost:8080/druid/sql.html
 
  <h2 id="java"></h2>
 
-### 3、java
+## 3、java
 
-#### 3.1、java常用集合方法
+### 3.1、java常用方法
 
+#### 3.1.1、lambda表达式
 
 ```java
-lambda表达式
+/*** lambda表达式 */
 
+// 循环
+AtomicInteger total = new AtomicInteger(0);
+productLogisticsDAOS.stream().forEach(dao -> {
+	int temp = dao.getAmount() * dao.getCount();
+	total.addAndGet(temp);
+});
+	
 List<Integer> interceptProductIdList = interceptGoodsNumDAOS.stream().map(dao -> dao.getProductId()).distinct().collect(Collectors.toList());
 
 List<DeliveryPackageDO> mainPackageDOList = packageDOS.stream().filter(dao -> dao.getTitle().equals(DriverPackageUtil.MAIN_PACKAGE_TEXT)).collect(Collectors.toList());
 
-detailDAOS.stream().mapToInt(DeliveryPackageGoodsDetailDAO::getNum).sum()
-	
-purchaserAmountMap.values().stream().map(SupplierBillDetailVO::getAmount).reduce(BigDecimal::add).get();
 
+// 求和
+Integer sum = detailDAOS.stream().mapToInt(DeliveryPackageGoodsDetailDAO::getNum).sum()
+BigDecimal paymentAmount = purchaserAmountMap.values().stream().map(SupplierBillDetailVO::getAmount).reduce(BigDecimal::add).get();
+
+
+/*** list转map */
+
+// list转map-排序
 LinkedHashMap<String, List<DeliveryOrderShopDAO>> addrMap = deliveryOrderShopDAOS.stream().collect(Collectors.groupingBy(DeliveryOrderShopDAO::getAddr_hash, LinkedHashMap::new, Collectors.toList()));
 
+// list转map-多字段分组
 Map<String, List<DeliveryGoodsDO>> deliveryGoodsMap = deliveryGoodsDOS.stream().collect(Collectors.groupingBy(item -> item.getVirtualgoodsId() + "_" + item.getTitle() + "_" + item.getSpec()));
 
+// list转map-值为单个对象
+Map<String, DeliveryDO> deliveryOrderMap = deliveryDOS.stream().collect(Collectors.toMap(DeliveryDO::getDeliveryOrder, (p) -> p));
+
+// list转map-值为对象的字段
  Map<Integer, Integer> goods2ProductParam = logisticsGoodsDAOS.stream().filter(dao -> goodsIdParamList.contains(dao.getGoodsId())).
                     collect(Collectors.toMap(LogisticsGoodsDAO::getGoodsId, LogisticsGoodsDAO::getProductId, (key1, key2) -> key2));
 
-Map<String, DeliveryDO> deliveryOrderMap = deliveryDOS.stream().collect(Collectors.toMap(DeliveryDO::getDeliveryOrder, (p) -> p));
 
 ```
 
-```
+#### 3.1.2、Map遍历
+
+```java
 
 java中Map遍历的四种方式
 https://www.cnblogs.com/damoblog/p/9124937.html
@@ -415,14 +438,181 @@ for(String key : map.keySet()){
 }
 
 
+```
+
+#### 3.1.3、java排序
+
+```java
+java排序
+
+public static void main(String[] args) {
+        // 1、数组排序
+        int[] arr = {2, 3, 4, 5, 2, 1};
+        Arrays.sort(arr);
+        System.out.println(JSON.toJSON(arr));
+
+        // 2、列表排序
+        List<Integer> list = new ArrayList<Integer>();
+        list.add(5);
+        list.add(9);
+        list.add(3);
+        list.add(1);
+        Collections.sort(list);
+        System.out.println(JSON.toJSON(list));
+
+        Random random = new Random();
+        List<BuffProductNumDAO> numDAOList = new ArrayList<>();
+        for (int i = 0; i < 10; i++) {
+            BuffProductNumDAO buffProductNumDAO = new BuffProductNumDAO();
+            buffProductNumDAO.setProductId(random.nextInt(10));
+            numDAOList.add(buffProductNumDAO);
+        }
+        System.out.format("Comparator before list=%s", JSON.toJSON(numDAOList));
+		
+        // 3、Comparator排序
+        Collections.sort(numDAOList, new Comparator<BuffProductNumDAO>() {
+            @Override
+            public int compare(BuffProductNumDAO p1, BuffProductNumDAO p2) {
+                // 调用compare方法大于0，就把前一个数和后一个数交换，也就是把大的数放后面了，
+                // 即所谓的升序了。如果第二个参数与第一个参数调换顺序，也就是降序了。
+                int product = p2.getProductId() - p1.getProductId();
+                return product;
+            }
+        });
+        System.out.println();
+        System.out.format("Comparator after list=%s", JSON.toJSON(numDAOList));
+
+        // 4、Comparable排序
+        List<Goods> goodsList = new ArrayList<>();
+        Collections.sort(goodsList);
+
+    }
+
+
+    @Data
+    @AllArgsConstructor
+    @NoArgsConstructor
+    public class Goods implements Comparable<Goods> { //实现Comparable接口，利用泛型限定比较的类型
+        private Integer productId; //商品编号
+        private String name; //商品名称
+        private double price; //商品价格
+
+        @Override
+        public int compareTo(Goods o) {  //重写compareTo方法。
+            //取出商品价格
+            double price1 = this.getPrice();
+            double price2 = o.getPrice();
+            int n = new Double(price2 - price1).intValue();  //double类型的差值转为int
+            return n;
+        }
+    }
 	
+	
+```
+
+
+```sql
+Java8排序stream.sorted() 
+https://blog.csdn.net/qq_34996727/article/details/94472999
+
+System.out.println("---Natural Sorting by Name---");
+List<Student> slist = list.stream().sorted().collect(Collectors.toList());
+slist.forEach(e -> System.out.println("Id:" + e.getId() + ", Name: " + e.getName() + ", Age:" + e.getAge()));
+
+System.out.println("---Natural Sorting by Name in reverse order---");
+slist = list.stream().sorted(Comparator.reverseOrder()).collect(Collectors.toList());
+slist.forEach(e -> System.out.println("Id:" + e.getId() + ", Name: " + e.getName() + ", Age:" + e.getAge()));
+
+System.out.println("---Sorting using Comparator by Age---");
+slist = list.stream().sorted(Comparator.comparing(Student::getAge)).collect(Collectors.toList());
+slist.forEach(e -> System.out.println("Id:" + e.getId() + ", Name: " + e.getName() + ", Age:" + e.getAge()));
+
+System.out.println("---Sorting using Comparator by Age with reverse order---");
+slist = list.stream().sorted(Comparator.comparing(Student::getAge).reversed()).collect(Collectors.toList());
+slist.forEach(e -> System.out.println("Id:" + e.getId() + ", Name: " + e.getName() + ", Age:" + e.getAge()));
+
+
+```
+
+#### 3.1.4、flatmap,peek,newArrayList
+
+```java
+JAVA8 中的flatmap
+
+使用flatMap方法的效果是，各个数组并不是分别映射一个流，而是映射成流的内容，所有使用map(Array::stream)时生成的单个流被合并起来，即扁平化为一个流。
+https://blog.csdn.net/liyantianmin/article/details/96178586
+https://blog.csdn.net/zhuwukai/article/details/82888316
+https://www.jianshu.com/p/ecb8e8f77a89
+
+ public static void main(String[] args) {
+	List<User> uList = Lists.newArrayList();
+	User u1 = new User();
+	u1.setAddr("a1;a2;a3;a4;a5");
+
+	User u2 = new User();
+	u2.setAddr("b1;b2;b3;b4;b5");
+
+	uList.add(u1);
+	uList.add(u2);
+
+	List<String> addrList = uList.stream().map(x -> x.getAddr()).flatMap(x-> Arrays.stream(x.split(";"))).collect(Collectors.toList());
+	//或者
+	List<String> ridStrList = uList.stream().map(x -> x.getAddr()).map(x -> x.split(";")).flatMap(Arrays::stream).collect(Collectors.toList());
+	System.out.println(addrList);
+}
+
+@Data
+@NoArgsConstructor
+public class User{
+	private   String addr;
+}
+
+
+---
+
+
+public static class User {
+        private String name;
+        private List<String> relativeUsers;
+}
+
+List<String> strings = users.stream()
+  .flatMap(user -> user.getRelativeUsers().stream())
+  .collect(Collectors.toList());
+	
+```
+
+
+```
+Java 8 Stream peek 与 map的区别
+原文链接：https://blog.csdn.net/tckt75433/article/details/81510743
+总结：peek接收一个没有返回值的λ表达式，可以做一些输出，外部处理等。map接收一个有返回值的λ表达式，之后Stream的泛型类型将转换为map参数λ表达式返回的类型。
+
+```
+
+
+```c
+几个快速添加list的方法
+1. 使用Collections.addAll()方法，前提还是需要手动 new ArrayList
+ArrayList<String> s = new ArrayList();
+Collections.addAll(s,"1","2","3")
+
+2. 使用Arrays.asList(...args) 直接返回一个List
+List<String> s = Arrays.asList("1","2","3")
+
+3. 如果引入了Guava的工具包，可以使用他的Lists.newArrayList(...args)方法
+List<String> list = Lists.newArrayList("1","2","3")
+
+4. 如果是Java9，可以使用自带的List类
+List<String> s = List.of("1","2","3")
+
 ```
 
 ---
 
-#### 3.2、idea基本配置与快捷键
+### 3.2、idea基本配置与快捷键
 
-##### 3.2.1、idea基本配置
+#### 3.2.1、idea基本配置
 
 
 ```java
@@ -476,7 +666,7 @@ Project - Show Options Menu - Show Members
 
 ```
 
-##### 3.2.2、idea常用快捷键
+#### 3.2.2、idea常用快捷键
 
 ```
 eclipse & idea常用快捷键
@@ -507,21 +697,21 @@ syso+Alt+/        输出
 
 ---
 
-#### 3.3、java软件
+### 3.3、java软件
 
-##### 3.3.1、java软件
+#### 3.3.1、java软件
 
 | 软件                              | 下载地址   |
 | --------                          | -----      |
 | tomcat   | [tomcat官网]( https://archive.apache.org/dist/tomcat/ ) &ensp; ([云盘]( https://pan.baidu.com/s/1yPhAfIcACTGkpIOYlEds1g )  密码: j9ug ) |
 | eclipse  | [eclipse官方下载]( http://www.eclipse.org/downloads/packages )    [版本说明]( ./eclipse.md ) |
 | maven    | [maven官方下载]( https://archive.apache.org/dist/maven/maven-3/ )            |
-| idea     | [idea官方下载]( https://www.jetbrains.com/idea/download/other.html ) &ensp; [idea2019]( https://www.aliyundrive.com/s/oWgxBBNqGj9 )|
+| idea     | [idea官方下载]( https://www.jetbrains.com/idea/download/other.html ) &ensp; [idea2019]( https://www.aliyundrive.com/s/oWgxBBNqGj9 )     |
 | jdk      | [Java Development Kit]( ./jdk.md ) |
 | mysql    | [mysql_5.7]( https://www.aliyundrive.com/s/pymjQca3DbY )                     |
-| javaSoft    | [java软件]( https://www.aliyundrive.com/s/fWXemUwcsUs )  redis/mongo/Navicat/kafka/zookeeper/git/Xshell...                      |
+| javaSoft | [java软件]( https://www.aliyundrive.com/s/fWXemUwcsUs )  redis/mongo/Navicat/kafka/zookeeper/git/Xshell...                              |
 
-##### 3.3.2、java环境变量配置
+#### 3.3.2、java环境变量配置
 
 ```java
 java环境变量配置    注意：环境变量中都是英文符号，结尾以英文分号;结束
@@ -553,7 +743,7 @@ tomcat环境变量配置
 
 ---
 
-#### 3.4、springboot项目打包布署
+### 3.4、springboot项目打包布署
 
 ```
 springboot项目打包布署
@@ -594,9 +784,9 @@ maven常用打包命令
 
  <h2 id="git"></h2>
  
-### 4、git仓库项目
+## 4、git仓库
 
-#### 4.1、书法练习轨迹
+### 4.1、书法练习轨迹
 
 > 若无意外，一般每周一在gitlab《**书法练习轨迹--明月几时有**》记录上周练习情况。其他渠道，不定时同步。
 
@@ -631,7 +821,7 @@ maven常用打包命令
 
 ---
 
-#### 4.2、笔记&项目
+### 4.2、笔记&项目
 
 ```
 个人资料一般保存在git平台及网盘，如下：
@@ -654,7 +844,7 @@ git平台：gitlab、github、gitee、csdn_code、coding、bitbucket
 | java-book  | [gitlab]( https://gitlab.com/xuyq123/java-book ) &ensp; [gitee]( https://gitee.com/xy180/java-book ) &ensp; [github]( https://github.com/scott180/java-book ) &ensp; [csdn_code]( https://codechina.csdn.net/xu180/java-book )  &ensp; [coding]( https://xyqin.coding.net/public/my/java-book/git/files )   		|   java书籍 |
 | calligraphy-boot    | [gitlab]( https://gitlab.com/xuyq123/calligraphy-boot ) &ensp; [gitee]( https://gitee.com/xy180/calligraphy-boot ) &ensp; [github]( https://github.com/scott180/calligraphy-boot ) &ensp; [csdn_code]( https://codechina.csdn.net/xu180/calligraphy-boot )    |   java项目 |
 | calligraphy    | [gitlab]( https://gitlab.com/xuyq123/calligraphy ) &ensp; [gitee]( https://gitee.com/xy180/calligraphy ) &ensp; [github]( https://github.com/scott180/calligraphy ) &ensp; [gitlab_pages]( https://xuyq123.gitlab.io/plain/%E4%B9%A6%E6%B3%95%E7%BB%83%E4%B9%A0%E8%BD%A8%E8%BF%B9--%E6%98%8E%E6%9C%88%E5%87%A0%E6%97%B6%E6%9C%89.html ) &ensp; [gitlab_mkdocs]( https://xuyq123.gitlab.io/plain-mkdocs/ )    |   书法练习轨迹 |
-| mkdocs   | gitlab [note-mkdocs]( https://gitlab.com/xuyq123/note-mkdocs )&ensp; [**网页**](  https://xuyq123.gitlab.io/note-mkdocs/ ) &ensp;&ensp; [myblog-mkdocs]( https://gitlab.com/xuyq123/myblog-mkdocs )&ensp; [网页](  https://xuyq123.gitlab.io/myblog-mkdocs/ ) <br/>github [note-mkdocs]( https://github.com/scott180/note-mkdocs )&ensp; [网页](  https://scott180.github.io/note-mkdocs/ ) &ensp;&ensp;[myblog-mkdocs]( https://github.com/scott180/myblog-mkdocs )&ensp; [网页](  https://scott180.github.io/myblog-mkdocs/ )<br/>gitee [plain-mkdocs]( https://gitee.com/xy180/plain-mkdocs/tree/master/note ) [网页](  http://xy180.gitee.io/plain-mkdocs/note/site/ )       |  我的笔记与博客                        |
+| mkdocs   | gitlab [note-mkdocs]( https://gitlab.com/xuyq123/note-mkdocs )&ensp; [**网页**](  https://xuyq123.gitlab.io/note-mkdocs/ ) &ensp;&ensp; [myblog-mkdocs]( https://gitlab.com/xuyq123/myblog-mkdocs )&ensp; [网页](  https://xuyq123.gitlab.io/myblog-mkdocs/ ) <br/>github [note-mkdocs]( https://github.com/scott180/note-mkdocs )&ensp; [网页](  https://scott180.github.io/note-mkdocs/ ) &ensp;&ensp;[myblog-mkdocs]( https://github.com/scott180/myblog-mkdocs )&ensp; [网页](  https://scott180.github.io/myblog-mkdocs/ )<br/>gitee [plain-mkdocs]( https://gitee.com/xy180/plain-mkdocs/tree/master/note ) [网页](  http://xy180.gitee.io/plain-mkdocs/note/site/ ) &ensp;&ensp;[myblog-mkdocs]( https://gitee.com/xy180/myblog-mkdocs )      |  我的笔记与博客                        |
 
 
 ---
