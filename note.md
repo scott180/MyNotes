@@ -4,6 +4,9 @@
 *   [3、java](#java)
 *   [4、git仓库项目](#git)
 
+
+- [ ] `仓库` &ensp; [gitlab]( https://gitlab.com/xuyq123/mynotes ) &ensp; [gitee]( https://gitee.com/xy180/MyNotes ) &ensp; [github]( https://github.com/scott180/MyNotes ) &ensp; [csdn_code]( https://codechina.csdn.net/xu180/MyNotes )  &ensp; [coding]( https://xyqin.coding.net/public/my/MyNotes/git/files ) &ensp; [bitbucket]( https://bitbucket.org/xu12345/mynotes )
+
  <h2 id="note"></h2>
 
 ## 1、日常
@@ -392,6 +395,12 @@ Map<String, DeliveryDO> deliveryOrderMap = deliveryDOS.stream().collect(Collecto
                     collect(Collectors.toMap(LogisticsGoodsDAO::getGoodsId, LogisticsGoodsDAO::getProductId, (key1, key2) -> key2));
 
 
+
+Optional.ofNullable(type).orElse(0).intValue();
+
+public static final int cpuNum = Runtime.getRuntime().availableProcessors();
+
+
 ```
 
 #### 3.1.2、Map遍历
@@ -482,6 +491,9 @@ public static void main(String[] args) {
         System.out.println();
         System.out.format("Comparator after list=%s", JSON.toJSON(numDAOList));
 
+        Collections.sort(logisticsDAOList, Comparator.comparing(WarehouseLogisticsDAO::getSort).thenComparing(WarehouseLogisticsDAO::getDistance));
+				
+				
         // 4、Comparable排序
         List<Goods> goodsList = new ArrayList<>();
         Collections.sort(goodsList);
@@ -591,7 +603,7 @@ Java 8 Stream peek 与 map的区别
 ```
 
 
-```c
+```java
 几个快速添加list的方法
 1. 使用Collections.addAll()方法，前提还是需要手动 new ArrayList
 ArrayList<String> s = new ArrayList();
@@ -673,15 +685,16 @@ eclipse & idea常用快捷键
 
 sout			打印
 Shift+Enter		另起一行
-Ctrl+h  		全局关键词搜索
+Alt+Enter		快速命名
+Ctrl+h          全局关键词搜索
 Ctrl+f          当前文件查找、替换
 Ctrl+shift+r    全局文件查找
 Ctrl+shift+f    整理代码格式
 Ctrl+shift+x    大小写
 Ctrl+shift+o    整理导入包
-alt+insert      快速生成get和set方法、构造方法
-alt+shift+r     批量重命名
-alt+shift+m     提取本地变量及方法
+Alt+insert      快速生成get和set方法、构造方法
+Alt+shift+r     批量重命名
+Alt+shift+m     提取本地变量及方法
 
 ---
     
@@ -689,8 +702,8 @@ Ctrl+Alt+↑        往上或下复制当前内容
 Alt+↓             将当前行的内容往上或下移动
 Alt+/        	  导入一个包
 Ctrl+m       	  编辑器窗口最大化
-ctrl+o       	  快速outline，查找方法
-ctrl+e	     	  快速转换编辑器
+Ctrl+o       	  快速outline，查找方法
+Ctrl+e	     	  快速转换编辑器
 syso+Alt+/        输出
 
 ```
@@ -703,15 +716,15 @@ syso+Alt+/        输出
 
 | 软件                              | 下载地址   |
 | --------                          | -----      |
-| tomcat   | [tomcat官网]( https://archive.apache.org/dist/tomcat/ ) &ensp; ([云盘]( https://pan.baidu.com/s/1yPhAfIcACTGkpIOYlEds1g )  密码: j9ug ) |
-| eclipse  | [eclipse官方下载]( http://www.eclipse.org/downloads/packages )    [版本说明]( ./eclipse.md ) |
-| maven    | [maven官方下载]( https://archive.apache.org/dist/maven/maven-3/ )            |
 | idea     | [idea官方下载]( https://www.jetbrains.com/idea/download/other.html ) &ensp; [idea2019]( https://www.aliyundrive.com/s/oWgxBBNqGj9 )     |
-| jdk      | [Java Development Kit]( ./jdk.md ) |
+| jdk      | [Java Development Kit]( ./jdk.md )  |
+| maven    | [maven官方下载]( https://archive.apache.org/dist/maven/maven-3/ )            |
 | mysql    | [mysql_5.7]( https://www.aliyundrive.com/s/pymjQca3DbY )                     |
 | javaSoft | [java软件]( https://www.aliyundrive.com/s/fWXemUwcsUs )  redis/mongo/Navicat/kafka/zookeeper/git/Xshell...                              |
+| tomcat   | [tomcat官网]( https://archive.apache.org/dist/tomcat/ ) &ensp; ([云盘]( https://pan.baidu.com/s/1yPhAfIcACTGkpIOYlEds1g )  密码: j9ug ) |
+| eclipse  | [eclipse官方下载]( http://www.eclipse.org/downloads/packages )    [版本说明]( ./eclipse.md ) |
 
-#### 3.3.2、java环境变量配置
+#### 3.3.2、java maven环境变量
 
 ```java
 java环境变量配置    注意：环境变量中都是英文符号，结尾以英文分号;结束
@@ -738,6 +751,32 @@ tomcat环境变量配置
 验证 
 启动 bin/startup.bat 
 访问 http://localhost:8080/ （或 http://127.0.0.1:8080/ ）
+
+```
+
+---
+
+
+#### 3.3.3、postman配置
+
+```
+
+postman环境变量配置
+--manage environments
+https://blog.csdn.net/mt122/article/details/104530439
+https://www.jianshu.com/p/391e995881c0
+
+--Tests
+var jsonData = JSON.parse(responseBody);
+postman.setGlobalVariable("webToken", jsonData.data.token);
+ 
+
+ 
+postman 出现Error: connect ECONNREFUSED 127.0.0.1:端口
+https://blog.csdn.net/weixin_45993202/article/details/109072188
+
+Settings--Proxy
+去掉勾选 Use the system proxy
 
 ```
 

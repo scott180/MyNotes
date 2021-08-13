@@ -1,11 +1,14 @@
 #### 本地安装zookeeper-3.5.7
-##### 1、 下载zookeeper    [官网](https://downloads.apache.org/zookeeper/zookeeper-3.5.7/)
+
+##### 1、 下载zookeeper    [官网](https://downloads.apache.org/zookeeper/zookeeper-3.5.7/) &ensp; [zookeeper-3.5.7]( https://download.csdn.net/download/xu180/12303347 )
+
 ``
 从目前的最新版本3.5.5开始，带有bin名称的包才是我们想要的下载可以直接使用的里面有编译后的二进制的包，而之前的普通的tar.gz的包里面是只是源码的包无法直接使用。
 ``
 
 *******
 ##### 2、 建立文件夹、改名
+
 解压后，建立data和log目录。进入conf目录，有一个zoo_sample.cfg文件，将其重命名为zoo.cfg，然后打开，在最后添加
 ``
 dataDir=E:\ProgramFiles\apache-zookeeper-3.5.7-bin\data
