@@ -46,16 +46,6 @@ java  linux  mysql  ...
 - [kafka本地安装方法]( https://blog.csdn.net/xu180/article/details/109309482 ) 
 - `markdown` &ensp;[typora]( https://typora.io/#windows )   [作业部落]( https://www.zybuluo.com/mdeditor )  
 
-```
-markdown转pdf：使用typora打开md文件，导出为html，使用浏览器打开--打印--保存为pdf文件。
-```
-
-```
-gitlab、github、gitee布署mkdocs主题仓库
-https://blog.csdn.net/xu180/article/details/119419599
-https://www.cnblogs.com/scott123/p/15103790.html
-https://www.zybuluo.com/scott180/note/1813723
-```
 ******************************************
 
  <h4 id="commonSoft"></h4>
@@ -76,35 +66,19 @@ python  nodejs vue
 [Java Development Kit]( https://gitee.com/xy180/MyNotes/blob/master/jdk.md )
 
 
-#### 2.2、tomcat   eclipse   maven  idea
+#### 2.2、 idea maven  mysql
 | 软件                              | 下载地址   |
 | --------                          | -----      |
-| tomcat   | [tomcat官网]( https://archive.apache.org/dist/tomcat/ )    ([云盘]( https://pan.baidu.com/s/1yPhAfIcACTGkpIOYlEds1g )   密码: j9ug ) |
-| eclipse  | [eclipse官方下载]( http://www.eclipse.org/downloads/packages )    [版本说明]( https://github.com/scott180/MyNotes/blob/master/eclipse%20download.md ) |
-| maven    | [maven官方下载]( https://archive.apache.org/dist/maven/maven-3/ )    |
-| idea     | [idea官方下载]( https://www.jetbrains.com/idea/download/other.html ) |
+| idea     | [idea官方下载]( https://www.jetbrains.com/idea/download/other.html ) &ensp; [idea2019]( https://www.aliyundrive.com/s/oWgxBBNqGj9 )     |
+| jdk      | [Java Development Kit]( ./jdk.md )  |
+| maven    | [maven官方下载]( https://archive.apache.org/dist/maven/maven-3/ )            |
+| mysql    | [mysql_5.7]( https://www.aliyundrive.com/s/pymjQca3DbY )                     |
+| javaSoft | [java软件]( https://www.aliyundrive.com/s/fWXemUwcsUs )  redis/mongo/Navicat/kafka/zookeeper/git/Xshell...                              |
+| tomcat   | [tomcat官网]( https://archive.apache.org/dist/tomcat/ ) &ensp; ([云盘]( https://pan.baidu.com/s/1yPhAfIcACTGkpIOYlEds1g )  密码: j9ug ) |
+| eclipse  | [eclipse官方下载]( http://www.eclipse.org/downloads/packages )    [版本说明]( ./eclipse.md ) |
 
-```vb
-idea 常用插件
-Alibaba Java Coding Guidelines
-lombok
-Spring Assistant 
-Free Mybatis plugin    MybatisX
-Markdown
-swagger
-```
 
- <h4 id="domesticMirror"></h4>
 
-### 3、国内镜像
-
-| 学校												   |  下载地址        |
-| ------------    									   |  -------------   |
-| [北京理工大学]( http://mirror.bit.edu.cn )           |  [download]( http://mirror.bit.edu.cn/eclipse/technology/epp/downloads/release/ )             |
-| [华中科技大学]( http://mirrors.hust.edu.cn/ ) 	   |  [download]( http://mirrors.hust.edu.cn/eclipse/technology/epp/downloads/release/ )           |
-| [大连东软信息学院]( http://mirrors.neusoft.edu.cn/)  |  [download]( http://mirrors.neusoft.edu.cn/eclipse/technology/epp/downloads/release/ )        |
-| [清华大学]( https://mirrors.tuna.tsinghua.edu.cn/ )  |  [download]( https://mirrors.tuna.tsinghua.edu.cn/eclipse/technology/epp/downloads/release/ ) |
-| [中科大]( http://mirrors.ustc.edu.cn/ )		 	   |  [download]( http://mirrors.ustc.edu.cn/eclipse/technology/epp/downloads/release/ )           |
 
 ******************************************
 ******************************************

@@ -2,7 +2,7 @@
 *   [1、日常](#note)
 *   [2、工作](#wrok)
 *   [3、java](#java)
-*   [4、git仓库项目](#git)
+*   [4、git仓库](#gitId)
 
 
 - [ ] `仓库` &ensp; [gitlab]( https://gitlab.com/xuyq123/mynotes ) &ensp; [gitee]( https://gitee.com/xy180/MyNotes ) &ensp; [github]( https://github.com/scott180/MyNotes ) &ensp; [csdn_code]( https://codechina.csdn.net/xu180/MyNotes )  &ensp; [coding]( https://xyqin.coding.net/public/my/MyNotes/git/files ) &ensp; [bitbucket]( https://bitbucket.org/xu12345/mynotes )
@@ -11,51 +11,11 @@
 
 ## 1、日常
 
-### 1.1、修改文件的默认打开方式
+### 1.1、文件相关操作
+
+#### 1.1.1、windows常用快捷键
 
 ```
-修改文件的默认打开方式：
-
-1.修改属性
-右击--属性--常规--打开方式--选择默认程序
-
-2.选择默认方式
-右击--打开方式--选择默认程序
-
-3.注册表设置
-在运行里面输入regedit（注册表编辑器），HEY_CLASS_ROOT下面是所有文件的后缀名文件，找到你想取消关联的后缀名，如.ppt，单击这个文件夹，右边出现的“数据”一项，双击“（默认）”，打开对话框，将“数据”下面可以填写的部分清除，保持空白，确定。你的电脑里面所有.ppt文件就没有了任何关联和默认程序，再按自己的想法重新关联或默认就行了。
-还有，要看你修改的是什么程序的默认打开方式，不一样的程序填写的数据不一样。
-如果用这个办法还不行就应该不单是这个软件的问题了，可能是系统其他设置的问题。 
-
-4.控制面板设置
-控制面板-----程序----默认程序----始终使用指定的程序打开此文件类型
-
-```
-
-```
-无扩展名文件默认打开程序设置Notepad++
-
-在命令提示符cmd以管理员身份下输入
-assoc .="No Extension"
-ftype "No Extension"="D:\ProgramFiles\Notepadd++\Notepad++\notepad++.exe" "%1"
-
-```
-
-```java
-notepad++常用插件：Compare、JSTool、Json Viewer、MIME Tools
-将dll文件放在如下目录，重启notepad即可
-D:\ProgramFiles\Notepadd++\Notepad++\plugins
-
-
-notepadd++  txt,md格式 文字高亮
-设置 - 语言格式设置 - 自定义扩展名
-
-```
-
-### 1.2、windows常用快捷键
-
-```
-
 windows常用快捷键
 
 Ctrl+C 复制选中内容
@@ -90,15 +50,114 @@ F11 浏览器进入全屏状态
 F12 浏览器打开调试
 
 
+```
+
+
+#### 1.1.2、修改文件的默认打开方式
+
+```
+修改文件的默认打开方式：
+
+1.修改属性
+右击--属性--常规--打开方式--选择默认程序
+
+2.选择默认方式
+右击--打开方式--选择默认程序
+
+3.注册表设置
+在运行里面输入regedit（注册表编辑器），HEY_CLASS_ROOT下面是所有文件的后缀名文件，找到你想取消关联的后缀名，如.ppt，单击这个文件夹，右边出现的“数据”一项，双击“（默认）”，打开对话框，将“数据”下面可以填写的部分清除，保持空白，确定。你的电脑里面所有.ppt文件就没有了任何关联和默认程序，再按自己的想法重新关联或默认就行了。
+还有，要看你修改的是什么程序的默认打开方式，不一样的程序填写的数据不一样。
+如果用这个办法还不行就应该不单是这个软件的问题了，可能是系统其他设置的问题。 
+
+4.控制面板设置
+控制面板-----程序----默认程序----始终使用指定的程序打开此文件类型
+
+```
+
+#### 1.1.3、notepadd++小知识
+
+```
+无扩展名文件默认打开程序设置Notepad++
+
+在命令提示符cmd以管理员身份下输入
+assoc .="No Extension"
+ftype "No Extension"="D:\ProgramFiles\Notepadd++\Notepad++\notepad++.exe" "%1"
+
+```
+
+```java
+notepad++常用插件：Compare、JSTool、Json Viewer、MIME Tools
+将dll文件放在如下目录，重启notepad即可
+D:\ProgramFiles\Notepadd++\Notepad++\plugins
+
+```
+
+```
+notepadd++  txt,md格式 文字高亮
+设置 - 语言格式设置 - 自定义扩展名
+
+```
+
+```
 notepad竖向选择
 先把鼠标光标放在起始位置，然后同时按Alt+shift键或者只按Alt键就可以，然后移动鼠标选取内容。
 
 ```
 
+#### 1.1.4、markdown
 
-### 1.3、网络&笔记本
+```
+markdown在线编辑
+作业部落  https://www.zybuluo.com/mdeditor
+马克飞象  https://maxiang.io/
+菜鸟工具  http://c.runoob.com/front-end/712
 
-#### 1.3.1、远程登录
+markdown软件
+typora	https://www.typora.io/
+Dillinger https://dillinger.io/
+https://blog.csdn.net/davidhzq/article/details/100815332
+
+```
+
+```
+将markdown文件导出为带图片的PDF 
+Ⅰ.使用Typora 打开 markdown文件
+Ⅱ.点击 文件-导出-HTML
+Ⅲ.浏览器打开文件-打印-另存为PDF
+
+markdown转PDF文件分页
+<div STYLE="page-break-after: always;"></div>
+
+markdown空格符号
+&ensp;
+&emsp;
+
+```
+
+
+```
+gitlab、github、gitee布署mkdocs主题仓库
+https://gitlab.com/xuyq123/mynotes/-/blob/master/gitlab%E3%80%81github%E3%80%81gitee%E5%B8%83%E7%BD%B2mkdocs%E4%B8%BB%E9%A2%98%E4%BB%93%E5%BA%93.md
+
+gitlab mkdocs主题仓库   
+	https://gitlab.com/xuyq123/plain-mkdocs   
+	https://xuyq123.gitlab.io/plain-mkdocs  
+	
+	
+git平台docsify布署markdown文件
+https://gitlab.com/xuyq123/mynotes/-/blob/master/git%E5%B9%B3%E5%8F%B0docsify%E5%B8%83%E7%BD%B2markdown%E6%96%87%E4%BB%B6.md 
+
+docsify主题仓库 	
+	https://gitlab.com/xuyq123/plain-docsify 
+	https://xuyq123.gitlab.io/plain-docsify/
+	
+```
+
+
+
+### 1.2、网络&笔记本
+
+#### 1.2.1、远程登录
 
 ```
 远程登录
@@ -110,7 +169,7 @@ Administrator/123456
 
 ```
 
-#### 1.3.2、红米笔记本问题
+#### 1.2.2、红米笔记本问题
 ```
 
 红米笔记本触摸板失灵
@@ -123,7 +182,7 @@ redmibook的FN键没有作用,F1～F12功能键直接按就是调节音.
 ```
 
 
-#### 1.3.3、无线网连不上 & 代理连接失败
+#### 1.2.3、无线网连不上 & 代理连接失败
 
 ```java
 
@@ -158,9 +217,9 @@ Computer\HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\WinHttpAutoProxySv
 
 ```
 
-### 1.4、其他
+### 1.3、其他
 
-#### 1.4.1、身高体重比例
+#### 1.3.1、身高体重比例
 
 ```
 
@@ -203,7 +262,7 @@ Computer\HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\WinHttpAutoProxySv
 
 ```
 
-#### 1.4.2、眼睛心理学
+#### 1.3.2、眼睛心理学
 
 `如果对方眼球处于右上方，表示正在创建视觉想象，也就是在脑海中创建一些现实中没有的事物。`
 
@@ -232,7 +291,7 @@ Computer\HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\WinHttpAutoProxySv
 ```
 
 
-#### 1.4.3、视频会员兑换渠道
+#### 1.3.3、视频会员兑换渠道
 
 ```java
 
@@ -624,7 +683,7 @@ List<String> s = List.of("1","2","3")
 
 ### 3.2、idea基本配置与快捷键
 
-#### 3.2.1、idea基本配置
+#### 3.2.1、idea配置与插件
 
 
 ```java
@@ -656,7 +715,7 @@ file and code Templates -- Includes -- File Header
 Settings→Editor→General→Auto Import
 选中Optimize imports on the fly和Add unambiguous imports on the fly
 
-7、idea 常用插件 Plugins
+7、idea常用插件 Plugins
 lombok
 Free Mybatis plugin    MybatisX
 Spring Assistant 
@@ -818,12 +877,12 @@ maven常用打包命令
 
 ```
 
-*************************
+---
 
+<h2 id="gitId"></h2>
 
- <h2 id="git"></h2>
- 
 ## 4、git仓库
+
 
 ### 4.1、书法练习轨迹
 
@@ -866,7 +925,7 @@ maven常用打包命令
 个人资料一般保存在git平台及网盘，如下：
 git平台：gitlab、github、gitee、csdn_code、coding、bitbucket
 网盘：阿里云网盘、百度网盘、阿里云个人邮箱网盘、坚果云、天翼云、微云、wps云盘
-笔记：有道云笔记、qq邮箱记事本、语雀、csdn、博客园、作业部落、腾讯文档
+笔记：csdn、博客园、作业部落、有道云笔记、qq邮箱记事本、语雀、腾讯文档、飞书、简书
 
 ```
 
@@ -884,6 +943,7 @@ git平台：gitlab、github、gitee、csdn_code、coding、bitbucket
 | calligraphy-boot    | [gitlab]( https://gitlab.com/xuyq123/calligraphy-boot ) &ensp; [gitee]( https://gitee.com/xy180/calligraphy-boot ) &ensp; [github]( https://github.com/scott180/calligraphy-boot ) &ensp; [csdn_code]( https://codechina.csdn.net/xu180/calligraphy-boot )    |   java项目 |
 | calligraphy    | [gitlab]( https://gitlab.com/xuyq123/calligraphy ) &ensp; [gitee]( https://gitee.com/xy180/calligraphy ) &ensp; [github]( https://github.com/scott180/calligraphy ) &ensp; [gitlab_pages]( https://xuyq123.gitlab.io/plain/%E4%B9%A6%E6%B3%95%E7%BB%83%E4%B9%A0%E8%BD%A8%E8%BF%B9--%E6%98%8E%E6%9C%88%E5%87%A0%E6%97%B6%E6%9C%89.html ) &ensp; [gitlab_mkdocs]( https://xuyq123.gitlab.io/plain-mkdocs/ )    |   书法练习轨迹 |
 | mkdocs   | gitlab [note-mkdocs]( https://gitlab.com/xuyq123/note-mkdocs )&ensp; [**网页**](  https://xuyq123.gitlab.io/note-mkdocs/ ) &ensp;&ensp; [myblog-mkdocs]( https://gitlab.com/xuyq123/myblog-mkdocs )&ensp; [网页](  https://xuyq123.gitlab.io/myblog-mkdocs/ ) <br/>github [note-mkdocs]( https://github.com/scott180/note-mkdocs )&ensp; [网页](  https://scott180.github.io/note-mkdocs/ ) &ensp;&ensp;[myblog-mkdocs]( https://github.com/scott180/myblog-mkdocs )&ensp; [网页](  https://scott180.github.io/myblog-mkdocs/ )<br/>gitee [plain-mkdocs]( https://gitee.com/xy180/plain-mkdocs/tree/master/note ) [网页](  http://xy180.gitee.io/plain-mkdocs/note/site/ ) &ensp;&ensp;[myblog-mkdocs]( https://gitee.com/xy180/myblog-mkdocs )      |  我的笔记与博客                        |
+| docsify   | gitlab [plain-docsify]( https://gitlab.com/xuyq123/plain-docsify )&ensp; [**网页**](  https://xuyq123.gitlab.io/plain-docsify/ ) <br/>github [plain-docsify]( https://github.com/scott180/plain-docsify )&ensp; [网页](  https://scott180.github.io/plain-docsify/ ) |  笔记docsify                        |
 
 
 ---
