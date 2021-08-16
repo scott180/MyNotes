@@ -18,36 +18,35 @@
 ```
 windows常用快捷键
 
-Ctrl+C 复制选中内容
-Ctrl+V 粘贴复制内容
-Ctrl+S 保存
-Ctrl+A 选中全部内容
-Ctrl+X 剪切
-Ctrl+F 查找与替换
+Ctrl+C  复制选中内容
+Ctrl+V  粘贴复制内容
+Ctrl+S  保存
+Ctrl+A  选中全部内容
+Ctrl+X  剪切
+Ctrl+F  查找与替换
+        
+Ctrl+W  关闭程序
+Ctrl+Z  撤消刚才进行的操作
+Ctrl+Y  恢复刚才进行的操作
+Ctrl+N  新建一个空白文档
+Ctrl+P  打开"打印"对话框
+Ctrl+O  打开文档
 
-Ctrl+W 关闭程序
-Ctrl+Z 撤消刚才进行的操作
-Ctrl+Y 恢复刚才进行的操作
-
-Ctrl+N 新建一个空白文档
-Ctrl+P 打开"打印"对话框
-Ctrl+O 打开文档
-Ctrl+Home  光标快速移到文件头
-Ctrl+End   光标快速移到文件尾
-Ctrl+Shift 输入法切换
-
-Alt+Tab	   程序切换
+Ctrl+Shift  输入法切换
+Ctrl+Home   光标快速移到文件头
+Ctrl+End    光标快速移到文件尾
+Alt+Tab     程序切换
 
 Win     显示开始菜单
-Win+L	锁定计算机
-Win+E	启动"我的电脑"
-Win+D	快速显示桌面
-Win+R	打开电脑"运行"对话框
+Win+L   锁定计算机
+Win+E   启动"我的电脑"
+Win+D   快速显示桌面
+Win+R   打开电脑"运行"对话框
 
-F2  文件夹改名
-F5  浏览器页面刷新
-F11 浏览器进入全屏状态
-F12 浏览器打开调试
+F2   文件夹改名
+F5   浏览器页面刷新
+F11  浏览器进入全屏状态
+F12  浏览器打开调试
 
 
 ```
@@ -111,6 +110,7 @@ markdown在线编辑
 作业部落  https://www.zybuluo.com/mdeditor
 马克飞象  https://maxiang.io/
 菜鸟工具  http://c.runoob.com/front-end/712
+Marked    https://marked.js.org/demo/
 
 markdown软件
 typora	https://www.typora.io/
@@ -127,6 +127,7 @@ https://blog.csdn.net/davidhzq/article/details/100815332
 
 markdown转PDF文件分页
 <div STYLE="page-break-after: always;"></div>
+
 
 markdown空格符号
 &ensp;
@@ -696,8 +697,8 @@ Keymap  Eclipse
 font  - Size
 
 3、配置 maven  （Setting For New Projects）
-Maven home directory:	D:/ProgramFiles/apache-maven-3.6.0
-User setting file:	    D:\ProgramFiles\apache-maven-3.6.0\conf\settings.xml
+Maven home directory:   D:/ProgramFiles/apache-maven-3.6.0
+User setting file:      D:\ProgramFiles\apache-maven-3.6.0\conf\settings.xml
 Local repository:       D:\ProgramFiles\apache-maven-localRepository
 
 4、配置Git命令行
@@ -742,9 +743,9 @@ Project - Show Options Menu - Show Members
 ```
 eclipse & idea常用快捷键
 
-sout			打印
-Shift+Enter		另起一行
-Alt+Enter		快速命名
+sout            打印
+Shift+Enter     另起一行
+Alt+Enter       快速命名
 Ctrl+h          全局关键词搜索
 Ctrl+f          当前文件查找、替换
 Ctrl+shift+r    全局文件查找
@@ -757,13 +758,13 @@ Alt+shift+m     提取本地变量及方法
 
 ---
     
-Ctrl+Alt+↑        往上或下复制当前内容
-Alt+↓             将当前行的内容往上或下移动
-Alt+/        	  导入一个包
-Ctrl+m       	  编辑器窗口最大化
-Ctrl+o       	  快速outline，查找方法
-Ctrl+e	     	  快速转换编辑器
-syso+Alt+/        输出
+Ctrl+Alt+↑      往上或下复制当前内容
+Alt+↓           将当前行的内容往上或下移动
+Alt+/           导入一个包
+Ctrl+m          编辑器窗口最大化
+Ctrl+o          快速outline，查找方法
+Ctrl+e          快速转换编辑器
+syso+Alt+/      输出
 
 ```
 
@@ -787,25 +788,25 @@ syso+Alt+/        输出
 
 ```java
 java环境变量配置    注意：环境变量中都是英文符号，结尾以英文分号;结束
-创建  JAVA_HOME		C:\Program Files\Java\jdk1.8.0_162
-添加  Path        	%JAVA_HOME%\bin;%JAVA_HOME%\jre\bin;
-创建  CLASSPATH   	.;%JAVA_HOME%\lib;%JAVA_HOME%\lib\tools.jar;
+创建  JAVA_HOME     C:\Program Files\Java\jdk1.8.0_162
+添加  Path          %JAVA_HOME%\bin;%JAVA_HOME%\jre\bin;
+创建  CLASSPATH     .;%JAVA_HOME%\lib;%JAVA_HOME%\lib\tools.jar;
 
 验证 java -version
 
 ---
 
 maven环境变量配置
-创建  MAVEN_HOME	D:\ProgramFiles\apache-maven-3.6.0
-添加  Path        	%MAVEN_HOME%\bin;
+创建  MAVEN_HOME    D:\ProgramFiles\apache-maven-3.6.0
+添加  Path          %MAVEN_HOME%\bin;
 
 验证 mvn -version
 
 ---
 
 tomcat环境变量配置
-创建  TOMCAT_HOME	E:\ProgramFiles\apache-tomcat-8.5.31
-添加  CLASSPATH   	%TOMCAT_HOME%\BIN;
+创建  TOMCAT_HOME   E:\ProgramFiles\apache-tomcat-8.5.31
+添加  CLASSPATH     %TOMCAT_HOME%\BIN;
 
 验证 
 启动 bin/startup.bat 
@@ -917,7 +918,7 @@ maven常用打包命令
 | 22   | [github_pages]( https://scott180.github.io/calligraphy/%E4%B9%A6%E6%B3%95%E7%BB%83%E4%B9%A0%E8%BD%A8%E8%BF%B9--%E6%98%8E%E6%9C%88%E5%87%A0%E6%97%B6%E6%9C%89 ) &ensp; [ReadMe]( https://scott180.github.io/calligraphy ) | github静态网页，有时打不开。[主题1]( https://scott180.github.io/calligraphy1/%E4%B9%A6%E6%B3%95%E7%BB%83%E4%B9%A0%E8%BD%A8%E8%BF%B9--%E6%98%8E%E6%9C%88%E5%87%A0%E6%97%B6%E6%9C%89 ) &ensp; [主题2]( https://scott180.github.io/calligraphy2/%E4%B9%A6%E6%B3%95%E7%BB%83%E4%B9%A0%E8%BD%A8%E8%BF%B9--%E6%98%8E%E6%9C%88%E5%87%A0%E6%97%B6%E6%9C%89 )  |
 | 23   | [**gitlab_pages**]( https://xuyq123.gitlab.io/plain/%E4%B9%A6%E6%B3%95%E7%BB%83%E4%B9%A0%E8%BD%A8%E8%BF%B9--%E6%98%8E%E6%9C%88%E5%87%A0%E6%97%B6%E6%9C%89.html )  &ensp; [ReadMe]( https://xuyq123.gitlab.io/plain/%E4%B9%A6%E6%B3%95%E7%BB%83%E4%B9%A0%E8%BD%A8%E8%BF%B9ReadMe.html )     | gitlab静态网页，markdown转html。       |
 
----
+
 
 ### 4.2、笔记&项目
 
