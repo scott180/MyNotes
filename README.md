@@ -48,7 +48,6 @@ java  linux  mysql  ...
 
 ******************************************
 
- <h4 id="commonSoft"></h4>
 
 ### 2、常用软件
 
@@ -78,6 +77,32 @@ python  nodejs vue
 | eclipse  | [eclipse官方下载]( http://www.eclipse.org/downloads/packages )    [版本说明]( ./eclipse.md ) |
 
 
+
+### 3、笔记&项目
+
+```
+个人资料一般保存在git平台及网盘，如下：
+git平台：gitlab、github、gitee、csdn_code、coding、bitbucket
+网盘：阿里云网盘、百度网盘、阿里云个人邮箱网盘、坚果云、天翼云、微云、wps云盘
+笔记：csdn、博客园、作业部落、有道云笔记、qq邮箱记事本、语雀、腾讯文档、飞书、简书
+
+```
+
+> 笔记 <br/>
+> [note]( https://gitlab.com/xuyq123/mynotes/-/blob/master/note.md ) &ensp; [linuxNote]( https://gitlab.com/xuyq123/mynotes/-/blob/master/linuxNote-x.md ) &ensp; [gitNote]( https://gitlab.com/xuyq123/mynotes/-/blob/master/gitNote.md ) &ensp; [java]( https://gitlab.com/xuyq123/mynotes/-/blob/master/java.md )
+
+<br/>
+
+> 项目 <br/>
+
+| 名称       | 仓库                                                			        |  备注            |
+| ---------  | -------------------------------------------------------------        |  ----------      |
+| MyNotes    | [gitlab]( https://gitlab.com/xuyq123/mynotes ) &ensp; [gitee]( https://gitee.com/xy180/MyNotes ) &ensp; [github]( https://github.com/scott180/MyNotes ) &ensp; [csdn_code]( https://codechina.csdn.net/xu180/MyNotes )  &ensp; [coding]( https://xyqin.coding.net/public/my/MyNotes/git/files ) &ensp; [bitbucket]( https://bitbucket.org/xu12345/mynotes ) |  工作笔记  |
+| java-book  | [gitlab]( https://gitlab.com/xuyq123/java-book ) &ensp; [gitee]( https://gitee.com/xy180/java-book ) &ensp; [github]( https://github.com/scott180/java-book ) &ensp; [csdn_code]( https://codechina.csdn.net/xu180/java-book )  &ensp; [coding]( https://xyqin.coding.net/public/my/java-book/git/files )   		|   java书籍 |
+| calligraphy-boot    | [gitlab]( https://gitlab.com/xuyq123/calligraphy-boot ) &ensp; [gitee]( https://gitee.com/xy180/calligraphy-boot ) &ensp; [github]( https://github.com/scott180/calligraphy-boot ) &ensp; [csdn_code]( https://codechina.csdn.net/xu180/calligraphy-boot )    |   java项目 |
+| calligraphy    | [gitlab]( https://gitlab.com/xuyq123/calligraphy ) &ensp; [gitee]( https://gitee.com/xy180/calligraphy ) &ensp; [github]( https://github.com/scott180/calligraphy ) &ensp; [gitlab_pages]( https://xuyq123.gitlab.io/plain/%E4%B9%A6%E6%B3%95%E7%BB%83%E4%B9%A0%E8%BD%A8%E8%BF%B9--%E6%98%8E%E6%9C%88%E5%87%A0%E6%97%B6%E6%9C%89.html ) &ensp; [gitlab_mkdocs]( https://xuyq123.gitlab.io/plain-mkdocs/ )    |   书法练习轨迹 |
+| mkdocs   | gitlab [note-mkdocs]( https://gitlab.com/xuyq123/note-mkdocs )&ensp; [**网页**](  https://xuyq123.gitlab.io/note-mkdocs/ ) &ensp;&ensp; [myblog-mkdocs]( https://gitlab.com/xuyq123/myblog-mkdocs )&ensp; [网页](  https://xuyq123.gitlab.io/myblog-mkdocs/ ) <br/>github [note-mkdocs]( https://github.com/scott180/note-mkdocs )&ensp; [网页](  https://scott180.github.io/note-mkdocs/ ) &ensp;&ensp;[myblog-mkdocs]( https://github.com/scott180/myblog-mkdocs )&ensp; [网页](  https://scott180.github.io/myblog-mkdocs/ )<br/>gitee [plain-mkdocs]( https://gitee.com/xy180/plain-mkdocs/tree/master/note ) [网页](  http://xy180.gitee.io/plain-mkdocs/note/site/ ) &ensp;&ensp;[myblog-mkdocs]( https://gitee.com/xy180/myblog-mkdocs )      |  我的笔记与博客                        |
+| docsify   | gitlab [plain-docsify]( https://gitlab.com/xuyq123/plain-docsify )&ensp; [**网页**](  https://xuyq123.gitlab.io/plain-docsify/ ) <br/>github [plain-docsify]( https://github.com/scott180/plain-docsify )&ensp; [网页](  https://scott180.github.io/plain-docsify/ ) |  笔记docsify                        |
 
 
 ******************************************

@@ -15,7 +15,7 @@
 
 #### 1.1.1、windows常用快捷键
 
-```
+```java
 windows常用快捷键
 
 Ctrl+C  复制选中内容
@@ -75,7 +75,7 @@ F12  浏览器打开调试
 
 #### 1.1.3、notepadd++小知识
 
-```
+```java
 无扩展名文件默认打开程序设置Notepad++
 
 在命令提示符cmd以管理员身份下输入
@@ -84,7 +84,7 @@ ftype "No Extension"="D:\ProgramFiles\Notepadd++\Notepad++\notepad++.exe" "%1"
 
 ```
 
-```java
+```
 notepad++常用插件：Compare、JSTool、Json Viewer、MIME Tools
 将dll文件放在如下目录，重启notepad即可
 D:\ProgramFiles\Notepadd++\Notepad++\plugins
@@ -105,12 +105,14 @@ notepad竖向选择
 
 #### 1.1.4、markdown
 
-```
+```java
 markdown在线编辑
 作业部落  https://www.zybuluo.com/mdeditor
 马克飞象  https://maxiang.io/
 菜鸟工具  http://c.runoob.com/front-end/712
 Marked    https://marked.js.org/demo/
+gitlab    https://gitlab.com/-/ide/project/gitlab-org/gitlab/edit/master/-/doc/user/markdown.md
+
 
 markdown软件
 typora	https://www.typora.io/
@@ -124,6 +126,7 @@ https://blog.csdn.net/davidhzq/article/details/100815332
 Ⅰ.使用Typora 打开 markdown文件
 Ⅱ.点击 文件-导出-HTML
 Ⅲ.浏览器打开文件-打印-另存为PDF
+
 
 markdown转PDF文件分页
 <div STYLE="page-break-after: always;"></div>
@@ -144,11 +147,12 @@ gitlab mkdocs主题仓库
 	https://gitlab.com/xuyq123/plain-mkdocs   
 	https://xuyq123.gitlab.io/plain-mkdocs  
 	
+---	
 	
 git平台docsify布署markdown文件
 https://gitlab.com/xuyq123/mynotes/-/blob/master/git%E5%B9%B3%E5%8F%B0docsify%E5%B8%83%E7%BD%B2markdown%E6%96%87%E4%BB%B6.md 
 
-docsify主题仓库 	
+gitlab docsify主题仓库 	
 	https://gitlab.com/xuyq123/plain-docsify 
 	https://xuyq123.gitlab.io/plain-docsify/
 	
@@ -185,11 +189,11 @@ redmibook的FN键没有作用,F1～F12功能键直接按就是调节音.
 
 #### 1.2.3、无线网连不上 & 代理连接失败
 
-```java
+```
 
 win7无线网络连接不上（未连接-连接可用）常用解决方法。
   开始 --控制面板（查看方式-小图标）--管理工具 --服务
-WLAN AutoConfig 启动此服务且启动类型改为自动
+  WLAN AutoConfig 启动此服务且启动类型改为自动
 
 ```
 
@@ -200,18 +204,28 @@ WLAN AutoConfig 启动此服务且启动类型改为自动
 控制面板 - 网络和Internet - Internet选项 - 连接 - 局域网设置 - 代理服务器 - 为LAN使用代理服务器[这些设置不用于拨号或VPN连接][X]
 去掉勾选-确定
 
+---
+
 治根方法：
 参考 https://www.zhihu.com/question/25686082?sort=created
 
+方法1：
 网上能找到的方法都试过了，没解决。
 最后忘了从哪找到的方法，把WinHttpAutoProxySvc 服务给禁用了，似乎是好了，几个小时了没有再出现问题。
 忘了说了，我是用完fiddler之后出现的问题。
 
 禁用需要编辑注册表：
 Computer\HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\WinHttpAutoProxySvc
-右边Start值改为4（禁止启动）
-然后重启电脑
+右边Start值改为4（禁止启动）。
+然后重启电脑。
 
+
+方法2：
+进到这个目录下：HKEY_CURRENT_USER/Software/Microsoft/Windows/CurrentVersion/Internet Settings/Connections
+通过目录找到Connections，把整个文件夹删除。
+不放心的话可以把Connections改名。
+
+---
 
 进入服务：   控制面板 - 系统和安全 - 管理工具 - 服务
 进入注册表： WIN+R - regedit
@@ -270,31 +284,26 @@ Computer\HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\WinHttpAutoProxySv
 ```
 
 眼睛心理学
+眼睛往左看代表：回忆；往右看代表：动用情感来创造词汇。
 
-眼睛往左看代表：回忆 ；往右看代表：动用情感来创造词汇。
-
-关于眼睛的心理bai学：
+关于眼睛的心理学：
 
 1. 如果对方眼球处于左上方，表示正在进行视觉回想，也就是回忆。
-
 2. 如果对方眼球处于左下方，表示正在思考，正在与自己对话。
 
 3. 如果对方眼球处于右上方，表示正在创建视觉想象，也就是在脑海中创建一些现实中没有的事物。
-
 4. 如果对方眼球处于右下方，表示ta正在感受自己的身体，感受情感的触动。
 
 5. 如果对方眼球向一侧看，同时脑袋微微向一侧倾斜，对方看上去像是在认真聆听，这个举动与声音有关，可能是在交谈中回忆起了某个声音，这时眼球也会处于中间位置。
-
 6. 如果对方眼球向左右平视，表示ta正在试图弄懂别人的意思。
-
-7. 如果对方眼球迅速地左右运动，表示ta正在忙碌地思考，也有可能是感受到了压力或者心怀戒备
+7. 如果对方眼球迅速地左右运动，表示ta正在忙碌地思考，也有可能是感受到了压力或者心怀戒备。
 
 ```
 
 
 #### 1.3.3、视频会员兑换渠道
 
-```java
+```
 
 视频会员：腾讯视频、优酷、爱奇艺、芒果TV等视频网站会员积分兑换
 
@@ -326,7 +335,7 @@ Computer\HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\WinHttpAutoProxySv
 
 ### 2.2、mysql logbin日志 
 
-```mysql
+```sql
 mysql开启log-bin日志.md  https://gitlab.com/xuyq123/mynotes/-/blob/master/mysql%E5%BC%80%E5%90%AFlog-bin%E6%97%A5%E5%BF%97.md
 
 一 、logbin日志 记录新增、更新、删除的sql 
@@ -945,7 +954,6 @@ git平台：gitlab、github、gitee、csdn_code、coding、bitbucket
 | calligraphy    | [gitlab]( https://gitlab.com/xuyq123/calligraphy ) &ensp; [gitee]( https://gitee.com/xy180/calligraphy ) &ensp; [github]( https://github.com/scott180/calligraphy ) &ensp; [gitlab_pages]( https://xuyq123.gitlab.io/plain/%E4%B9%A6%E6%B3%95%E7%BB%83%E4%B9%A0%E8%BD%A8%E8%BF%B9--%E6%98%8E%E6%9C%88%E5%87%A0%E6%97%B6%E6%9C%89.html ) &ensp; [gitlab_mkdocs]( https://xuyq123.gitlab.io/plain-mkdocs/ )    |   书法练习轨迹 |
 | mkdocs   | gitlab [note-mkdocs]( https://gitlab.com/xuyq123/note-mkdocs )&ensp; [**网页**](  https://xuyq123.gitlab.io/note-mkdocs/ ) &ensp;&ensp; [myblog-mkdocs]( https://gitlab.com/xuyq123/myblog-mkdocs )&ensp; [网页](  https://xuyq123.gitlab.io/myblog-mkdocs/ ) <br/>github [note-mkdocs]( https://github.com/scott180/note-mkdocs )&ensp; [网页](  https://scott180.github.io/note-mkdocs/ ) &ensp;&ensp;[myblog-mkdocs]( https://github.com/scott180/myblog-mkdocs )&ensp; [网页](  https://scott180.github.io/myblog-mkdocs/ )<br/>gitee [plain-mkdocs]( https://gitee.com/xy180/plain-mkdocs/tree/master/note ) [网页](  http://xy180.gitee.io/plain-mkdocs/note/site/ ) &ensp;&ensp;[myblog-mkdocs]( https://gitee.com/xy180/myblog-mkdocs )      |  我的笔记与博客                        |
 | docsify   | gitlab [plain-docsify]( https://gitlab.com/xuyq123/plain-docsify )&ensp; [**网页**](  https://xuyq123.gitlab.io/plain-docsify/ ) <br/>github [plain-docsify]( https://github.com/scott180/plain-docsify )&ensp; [网页](  https://scott180.github.io/plain-docsify/ ) |  笔记docsify                        |
-
 
 ---
 

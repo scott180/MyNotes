@@ -496,6 +496,14 @@ lower_case_table_names = 2
 
 ### 4.其他
 
+```
+
+sql将毫秒数字转换为日期
+SELECT FROM_UNIXTIME(operation_time/1000,"%Y-%m-%d %H:%i:%s") operationDate FROM ins_purchase
+
+
+```
+
 #### 4.1.group_concat函数
 
 ```
