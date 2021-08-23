@@ -124,6 +124,17 @@ SpringBoot整合Mybatis完整详细版				      	|	[链接]( https://blog.csdn.n
 
 ### 1.5、项目
 
+```
+盘点一下Github上开源的Java面试/学习相关的仓库
+https://mp.weixin.qq.com/s?__biz=Mzg2OTA0Njk0OA==&mid=2247484789&idx=1&sn=2ad9fabb8fc7fae3bd3756ea05594344&source=41#wechat_redirect
+
+https://github.com/Snailclimb/JavaGuide.git
+https://github.com/it-interview/EasyJob.git
+https://github.com/crossoverJie/JCSprout.git
+https://github.com/geekcompany/ResumeSample.git
+
+```
+
 标题        | 地址
 ----------- | --------- 
 私活必备，Web 开发中后台管理						|	[链接]( https://blog.csdn.net/sinat_33224091/article/details/100980160 )	

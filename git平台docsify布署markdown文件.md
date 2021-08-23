@@ -72,6 +72,7 @@ window.$docsify = {
 创建docs目录，将markdown文件放在此处，推送文件。
 
 可参考此项目  https://gitlab.com/xuyq123/plain-docsify   https://xuyq123.gitlab.io/plain-docsify 
+多级页面可参考  https://gitlab.com/xuyq123/myblog-docsify   https://xuyq123.gitlab.io/myblog-docsify 
 
 ```
 
