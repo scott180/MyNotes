@@ -1,4 +1,4 @@
 #!/bin/bash
 #请在linux的创建，若在windoxs下创建文件可能创建临时文件。
 file=/home/share/timerSearch/record.txt
-mysql -uroot -pSudy.web123 -e "use IDSPLUS;select id,loginName,name,password,idcard,field29 from T_USER where loginName='admin'\G;" >> $file
+mysql -uroot -pSu.web123 -e "use IDSPLUS;select id,loginName,name,password,idcard,field29 from T_USER where loginName='admin'\G;" >> $file

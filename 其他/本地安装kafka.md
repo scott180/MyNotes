@@ -10,8 +10,8 @@
 2、解压文件，进入目录，创建 logs文件夹。
 进入config目录，打开 server.properties 文件：
 注释 
-#log.dirs=/tmp/kafka-logs
-#zookeeper.connect=localhost:2181
+`#log.dirs=/tmp/kafka-logs`
+`#zookeeper.connect=localhost:2181`
 
 添加配置
 log.dirs=E:\ProgramFiles\kafka_2.13-2.5.1\logs
@@ -63,3 +63,10 @@ kafka在windows平台就是有这个BUG，没办法。只能手动删除\kafka_2
 
 软件下载 [kafka_2.13-2.5.1.tgz]( https://download.csdn.net/download/xu180/13060538 )
 文档参考 https://blog.csdn.net/lizhitao627619011/article/details/50593278
+
+```
+[本地安装zookeeper]( https://blog.csdn.net/xu180/article/details/105235397 ) 
+[kafka_2.13-2.5.1.tgz]( https://download.csdn.net/download/xu180/13060538 )
+文档参考 https://blog.csdn.net/lizhitao627619011/article/details/50593278
+
+```
