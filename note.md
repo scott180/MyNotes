@@ -452,6 +452,9 @@ spring.jackson.time-zone=GMT+8
 @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
 private Date createTime;
 
+
+Assert.isTrue(!StringUtils.isEmpty(param.getPhone()), "联系方式不能为空");
+
 ```
 
 #### 3.1.1、lambda表达式
@@ -486,7 +489,11 @@ LinkedHashMap<String, List<DeliveryOrderShopDAO>> addrMap = deliveryOrderShopDAO
 Map<String, List<DeliveryGoodsDO>> deliveryGoodsMap = deliveryGoodsDOS.stream().collect(Collectors.groupingBy(item -> item.getVirtualgoodsId() + "_" + item.getTitle() + "_" + item.getSpec()));
 
 // list转map-值为单个对象
-Map<String, DeliveryDO> deliveryOrderMap = deliveryDOS.stream().collect(Collectors.toMap(DeliveryDO::getDeliveryOrder, (p) -> p));
+Map<String, DeliveryDO> deliveryOrderMap = deliveryDOS.stream().collect(Collectors.toMap(DeliveryDO::getDeliveryOrder, a -> a));
+
+// list转map-值为单个对象 （如有重复，用第一个）
+Map<String, DeliveryDO> deliveryOrderMap = deliveryDOS.stream().collect(Collectors.toMap(DeliveryDO::getDeliveryOrder, a-> a,(k1,k2)->k2));
+
 
 // list转map-值为对象的字段
  Map<Integer, Integer> goods2ProductParam = logisticsGoodsDAOS.stream().filter(dao -> goodsIdParamList.contains(dao.getGoodsId())).
@@ -781,26 +788,28 @@ file and code Templates -- Includes -- File Header
 Settings→Editor→General→Auto Import
 选中Optimize imports on the fly和Add unambiguous imports on the fly
 
-7、idea常用插件 Plugins
+
+7、代码自动定位文件
+Project - Show Options Menu - Autoscroll From Source
+
+8、显示成员变量及方法
+Project - Show Options Menu - Show Members
+
+9、初始化idea（删除所有配置及历史记录）
+删除目录 C:\Users\Administrator\.IdeaIC2019.1
+
+```
+
+```
+idea常用插件 Plugins
 lombok
 Free Mybatis plugin    MybatisX
 Spring Assistant 
+Translation
 
 Alibaba Java Coding Guidelines
 Markdown
 swagger
-
-
-8、代码自动定位文件
-Project - Show Options Menu - Autoscroll From Source
-
-9、显示成员变量及方法
-Project - Show Options Menu - Show Members
-
-
-10、初始化idea（删除所有配置及历史记录）
-删除目录 C:\Users\Administrator\.IdeaIC2019.1
-
 ```
 
 #### 3.2.2、idea常用快捷键
@@ -809,6 +818,7 @@ Project - Show Options Menu - Show Members
 eclipse & idea常用快捷键
 
 sout            打印
+fori            循环
 Shift+Enter     另起一行
 Alt+Enter       快速命名
 Ctrl+h          全局关键词搜索
