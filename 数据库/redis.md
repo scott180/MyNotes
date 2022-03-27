@@ -1,5 +1,7 @@
 
-## redis
+# redis
+
+## 安装 
 
 ``` sql
 windows下redis安装 
@@ -27,6 +29,11 @@ redis 设置来密码，出现来这个错误，
 改成
 requirepass 123456
 
+```
+
+## 启动 
+
+```
 
 启动redis
 ./redis/src/redis-server ./redis/redis.conf &

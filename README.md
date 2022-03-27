@@ -2,7 +2,7 @@
 
 - [x] 个人仓库  java  linux  mysql  ...
 
-- [gitlab]( https://gitlab.com/xuyq123/mynotes ) &ensp; [gitee]( https://gitee.com/xy180/MyNotes ) &ensp; [github]( https://github.com/scott180/MyNotes ) &ensp; [csdn_code]( https://codechina.csdn.net/xu180/MyNotes )  &ensp; [coding]( https://xyqin.coding.net/public/my/MyNotes/git/files ) &ensp; [bitbucket]( https://bitbucket.org/xu12345/mynotes )
+- [blog]( https://blog.xushufa.cn ) &ensp; [gitlab]( https://gitlab.com/xuyq123/mynotes ) &ensp; [gitee]( https://gitee.com/xy180/MyNotes ) &ensp; [github]( https://github.com/scott180/MyNotes )
 
 ******************************************
 
@@ -50,17 +50,16 @@
 
 ******************************************
 
+```
+个人资料一般保存在git平台及网盘，如下：
+git平台：gitlab、github、gitee、csdn_code、coding、bitbucket
+网盘：阿里云网盘、百度网盘、阿里云个人邮箱网盘、坚果云、天翼云、微云、wps云盘
+笔记：csdn、博客园、作业部落、有道云笔记、qq邮箱记事本、语雀、腾讯文档、飞书、简书
+
+```
 
 ## 2、软件
 
-```
-java  mysql  maven  
-idea  git  navicat notepad++  
-postman xshell fillder typora VMware
-redis mongo kafka zookeeper tomcat eclipse
-python  nodejs vue 
-火绒安全软件 向日葵 Everything
-```
 
 - [x] idea maven  mysql
 
@@ -75,45 +74,52 @@ python  nodejs vue
 | eclipse  | [eclipse官方下载]( http://www.eclipse.org/downloads/packages )    [版本说明]( ./eclipse.md ) |
 
 
-
-## 3、项目
-
-```
-个人资料一般保存在git平台及网盘，如下：
-git平台：gitlab、github、gitee、csdn_code、coding、bitbucket
-网盘：阿里云网盘、百度网盘、阿里云个人邮箱网盘、坚果云、天翼云、微云、wps云盘
-笔记：csdn、博客园、作业部落、有道云笔记、qq邮箱记事本、语雀、腾讯文档、飞书、简书
+---
 
 ```
+java  mysql  maven  
+idea  git  navicat notepad++  
+postman xshell fillder typora VMware
+redis mongo kafka zookeeper tomcat eclipse
+python  nodejs vue 
+火绒安全软件 向日葵 Everything
+```
 
-<br/>
-
-> 项目 <br/>
-
-| 名称       | 仓库                                                			        |  备注            |
-| ---------  | -------------------------------------------------------------        |  ----------      |
-| MyNotes    | [gitlab]( https://gitlab.com/xuyq123/mynotes ) &ensp; [gitee]( https://gitee.com/xy180/MyNotes ) &ensp; [github]( https://github.com/scott180/MyNotes ) &ensp; [csdn_code]( https://codechina.csdn.net/xu180/MyNotes )  &ensp; [coding]( https://xyqin.coding.net/public/my/MyNotes/git/files ) &ensp; [bitbucket]( https://bitbucket.org/xu12345/mynotes ) |  工作笔记  |
-| java-book  | [gitlab]( https://gitlab.com/xuyq123/java-book ) &ensp; [gitee]( https://gitee.com/xy180/java-book ) &ensp; [github]( https://github.com/scott180/java-book ) &ensp; [csdn_code]( https://codechina.csdn.net/xu180/java-book )  &ensp; [coding]( https://xyqin.coding.net/public/my/java-book/git/files )   		|   java书籍 |
-| calligraphy-boot    | [gitlab]( https://gitlab.com/xuyq123/calligraphy-boot ) &ensp; [gitee]( https://gitee.com/xy180/calligraphy-boot ) &ensp; [github]( https://github.com/scott180/calligraphy-boot ) &ensp; [csdn_code]( https://codechina.csdn.net/xu180/calligraphy-boot )    |   springboot项目 |
-| calligraphy    | [gitlab]( https://gitlab.com/xuyq123/calligraphy ) &ensp; [gitee]( https://gitee.com/xy180/calligraphy ) &ensp; [github]( https://github.com/scott180/calligraphy ) &ensp; [gitlab_pages]( https://xuyq123.gitlab.io/plain/%E4%B9%A6%E6%B3%95%E7%BB%83%E4%B9%A0%E8%BD%A8%E8%BF%B9--%E6%98%8E%E6%9C%88%E5%87%A0%E6%97%B6%E6%9C%89.html ) &ensp; [gitlab_mkdocs]( https://xuyq123.gitlab.io/plain-mkdocs/ )    |   书法练习轨迹 |
-| mkdocs   | gitlab [note-mkdocs]( https://gitlab.com/xuyq123/note-mkdocs )&ensp; [**网页**](  https://xuyq123.gitlab.io/note-mkdocs/ ) &ensp;&ensp; [myblog-mkdocs]( https://gitlab.com/xuyq123/myblog-mkdocs )&ensp; [网页](  https://xuyq123.gitlab.io/myblog-mkdocs/ ) <br/>github [note-mkdocs]( https://github.com/scott180/note-mkdocs )&ensp; [网页](  https://scott180.github.io/note-mkdocs/ ) &ensp;&ensp;[myblog-mkdocs]( https://github.com/scott180/myblog-mkdocs )&ensp; [网页](  https://scott180.github.io/myblog-mkdocs/ )<br/>gitee [plain-mkdocs]( https://gitee.com/xy180/plain-mkdocs/tree/master/note ) [网页](  http://xy180.gitee.io/plain-mkdocs/note/site/ ) &ensp;&ensp;[myblog-mkdocs]( https://gitee.com/xy180/myblog-mkdocs )      |  我的笔记与博客                        |
-| docsify   | gitlab [plain-docsify]( https://gitlab.com/xuyq123/plain-docsify )&ensp; [**网页**](  https://xuyq123.gitlab.io/plain-docsify/ ) &ensp;&ensp; [myblog-docsify]( https://gitlab.com/xuyq123/myblog-docsify )&ensp; [网页](  https://xuyq123.gitlab.io/myblog-docsify/ ) <br/>github [plain-docsify]( https://github.com/scott180/plain-docsify )&ensp; [网页](  https://scott180.github.io/plain-docsify/ ) &ensp;&ensp;[myblog-docsify]( https://github.com/scott180/myblog-docsify )&ensp; [网页](  https://scott180.github.io/myblog-docsify/ )      |  笔记与博客docsify                        |
+## 3、网站
 
 
-******************************************
-******************************************
-******************************************
+> **平台**
+
+- 若有志同道合的小伙伴想联系本人，可通过以下方式发邮件或私信。路漫漫其修远兮，吾将上下而求索。共勉。
+
+| 平台           | 链接           |
+| -------------- | -------------- |
+|  **项目仓库**  | [gitlab]( https://gitlab.com/xuyq123/calligraphy ) &ensp; [coding]( https://xyqin.coding.net/public/my/calligraphy/git ) &ensp; [github]( https://github.com/scott180/calligraphy )  &ensp; [bitbucket]( https://bitbucket.org/xu12345/calligraphy ) &ensp; [gitee]( https://gitee.com/xy180/calligraphy ) &ensp; [sourceforge]( https://sourceforge.net/p/calligraphy/code )  &ensp; [github_docsify]( https://scott180.github.io/docsify-calligraphy )    |
+|  **资讯账号**  | [微信公众号]( https://mp.weixin.qq.com/s/HmdDsCaeumuZg_DfitIdlw ) &ensp; [头条]( https://www.toutiao.com/c/user/token/MS4wLjABAAAA2_bWhiknCbcKNu4c6VTM2B7m2vr7zBrh0x6fSyOrtGU ) &ensp;  [豆瓣]( https://www.douban.com/people/80730595/photos ) &ensp;  [知乎]( https://www.zhihu.com/people/xu-xian-sheng-72-29/posts )     |
+|  **个人邮箱**  | 1021151991@qq.com   |
 
 ***
 
-> 注册了微信公众号及今日头条号：**无为徐生**，以后会将书法练习轨迹、程序员笔记以及一些随笔感想更新在此。若有兴趣，可扫码关注。
+> **公众号**
 
-| 无为徐生   | 今日头条号                                                	 |  &ensp; |  微信公众号        |
+- 注册了微信公众号及今日头条号：[**无为徐生**]( https://scott180.github.io/calligraphy/%E6%97%A0%E4%B8%BA%E5%BE%90%E7%94%9F )，以后会将书法练习轨迹、程序员笔记以及一些随笔感想更新在此。<br/>
+- 每周一会在无为徐生**微信公众号**同步《书法练习轨迹》，持续更新，敬请关注。
+
+| 无为徐生   | 微信公众号                                               	 |  &ensp; |  今日头条号        |
 | ---------  | ------------------------------------------------------------- |  -      |  ----------        |
-|  二维码    | ![t]( https://codechina.csdn.net/xu180/document/-/raw/master/imgs/toutiao/无为徐生.png ) | <br/> | ![w]( https://codechina.csdn.net/xu180/document/-/raw/master/imgs/weixin/无为徐生.png )  |
+|  二维码    | ![w]( https://xyqin.coding.net/p/my/d/imgs/git/raw/master/other/wuweixusheng_weixin.png ) | <br/> | ![t]( https://xyqin.coding.net/p/my/d/imgs/git/raw/master/other/wuweixusheng_toutiao.png )     |
 
 ***
 
+> **我的网站**
 
+- 徐书法 `xushufa.cn` 个人书法练习网站
 
+| 徐书法 | 我的网站 |  备注  |
+| ---  | ------------- |  ------------- |
+| 1    | [xushufa]( https://xushufa.cn ) &ensp; [blog]( https://blog.xushufa.cn ) | 《书法练习轨迹》及博客网站。     |
+| 2    | [docsify-calligraphy]( https://docsify-calligraphy.xushufa.cn ) &ensp; [docsify-blog]( https://docsify-blog.xushufa.cn ) | docsify构建的网站。 |
+| 3    | [mkdocs-calligraphy]( https://mkdocs-calligraphy.xushufa.cn ) &ensp; [mkdocs-blog]( https://mkdocs-blog.xushufa.cn )     | mkdocs构建的网站。  |
+
+***
 
