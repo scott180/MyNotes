@@ -1,7 +1,11 @@
 # git笔记
 
 
+<<<<<<< HEAD
 > [blog]( https://blog.xushufa.cn ) &ensp; [gitlab]( https://gitlab.com/xuyq123/mynotes ) &ensp; [gitee]( https://gitee.com/xy180/MyNotes ) &ensp; [github]( https://github.com/scott180 )   
+=======
+> [gitlab]( https://gitlab.com/xuyq123/mynotes ) &ensp; [gitee]( https://gitee.com/xy180/MyNotes ) &ensp; [github]( https://github.com/scott180 )   
+>>>>>>> 356163663c98d5334718124e646ebfc863685d84
 
 
 ------------------------
@@ -327,7 +331,11 @@ git checkout -b reback_remove_branch ddd94a4
 
 ```
 
+<<<<<<< HEAD
 ### 2.4、撤销
+=======
+#### 2.4、撤销
+>>>>>>> 356163663c98d5334718124e646ebfc863685d84
 
 > git commit之后如何撤销
 
