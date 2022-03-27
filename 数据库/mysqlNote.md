@@ -829,11 +829,7 @@ CONSTRAINT check_salary CHECK
 
 ```
 
-<<<<<<< HEAD:数据库/mysqlNote.md
 ### 4.4、Mysql复制表结构、表数据的方法
-=======
-#### Mysql复制表结构、表数据的方法
->>>>>>> 356163663c98d5334718124e646ebfc863685d84:mysqlNote.md
 
 ```
 
@@ -884,7 +880,6 @@ SELECT * INTO 表2 FROM 表1
 这样会将旧表的创建命令列出。我们只需要将该命令拷贝出来，更改table的名字，就可以建立一个完全一样的表
 
 ```
-<<<<<<< HEAD:数据库/mysqlNote.md
 
 
 
@@ -896,6 +891,4 @@ SELECT * INTO 表2 FROM 表1
 | 2    | [vuepress-calligraphy]( https://vuepress-calligraphy.xushufa.cn ) &ensp; [vuepress-blog]( https://vuepress-blog.xushufa.cn ) | vuepress构建的网站。|
 | 3    | [docsify-calligraphy]( https://docsify-calligraphy.xushufa.cn ) &ensp; [docsify-blog]( https://docsify-blog.xushufa.cn )     | docsify构建的网站。 |
 | 4    | [mkdocs-calligraphy]( https://mkdocs-calligraphy.xushufa.cn ) &ensp; [mkdocs-blog]( https://mkdocs-blog.xushufa.cn )         | mkdocs构建的网站。  |
-=======
->>>>>>> 356163663c98d5334718124e646ebfc863685d84:mysqlNote.md
 
