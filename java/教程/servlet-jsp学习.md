@@ -1,4 +1,4 @@
-# servlet-jsp课程学习
+# servlet-jsp学习
 
 ```java
 servlet、jsp学习教程：myeclipse 10 + tomcat 7  --2016
