@@ -169,6 +169,21 @@ Deployment request failed for 5a3201f6016e6e078f0f3c46eb4132a3d9014bdd due to in
 
 ```
 
+---
+
+> 主要命令
+
+```sh
+# 启动 
+npm run docs:dev
+
+# 打包
+npm run docs:build
+
+# 部署
+npm run deploy
+
+```
 
 
 ### 1.3 备案号
@@ -199,22 +214,61 @@ Copyright © 2022 · xushufa.cn · 无为徐生 <br/>  [浙ICP备2022008289号-1
 
 ```
 
----
 
-> 主要命令
 
-```sh
-# 启动 
-npm run docs:dev
+### 1.4 阅读量
 
-# 打包
-npm run docs:build
+参考 [Vuepress-阅读量统计]( https://heshiyu1996.github.io/blog/tool/vuepress-stat/ ) &ensp; [valine]( https://valine.js.org/ ) &ensp; [leancloud]( https://console.leancloud.cn/apps )
 
-# 部署
-npm run deploy
+项目 [vuepress-calligraphy]( https://github.com/scott180/vuepress-calligraphy )
+
+```
+yarn add leancloud-storage -S
+
+yarn add valine -S
 
 ```
 
+创建`Valine.vue` 及 继承默认主题，并在`Page.vue`下引入 `<Valine />`。[commit]( https://github.com/scott180/vuepress-calligraphy/commit/18f3aefd2928e5e445a200842e61f9fa888575c5 )
+
+
+
+### 1.5 时间格式化
+
+[plugin-last-updated]( https://vuepress.vuejs.org/zh/plugin/official/plugin-last-updated.html ) &ensp; [momentjs]( http://momentjs.cn/ )
+
+```
+npm install moment --save
+
+```
+
+```js
+plugins: [
+[
+  '@vuepress/last-updated',
+  {
+	transformer: (timestamp, lang) => {
+	  // 不要忘了安装 moment
+	  const moment = require('moment')
+	  moment.locale(lang)
+	  return moment(timestamp).format('YYYY-MM-DD HH:mm:ss');
+	}
+  }
+]
+]
+```
+
+
+```js
+locales: {
+	'/': {
+	  lang: 'zh-CN',
+	  title: 'VuePress',
+	  description: 'Vue 驱动的静态网站生成器'
+	}
+}
+
+```
 
 
 

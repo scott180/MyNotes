@@ -1,5 +1,6 @@
 # git笔记
 
+<br />
 
 > [blog]( https://blog.xushufa.cn ) &ensp; [gitlab]( https://gitlab.com/xuyq123/mynotes ) &ensp; [gitee]( https://gitee.com/xy180/MyNotes ) &ensp; [github]( https://github.com/scott180 )   
 
@@ -241,6 +242,7 @@ git tag
 
 // 新建标签
 git tag t20220330
+git tag -a v1.1 -m '版本介绍'
 
 // 推送标签
 git push origin t20220330

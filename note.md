@@ -1,13 +1,16 @@
-# [note]( https://gitlab.com/xuyq123/mynotes/-/blob/master/note.md )
+# note
+
+<br />
+
 *   [1、日常](#note)
-*   [2、工作](#wrok)
+*   [2、工作](#work)
 *   [3、java](#java)
 *   [4、我的](#myShu)
 
 
 - [ ] `仓库` &ensp;  [blog]( https://blog.xushufa.cn ) &ensp;  [gitlab]( https://gitlab.com/xuyq123/mynotes ) &ensp; [gitee]( https://gitee.com/xy180/MyNotes ) &ensp; [github]( https://github.com/scott180/MyNotes )
 
- <h2 id="note"></h2>
+<h2 id="note"></h2>
 
 ## 1、日常
 
@@ -324,7 +327,7 @@ Computer\HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\WinHttpAutoProxySv
 
 ```
 
- <h2 id="work"></h2>
+<h2 id="work"></h2>
 
 ## 2、工作
 
@@ -434,7 +437,7 @@ http://localhost:8080/druid/sql.html
 
 *************************
 
- <h2 id="java"></h2>
+<h2 id="java"></h2>
 
 ## 3、java
 
@@ -1031,7 +1034,7 @@ maven常用打包命令
 
 ---
 
-<h2 id="muShu"></h2>
+<h2 id="myShu"></h2>
 
 ## 4、我的
 

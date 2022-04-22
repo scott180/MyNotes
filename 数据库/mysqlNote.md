@@ -1,5 +1,4 @@
-
-# mysql
+# mysql笔记
 
 ## 1、安装mysql
 

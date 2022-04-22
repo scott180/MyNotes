@@ -1,5 +1,6 @@
-
 # gitlab、github绑定自定义域名 
+
+<br />
 
 `网址` &ensp; [xushufa]( https://xushufa.cn ) &ensp; [blog]( https://vuepress-blog.xushufa.cn )
 

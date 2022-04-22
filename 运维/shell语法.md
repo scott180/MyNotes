@@ -1,10 +1,16 @@
-# linux笔记-xyq
+# shell语法
+
+<br />
+
+> [blog]( https://blog.xushufa.cn ) &ensp; [MyNotes]( https://gitee.com/xy180/MyNotes ) &ensp; [typora]( https://typora.io/#windows ) &ensp; [作业部落]( https://www.zybuluo.com/mdeditor ) &ensp; [菜鸟教程]( https://www.runoob.com ) 
+
+<br />
 
 *   [1、常用命令](#command)
 *   [2、shell编程](#shell)
     *   [2.1、shell概述及优势](#shellIntroduce)
     *   [2.2、shell创建、执行](#shellExecute)
-    *   [2.3、shell 变量、引号、数组、传递参数](#shellParams)
+    *   [2.3、shell 变量](#shellParams)
     *   [2.4、shell 运算符](#shellOperator)
     *   [2.5、shell 常用命令](#shellCommonCommand)
     *   [2.6、shell 流程控制](#shellFlow)
@@ -13,45 +19,122 @@
     *   [2.9、shell 文件包含](#shellFileContain)
 *   [3、vi命令详解](#viCommand)
 
-
-> [linux]( https://gitee.com/xy180/MyNotes/blob/master/linuxNote-x.md ) &ensp; [作业部落]( https://www.zybuluo.com/mdeditor ) &ensp; [CSDN]( https://me.csdn.net/xu180 ) &ensp; [马克飞象]( https://maxiang.io ) &ensp; [typora]( https://typora.io/#windows ) 
-
+ 
 <h2 id="command"></h2>
 
 ## 1、常用命令
 
- <h3 id="commonCommand"></h3>
  
- 
-[常用linux命令]( https://gitee.com/xy180/MyNotes/blob/master/linuxNote-x.md )
+说明                | 命令
+-----------------   | -----------------------------------------------------------------  
+进入目录       		| cd dir1
+创建目录       		| mkdir dir1   
+创建多级目录  		| mkdir -p  d1/d2/d3   
+查看当前目录		| pwd
+复制文件       		| cp srcname  targetname
+复制目录 			| cp -r dir1/ dir2/
+修改名称(移动文件)  | mv readme.txt readme.doc
+跨服务器复制        | scp /data/ROOT.tar.gz root@192.168.239.35:/opt/saiwen/db_backup
+删除普通文件a.txt   | rm a.txt (-f:表示强制)
+目录a删除           | rm -rf a       (-f:表示强制; -r:表示目录)
+建立新文件  		| touch test.txt
+清空文件            | cat /dev/null >json.log
+`-----------------` | `--------------------------------------------------------------`  
+查看磁盘空间     	| df -h
+查看文件大小        | du -h filepath
+显示文件或目录类型	| file test
+查询程序的位置	    | which test
+统计文件信息	    | wc testfile
+3 92 598 testfile   | testfile文件的行数为3、单词数92、字节数598 
+`-----------------` | `--------------------------------------------------------------`  
+压缩tar   | tar -zcvf /home/love.tar.gz /home/yx/love
+解压tar   | tar -zxvf /home/love.tar.gz
+压缩zip   | zip  test.zip  test
+解压zip   | unzip test.zip
+压缩gz    | gzip -c test.log > /root/test.gz
+解压gz    | gunzip -c debug.2020-07-02.log.gz > ./0702.log
+`-----------------` | `--------------------------------------------------------------`  
+模糊查找当前目录文件   	 | find *txt
+从根目录查找文件         | find / -name test 
+查找文件               	 | find /home -name 'test.log' -type f -print
+查找目录                 | find / -name 'tech' -type d -print
+查找当前目录及子目录文件 | find . -name "*root*" -maxdepth 1  （maxdepth指层数）
+查找大文件               | find / -type f -size +400M | xargs ls -hlrt
+`-----------------` | `--------------------------------------------------------------`  
+从旧到新并显示大小 | ls -hlrt （ls -lrt 从旧到新） 
+从新到旧并显示大小 | ls -hlt  （ls -lt  从新到旧 ）
+按大小升序		   | ls -hSlr
+按大小降序		   | ls -hSl
+模糊查找文件	   | ls name*  (ls /etc/rc.d/init.d/my*)
+显示当前目录文件   | ls
+`-----------------` | `--------------------------------------------------------------`  
+查看linux版本      	| cat /proc/version      lsb_release -a
+查看linux内核版本   | uname -a
+查看centos版本 	    | cat /etc/redhat-release
+查看java版本        | java -version
+查看进程			| ps 
+查看tomcat进程      | ps -ef | grep tomcat
+`-----------------` | `--------------------------------------------------------------` 
+上传				| sz filename   (安装上传下载 yum install lrzsz)
+下载    			| sz
+显示10行历史记录	| history 10
+查看ip             	| ifconfig
+清楚屏幕           	| clear
+查看时间           	| date
+时间格式化          | date "+%Y-%m-%d %H:%M:%S"
+查看指定年月日历   	| cal 3 2013
+建立链接 			| ln -fs /opt/tech/mysql/bin/mysql /usr/local/bin/mysql
+删除链接 			| rm -rf name
+查看所有别名   		| alias
+添加别名       		| alias test="tar -zcvf "
+删除别名       		| unalias test
+显示所有分区的信息	| fdisk -l 
+帮助				| help
+查看命令手册 		| man ls  
+树状结构展示目录	| tree   (安装tree命令 yum  install tree)  
+输出重定向(保存文件)| ls > dir.txt
+追加文件            | ls >> dir.txt 
+`-----------------` | `--------------------------------------------------------------` 
+关机				| halt              
+重启       			| reboot  
+关机重启        	| shutdown -r
+关机不重启        	| shutdown -h
+立刻关机        	| shutdown now
+
+
+********************************************************
 
 <h2 id="shell"></h2>
+
 ## 2、Shell编程 
+
 <h3 id="shellIntroduce"></h3>
+
 ### 2.1、shell概述及优势
 
 ```java
-==============================================================
   Shell是一个命令语言解释器，它拥有自己内建的Shell命令集，Shell也能被系统中其他应用程序调用。
   当普通用户成功登录后，系统将执行一个称为Shell的程序。正是Shell进程提供了命令行提示符。作为默认值，对普通用户用“$”作提示符，对超级用户(root)用“#”作提示符。
  
   Linux中的Shell有多种类型，其中最常见的是Bourne Shell (sh)、C Shell (csh)和Korn Shell (ksh)。三种Shell各有优缺点。Bourne Shell是Unix最初始的Shell，并且在每种Unix上都可以使用。Bourne Shell在Shell编程方面相当优秀，但在处理与用户的交互方面做得不如其他几种Shell。Bash(Bourne Again Shell)是Bourne Shell的扩展，与Bourne Shell完全向下兼容，并且增加了许多特性。它还包含了很多C Shell和Korn Shell中的优点，有灵活和强大的编程接口，同时又有很友好的用户界面。
   C Shell是一种比Bourne Shell更适于编程的Shell，它的语法与C语言很相似。Linux为喜欢使用C Shell的人员提供了Tcsh。Tcsh是C Shell的一个扩展版本。Tcsh包括命令行编辑、可编程单词补全、拼写矫正、历史命令替换、作业控制和类似C语言的语法，它提供比Bourne Shell更多的提示符参数。
   Korn Shell集合了C Shell和Bourne Shell的优点并且和Bourne Shell完全兼容。Linux系统提供了pdksh(ksh的扩展)，它支持任务控制，可以在命令行上挂起、后台执行、唤醒或终止程序。
+```
 
+```
 
 	Bash是大多数Linux系统(包括红旗Linux系统)的默认Shell。Bash有以下的优点：
 	(1) 补全命令。当你在Bash命令提示符下输入命令或程序名时，你不必输全命令或程序名，按【Tab】键，Bash将自动补全命令或程序名。
 	(2) 通配符。在Bash下可以使用通配符“*”和“？”。“*”可以替代多个字符，而“？”则替代一个字符。
     (3) 历史命令。Bash能自动跟踪用户每次输入的命令，并把输入的命令保存在历史列表缓冲区。缓冲区的大小由HISTSIZE变量控制。当用户每次登录后，home目录下的“.bash_history”文件将初始化历史列表缓冲区。也能通过history和fc命令执行、编辑历史命令。
 	(4) 别名。在Bash下，可用alias和unalias命令给命令或可执行程序起别名和清除别名，这样就可以用自己习惯的方式输入命令。
-```
+
      查看所有别名   alias
      添加别名       alias test="tar -zcvf "
      删除别名       unalias test
-    ``` 
+
     (5)输入/输出重定向。输入重定向用于改变命令的输入，输出重定向用于改变命令的输出。输出重定向更为常用，它经常用于将命令的结果输入到文件中，而不是屏幕上。输入重定向的命令是“<”，输出重定向的命令是“>”
-    ```  
+
     ① 输入重定向：
     [root@redflag /root]#wc</etc/passwd
     20 23 726
@@ -59,12 +142,12 @@
     [root@redflag /root]#ls>dir.out                        
     上面命令将ls命令的输出保存为文件dir.out。
     [root@redflag /root]#ls>>dir1.out	 “>>”表示要将一条命令的输出结果追加到文件dir1.out的后面，该文件的原有内容不被破坏，如果使用“>”，则文件原有内容被覆盖。
-    ``` 
-     (6) 管道。管道用于将一系列的命令连接起来，也就是把前面命令的输出作为后面命令的输入。管道的命令是“|”。
-    ``` 
+
+    (6) 管道。管道用于将一系列的命令连接起来，也就是把前面命令的输出作为后面命令的输入。管道的命令是“|”。
+
     root@redflag /root]# cat dir.out|grep "test "|wc –l
     管道将cat命令(列出一个文件的内容)的输出送给grep命令，grep命令在输入里查找单词test，grep的输出则是所有包含单词test的行，这个输出又被送给wc命令，wc命令统计出输入中的行数。
-    ``` 
+
     (7) 提示符。
     (8) 作业控制。
     
@@ -76,19 +159,19 @@
 ```
 
 <h3 id="shellExecute"></h3>
+
 ### 2.2、shell创建、执行 
 
-​```java
-==============================================================
+```
 	Shell 脚本（shell script），是一种为 shell 编写的脚本程序。业界所说的 shell 通常都是指 shell 脚本。
 	
 一、创建 Shell 脚本
 	打开文本编辑器(可以使用 vi/vim 命令来创建文件)，新建一个文件 test.sh，扩展名为 sh（sh代表shell），扩展名并不影响脚本执行，见名知意就好，如果你用 php 写 shell 脚本，扩展名就用 php 好了。
 	输入一些代码，一般是这样：
-```
+
     	#!/bin/bash
     	echo "Hello World !"
-    ```
+
     #! 是一个约定的标记，它告诉系统这个脚本需要什么解释器来执行，即使用哪一种 Shell。
     ① 如果Shell脚本的第一个非空白字符不是“#”，则它会使用Bourne Shell。
     ② 如果Shell脚本的第一个非空白字符是“#”，但不是以“#！”开头时，则它会使用C Shell。
@@ -96,32 +179,33 @@
     echo 命令用于向窗口输出文本。
 
 
-​	
+
 二、运行 Shell 脚本有两种方法：
 ​	1、作为可执行程序
 ​	将上面的代码保存为 test.sh，并 cd 到相应目录：
-​	```
+
 ​	chmod +x ./test.sh  #使脚本具有执行权限
 ​	./test.sh  #执行脚本
-​	```
+
 ​	注意，一定要写成 ./test.sh，而不是 test.sh，运行其它二进制的程序也一样，直接写 test.sh，linux 系统会去 PATH 里寻找有没有叫 test.sh 的，而只有 /bin, /sbin, /usr/bin，/usr/sbin 等在 PATH 里，你的当前目录通常不在 PATH 里，所以写成 test.sh 是会找不到命令的，要用 ./test.sh 告诉系统说，就在当前目录找。
 ​	
 ​	2、作为解释器参数
 ​	这种运行方式是，直接运行解释器，其参数就是 shell 脚本的文件名，如：
-​	```
+
 ​	/bin/sh test.sh
 ​	/bin/php test.php
-​	```
+
 ​	这种方式运行的脚本，不需要在第一行指定解释器信息，写了也没用。
 
-==============================================================
+
 ```
 
 <h3 id="shellParams"></h3>
-### 2.3、shell 变量、引号、数组、传递参数 
 
-​```java
-==============================================================
+### 2.3、shell 变量 
+
+```
+shell 变量、引号、数组、传递参数
 http://www.runoob.com/linux/linux-shell-variable.html 转自菜鸟教程
 
 test="测试引号"
@@ -212,14 +296,13 @@ $ ./test.sh 1 2 3
 2
 3
 
-==============================================================
 ```
 
 <h3 id="shellOperator"></h3>
+
 ### 2.4、shell 运算符 
 
-```java
-==============================================================
+```
 
 原生bash不支持简单的数学运算，但是可以通过其他命令来实现，例如 awk 和 expr，expr 最常用。
 expr 是一款表达式计算工具，使用它能完成表达式的求值操作。
@@ -241,7 +324,9 @@ LT 就是 LESS THAN小于
 GE 就是 GREATER THAN OR EQUAL 大于等于 
 LE 就是 LESS THAN OR EQUAL 小于等于
 ```
+
 #### 2.4.1、算术运算符
+
 ```
 `算术运算符`
 下表列出了常用的算术运算符，假定变量 a 为 10，变量 b 为 20：
@@ -303,6 +388,7 @@ if...then...fi 是条件语句，后续将会讲解。
 ```
 
 #### 2.4.2、关系运算符
+
 ```
 `关系运算符`
 关系运算符只支持数字，不支持字符串，除非字符串的值是数字。
@@ -591,6 +677,7 @@ fi
 ```
 
 ### 2.5、shell 常用命令 <h3 id="shellCommonCommand"></h3>
+
 #### 2.5.1、shell echo命令
 
 ```java
@@ -845,7 +932,9 @@ fi
 ```
 
 <h3 id="shellFlow"></h3>
+
 ### 2.6、shell 流程控制 
+
 #### 2.6.1、if
 
 ```java
@@ -916,7 +1005,9 @@ fi
 输出结果：
 两个数字相等!
 ```
+
 #### 2.6.2、for
+
 ```
 for 循环
 与其他编程语言类似，Shell支持for循环。
@@ -1020,6 +1111,7 @@ done
 ```
 
 #### 2.6.5、case
+
 ```
 `case  esac`
 Shell case语句为多选择语句。可以用case语句匹配一个值与一个模式，如果匹配成功，执行相匹配的命令。case语句格式如下：
@@ -1114,6 +1206,7 @@ case的语法和C family语言差别很大，它需要一个esac（就是case反
 ```
 
 <h3 id="shellFunction"></h3>
+
 ### 2.7、shell 函数 
 
 ```java
@@ -1217,6 +1310,7 @@ $?	显示最后命令的退出状态。0表示没有错误，其他任何值表�
 ```
 
 <h3 id="shellIO"></h3>
+
 ### 2.8、shell 输入、输出重定向 
 
 ```java
@@ -1412,6 +1506,7 @@ $ ./test2.sh
 ```
 
 <h2 id="viCommand"></h2>
+
 ## 3、vi命令详解 
 
 ```java
