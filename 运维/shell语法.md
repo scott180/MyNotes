@@ -19,7 +19,7 @@
     *   [2.9、shell 文件包含](#shellFileContain)
 *   [3、vi命令详解](#viCommand)
 
- 
+
 <h2 id="command"></h2>
 
 ## 1、常用命令
@@ -1465,6 +1465,8 @@ xxx 2>&1 > list
 先将要输出到stderr的内容重定向到stdout，此时会产生一个stdout的拷贝，作为程序的stderr，而程序原本要输出到stdout的内容，依然是对接在stdout原身上的，因此第二步重定向stdout，对stdout的拷贝不产生任何影响
 ==============================================================
 ```
+
+<h3 id="shellFileContain"></h3> 
 
 ### 2.9、shell 文件包含 
 

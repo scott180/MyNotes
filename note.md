@@ -141,6 +141,12 @@ markdown空格符号
 
 ```
 
+```
+markdown表格宽度设置
+
+| git仓库 | 布署方法 | <span style="white-space:nowrap;">备注&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</span> |
+
+```
 
 ```
 gitlab、github、gitee布署mkdocs主题仓库
@@ -935,6 +941,17 @@ syso+Alt+/      输出
 | [jdk8]( https://pan.baidu.com/s/1MT8zldLnH9PuZsVR77DEAw )     | mv5i |
 | [jdk9]( https://pan.baidu.com/s/1SMGJqedJKR3hULrpWn4eLA )     | hai6 |
 | [jdk10]( https://pan.baidu.com/s/1SHA7XNoPxBdOkaed3cunow )    | hgyn |
+
+---
+
+```
+java  mysql  maven  
+idea  git  navicat notepad++  
+postman xshell fillder typora VMware
+redis mongo kafka zookeeper tomcat eclipse
+python  nodejs vue 
+火绒安全软件 向日葵 Everything
+```
 
 ---
 

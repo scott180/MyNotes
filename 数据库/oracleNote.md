@@ -1345,12 +1345,23 @@ cmd imp
 	)  
 	WHERE RN >= 21
 	
+
+	
+oracle查询:分组查询，取出每组中的第一条记录			
+https://blog.csdn.net/yatou5211/article/details/53764676			
+SELECT * FROM(
+SELECT z.type , z.code ,ROW_NUMBER()
+OVER(PARTITION BY z.type ORDER BY z.code) AS code_id
+FROM group_info z
+)
+WHERE code_id =1;
+
+	
 oracle   dt = session.query(sql, new Integer[]{rowBeginIndex+rows,rowBeginIndex});	
 mysql    dt = session.query(sql, new Integer[]{rowBeginIndex,rows});
 
 
 create sequence HIBERNATE_SEQUENCE start with 1 increment by 1;
-
 
 
 

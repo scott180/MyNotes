@@ -2,9 +2,23 @@
 
 ## 1、安装mysql
 
-```
-安装mysql 5.7
+> 安装mysql 5.7
+
+```js
+参考
+http://blog.xushufa.cn
 http://blog.csdn.net/wengengeng/article/details/52013650
+https://www.cnblogs.com/jyjia/archive/2019/03/07/10490013.html
+
+
+下载mysql
+https://www.mysql.com/
+https://www.aliyundrive.com/s/pymjQca3DbY
+
+```
+
+
+```java
 下载mysql
 
     进入官网：https://www.mysql.com/
@@ -22,7 +36,6 @@ http://blog.csdn.net/wengengeng/article/details/52013650
 
 
 2.创建my.ini文件（在 D:\mysql-5.7.13-winx64 目录），内容如下：
-[plain] view plain copy
 
     [mysqld]  
     port=3306  
@@ -35,6 +48,10 @@ http://blog.csdn.net/wengengeng/article/details/52013650
  注意，basedir和datadir是必须要配置的，basedir就是你解压的目录。官方文档上说，如果你喜欢用反斜杠，则要用双反斜杠，斜杠的话就不用这样。即：D:\\mysql-5.7.13-winx64\\ 或：D:/mysql-5.7.13-winx64/
 由于本人喜欢把数据库的数据文件独立出来，所以就把datadir配置到其它地方，方便管理。另外，创建该目录。
 
+```
+
+
+```java
 3.配置环境变量
 
     添加一个名叫 MYSQL_HOME 的变量。
@@ -45,12 +62,10 @@ http://blog.csdn.net/wengengeng/article/details/52013650
     以管理员身份运行cmd，进入mysql的bin目录。
     初始化数据库文件
 
-[plain] view plain copy
-
     mysqld  --initialize  
 
  初始化成功后，会在datadir目录下生成一些文件，其中，xxx.err文件里说明了root账户的临时密码。那行大概长这样：
-[plain] view plain copy
+ 
 
     2016-07-24T05:19:20.152135Z 1 [Note] A temporary password is generated for root@localhost: bL2uuwuf0H(X  
 
@@ -58,33 +73,24 @@ http://blog.csdn.net/wengengeng/article/details/52013650
 即密码是：bL2uuwuf0H(X
 
     注册mysql服务
-
-[html] view plain copy
-
     mysqld -install MySQL  
 
+	
     启动mysql服务
-
-[plain] view plain copy
-
     net start MySQL  
 
 
     修改root密码
-
-输入以下命令，回车，然后输入上面的默认密码：
-[sql] view plain copy
-
+	输入以下命令，回车，然后输入上面的默认密码：
     mysql -u root -p  
 
 
-进入MySQL命令行模式后，输入如下命令，命令中的 new_password 为root账号的新密码，请修改它。
-[sql] view plain copy
-
+	进入MySQL命令行模式后，输入如下命令，命令中的 new_password 为root账号的新密码，请修改它。
     ALTER USER 'root'@'localhost' IDENTIFIED BY 'new_password';  
-	
-	
-	
+```
+
+
+```java	
 	
 注意：
 一、如果会弹出“无法启动此程序，因为计算机中丢失 msvcp120.dll...”等类似的提示  请安装 vcredist_x86.exe
@@ -152,7 +158,8 @@ https://jingyan.baidu.com/article/7c6fb42865213f80642c90c3.html
 
 	6  报错 ERROR 1820 (HY000): Unknown error 1820
 	   SET PASSWORD = PASSWORD('12344');
-	
+
+	   
 五、win10 不能自启
 https://www.cnblogs.com/jyjia/archive/2019/03/07/10490013.html
 解决办法： my.ini文件保存为ANSI格式文件 ！！！
@@ -161,7 +168,7 @@ https://www.cnblogs.com/jyjia/archive/2019/03/07/10490013.html
 
 ## 2、基础命令
 
-```
+```sql
 
 -- dos命令进入数据
 1.进入安装mysql的目录
@@ -398,7 +405,7 @@ mysqldump -uroot -p –default-character-set=latin1 –set-charset=gbk –skip-o
 
 ### 3.1、linux命令
 
-```
+```sql
 
 指令 ps -ef|grep mysql 得出结果
     root     17659     1  0  2011 ?        00:00:00 /bin/sh /usr/bin/mysqld_safe --datadir=/var/lib/mysql --socket=/var/lib/mysql/mysql.sock --log-error=/var/log/mysqld.log --pid-file=/var/run/mysqld/mysqld.pid   
@@ -508,7 +515,7 @@ SELECT FROM_UNIXTIME(operation_time/1000,"%Y-%m-%d %H:%i:%s") operationDate FROM
 
 ### 3.3、group_concat函数
 
-```
+```sql
 MySQL中group_concat函数
 
 https://www.iteye.com/blog/hchmsguo-555543
@@ -613,7 +620,7 @@ inner join(等值连接) 只返回两个表中联结字段相等的行
 举例如下： 
 --------------------------------------------
 表A记录如下：
-aID　　　　　aNum
+aID　　　　　aNums
 1　　　　　a20050111
 2　　　　　a20050112
 3　　　　　a20050113
@@ -698,7 +705,7 @@ compopr参数指定关系比较运算符："="， "<"， ">"， "<="， ">=" 或
 
 ### 3.4、Case when 的使用方法
 
-```
+```java
 
 Case when 的使用方法
 https://www.cnblogs.com/yazdao/archive/2009/12/09/1620482.html
@@ -835,7 +842,7 @@ CONSTRAINT check_salary CHECK
 
 ### 4.1、复制表结构、表数据
 
-```
+```java
 
 Mysql复制表结构、表数据的方法
 
@@ -885,6 +892,32 @@ SELECT * INTO 表2 FROM 表1
 
 这样会将旧表的创建命令列出。我们只需要将该命令拷贝出来，更改table的名字，就可以建立一个完全一样的表
 
+```
+
+
+```
+sql中文排序 
+SELECT id,name FROM `T_USER` ORDER BY convert(name using gbk)  ASC limit 10,100;
+```
+
+
+```js
+	
+https://www.cnblogs.com/kyosusan/p/5198934.html	
+修改root密码
+
+一、知道原来的myql数据库的root密码；
+
+①： 在终端命令行输入 mysqladmin -u root -p password "新密码" 回车 ，Enter password: 【输入原来的旧密码】
+②： 登录mysql系统修改， mysql -uroot -p 回车 Enter password: 【输入原来的密码】
+
+mysql>use mysql;
+
+mysql> update user set password=password("新密码") where user='root';        【密码注意大小写】
+
+mysql> flush privileges;
+
+mysql> exit;   
 ```
 
 
