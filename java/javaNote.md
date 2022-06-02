@@ -497,6 +497,17 @@ syso+Alt+/      输出
 
 ---
 
+```
+java  mysql  maven  
+idea  git  navicat notepad++  
+postman xshell fillder typora VMware
+redis mongo kafka zookeeper tomcat eclipse
+python  nodejs vue 
+火绒安全软件 向日葵 Everything
+```
+
+---
+
 ### 3.2、java maven环境变量
 
 ```java
