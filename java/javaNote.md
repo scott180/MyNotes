@@ -259,6 +259,28 @@ slist = list.stream().sorted(Comparator.comparing(Student::getAge).reversed()).c
 slist.forEach(e -> System.out.println("Id:" + e.getId() + ", Name: " + e.getName() + ", Age:" + e.getAge()));
 
 
+分组排序
+https://www.toutiao.com/article/7096484701099295263
+
+TreeMap<TypeEnum, List<Customer>> treeMap4 = customers.stream().sorted(Comparator.comparing(Customer::getAge, Comparator.nullsLast(Integer::compareTo)))
+		.collect(Collectors.groupingBy(Customer::getType, TreeMap::new, Collectors.toList()));
+	
+	
+Map<String, List<LogisticsStatisticsDAO>> logisticsRegionMap = logisticsStatisticsDAOS.stream().
+		collect(Collectors.groupingBy(LogisticsStatisticsDAO::getRegion, WarehouseUtil::getCustomSortTreeMap, Collectors.toList()));
+		
+public static TreeMap<String, List<LogisticsStatisticsDAO>> getCustomSortTreeMap() {
+	// return new TreeMap<>(Comparator.comparingInt(TypeEnum::getPriority));
+	TreeMap<String, List<LogisticsStatisticsDAO>> map = new TreeMap<String, List<LogisticsStatisticsDAO>>(new Comparator<String>() {
+		@Override
+		public int compare(String r1, String r2) {
+			// 升序
+			return CommonUtil.regionSort(r1, r2);
+		}
+	});
+	return map;
+}
+	
 ```
 
 ### 1.4、flatmap,peek,newArrayList

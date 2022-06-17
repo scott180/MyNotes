@@ -35,13 +35,10 @@
 | 2      | [blog.xushufa.cn]( https://blog.xushufa.cn )  | `vuepress`构建的博客网站。 |
 | 3      | [web.xushufa.cn]( https://web.xushufa.cn )    | `vuepress-theme-reco`构建的博客网站。|
 
-
 ---
-
 
 > 个人邮箱 
 
 1021151991@qq.com 
-
 
 ---
