@@ -2,15 +2,8 @@
 
 <br />
 
-*   [1、日常](#note)
-*   [2、工作](#work)
-*   [3、java](#java)
-*   [4、我的](#myShu)
-
-
 - [ ] `仓库` &ensp;  [blog]( https://blog.xushufa.cn ) &ensp;  [gitlab]( https://gitlab.com/xuyq123/mynotes ) &ensp; [gitee]( https://gitee.com/xy180/MyNotes ) &ensp; [github]( https://github.com/scott180/MyNotes )
 
-<h2 id="note"></h2>
 
 ## 1、日常
 
@@ -416,14 +409,10 @@ copyPush
 
 ```
 
-<h2 id="work"></h2>
-
-## 2、工作
-
-*************************
+### 1.4、工作
 
 
-###  2.1、善事利器
+#### 1.4.1、善事利器
 
 ```js
 工欲善其事必先利其器
@@ -439,7 +428,7 @@ git ：gitlab、github、gitee、gitcode、coding、bitbucket
 
 *************************
 
-### 2.2、mysql logbin日志 
+#### 1.4.2、mysql logbin日志 
 
 ```sql
 mysql开启log-bin日志.md  https://gitlab.com/xuyq123/mynotes/-/blob/master/mysql%E5%BC%80%E5%90%AFlog-bin%E6%97%A5%E5%BF%97.md
@@ -459,7 +448,7 @@ TRUNCATE table mysql.general_log
 
 --------------------
 
-### 2.3、端点已使用
+#### 1.4.3、端点已使用
 
 ```sql
 C:\Users\Administrator>netstat -ano|findstr "8080"
@@ -476,7 +465,7 @@ C:\Users\Administrator>taskkill /f /t /im 11492
 
 *************************
 
-### 2.4、druid 安全配置
+#### 1.4.4、druid 安全配置
 
 ```vb
 
@@ -510,7 +499,7 @@ http://localhost:8080/druid/sql.html
 
 *************************
 
-### 2.5、github登录不上解决办法
+#### 1.4.5、github登录不上解决办法
 
 ```
 参考 https://blog.csdn.net/ych9527/article/details/114372201
@@ -526,11 +515,10 @@ http://localhost:8080/druid/sql.html
 
 *************************
 
-<h2 id="java"></h2>
 
-## 3、java
+## 2、java
 
-### 3.1、java常用方法
+### 2.1、java常用方法
 
 ```
 
@@ -557,7 +545,7 @@ Assert.isTrue(!StringUtils.isEmpty(param.getPhone()), "联系方式不能为空"
 
 ```
 
-#### 3.1.1、lambda表达式
+#### 2.1.1、lambda表达式
 
 ```java
 
@@ -644,7 +632,7 @@ basketList.parallelStream().collect(Collectors.groupingBy(item -> item.getAddrTe
 
 ```
 
-#### 3.1.2、Map遍历
+#### 2.1.2、Map遍历
 
 ```java
 
@@ -694,7 +682,7 @@ for(String key : map.keySet()){
 
 ```
 
-#### 3.1.3、java排序
+#### 2.1.3、java排序
 
 ```java
 java排序
@@ -813,7 +801,7 @@ public static TreeMap<String, List<LogisticsStatisticsDAO>> getCustomSortTreeMap
 	
 ```
 
-#### 3.1.4、flatmap,peek,newArrayList
+#### 2.1.4、flatmap,peek,newArrayList
 
 ```java
 JAVA8 中的flatmap
@@ -916,9 +904,9 @@ List<String> list=new ArrayList(Arrays.asList(nameList));
 
 ---
 
-### 3.2、idea基本配置与快捷键
+### 2.2、idea基本配置与快捷键
 
-#### 3.2.1、idea配置与插件
+#### 2.2.1、idea配置与插件
 
 
 ```java
@@ -974,7 +962,7 @@ Markdown
 swagger
 ```
 
-#### 3.2.2、idea常用快捷键
+#### 2.2.2、idea常用快捷键
 
 ```
 eclipse & idea常用快捷键
@@ -1007,9 +995,9 @@ syso+Alt+/      输出
 
 ---
 
-### 3.3、java软件
+### 2.3、java软件
 
-#### 3.3.1、jdk java软件
+#### 2.3.1、jdk java软件
 
 | 软件                              | 下载地址   |
 | --------                          | -----      |
@@ -1060,7 +1048,7 @@ python  nodejs vue
 
 ---
 
-#### 3.3.2、java maven环境变量
+#### 2.3.2、java maven环境变量
 
 ```java
 java环境变量配置    注意：环境变量中都是英文符号，结尾以英文分号;结束
@@ -1093,7 +1081,7 @@ tomcat环境变量配置
 ---
 
 
-#### 3.3.3、postman配置
+#### 2.3.3、postman配置
 
 ```
 
@@ -1118,7 +1106,7 @@ Settings--Proxy
 
 ---
 
-### 3.4、springboot项目打包布署
+### 2.4、springboot项目打包布署
 
 ```
 springboot项目打包布署
@@ -1156,9 +1144,8 @@ maven常用打包命令
 
 ---
 
-<h2 id="myShu"></h2>
 
-## 4、我的
+### 2.5、我的网站
 
 > **平台**
 
