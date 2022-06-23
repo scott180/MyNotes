@@ -50,7 +50,7 @@ F12  浏览器打开调试
 
 #### 1.1.2、修改文件的默认打开方式
 
-```
+```sql
 修改文件的默认打开方式：
 
 1.修改属性
@@ -60,7 +60,10 @@ F12  浏览器打开调试
 右击--打开方式--选择默认程序
 
 3.注册表设置
-在运行里面输入regedit（注册表编辑器），HEY_CLASS_ROOT下面是所有文件的后缀名文件，找到你想取消关联的后缀名，如.ppt，单击这个文件夹，右边出现的“数据”一项，双击“（默认）”，打开对话框，将“数据”下面可以填写的部分清除，保持空白，确定。你的电脑里面所有.ppt文件就没有了任何关联和默认程序，再按自己的想法重新关联或默认就行了。
+Win+R 在运行里面输入regedit（注册表编辑器），HEY_CLASS_ROOT下面是所有文件的后缀名文件，
+找到你想取消关联的后缀名，如.ppt，单击这个文件夹，右边出现的“数据”一项，双击“（默认）”，
+打开对话框，将“数据”下面可以填写的部分清除，保持空白，确定。
+你的电脑里面所有.ppt文件就没有了任何关联和默认程序，再按自己的想法重新关联或默认就行了。
 还有，要看你修改的是什么程序的默认打开方式，不一样的程序填写的数据不一样。
 如果用这个办法还不行就应该不单是这个软件的问题了，可能是系统其他设置的问题。 
 
@@ -205,7 +208,7 @@ win7无线网络连接不上（未连接-连接可用）常用解决方法。
 
 ```
 
-```
+```c
 代理连接失败 （-130 ERR_PROXY_CONNECTION_FAILED ）
 
 治本方法：
@@ -242,18 +245,24 @@ Computer\HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\WinHttpAutoProxySv
 
 #### 1.2.4、视频会员兑换渠道
 
-```
-
+```js
 视频会员：腾讯视频、优酷、爱奇艺、芒果TV等视频网站会员积分兑换
 
 微信支付-支付有优惠-兑换好礼
-安徽掌上10000APP兑换币 、 积分
+安徽掌上10000APP兑换币、积分
 安徽电信公众号-个人中心-金币兑换
 中国联通APP积分
 电信营业厅 APP积分
 微众银行APP积分
 支付宝会员积分
 云闪付APP签到金
+--2021
+
+
+招商银行 腾讯超V联名卡 腾讯权益六选一
+平安悦享白金卡 百变好礼月月享
+--2022
+
 
 ```
 
@@ -930,14 +939,14 @@ D:\ProgramFiles\git\Git\bin\bash.exe
 5、自动生成作者信息
 file and code Templates -- Includes -- File Header
 /**
- * @author xu
+ * @author xyq
  * @date ${DATE} ${TIME}
  */
 
+ 
 6、代码自动导入包
 Settings→Editor→General→Auto Import
-选中Optimize imports on the fly和Add unambiguous imports on the fly
-
+选中Optimize imports on the fly 和 Add unambiguous imports on the fly
 
 7、代码自动定位文件
 Project - Show Options Menu - Autoscroll From Source
@@ -951,7 +960,7 @@ Project - Show Options Menu - Show Members
 ```
 
 ```
-idea常用插件 Plugins
+idea常用插件 File -- Settings -- Plugins
 lombok
 Free Mybatis plugin    MybatisX
 Spring Assistant 
@@ -1083,8 +1092,7 @@ tomcat环境变量配置
 
 #### 2.3.3、postman配置
 
-```
-
+```js
 postman环境变量配置
 --manage environments
 https://blog.csdn.net/mt122/article/details/104530439
@@ -1108,7 +1116,7 @@ Settings--Proxy
 
 ### 2.4、springboot项目打包布署
 
-```
+```sh
 springboot项目打包布署
 https://gitlab.com/xuyq123/calligraphy-boot
 
