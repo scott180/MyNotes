@@ -418,12 +418,12 @@ usr/lib/mysql 是指：mysql的安装路径
 
 导出数据库 /opt/tech/mysql/bin/mysqldump -uroot -p1234 webpro > /opt/tech/20170814.sql
  
-导入数据  mysql -uroot -pSudy.web123 UCPPLUS < /opt/sql/ucpplus_v4_0_5.sql
+导入数据  mysql -uroot -psd.web123 UCPPLUS < /opt/sql/ucpplus_v4_0_5.sql
 
 mysql导入时出现"ERROR at line : Unknown command '\''."的解决办法
 		 mysql -uroot -p12344  --default-character-set=utf8 IMP_V12_1 < E:\ids-1.1.2.sql
 
-导出查询语句 /opt/sudytech/mysql/bin/mysql -uroot -p12344 -e "use IDSPLUS;select id,loginName from T_USER where id=1\G;" >> /opt/test.txt
+导出查询语句 /opt/sdtech/mysql/bin/mysql -uroot -p12344 -e "use IDSPLUS;select id,loginName from T_USER where id=1\G;" >> /opt/test.txt
 
 导出表   /opt/tech/mysql/bin/mysqldump -uroot -p1234 webpro t_user > /opt/tech/t_user.sql
 
@@ -452,9 +452,9 @@ mysql -u root -p12344
 
 navicat连接mysql失败，授权：
 GRANT ALL PRIVILEGES ON `db1`.* TO 'user1'@'192.171.1.18' identified by 'pwd1' WITH GRANT OPTION;
-GRANT ALL PRIVILEGES ON `IDSPLUS`.* TO 'sudy'@'192.171.1.18' identified by 'shhg12344' WITH GRANT OPTION;
+GRANT ALL PRIVILEGES ON `IDSPLUS`.* TO 'sd'@'192.171.1.18' identified by 'shhg12344' WITH GRANT OPTION;
 
-grant all privileges on *.* to root@'%' identified by 'Sudy.web123' with grant option;
+grant all privileges on *.* to root@'%' identified by 'sd.web123' with grant option;
 
 -- flush privileges;
 
@@ -486,19 +486,19 @@ SELECT @@GLOBAL.sql_mode;
 lower_case_table_names = 2
 
 启动mysql
-  /opt/sudytech/mysql/support-files/mysql.server start
+  /opt/sdtech/mysql/support-files/mysql.server start
   
-  /opt/sudytech/mysql/bin/mysqld_safe --user=mysql --basedir=/opt/sudytech/mysql --datadir=/opt/sudytech/mysql/data & 
+  /opt/sdtech/mysql/bin/mysqld_safe --user=mysql --basedir=/opt/sdtech/mysql --datadir=/opt/sdtech/mysql/data & 
   
-  cd /opt/sudytech/mysql/
+  cd /opt/sdtech/mysql/
   ./bin/mysqld_safe &
   
   
   chmod -R 775 mysql
   
   
-  cd /data/sudytech/mysql/&&./bin/mysqld_safe &
-  cd /opt/sudytech/mysql/ && bin/mysqld_safe --user=root &
+  cd /data/sdtech/mysql/&&./bin/mysqld_safe &
+  cd /opt/sdtech/mysql/ && bin/mysqld_safe --user=root &
   
 ```
 
@@ -506,10 +506,19 @@ lower_case_table_names = 2
 
 
 ```
-
 sql将毫秒数字转换为日期
 SELECT FROM_UNIXTIME(operation_time/1000,"%Y-%m-%d %H:%i:%s") operationDate FROM ins_purchase
 
+```
+
+```sql
+--时间计算
+SELECT id,car_number,tel,person_liable,result,create_time,
+date_format(create_time, '%H:%i:%s') t1,
+timediff(date_format(create_time, '%H:%i:%s'),'03:00:00') t2,
+(HOUR(timediff(date_format(create_time, '%H:%i:%s'),'03:00:00')) + ROUND(MINUTE(timediff(date_format(create_time, '%H:%i:%s'),'03:00:00'))/60) )
+ t3 FROM `ins_car_use_log` where person_liable like '%林%'
+ order by create_time desc limit 100;
 
 ```
 
@@ -608,8 +617,7 @@ select id,group_concat(name order by name desc) from aa group by id;
 
 ### 3.3、left join左右连接
 
-```
-
+```sql
 sql之left join、right join、inner join的区别
 https://www.cnblogs.com/pcjim/articles/799302.html
 
@@ -925,6 +933,6 @@ mysql> exit;
 
 - [数据库隔离级别]( https://blog.xushufa.cn )
 
-- [mysql开启log-bin日志]( https://reco-blog.xushufa.cn )
+- [mysql开启log-bin日志]( https://web.xushufa.cn )
 
 

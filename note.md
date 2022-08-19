@@ -529,8 +529,7 @@ http://localhost:8080/druid/sql.html
 
 ### 2.1、java常用方法
 
-```
-
+```java
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -539,7 +538,9 @@ public class ComboboxVO {}
 
 MessageResult result = JSON.parseObject(text, new TypeReference<MessageResult>() {});
 List<DiffRegionLogisticsDetailVO> cateList = JSON.parseObject(text, new TypeReference<List<DiffRegionLogisticsDetailVO>>() {});
-				
+
+String detail = JSON.toJSONStringWithDateFormat(billDO, "yyyy-MM-dd HH:mm:ss", SerializerFeature.WriteDateUseDateFormat);
+			
 				
 # 格式化全局时间
 spring.jackson.date-format=yyyy-MM-dd HH:mm:ss
@@ -551,6 +552,15 @@ private Date createTime;
 
 
 Assert.isTrue(!StringUtils.isEmpty(param.getPhone()), "联系方式不能为空");
+
+
+@MapKey("operatorId")
+List<Map<Integer, String>> queryOperatorList();
+
+<select id="queryOperatorList" resultType="java.util.Map">
+	select operator_id operatorId,operator_name operatorName from ins_region_log
+	GROUP BY operator_id
+</select>
 
 ```
 
@@ -963,6 +973,7 @@ Project - Show Options Menu - Show Members
 idea常用插件 File -- Settings -- Plugins
 lombok
 Free Mybatis plugin    MybatisX
+GenerateAllSetter      Alt+Enter
 Spring Assistant 
 Translation
 
@@ -1021,23 +1032,22 @@ syso+Alt+/      输出
 
 > Java Development Kit (JDK) 是Sun公司（已被Oracle收购）针对Java开发员的软件开发工具包。自从Java推出以来，JDK已经成为使用最广泛的Java SDK（Software development kit）。
 
-- [ ] jdk6--jdk10都是来自[官网]( http://www.oracle.com/technetwork/java/archive-139210.html )
-这些jdk软件有三种格式：tar.gz、zip、bin
+- [ ] jdk来自[官网]( http://www.oracle.com/technetwork/java/archive-139210.html ) ，这些软件有三种格式：tar.gz、zip、bin
 - 1、zip是windoxs软件，解压后会有exe格式的jdk软件，直接安装即可。
-- 2、tar.gz是linux软件，需要用tar -zxvf xx.tar.gz解压。
+- 2、tar.gz是linux软件，需要用 `tar -zxvf xx.tar.gz` 解压。
 - 3、bin也是linux软件，需解压：
    - 添加执行权限 
-    chmod u+x jdk-6u45-linux-x64.bin
+    `chmod u+x jdk-6u45-linux-x64.bin`
    - 解压 
-    ./jdk-6u45-linux-x64.bin
+    `./jdk-6u45-linux-x64.bin`
    
 - [ ] 软件名称里含有x64则是64位软件，32位为则没有。如下：
-- jdk-8u162-windows-x64.zip  jdk-8u162-linux-x64.tar.gz  是64位软件
-- jdk-8u72-windows-i586.zip jdk-8u72-linux-i586.tar.gz   是32位软件
+- `jdk-8u162-windows-x64.zip`  `jdk-8u162-linux-x64.tar.gz`  是64位软件
+- `jdk-8u72-windows-i586.zip`  `jdk-8u72-linux-i586.tar.gz`  是32位软件
 
 
-| 云盘链接                              | 密码   |
-| --------                              | -----  |
+| 云盘链接                                                      | 密码 |
+| --------------------------------                              | ---  |
 | [jdk6]( https://pan.baidu.com/s/1z3p1DecyBVugP7cECIupyg )     | 829h |
 | [jdk7]( https://pan.baidu.com/s/17ik9x-g3RkYEu6vah9CZVw )     | muvr |
 | [jdk8]( https://pan.baidu.com/s/1MT8zldLnH9PuZsVR77DEAw )     | mv5i |
@@ -1174,7 +1184,7 @@ maven常用打包命令
 
 | 无为徐生   | 微信公众号                                               	 |  &ensp; |  今日头条号        |
 | ---------  | ------------------------------------------------------------- |  -      |  ----------        |
-|  二维码    | ![w]( https://xyqin.coding.net/p/my/d/imgs/git/raw/master/other/wuweixusheng_weixin.png ) | <br/> | ![t]( https://xyqin.coding.net/p/my/d/imgs/git/raw/master/other/wuweixusheng_toutiao.png )     |
+|  二维码    | ![w]( https://md.xushufa.cn/gitimg/imgs/other/wuweixusheng_weixin.png ) | <br/> | ![t]( https://md.xushufa.cn/gitimg/imgs/other/wuweixusheng_toutiao.png )     |
 
 ***
 
