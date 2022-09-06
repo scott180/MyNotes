@@ -14,7 +14,7 @@
 
 markdown导出pdf期望达到理想效果：
 - **内容不丢失**，标题、正文、高亮、代码块等内容不会丢失，即使是代码块也能无损导出。
-- **格式不变形**，字体、样式与在markdown的看到的基本一致。
+- **格式不变形**，字体、样式与markdown看到的基本一致。
 - **有图片**，markdown的图片不论是网络链接还是base64都能正常导出。
 - **有书签**，markdown的一二三四级标题就是pdf的书签。
 - **操作简单**，一键导出，高效方便。
@@ -23,8 +23,8 @@ markdown导出pdf期望达到理想效果：
 
 ### 1.2 说明
 
-使用了`Typora`，`作业部落`，`小书匠`，`马克飞象`，`pandoc`，`xelatex`，`wkhtmltopdf`，`vscode`，`MarkText`等等许多方法将markdown导出pdf。有的收费，有的加水印，有的丢文字，有的丢图片，最后发现：
-- 操作Markdown文件，使用`Typora`最方便。
+使用了`Typora`，`作业部落`，`小书匠`，`马克飞象`，`浏览器打印`，`pandoc`，`xelatex`，`wkhtmltopdf`，`vscode`，`MarkText`等等许多方法将markdown导出pdf。有的收费，有的加水印，有的丢文字，有的丢图片，最后发现：
+- 操作markdown文件，使用`Typora`最方便。
 - 若markdown导出pdf，`MarkText`搭配`PDFPatcher`最优秀。
 
 
@@ -150,16 +150,16 @@ MarkText是一个简单开源的 Markdown 编辑器。 https://github.com/markte
 
 ### 2.6 评分
 
-| 评分        | 内容不丢失 | 格式不变形 | 有图片 | 有书签 | 操作简单 | 得分       |
-| ----------  | ---------- | ---------- | ------ | ------ | -------- | ---------   |
-| Typora      |   √        |   √        |   ×    |   √    |   √      |  ★★★★   |
+| 评分        | 内容不丢失 | 格式不变形 | 有图片 | 有书签 | 操作简单 | 得分     |
+| ----------  | ---------- | ---------- | ------ | ------ | -------- | -------- |
+| Typora      |   √        |   √        |   ×    |   √    |   √      |  ★★★★    |
 | pandoc      |   ○        |   ○        |   ○    |   √    |   ○      |  ★★★     |
 | wkhtmltopdf |   ○        |   ○        |   ○    |   √    |   ○      |  ★★★     |
 | vscode      |   √        |   ○        |   ×    |   √    |   ×      |  ★★☆     |
-| MarkText    |   √        |   √        |   √    |   ○    |   √      |  ★★★★☆ |
+| MarkText    |   √        |   √        |   √    |   ○    |   √      |  ★★★★☆   |
 
 
-操作Markdown文件，使用`Typora`最方便。 <br/>
+操作markdown文件，使用`Typora`最方便。 <br/>
 若markdown导出pdf，`MarkText`搭配`PDFPatcher`最优秀。 <br/>
 
 
