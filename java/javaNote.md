@@ -72,7 +72,7 @@ Map<String, List<DeliveryGoodsDO>> deliveryGoodsMap = deliveryGoodsDOS.stream().
 Map<String, DeliveryDO> deliveryOrderMap = deliveryDOS.stream().collect(Collectors.toMap(DeliveryDO::getDeliveryOrder, a -> a));
 
 // list转map-值为单个对象 （如有重复，用第一个）
-Map<String, DeliveryDO> deliveryOrderMap = deliveryDOS.stream().collect(Collectors.toMap(DeliveryDO::getDeliveryOrder, a-> a,(k1,k2)->k2));
+Map<String, DeliveryDO> deliveryOrderMap = deliveryDOS.stream().collect(Collectors.toMap(DeliveryDO::getDeliveryOrder, a-> a,(k1,k2)->k1));
 
 
 // list转map-值为对象的字段

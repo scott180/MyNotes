@@ -159,8 +159,17 @@ MarkText是一个简单开源的 Markdown 编辑器。 https://github.com/markte
 | MarkText    |   √        |   √        |   √    |   ○    |   √      |  ★★★★☆   |
 
 
+| 网址        | 官网       | 下载       |
+| ----------  | ---------- | ---------- |
+| Typora      | https://typora.io/                   | https://typoraio.cn/                   |
+| marktext    | https://marktext.app/                | https://github.com/marktext/marktext   |
+| PDFPatcher  | https://www.cnblogs.com/pdfpatcher/  | https://github.com/wmjordan/PDFPatcher |
+
+
 操作markdown文件，使用`Typora`最方便。 <br/>
 若markdown导出pdf，`MarkText`搭配`PDFPatcher`最优秀。 <br/>
+
+
 
 
 
