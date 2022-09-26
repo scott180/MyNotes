@@ -27,6 +27,23 @@ markdown导出pdf期望达到理想效果：
 - 操作markdown文件，使用`Typora`最方便。
 - 若markdown导出pdf，`MarkText`搭配`PDFPatcher`最优秀。
 
+---
+
+### 1.3 相关
+
+> html转markdown文件
+
+- pandoc 转化  `pandoc -f html -t markdown -o 202010.md 202110.html`
+- turndown `Convert HTML into Markdown with JavaScript.`  https://mixmark-io.github.io/turndown/
+
+
+> markdown文件部署项目
+
+- gitlab、github、gitee布署`mkdocs`主题仓库
+- git平台`docsify`布署markdown文件
+- `vuepress`构建项目
+- `gitbook`部署博客  https://web.xushufa.cn
+
 
 
 
