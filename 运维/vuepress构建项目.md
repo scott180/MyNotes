@@ -137,8 +137,6 @@ echo 'reco-blog.xushufa.cn' > CNAME
 
 ---
 
-
-
 > github Actions pages build and deployment 报错
 
 ```
@@ -168,6 +166,27 @@ Deployment request failed for 5a3201f6016e6e078f0f3c46eb4132a3d9014bdd due to in
 3、可能是SSH key有问题，换一下，重新deploy。
 
 ```
+
+---
+
+>  npm run docs:build 本地打包项目，丢失css样式
+
+- 1、修改`base`字段为 `./`   参考 https://blog.csdn.net/JZevin/article/details/109195652 <br>
+修改 `/docs/.vuepress/config.js` 中配置的`base`字段  <br>
+这里的资源路径不应该是绝对路径，根目录 `/` ，而应该是相对路径 `./` <br>
+
+
+- 2、注释掉 `mode`  参考  https://www.jianshu.com/p/f9b9edd210f8
+
+```c
+找到 node_modules\@vuepress\core\lib\client\app.js文件， 注释掉 'mode'，让它默认哈希模式。
+
+ const router = new Router({
+    base: routerBase,
+    // mode: 'history',
+	
+```
+
 
 ---
 
