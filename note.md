@@ -2,7 +2,7 @@
 
 <br />
 
-- [ ] `仓库` &ensp;  [blog]( https://blog.xushufa.cn ) &ensp;  [gitlab]( https://gitlab.com/xuyq123/mynotes ) &ensp; [gitee]( https://gitee.com/xy180/MyNotes ) &ensp; [github]( https://github.com/scott180/MyNotes )
+- [ ] `仓库` &ensp;  [blog]( https://xushufa.cn ) &ensp;  [gitlab]( https://gitlab.com/xuyq123/mynotes ) &ensp; [gitee]( https://gitee.com/xy180/MyNotes ) &ensp; [github]( https://github.com/scott180/MyNotes )
 
 
 ## 1、日常
@@ -1194,9 +1194,9 @@ maven常用打包命令
 
 | 徐书法 | 地址        |  备注          |
 | -----  | ----------- |  ------------- |
-| 1      | [xushufa.cn]( https://xushufa.cn )            | 书法练习轨迹网站。                   |
-| 2      | [blog.xushufa.cn]( https://blog.xushufa.cn )  | `vuepress`构建的博客网站。           |
-| 3      | [web.xushufa.cn]( https://web.xushufa.cn )    | `vuepress-theme-reco`构建的博客网站。|
+| 1      | [xushufa]( https://xushufa.cn )                  	    | `vuepress-theme-reco`构建的博客网站。|
+| 2      | [vuepress-blog]( https://vuepress-blog.xushufa.cn )  	| `vuepress`构建的博客网站。           |
+| 3      | [mkdocs-blog]( https://xuyq123.gitlab.io/mkdocs-blog )   | `mkdocs`构建的博客网站。             |
 
 ***
 
