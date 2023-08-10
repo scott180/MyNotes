@@ -16,7 +16,7 @@
 | 序号 | 地址        |
 | ---- | ----------- |
 | 1    | [gitlab]( https://gitlab.com/xuyq123/MyNotes )             |  
-| 2    | [coding]( https://xyqin.coding.net/public/my/MyNotes/git )	|
+| 2    | [gitee]( https://gitee.com/xy180/MyNotes )	                |
 | 3    | [github]( https://github.com/scott180/MyNotes )            |  
 
 ---
