@@ -1,6 +1,8 @@
 # javaNote
 
-## 1、java常用方法
+## 1、java编程
+
+### 1.1、常用方法
 
 ```java
 @Data
@@ -26,7 +28,15 @@ private Date createTime;
 
 Assert.isTrue(!StringUtils.isEmpty(param.getPhone()), "联系方式不能为空");
 
+ExecutorService ex = Executors.newCachedThreadPool();
+Runtime.getRuntime().availableProcessors();
+ThreadPoolTaskExecutor
+CountDownLatch
+CyclicBarrier 
 
+```
+
+```java
 @MapKey("operatorId")
 List<Map<Integer, String>> queryOperatorList();
 
@@ -35,9 +45,22 @@ List<Map<Integer, String>> queryOperatorList();
 	GROUP BY operator_id
 </select>
 
+
+@Select("<script>" +
+        "select process_instance_id processInstanceId, business_id businessId, " +
+        "settlement_no settlementNo, price, status, create_time createTime " +
+        "from ins_settlement_process " +
+        "WHERE settlement_no in " +
+        "<foreach collection= 'billOrderList' item= 'billOrder' open='(' separator= ',' close=')'>" +
+        "#{billOrder} " +
+        "</foreach> order by create_time desc " +
+        "</script>")
+List<SettlementProcessInstanceDO> querySettlementProcessInstanceList(@Param("billOrderList") List<String> billOrderList);
+
+
 ```
 
-### 1.1、lambda表达式
+### 1.2、lambda表达式
 
 ```java
 
@@ -124,7 +147,7 @@ basketList.parallelStream().collect(Collectors.groupingBy(item -> item.getAddrTe
 
 ```
 
-### 1.2、Map遍历
+### 1.3、Map遍历
 
 ```java
 
@@ -174,7 +197,7 @@ for(String key : map.keySet()){
 
 ```
 
-### 1.3、java排序
+### 1.4、java排序
 
 ```java
 java排序
@@ -293,7 +316,7 @@ public static TreeMap<String, List<LogisticsStatisticsDAO>> getCustomSortTreeMap
 	
 ```
 
-### 1.4、flatmap,peek,newArrayList
+### 1.5、flatmap,peek,newArrayList
 
 ```java
 JAVA8 中的flatmap
@@ -657,7 +680,7 @@ maven常用打包命令
 
 | 无为徐生   | 微信公众号                                               	 |  &ensp; |  今日头条号        |
 | ---------  | ------------------------------------------------------------- |  -      |  ----------        |
-|  二维码    | ![w]( https://md.xushufa.cn/gitimg/imgs/other/wuweixusheng_weixin.png ) | <br/> | ![t]( https://md.xushufa.cn/gitimg/imgs/other/wuweixusheng_toutiao.png )     |
+|  二维码    | ![w]( https://bitbucket.org/xu12345/document/raw/114a5f5c292cc412cd46304dc1d20cfda7c7a7f8/imgs/weixin/wuweixusheng_weixin.png ) | <br/> | ![t]( https://bitbucket.org/xu12345/document/raw/114a5f5c292cc412cd46304dc1d20cfda7c7a7f8/imgs/toutiao/wuweixusheng_toutiao.png )     |
 
 ***
 
@@ -672,4 +695,5 @@ maven常用打包命令
 | 3      | [mkdocs-blog]( https://xuyq123.gitlab.io/mkdocs-blog )   | `mkdocs`构建的博客网站。             |
 
 ***
+
 

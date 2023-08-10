@@ -2,7 +2,7 @@
 
 <br />
 
-> [blog]( https://blog.xushufa.cn ) &ensp; [gitlab]( https://gitlab.com/xuyq123/mynotes ) &ensp; [gitee]( https://gitee.com/xy180/MyNotes ) &ensp; [github]( https://github.com/scott180 )   
+> [blog]( https://xushufa.cn ) &ensp; [gitlab]( https://gitlab.com/xuyq123/mynotes ) &ensp; [gitee]( https://gitee.com/xy180/MyNotes ) &ensp; [github]( https://github.com/scott180 )   
 
 
 ------------------------
@@ -12,7 +12,7 @@
 ### 1.1、常用命令
 
 
-[git知识大全]( https://gitee.com/help/articles/4122 )
+[git知识大全]( https://gitee.com/help/articles/4122 ) &ensp; [Git教程]( https://www.liaoxuefeng.com/wiki/896043488029600 )
 ```vb
 提交代码
  git add .

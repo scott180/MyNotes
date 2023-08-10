@@ -3,7 +3,7 @@
 ## 一、vuepress
 
 使用vuepress构建的博客。
-[github]( https://github.com/scott180/vuepress-blog ) &ensp; [vuepress-blog]( https://scott180.github.io/vuepress-blog )  &ensp; [vuepress-calligraphy]( https://scott180.github.io/vuepress-calligraphy )
+[github]( https://github.com/scott180/vuepress-blog ) &ensp; [gitlab]( https://gitlab.com/xuyq123/mynotes ) &ensp; [vuepress-blog]( https://scott180.github.io/vuepress-blog )  
 
 
 ### 1.1 安装
@@ -90,6 +90,15 @@ cd -
 
 ```
 
+
+```c
+如果要在github绑定域名，如 https://blog.xushufa.cn/ ，必须在github建立同名项目，如 https://github.com/scott180/blog 。如果子域名和项目不同名，布署时css样式会混乱，网页不能正常访问。 
+而且 `.vuepress\config.js` 的 `base` 也要注释掉。
+
+绑定教程可参看： gitlab、github绑定自定义域名  https://xushufa.cn/docs/bian-cheng/yun-wei/gitlab-githubbang-ding-zi-ding-yi-yu-ming.html  
+
+```
+
 ---
 
 设置 `package.json`
@@ -117,19 +126,19 @@ cd -
 
 `docs\.vuepress\config.js` 配置 `base` 字段为项目名 `reco-blog`
 
-`deploy.sh` 配置 `git push -f git@github.com:scott180/reco-calligraphy.git master:gh-pages`
+`deploy.sh` 配置 `git push -f git@github.com:scott180/reco-blog.git master:gh-pages`
 
 ```
 
 - 2、如果要绑定域名
 
 ```js
-如访问地址为 `http://reco-blog.xushufa.cn/` 则
+如访问地址为 `http://xushufa.cn` 则
 
 `docs\.vuepress\config.js` 配置 `base` 字段需注释掉
 
 `deploy.sh` 配置 
-echo 'reco-blog.xushufa.cn' > CNAME
+echo 'xushufa.cn' > CNAME
 `git push -f git@github.com:scott180/reco-calligraphy.git master:gh-pages`
 
 
@@ -206,10 +215,23 @@ npm run deploy
 
 ---
 
+> 参考项目
+
 ```sh
 git clone git@github.com:scott180/vuepress-blog.git
 
 npm install
+
+```
+
+---
+
+> 后续更新
+
+```java
+首次部署需要按照以上步骤发布项目，后续增加或更新文件只需：
+在本地验证	npm run docs:dev
+发布到线上	npm run deploy
 
 ```
 

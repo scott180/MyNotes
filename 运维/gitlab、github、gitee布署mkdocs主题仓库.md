@@ -2,7 +2,7 @@
 
 <br />
 
-`网址` &ensp; [xushufa]( https://xushufa.cn ) &ensp; [blog]( https://blog.xushufa.cn )
+`网址` &ensp; [xushufa]( https://xushufa.cn ) &ensp; [blog]( https://scott180.github.io/vuepress-blog )
 
 ## 1、概述
 

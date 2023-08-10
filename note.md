@@ -14,8 +14,8 @@
 ```java
 windows常用快捷键
 
-Ctrl+C  复制选中内容
-Ctrl+V  粘贴复制内容
+Ctrl+C  复制
+Ctrl+V  粘贴
 Ctrl+S  保存
 Ctrl+A  选中全部内容
 Ctrl+X  剪切
@@ -28,10 +28,16 @@ Ctrl+N  新建一个空白文档
 Ctrl+P  打开"打印"对话框
 Ctrl+O  打开文档
 
-Ctrl+Shift  输入法切换
-Ctrl+Home   光标快速移到文件头
-Ctrl+End    光标快速移到文件尾
-Alt+Tab     程序切换
+Ctrl+Shift	输入法切换
+Ctrl+Home	光标快速移到文件头
+Ctrl+End	光标快速移到文件尾
+
+Ctrl+Shift+End	选中当前到末尾所有内容
+Ctrl+Shift+Esc	打开任务管理器
+Ctrl+Shift+Del	浏览器打开清除缓存对话框
+
+Alt+Tab     程序切换（小图标）
+Win+Tab     程序切换（大图标）
 
 Win     显示开始菜单
 Win+L   锁定计算机
@@ -39,18 +45,22 @@ Win+E   启动"我的电脑"
 Win+D   快速显示桌面
 Win+R   打开电脑"运行"对话框
 
-F2   文件夹改名
+F2   文件改名
 F5   浏览器页面刷新
 F11  浏览器进入全屏状态
 F12  浏览器打开调试
 
+Shift+PgUp	向上选中内容
+Shift+PgDn	向下选中内容
+
+Shift+光标+右键	 选中内容
 
 ```
 
 
 #### 1.1.2、修改文件的默认打开方式
 
-```sql
+```
 修改文件的默认打开方式：
 
 1.修改属性
@@ -90,7 +100,7 @@ D:\ProgramFiles\Notepadd++\Notepad++\plugins
 
 ```
 
-```c
+```
 notepadd++  txt,md格式 文字高亮
 设置 - 语言格式设置 - 自定义扩展名
 
@@ -104,7 +114,7 @@ notepad竖向选择
 
 #### 1.1.4、markdown
 
-```java
+```
 markdown在线编辑
 作业部落  https://www.zybuluo.com/mdeditor
 马克飞象  https://maxiang.io/
@@ -137,16 +147,16 @@ markdown空格符号
 
 ```
 
-```
+```java
 markdown表格宽度设置
 
 | git仓库 | 布署方法 | <span style="white-space:nowrap;">备注&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</span> |
 
 ```
 
-```c
+```
 gitlab、github、gitee布署mkdocs主题仓库
-https://gitlab.com/xuyq123/mynotes/-/blob/master/gitlab%E3%80%81github%E3%80%81gitee%E5%B8%83%E7%BD%B2mkdocs%E4%B8%BB%E9%A2%98%E4%BB%93%E5%BA%93.md
+https://gitlab.com/xuyq123/mynotes
 
 gitlab mkdocs主题仓库   
 	https://gitlab.com/xuyq123/plain-mkdocs   
@@ -158,7 +168,7 @@ gitlab mkdocs主题仓库
 ---	
 	
 git平台docsify布署markdown文件
-https://gitlab.com/xuyq123/mynotes/-/blob/master/git%E5%B9%B3%E5%8F%B0docsify%E5%B8%83%E7%BD%B2markdown%E6%96%87%E4%BB%B6.md 
+https://github.com/scott180/MyNotes
 
 gitlab docsify主题仓库 	
 	https://gitlab.com/xuyq123/plain-docsify 
@@ -187,7 +197,7 @@ Administrator/123456
 
 #### 1.2.2、红米笔记本问题
 
-```c
+```
 红米笔记本触摸板失灵
 - 按F12 
 
@@ -200,15 +210,14 @@ redmibook的FN键没有作用,F1～F12功能键直接按就是调节音.
 
 #### 1.2.3、无线网连不上 & 代理连接失败
 
-```
-
+```js
 win7无线网络连接不上（未连接-连接可用）常用解决方法。
   开始 --控制面板（查看方式-小图标）--管理工具 --服务
   WLAN AutoConfig 启动此服务且启动类型改为自动
 
 ```
 
-```c
+```
 代理连接失败 （-130 ERR_PROXY_CONNECTION_FAILED ）
 
 治本方法：
@@ -243,28 +252,53 @@ Computer\HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\WinHttpAutoProxySv
 
 ```
 
-#### 1.2.4、视频会员兑换渠道
 
-```js
-视频会员：腾讯视频、优酷、爱奇艺、芒果TV等视频网站会员积分兑换
-
-微信支付-支付有优惠-兑换好礼
-安徽掌上10000APP兑换币、积分
-安徽电信公众号-个人中心-金币兑换
-中国联通APP积分
-电信营业厅 APP积分
-微众银行APP积分
-支付宝会员积分
-云闪付APP签到金
---2021
+#### 1.2.4、关闭Chrome浏览器更新通知
 
 
-招商银行 腾讯超V联名卡 腾讯权益六选一
-平安悦享白金卡 百变好礼月月享
---2022
-
+如何关闭Chrome 浏览器提示“若要接收后续 google chrome 更新,您需使用 windows 10 或更高版本”
 
 ```
+方法一：新建注册表文件
+原文链接：https://www.ahaoyw.com/article/827.html
+
+1、首先在桌面或者其他文件夹内新建一个记事本文件
+
+2、打开新建的记事本文件，复制下面这段代码，粘贴其中，保存关闭
+
+Windows Registry Editor Version 5.00
+
+[HKEY_CURRENT_USER\Software\Policies\Google\Chrome]
+"SuppressUnsupportedOSWarning"=dword:00000001
+
+3、将记事本的名称改为 .reg 后缀（注意连 .txt 的后缀也得删除一并改掉），例如closeChromeUpdate.reg （名字可以自定义但是后缀一定要.reg）然后双击运行该文件，点击是
+
+4、系统弹出包含的项和值已经成功添加到注册表中，点击确定完成
+
+5、最后重启Chrome浏览器
+
+```
+
+```
+方法二：编辑注册表
+原文链接：https://blog.csdn.net/haobiliuxiang/article/details/128232476
+
+1. 打开“开始”，输入 regedit.exe，选择注册表编辑器。
+
+2. 转到 HKEY_CURRENT_USER / Software / Policies / Google / Chrome。
+
+如果其中一个键不存在，在前面的键上点击右键，选择新建 > 键。给它起个相应的名字。
+
+3. 右键点击 Chrome，选择新建 > Dword（32 位）值。
+
+4. 将其命名为 SuppressUnsupportedOSWarning。
+
+5. 双击该名称并将其值设为 1。
+
+6. 重新启动浏览器。
+
+```
+
 
 #### 1.2.5、shell批量推送git
 
@@ -324,8 +358,7 @@ copyPush
 
 #### 1.3.1、身高体重比例
 
-```js
-
+```
 标准体重是反映和衡量一个人健康状况的重要标志之一。过胖和过瘦都不利于健康，也不会给人以健美感。不同体型的大量统计材料表明，反映正常体重较理想和简单的指标，可用身高体重的关系来表示。
 
 一、世卫计算方法
@@ -390,7 +423,7 @@ copyPush
 
 #### 1.3.3、春联上联和下联怎么区分
 
-```js
+```
 在以往，我国春节贴的春联，大多是请村子里学问高的先生到家里来写，然后在先生的指导下贴上的。那过年春联上联和下联怎么区分如何贴？上联贴在左边还是右边？
 
 上联下联的区分：
@@ -418,6 +451,48 @@ copyPush
 
 ```
 
+#### 1.3.4、视频会员和电信流量兑换渠道
+
+```js
+视频会员：腾讯视频、优酷、爱奇艺、芒果TV等视频网站会员积分兑换
+
+微信支付-支付有优惠-兑换好礼
+安徽掌上10000APP兑换币、积分
+安徽电信公众号-个人中心-金币兑换
+中国联通APP积分
+电信营业厅 APP积分
+微众银行APP积分
+支付宝会员积分
+云闪付APP签到金
+--2021
+
+
+招商银行 腾讯超V联名卡 腾讯权益六选一
+平安悦享白金卡 百变好礼月月享
+--2022
+
+
+```
+
+---
+
+```
+各位小伙伴，现在主要有以下几个方法正规免费获取流量：
+
+1、安徽电信公众号--福利专区--个人中心--#签到有礼 。每日连续签到，使用金币兑换流量，一个月大概有4G多免费流量。活动到2023年12月31结束。
+
+2、安徽电信公众号--福利专区--个人中心--#夏日送福利 （顶部动态活动）。每日签到，有几率获取流量、翼支付权益金、视频会员等等。活动到2023年8月31结束。
+
+3、安徽电信公众号--福利专区--个人中心-#福利大放送 （顶部动态活动）。每月参与一次抽奖，有几率获取金币、流量、翼支付权益金、视频会员等等。活动到2023年12月31结束。
+
+4、安徽电信掌上10000--福利中心--#玩酷大转盘。消耗兑换币、分享活动等方式获取抽奖机会，有几率获取金币、流量、翼支付权益金、视频会员等等。活动到2023年9月30结束。
+
+--2023.08.01
+
+```
+
+
+
 ### 1.4、工作
 
 
@@ -433,13 +508,13 @@ git ：gitlab、github、gitee、gitcode、coding、bitbucket
 搜索：谷歌、百度、头条、必应
 工具：idea、notepadd++、navicat、postman、fiddler、typora、eclipse、vscode
 
-``` 
+```
 
 *************************
 
 #### 1.4.2、mysql logbin日志 
 
-```sql
+```
 mysql开启log-bin日志.md  https://gitlab.com/xuyq123/mynotes/-/blob/master/mysql%E5%BC%80%E5%90%AFlog-bin%E6%97%A5%E5%BF%97.md
 
 一 、logbin日志 记录新增、更新、删除的sql 
@@ -459,7 +534,7 @@ TRUNCATE table mysql.general_log
 
 #### 1.4.3、端点已使用
 
-```sql
+```sh
 C:\Users\Administrator>netstat -ano|findstr "8080"
   TCP    0.0.0.0:8080           0.0.0.0:0              LISTENING       11492
   TCP    [::]:8080              [::]:0                 LISTENING       11492
@@ -476,8 +551,7 @@ C:\Users\Administrator>taskkill /f /t /im 11492
 
 #### 1.4.4、druid 安全配置
 
-```vb
-
+```
 为Druid增加权限验证措施，建议参考 https://github.com/alibaba/druid/wiki/%E9%85%8D%E7%BD%AE_StatViewServlet%E9%85%8D%E7%BD%AE
 https://blog.csdn.net/my_ha_ha/article/details/86212492
 
@@ -524,10 +598,35 @@ http://localhost:8080/druid/sql.html
 
 *************************
 
+#### 1.4.6、小工具
+
+| 序号   | 地址        |  备注          |
+| -----  | ----------- |  ------------- |
+| 1      | [json]( https://tool.xushufa.cn/json )                       | json 格式化工具             |
+| 2      | [yaml解析]( https://tool.xushufa.cn/yaml-parse )             | yaml解析为json              |
+| 3      | [时间毫秒值转换]( https://tool.xushufa.cn/time-format )      | 时间毫秒值转换              |
+|        | 解码编码     |               |                              
+| 4      | [url解码]( https://tool.xushufa.cn/url-encode )              | url解码编码                 |
+| 5      | [unicode解码]( https://tool.xushufa.cn/unicode-encode )      | unicode解码编码             |
+| 6      | [文字转二维码]( https://tool.xushufa.cn/words-QRcode )       | 文字转二维码                |
+| 7      | [二维码生成扫描识别]( https://tool.xushufa.cn/HtmlQRCode )   | 二维码生成扫描识别          |
+|        | markdown                     |                 |             
+| 8      | [md2wx]( https://tool.xushufa.cn/md2wx/docs )                | 在线Markdown微信格式化工具            |
+| 9      | [editormd]( https://tool.xushufa.cn/markdown-editormd )      | 开源的、可嵌入的 Markdown 在线编辑器  |
+| 10     | [markthing]( https://tool.xushufa.cn/markdown-markthing )    | 一个MarkDown编辑器                    |
+| 11     | [mpeditor]( https://tool.xushufa.cn/markdown-mpeditor )      | 专注于微信公众号的编辑阅读器          |
+|        | 项目布署                     |                 |
+| 12     | [tool]( https://github.com/scott180/tool )     | github仓库  |
+| 13     | [xushufa]( https://xushufa.cn )                | 个人网站    |
+
+*************************
+
 
 ## 2、java
 
-### 2.1、java常用方法
+### 2.1、java编程
+
+#### 2.1.1、常用方法
 
 ```java
 @Data
@@ -553,7 +652,15 @@ private Date createTime;
 
 Assert.isTrue(!StringUtils.isEmpty(param.getPhone()), "联系方式不能为空");
 
+ExecutorService ex = Executors.newCachedThreadPool();
+Runtime.getRuntime().availableProcessors();
+ThreadPoolTaskExecutor
+CountDownLatch
+CyclicBarrier 
 
+```
+
+```java
 @MapKey("operatorId")
 List<Map<Integer, String>> queryOperatorList();
 
@@ -562,9 +669,22 @@ List<Map<Integer, String>> queryOperatorList();
 	GROUP BY operator_id
 </select>
 
+
+@Select("<script>" +
+        "select process_instance_id processInstanceId, business_id businessId, " +
+        "settlement_no settlementNo, price, status, create_time createTime " +
+        "from ins_settlement_process " +
+        "WHERE settlement_no in " +
+        "<foreach collection= 'billOrderList' item= 'billOrder' open='(' separator= ',' close=')'>" +
+        "#{billOrder} " +
+        "</foreach> order by create_time desc " +
+        "</script>")
+List<SettlementProcessInstanceDO> querySettlementProcessInstanceList(@Param("billOrderList") List<String> billOrderList);
+
+
 ```
 
-#### 2.1.1、lambda表达式
+#### 2.1.2、lambda表达式
 
 ```java
 
@@ -651,7 +771,7 @@ basketList.parallelStream().collect(Collectors.groupingBy(item -> item.getAddrTe
 
 ```
 
-#### 2.1.2、Map遍历
+#### 2.1.3、Map遍历
 
 ```java
 
@@ -701,7 +821,7 @@ for(String key : map.keySet()){
 
 ```
 
-#### 2.1.3、java排序
+#### 2.1.4、java排序
 
 ```java
 java排序
@@ -820,7 +940,7 @@ public static TreeMap<String, List<LogisticsStatisticsDAO>> getCustomSortTreeMap
 	
 ```
 
-#### 2.1.4、flatmap,peek,newArrayList
+#### 2.1.5、flatmap,peek,newArrayList
 
 ```java
 JAVA8 中的flatmap
@@ -1184,7 +1304,7 @@ maven常用打包命令
 
 | 无为徐生   | 微信公众号                                               	 |  &ensp; |  今日头条号        |
 | ---------  | ------------------------------------------------------------- |  -      |  ----------        |
-|  二维码    | ![w]( https://md.xushufa.cn/gitimg/imgs/other/wuweixusheng_weixin.png ) | <br/> | ![t]( https://md.xushufa.cn/gitimg/imgs/other/wuweixusheng_toutiao.png )     |
+|  二维码    | ![w]( https://bitbucket.org/xu12345/document/raw/114a5f5c292cc412cd46304dc1d20cfda7c7a7f8/imgs/weixin/wuweixusheng_weixin.png ) | <br/> | ![t]( https://bitbucket.org/xu12345/document/raw/114a5f5c292cc412cd46304dc1d20cfda7c7a7f8/imgs/toutiao/wuweixusheng_toutiao.png )     |
 
 ***
 

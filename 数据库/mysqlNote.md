@@ -6,7 +6,7 @@
 
 ```js
 压缩包，免安装文件，安装mysql。参考：
-http://blog.xushufa.cn
+http://xushufa.cn
 http://blog.csdn.net/wengengeng/article/details/52013650
 https://www.cnblogs.com/jyjia/archive/2019/03/07/10490013.html
 
@@ -906,7 +906,7 @@ SELECT * INTO 表2 FROM 表1
 
 
 ```sql
-sql将毫秒数字转换为日期
+--sql将毫秒数字转换为日期
 SELECT FROM_UNIXTIME(operation_time/1000,"%Y-%m-%d %H:%i:%s") operationDate FROM ins_purchase
 
 ```
@@ -919,6 +919,14 @@ timediff(date_format(create_time, '%H:%i:%s'),'03:00:00') t2,
 (HOUR(timediff(date_format(create_time, '%H:%i:%s'),'03:00:00')) + ROUND(MINUTE(timediff(date_format(create_time, '%H:%i:%s'),'03:00:00'))/60) )
  t3 FROM `ins_car_use_log` where person_liable like '%林%'
  order by create_time desc limit 100;
+
+```
+
+```sql
+--时间增减
+select DATE_ADD( now(), INTERVAL -2 DAY ) from dual
+
+SELECT id,product_id productId,sales  FROM ins_period_sales where create_time > DATE_ADD( now(), INTERVAL -2 DAY ) 
 
 ```
 
@@ -988,8 +996,8 @@ kill 进程ID
 
 ### 3.6、文档
 
-- [数据库隔离级别]( https://blog.xushufa.cn/%E7%BC%96%E7%A8%8B/%E6%95%B0%E6%8D%AE%E5%BA%93/%E6%95%B0%E6%8D%AE%E5%BA%93%E9%9A%94%E7%A6%BB%E7%BA%A7%E5%88%AB.html )
+- [数据库隔离级别]( https://xushufa.cn/docs/bian-cheng/shu-ju-ku/shu-ju-ku-ge-chi-ji-bie.html )
 
-- [mysql开启log-bin日志]( https://web.xushufa.cn/docs/bian-cheng/shu-ju-ku/mysqlkai-qi-log-binri-zhi.html )
+- [mysql开启log-bin日志]( https://xushufa.cn/docs/bian-cheng/shu-ju-ku/mysqlkai-qi-log-binri-zhi.html )
 
 
