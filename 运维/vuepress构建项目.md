@@ -220,9 +220,12 @@ npm run deploy
 ```sh
 git clone git@github.com:scott180/vuepress-blog.git
 
-npm install
+克隆本项目后运行 npm install -D vuepress 安装相关插件。
+再启动 npm run docs:dev 项目，有可能会失败，因为版本不太兼容。
+所以可以直接在下方链接下载原始全部项目包 vuepress-blog.20230812.zip ，将 node_modules 依赖包复制到项目，再启动即可。
 
 ```
+[百度网盘]( https://pan.baidu.com/s/1NHLuagvGS5SWC-fHuHByaQ?pwd=576i ) &ensp;  [sourceforge]( https://sourceforge.net/p/xdocument/code/ci/master/tree/files/vuepress-blog.20230812.zip )
 
 ---
 
