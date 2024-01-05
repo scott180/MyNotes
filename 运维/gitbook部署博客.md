@@ -3,6 +3,9 @@
 ## 基础命令 
 
 ```sh
+GitBook可以看作个人的一本电子书。它用MarkDown编写，可以自动生成网页或者PDF等，生成网页可以通过插件配置目录和搜索功能等。
+
+
 安装GitBook
 npm install gitbook-cli -g
 

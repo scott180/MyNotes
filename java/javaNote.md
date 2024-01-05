@@ -60,6 +60,48 @@ List<SettlementProcessInstanceDO> querySettlementProcessInstanceList(@Param("bil
 
 ```
 
+```java
+<dependency>
+    <groupId>net.sf.dozer</groupId>
+    <artifactId>dozer</artifactId>
+    <version>5.5.1</version>
+</dependency>
+
+
+    /**
+     * 深度复制
+     * @param args
+     */
+    public static void main(String[] args) {
+        Object sourceObject = new Object();
+        Object targetObject = new Object();
+        DozerBeanMapper dozerBeanMapper = new DozerBeanMapper();
+        dozerBeanMapper.map(sourceObject, targetObject);
+    }
+
+	
+	
+	
+    /**
+     * 正则分割中文和数字
+     *
+     * @param region
+     * @return
+     */
+    public static List spitRegion(String region) {
+		Pattern REGION_PATTERN = Pattern.compile("[\\u4e00-\\u9fa5]+|\\d+");
+		
+        List<String> list = new ArrayList<>();
+        Matcher m = REGION_PATTERN.matcher(region);
+        while (m.find()) {
+            list.add(m.group());
+        }
+        return list;
+    }
+	
+```
+
+
 ### 1.2、lambda表达式
 
 ```java
@@ -78,9 +120,13 @@ List<Integer> interceptProductIdList = interceptGoodsNumDAOS.stream().map(dao ->
 List<DeliveryPackageDO> mainPackageDOList = packageDOS.stream().filter(dao -> dao.getTitle().equals(DriverPackageUtil.MAIN_PACKAGE_TEXT)).collect(Collectors.toList());
 
 
-// 求和
-Integer sum = detailDAOS.stream().mapToInt(DeliveryPackageGoodsDetailDAO::getNum).sum()
+// 求和  值为null时会报错 No value present
+Integer sum = detailDAOS.stream().mapToInt(DeliveryPackageGoodsDetailDAO::getNum).sum();
+BigDecimal paymentAmount = purchaserAmountMap.values().stream().map(SupplierBillDetailVO::getAmount).reduce(BigDecimal.ZERO, BigDecimal::add);
 BigDecimal paymentAmount = purchaserAmountMap.values().stream().map(SupplierBillDetailVO::getAmount).reduce(BigDecimal::add).get();
+
+// filter过滤空值且使用BigDecimal.ZERO 则不报错
+list.stream().filter(val->val.getSalesAmount()!=null).map(SupplierJointSalesDO::getSalesAmount).reduce(BigDecimal.ZERO,BigDecimal::add);
 
 
 /*** list转map */
@@ -553,12 +599,12 @@ syso+Alt+/      输出
 ---
 
 ```
-java  mysql  maven  
-idea  git  navicat notepad++  
+java mysql maven  
+idea git navicat notepad++  
 postman xshell fillder typora VMware
 redis mongo kafka zookeeper tomcat eclipse
-python  nodejs vue 
-火绒安全软件 向日葵 Everything
+python nodejs npm vue github gitlab gitee gitcode
+Google Chrome 火绒安全软件 向日葵 Everything
 ```
 
 ---
@@ -606,10 +652,10 @@ https://www.jianshu.com/p/391e995881c0
 
 --Tests
 var jsonData = JSON.parse(responseBody);
-postman.setGlobalVariable("webToken", jsonData.data.token);
+tests["success"] = jsonData.code === 200;
+postman.setGlobalVariable("authorityToken", jsonData.data.token);
  
 
- 
 postman 出现Error: connect ECONNREFUSED 127.0.0.1:端口
 https://blog.csdn.net/weixin_45993202/article/details/109072188
 
@@ -667,7 +713,7 @@ maven常用打包命令
 
 | 平台           | 链接           |
 | -------------- | -------------- |
-|  **项目仓库**  | [gitlab]( https://gitlab.com/xuyq123/calligraphy ) &ensp; [coding]( https://xyqin.coding.net/public/my/calligraphy/git ) &ensp; [github]( https://github.com/scott180/calligraphy )  &ensp; [bitbucket]( https://bitbucket.org/xu12345/calligraphy ) &ensp; [gitee]( https://gitee.com/xy180/calligraphy ) &ensp; [sourceforge]( https://sourceforge.net/p/calligraphy/code )  &ensp; [vuepress]( https://scott180.github.io/vuepress-calligraphy )    |
+|  **项目仓库**  | [gitlab]( https://gitlab.com/xuyq123/mynotes ) &ensp; [gitcode]( https://gitcode.net/xu180/MyNotes ) &ensp; [github]( https://github.com/scott180/MyNotes )  &ensp; [bitbucket]( https://bitbucket.org/xu12345/calligraphy ) &ensp; [gitee]( https://gitee.com/xy180/MyNotes ) &ensp; [sourceforge]( https://sourceforge.net/p/calligraphy/code )  &ensp; [vuepress]( https://scott180.github.io/vuepress-blog )    |
 |  **资讯账号**  | [微信公众号]( https://mp.weixin.qq.com/s/HmdDsCaeumuZg_DfitIdlw ) &ensp; [头条]( https://www.toutiao.com/c/user/token/MS4wLjABAAAA2_bWhiknCbcKNu4c6VTM2B7m2vr7zBrh0x6fSyOrtGU ) &ensp;  [豆瓣]( https://www.douban.com/people/80730595/photos ) &ensp;  [知乎]( https://www.zhihu.com/people/xu-xian-sheng-72-29/posts )     |
 |  **个人邮箱**  | 1021151991@qq.com   |
 
@@ -695,5 +741,4 @@ maven常用打包命令
 | 3      | [mkdocs-blog]( https://xuyq123.gitlab.io/mkdocs-blog )   | `mkdocs`构建的博客网站。             |
 
 ***
-
 

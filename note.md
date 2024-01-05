@@ -2,8 +2,9 @@
 
 <br />
 
-- [ ] `仓库` &ensp;  [blog]( https://xushufa.cn ) &ensp;  [gitlab]( https://gitlab.com/xuyq123/mynotes ) &ensp; [gitee]( https://gitee.com/xy180/MyNotes ) &ensp; [github]( https://github.com/scott180/MyNotes )
+[blog]( https://xushufa.cn ) &ensp;  [gitlab]( https://gitlab.com/xuyq123/mynotes ) &ensp; [gitee]( https://gitee.com/xy180/MyNotes ) &ensp; [github]( https://github.com/scott180/MyNotes ) &ensp; [xushufa]( https://vuepress-blog.xushufa.cn )
 
+<br />
 
 ## 1、日常
 
@@ -43,8 +44,13 @@ Win     显示开始菜单
 Win+L   锁定计算机
 Win+E   启动"我的电脑"
 Win+D   快速显示桌面
-Win+R   打开电脑"运行"对话框
 
+Win+R   打开"运行"对话框，输入命令开启相关功能
+cmd 			命令行控制台
+reg 			注册表
+mstsc			远程登录
+services.msc 	本地服务
+	
 F2   文件改名
 F5   浏览器页面刷新
 F11  浏览器进入全屏状态
@@ -57,30 +63,30 @@ Shift+光标+右键	 选中内容
 
 ```
 
+<br/>
 
 #### 1.1.2、修改文件的默认打开方式
 
-```
-修改文件的默认打开方式：
+修改文件的默认打开方式： <br/>
 
-1.修改属性
+**1.修改属性** <br/>
 右击--属性--常规--打开方式--选择默认程序
 
-2.选择默认方式
+**2.选择默认方式** <br/>
 右击--打开方式--选择默认程序
 
-3.注册表设置
-Win+R 在运行里面输入regedit（注册表编辑器），HEY_CLASS_ROOT下面是所有文件的后缀名文件，
-找到你想取消关联的后缀名，如.ppt，单击这个文件夹，右边出现的“数据”一项，双击“（默认）”，
-打开对话框，将“数据”下面可以填写的部分清除，保持空白，确定。
-你的电脑里面所有.ppt文件就没有了任何关联和默认程序，再按自己的想法重新关联或默认就行了。
-还有，要看你修改的是什么程序的默认打开方式，不一样的程序填写的数据不一样。
-如果用这个办法还不行就应该不单是这个软件的问题了，可能是系统其他设置的问题。 
+**3.注册表设置** <br/>
+Win+R 在运行里面输入regedit（注册表编辑器），HEY_CLASS_ROOT下面是所有文件的后缀名文件，找到你想取消关联的后缀名，如.ppt。 <br/>
+单击这个文件夹，右边出现的“数据”一项，双击“（默认）”，打开对话框，将“数据”下面可以填写的部分清除，保持空白，确定。 <br/>
 
-4.控制面板设置
-控制面板-----程序----默认程序----始终使用指定的程序打开此文件类型
+你的电脑里面所有.ppt文件就没有了任何关联和默认程序，再按自己的想法重新关联或默认就行了。 <br/>
+还有，要看你修改的是什么程序的默认打开方式，不一样的程序填写的数据不一样。 <br/>
+如果用这个办法还不行就应该不单是这个软件的问题了，可能是系统其他设置的问题。
 
-```
+**4.控制面板设置** <br/>
+控制面板-----程序----默认程序----始终使用指定的程序打开此文件类型 <br/>
+
+<br/>
 
 #### 1.1.3、notepadd++小知识
 
@@ -111,6 +117,8 @@ notepad竖向选择
 先把鼠标光标放在起始位置，然后同时按Alt+shift键或者只按Alt键就可以，然后移动鼠标选取内容。
 
 ```
+
+<br/>
 
 #### 1.1.4、markdown
 
@@ -179,7 +187,7 @@ gitlab docsify主题仓库
 	
 ```
 
-
+<br/>
 
 ### 1.2、网络&笔记本
 
@@ -207,54 +215,49 @@ redmibook的FN键没有作用,F1～F12功能键直接按就是调节音.
 
 ```
 
-
 #### 1.2.3、无线网连不上 & 代理连接失败
 
-```js
+```
 win7无线网络连接不上（未连接-连接可用）常用解决方法。
   开始 --控制面板（查看方式-小图标）--管理工具 --服务
   WLAN AutoConfig 启动此服务且启动类型改为自动
 
 ```
 
-```
 代理连接失败 （-130 ERR_PROXY_CONNECTION_FAILED ）
 
-治本方法：
-控制面板 - 网络和Internet - Internet选项 - 连接 - 局域网设置 - 代理服务器 - 为LAN使用代理服务器[这些设置不用于拨号或VPN连接][X]
+**治本方法**：<br/>
+控制面板 - 网络和Internet - Internet选项 - 连接 - 局域网设置 - 代理服务器 - 为LAN使用代理服务器[这些设置不用于拨号或VPN连接][X] <br/>
 去掉勾选-确定
 
----
+<br/>
 
-治根方法：
+**治根方法**：<br/>
 参考 https://www.zhihu.com/question/25686082?sort=created
 
-方法1：
-网上能找到的方法都试过了，没解决。
-最后忘了从哪找到的方法，把WinHttpAutoProxySvc 服务给禁用了，似乎是好了，几个小时了没有再出现问题。
+**方法1**：<br/>
+网上能找到的方法都试过了，没解决。<br/>
+最后忘了从哪找到的方法，把WinHttpAutoProxySvc 服务给禁用了，似乎是好了，几个小时了没有再出现问题。<br/>
 忘了说了，我是用完fiddler之后出现的问题。
 
-禁用需要编辑注册表：
-Computer\HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\WinHttpAutoProxySvc
-右边Start值改为4（禁止启动）。
+禁用需要编辑注册表：<br/>
+`Computer\HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\WinHttpAutoProxySvc`<br/>
+右边Start值改为4（禁止启动）。<br/>
 然后重启电脑。
 
 
-方法2：
-进到这个目录下：HKEY_CURRENT_USER/Software/Microsoft/Windows/CurrentVersion/Internet Settings/Connections
-通过目录找到Connections，把整个文件夹删除。
+**方法2**：<br/>
+进到这个目录下：`HKEY_CURRENT_USER/Software/Microsoft/Windows/CurrentVersion/Internet Settings/Connections`<br/>
+通过目录找到Connections，把整个文件夹删除。<br/>
 不放心的话可以把Connections改名。
+
+
+进入服务：   控制面板 - 系统和安全 - 管理工具 - 服务<br/>
+进入注册表： WIN+R - regedit
 
 ---
 
-进入服务：   控制面板 - 系统和安全 - 管理工具 - 服务
-进入注册表： WIN+R - regedit
-
-```
-
-
 #### 1.2.4、关闭Chrome浏览器更新通知
-
 
 如何关闭Chrome 浏览器提示“若要接收后续 google chrome 更新,您需使用 windows 10 或更高版本”
 
@@ -271,7 +274,8 @@ Windows Registry Editor Version 5.00
 [HKEY_CURRENT_USER\Software\Policies\Google\Chrome]
 "SuppressUnsupportedOSWarning"=dword:00000001
 
-3、将记事本的名称改为 .reg 后缀（注意连 .txt 的后缀也得删除一并改掉），例如closeChromeUpdate.reg （名字可以自定义但是后缀一定要.reg）然后双击运行该文件，点击是
+3、将记事本的名称改为 .reg 后缀（注意连 .txt 的后缀也得删除一并改掉），
+例如closeChromeUpdate.reg （名字可以自定义但是后缀一定要.reg）然后双击运行该文件，点击是
 
 4、系统弹出包含的项和值已经成功添加到注册表中，点击确定完成
 
@@ -286,7 +290,6 @@ Windows Registry Editor Version 5.00
 1. 打开“开始”，输入 regedit.exe，选择注册表编辑器。
 
 2. 转到 HKEY_CURRENT_USER / Software / Policies / Google / Chrome。
-
 如果其中一个键不存在，在前面的键上点击右键，选择新建 > 键。给它起个相应的名字。
 
 3. 右键点击 Chrome，选择新建 > Dword（32 位）值。
@@ -315,6 +318,8 @@ copyPush(){
 	git push
 	echo '.........end.........'
 }
+
+# *// calligraphy git 
 
 #agit 1
 data_dir=/e/Project/gitlab/agit/calligraphy
@@ -353,103 +358,95 @@ copyPush
 
 ```
 
+---
 
 ### 1.3、杂学
 
 #### 1.3.1、身高体重比例
 
-```
+
 标准体重是反映和衡量一个人健康状况的重要标志之一。过胖和过瘦都不利于健康，也不会给人以健美感。不同体型的大量统计材料表明，反映正常体重较理想和简单的指标，可用身高体重的关系来表示。
 
-一、世卫计算方法
-男性：(身高cm－80)×70﹪=标准体重 女性：(身高cm－70)×60﹪=标准体重
-标准体重正负10﹪为正常体重
-标准体重正负10﹪~ 20﹪为体重过重或过轻
-标准体重正负20﹪以上为肥胖或体重不足
-超重计算公式
-超重%=[（实际体重－理想体重）/（理想体重）]×100%
+**一、世卫计算方法** <br/>
+男性：(身高cm－80)×70﹪=标准体重 女性：(身高cm－70)×60﹪=标准体重 <br/>
+标准体重正负10﹪为正常体重 <br/>
+标准体重正负10﹪~ 20﹪为体重过重或过轻 <br/>
+标准体重正负20﹪以上为肥胖或体重不足 <br/>
+超重计算公式 <br/>
+超重%=[（实际体重－理想体重）/（理想体重）]×100% <br/>
 如：（170-80）* 70%=63kg
 
-二、BMI 法
-体重指数 BMI = 体重（公斤） / 身高（米）的平方即 kg/m2
-算式写法： BMI = 体重 / （身高）^2
-正常体重 ： 体重指数 = 18.5 - 25 （中国体质标准:正常范围 18.5~23.9，超重24.0~27.9，肥胖≥28.0）
-超重 ： 体重指数 = 25 - 30
-轻度肥胖 ： 体重指数 > 30
-中度肥胖 ： 体重指数 > 35
-重度肥胖 ：体重指数 > 40
+**二、BMI 法** <br/>
+体重指数 BMI = 体重（公斤） / 身高（米）的平方即 kg/m2 <br/>
+算式写法： BMI = 体重 / （身高）^2 <br/>
+正常体重 ： 体重指数 = 18.5 - 25 （中国体质标准:正常范围 18.5~23.9，超重24.0~27.9，肥胖≥28.0） <br/>
+超重 ： 体重指数 = 25 - 30 <br/>
+轻度肥胖 ： 体重指数 > 30 <br/>
+中度肥胖 ： 体重指数 > 35 <br/>
+重度肥胖 ：体重指数 > 40 <br/>
 如：67/1.7/1.7=23.18
 
 
-三、简单方法
-标准体重=身高(m)×身高(m)×标准系数（女性20，男性22）
-标准体重正负10﹪为正常体重
-标准体重正负10﹪~ 20﹪为体重偏重或偏轻
-标准体重正负20﹪以上为肥胖或体重不足
-如： 1.7*1.7*22=63.58kg
+**三、简单方法** <br/>
+标准体重=身高(m)×身高(m)×标准系数（女性20，男性22） <br/>
+标准体重正负10﹪为正常体重 <br/>
+标准体重正负10﹪~ 20﹪为体重偏重或偏轻 <br/>
+标准体重正负20﹪以上为肥胖或体重不足 <br/>
+如： 1.7 * 1.7 * 22=63.58kg
 
-四、简单方法：
-标准体重（kg）=身高（cm）-105
-例如，一个身高170厘米的男子，他的标准体重应该是：170（厘米）－105=65（公斤）。凡是超过标准体重10%者为偏重，超过20%以上者为肥胖；低于标准体重10%者为偏瘦，低于20%以上者为消瘦。
-如： 170-105=65kg
+
+**四、简单方法**： <br/>
+标准体重（kg）=身高（cm）-105 <br/>
+例如，一个身高170厘米的男子，他的标准体重应该是：170（厘米）－105=65（公斤）。凡是超过标准体重10%者为偏重，超过20%以上者为肥胖；低于标准体重10%者为偏瘦，低于20%以上者为消瘦。 <br/>
+如： 170-105=65kg <br/>
  
 注意：上述计算方法只适用于成年人。 对儿童，老年人，或者身高过于矮小的人士并不适用。
 
-
-```
+<br/>
 
 #### 1.3.2、眼睛心理学
 
-`如果对方眼球处于右上方，表示正在创建视觉想象，也就是在脑海中创建一些现实中没有的事物。`
+如果对方眼球处于**右上方**，表示正在创建视觉想象，也就是在脑海中创建一些现实中没有的事物。说明在撒谎，在想象。
 
-```java
 
-眼睛心理学
-眼睛往左看代表：回忆；往右看代表：动用情感来创造词汇。
+眼睛心理学。眼睛往左看代表：回忆；往右看代表：动用情感来创造词汇。 <br/>
+1、如果对方眼球处于左上方，表示正在进行视觉回想，也就是回忆。 <br/>
+2、如果对方眼球处于左下方，表示正在思考，正在与自己对话。 <br/>
 
-关于眼睛的心理学：
+3、如果对方眼球处于右上方，表示正在创建视觉想象，也就是在脑海中创建一些现实中没有的事物。 <br/>
+4、如果对方眼球处于右下方，表示ta正在感受自己的身体，感受情感的触动。 <br/>
 
-1. 如果对方眼球处于左上方，表示正在进行视觉回想，也就是回忆。
-2. 如果对方眼球处于左下方，表示正在思考，正在与自己对话。
+5.、如果对方眼球向一侧看，同时脑袋微微向一侧倾斜，对方看上去像是在认真聆听，这个举动与声音有关，可能是在交谈中回忆起了某个声音，这时眼球也会处于中间位置。 <br/>
+6、如果对方眼球向左右平视，表示ta正在试图弄懂别人的意思。 <br/>
+7、如果对方眼球迅速地左右运动，表示ta正在忙碌地思考，也有可能是感受到了压力或者心怀戒备。
 
-3. 如果对方眼球处于右上方，表示正在创建视觉想象，也就是在脑海中创建一些现实中没有的事物。
-4. 如果对方眼球处于右下方，表示ta正在感受自己的身体，感受情感的触动。
-
-5. 如果对方眼球向一侧看，同时脑袋微微向一侧倾斜，对方看上去像是在认真聆听，这个举动与声音有关，可能是在交谈中回忆起了某个声音，这时眼球也会处于中间位置。
-6. 如果对方眼球向左右平视，表示ta正在试图弄懂别人的意思。
-7. 如果对方眼球迅速地左右运动，表示ta正在忙碌地思考，也有可能是感受到了压力或者心怀戒备。
-
-```
+<br/>
 
 #### 1.3.3、春联上联和下联怎么区分
 
-```
+
 在以往，我国春节贴的春联，大多是请村子里学问高的先生到家里来写，然后在先生的指导下贴上的。那过年春联上联和下联怎么区分如何贴？上联贴在左边还是右边？
 
 上联下联的区分：
 
 1、按字调平仄分。
-对联比较讲究平仄，这是对联的特点。具体来说，上联的最后一个字一般是仄声，下联的最后一个字一般是平声，否则，读起来就会感到非常别扭。
-
+对联比较讲究平仄，这是对联的特点。具体来说，上联的最后一个字一般是仄声，下联的最后一个字一般是平声，否则，读起来就会感到非常别扭。 <br/>
 2、按左右方位分。
-贴对联时应将上联贴在右边，下联贴在左边，左与右则以面对大门或壁柱来分。之所以这样张贴，是因为直行书写都是从右到左，所以念对联也是从右向左念。
-
+贴对联时应将上联贴在右边，下联贴在左边，左与右则以面对大门或壁柱来分。之所以这样张贴，是因为直行书写都是从右到左，所以念对联也是从右向左念。 <br/>
 3、按时序先后分。
-就是时间在前的为上联，时间在后的则为下联。如“门迎春夏秋冬福，户纳东西南北祥”。
+就是时间在前的为上联，时间在后的则为下联。如“门迎春夏秋冬福，户纳东西南北祥”。 <br/>
 
 4、按语言习惯分。
-比如“福如东海长流水，寿比南山不老松”。
-
+比如“福如东海长流水，寿比南山不老松”。 <br/>
 5、按因果关系分。
-就是“因”为上联，“果”为下联。
-
+就是“因”为上联，“果”为下联。 <br/>
 6、按场面范围分。
-在时间、空间、具体事物上一般是从左到右、从大到小，比如“年年过年年年好，月月赏月月月圆”。
+在时间、空间、具体事物上一般是从左到右、从大到小，比如“年年过年年年好，月月赏月月月圆”。 <br/>
 
 
 最简办法，看最后一个字：三或四声为上，一二声为下。位置：面对门右上左下。古人写字即右向左这是沿承下来的。
 
-```
+<br/>
 
 #### 1.3.4、视频会员和电信流量兑换
 
@@ -476,7 +473,7 @@ copyPush
 
 ---
 
-```
+
 各位小伙伴，现在主要有以下几个方法正规免费获取流量：
 
 1、安徽电信公众号--福利专区--个人中心--#签到有礼 。每日连续签到，使用金币兑换流量，一个月大概有4G多免费流量。活动到2023年12月31结束。
@@ -489,8 +486,7 @@ copyPush
 
 --2023.08.01
 
-```
-
+<br/>
 
 #### 1.3.5、天干地支
 
@@ -514,7 +510,7 @@ copyPush
 11、戌时：黄昏，又名日夕、日暮、日晚等，此时太阳已经落山，天将黑未黑。天地昏黄，万物朦胧，故称黄昏。对应19时至21时。 <br/>
 12、亥时：人定，又名定昏等，代表此时夜色已深，人们也已经停止活动，安歇睡眠了。人定也就是人静。对应21时至23时。       <br/>
 
-
+<br/>
 
 #### 1.3.6、二十四节气
 
@@ -532,10 +528,9 @@ copyPush
 | 清明	| 4月4-6日	 |  小暑  | 7月6-8日	 |  寒露 | 10月8-9日	| 小寒	| 1月5-7日    | 
 | 谷雨	| 4月19-21日 | 	大暑  | 7月22日-24日 | 	霜降 | 10月23-24日	| 大寒	| 1月20-21日  | 
 
-
+<br/>
 
 ### 1.4、工作
-
 
 #### 1.4.1、善事利器
 
@@ -551,7 +546,6 @@ git ：gitlab、github、gitee、gitcode、coding、bitbucket
 
 ```
 
-*************************
 
 #### 1.4.2、mysql logbin日志 
 
@@ -571,7 +565,6 @@ TRUNCATE table mysql.general_log
 
 ```
 
---------------------
 
 #### 1.4.3、端点已使用
 
@@ -588,12 +581,12 @@ C:\Users\Administrator>taskkill /f /t /im 11492
 
 ```
 
-*************************
 
 #### 1.4.4、druid 安全配置
 
 ```
-为Druid增加权限验证措施，建议参考 https://github.com/alibaba/druid/wiki/%E9%85%8D%E7%BD%AE_StatViewServlet%E9%85%8D%E7%BD%AE
+为Druid增加权限验证措施，建议参考 
+https://github.com/alibaba/druid/wiki/%E9%85%8D%E7%BD%AE_StatViewServlet%E9%85%8D%E7%BD%AE
 https://blog.csdn.net/my_ha_ha/article/details/86212492
 
 http://localhost:8080/druid/datasource.json
@@ -621,44 +614,28 @@ http://localhost:8080/druid/sql.html
 
 ```
 
-*************************
-
-#### 1.4.5、github登录不上解决办法
-
-```
-参考 https://blog.csdn.net/ych9527/article/details/114372201
-
-1、查询github域名
-搜索DNS查询 http://tool.chinaz.com/dns/?type=1&host=github.com&ip=.   得到IP
-
-2、修改系统hosts文件
-在 C:\Windows\System32\drivers\etc\hosts 加上如下文本
-13.229.188.59 github.com
-
-```
-
-*************************
-
-#### 1.4.6、小工具
+#### 1.4.5、小工具
 
 | 序号   | 地址        |  备注          |
 | -----  | ----------- |  ------------- |
-| 1      | [json]( https://tool.xushufa.cn/json )                       | json 格式化工具             |
-| 2      | [yaml解析]( https://tool.xushufa.cn/yaml-parse )             | yaml解析为json              |
-| 3      | [时间毫秒值转换]( https://tool.xushufa.cn/time-format )      | 时间毫秒值转换              |
-|        | 解码编码     |               |                              
-| 4      | [url解码]( https://tool.xushufa.cn/url-encode )              | url解码编码                 |
-| 5      | [unicode解码]( https://tool.xushufa.cn/unicode-encode )      | unicode解码编码             |
-| 6      | [文字转二维码]( https://tool.xushufa.cn/words-QRcode )       | 文字转二维码                |
-| 7      | [二维码生成扫描识别]( https://tool.xushufa.cn/HtmlQRCode )   | 二维码生成扫描识别          |
-|        | markdown                     |                 |             
-| 8      | [md2wx]( https://tool.xushufa.cn/md2wx/docs )                | 在线Markdown微信格式化工具            |
-| 9      | [editormd]( https://tool.xushufa.cn/markdown-editormd )      | 开源的、可嵌入的 Markdown 在线编辑器  |
-| 10     | [markthing]( https://tool.xushufa.cn/markdown-markthing )    | 一个MarkDown编辑器                    |
-| 11     | [mpeditor]( https://tool.xushufa.cn/markdown-mpeditor )      | 专注于微信公众号的编辑阅读器          |
-|        | 项目布署                     |                 |
-| 12     | [tool]( https://github.com/scott180/tool )     | github仓库  |
-| 13     | [xushufa]( https://xushufa.cn )                | 个人网站    |
+| 1      | [json]( https://tool.xushufa.cn/json )                     | json 格式化工具             |
+| 2      | [yaml解析]( https://tool.xushufa.cn/yaml-parse )           | yaml解析为json              |
+| 3      | [Json2Excel]( https://tool.xushufa.cn/Json2Excel )         | Json转Excel文件             |
+| 4      | [时间毫秒值转换]( https://tool.xushufa.cn/time-format )    | 时间毫秒值转换              |
+|        | 解码编码                                                   |                             |
+| 5      | [url解码]( https://tool.xushufa.cn/url-encode )            | url解码编码                 |
+| 6      | [unicode解码]( https://tool.xushufa.cn/unicode-encode )    | unicode解码编码             |
+| 7      | [文字转二维码]( https://tool.xushufa.cn/words-QRcode )     | 文字转二维码                |
+| 8      | [二维码生成扫描识别]( https://tool.xushufa.cn/HtmlQRCode ) | 二维码生成扫描识别          |
+|        | markdown                                                   |                             |
+| 9      | [md2wx]( https://tool.xushufa.cn/md2wx/docs )              | 在线Markdown微信格式化工具            |
+| 10     | [editormd]( https://tool.xushufa.cn/markdown-editormd )    | 开源的、可嵌入的 Markdown 在线编辑器  |
+| 11     | [markthing]( https://tool.xushufa.cn/markdown-markthing )  | 一个MarkDown编辑器                    |
+| 12     | [mpeditor]( https://tool.xushufa.cn/markdown-mpeditor )    | 专注于微信公众号的编辑阅读器          |
+|        | 项目布署                                                   |                                       |
+| 13     | [tool]( https://github.com/scott180/tool )                 | github仓库                            |
+| 14     | [xushufa]( https://xushufa.cn )                            | 个人网站                              |
+
 
 *************************
 
@@ -725,6 +702,47 @@ List<SettlementProcessInstanceDO> querySettlementProcessInstanceList(@Param("bil
 
 ```
 
+```java
+<dependency>
+    <groupId>net.sf.dozer</groupId>
+    <artifactId>dozer</artifactId>
+    <version>5.5.1</version>
+</dependency>
+
+
+    /**
+     * 深度复制
+     * @param args
+     */
+    public static void main(String[] args) {
+        Object sourceObject = new Object();
+        Object targetObject = new Object();
+        DozerBeanMapper dozerBeanMapper = new DozerBeanMapper();
+        dozerBeanMapper.map(sourceObject, targetObject);
+    }
+
+	
+	
+	
+    /**
+     * 正则分割中文和数字
+     *
+     * @param region
+     * @return
+     */
+    public static List spitRegion(String region) {
+		Pattern REGION_PATTERN = Pattern.compile("[\\u4e00-\\u9fa5]+|\\d+");
+		
+        List<String> list = new ArrayList<>();
+        Matcher m = REGION_PATTERN.matcher(region);
+        while (m.find()) {
+            list.add(m.group());
+        }
+        return list;
+    }
+	
+```
+
 #### 2.1.2、lambda表达式
 
 ```java
@@ -743,9 +761,13 @@ List<Integer> interceptProductIdList = interceptGoodsNumDAOS.stream().map(dao ->
 List<DeliveryPackageDO> mainPackageDOList = packageDOS.stream().filter(dao -> dao.getTitle().equals(DriverPackageUtil.MAIN_PACKAGE_TEXT)).collect(Collectors.toList());
 
 
-// 求和
-Integer sum = detailDAOS.stream().mapToInt(DeliveryPackageGoodsDetailDAO::getNum).sum()
+// 求和  值为null时会报错 No value present
+Integer sum = detailDAOS.stream().mapToInt(DeliveryPackageGoodsDetailDAO::getNum).sum();
+BigDecimal paymentAmount = purchaserAmountMap.values().stream().map(SupplierBillDetailVO::getAmount).reduce(BigDecimal.ZERO, BigDecimal::add);
 BigDecimal paymentAmount = purchaserAmountMap.values().stream().map(SupplierBillDetailVO::getAmount).reduce(BigDecimal::add).get();
+
+// filter过滤空值且使用BigDecimal.ZERO 则不报错
+list.stream().filter(val->val.getSalesAmount()!=null).map(SupplierJointSalesDO::getSalesAmount).reduce(BigDecimal.ZERO,BigDecimal::add);
 
 
 /*** list转map */
@@ -1218,12 +1240,12 @@ syso+Alt+/      输出
 ---
 
 ```
-java  mysql  maven  
-idea  git  navicat notepad++  
+java mysql maven  
+idea git navicat notepad++  
 postman xshell fillder typora VMware
 redis mongo kafka zookeeper tomcat eclipse
-python  nodejs vue 
-火绒安全软件 向日葵 Everything
+python nodejs npm vue github gitlab gitee gitcode
+Google Chrome 火绒安全软件 向日葵 Everything
 ```
 
 ---
@@ -1271,10 +1293,10 @@ https://www.jianshu.com/p/391e995881c0
 
 --Tests
 var jsonData = JSON.parse(responseBody);
-postman.setGlobalVariable("webToken", jsonData.data.token);
+tests["success"] = jsonData.code === 200;
+postman.setGlobalVariable("authorityToken", jsonData.data.token);
  
 
- 
 postman 出现Error: connect ECONNREFUSED 127.0.0.1:端口
 https://blog.csdn.net/weixin_45993202/article/details/109072188
 
@@ -1332,7 +1354,7 @@ maven常用打包命令
 
 | 平台           | 链接           |
 | -------------- | -------------- |
-|  **项目仓库**  | [gitlab]( https://gitlab.com/xuyq123/calligraphy ) &ensp; [coding]( https://xyqin.coding.net/public/my/calligraphy/git ) &ensp; [github]( https://github.com/scott180/calligraphy )  &ensp; [bitbucket]( https://bitbucket.org/xu12345/calligraphy ) &ensp; [gitee]( https://gitee.com/xy180/calligraphy ) &ensp; [sourceforge]( https://sourceforge.net/p/calligraphy/code )  &ensp; [vuepress]( https://scott180.github.io/vuepress-calligraphy )    |
+|  **项目仓库**  | [gitlab]( https://gitlab.com/xuyq123/mynotes ) &ensp; [gitcode]( https://gitcode.net/xu180/MyNotes ) &ensp; [github]( https://github.com/scott180/MyNotes )  &ensp; [bitbucket]( https://bitbucket.org/xu12345/calligraphy ) &ensp; [gitee]( https://gitee.com/xy180/MyNotes ) &ensp; [sourceforge]( https://sourceforge.net/p/calligraphy/code )  &ensp; [vuepress]( https://scott180.github.io/vuepress-blog )    |
 |  **资讯账号**  | [微信公众号]( https://mp.weixin.qq.com/s/HmdDsCaeumuZg_DfitIdlw ) &ensp; [头条]( https://www.toutiao.com/c/user/token/MS4wLjABAAAA2_bWhiknCbcKNu4c6VTM2B7m2vr7zBrh0x6fSyOrtGU ) &ensp;  [豆瓣]( https://www.douban.com/people/80730595/photos ) &ensp;  [知乎]( https://www.zhihu.com/people/xu-xian-sheng-72-29/posts )     |
 |  **个人邮箱**  | 1021151991@qq.com   |
 

@@ -9,11 +9,11 @@
 ## 命令
 
 ```shell
-[root@localhost ~]# top         --查看cpu	 
-[root@localhost ~]# top -p 6734 -H        --观察该进程中所有线程的CPU占用
-[root@localhost ~]# printf "%x\n" 6759    --找出CPU消耗较多的线程id，转16进制
+[root@localhost ~]# top         					--查看cpu	 
+[root@localhost ~]# top -p 6734 -H        			--观察该进程中所有线程的CPU占用
+[root@localhost ~]# printf "%x\n" 6759    			--找出CPU消耗较多的线程id，转16进制
 1a67
-[root@localhost ~]# jstack 6734|grep 1a67 -A 30        --打印堆栈信息，提交开发分析处理
+[root@localhost ~]# jstack 6734|grep 1a67 -A 30     --打印堆栈信息，提交开发分析处理
 
 
 ```
@@ -58,10 +58,10 @@
 --------------------------------------
 
 ```shell
-[root@localhost ~]# printf "%x\n" 6759    --找出CPU消耗较多的线程id，转16进制
+[root@localhost ~]# printf "%x\n" 6759    				--找出CPU消耗较多的线程id，转16进制
 1a67
  
-[root@localhost ~]# jstack 6734|grep 1a67 -A 30        --打印堆栈信息，提交开发分析处理
+[root@localhost ~]# jstack 6734|grep 1a67 -A 30			--打印堆栈信息，提交开发分析处理
 
 "startJob_Worker-5" prio=10 tid=0x00007f15c4c07800 nid=0x1a67 runnable [0x00007f159cc74000]
    java.lang.Thread.State: RUNNABLE
