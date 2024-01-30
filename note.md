@@ -189,6 +189,28 @@ gitlab docsify主题仓库
 
 <br/>
 
+#### 1.1.5、部署网站
+
+
+| 序号  | 平台    | 仓库地址    |  git静态页面   | 域名  | 说明 |
+| ----- | -----   | ----------- |  ------------- | ----  | ---- |
+| 1     | github  | [**reco-blog**]( https://github.com/scott180/reco-blog )  	 | [github.io/reco-blog]( https://scott180.github.io/reco-blog )   | [xushufa]( https://xushufa.cn) |  vuepress-reco部署网站 |
+| 2     | github  | [**vuepress-blog**]( https://github.com/scott180/vuepress-blog )  	 | [github.io/vuepress-blog]( https://scott180.github.io/vuepress-blog )   | [vuepress-blog.xushufa]( https://vuepress-blog.xushufa.cn) | vuepress部署网站 |
+| 3     | github  | [blog]( https://github.com/scott180/blog )  	 | [github.io/blog]( https://scott180.github.io/blog )   | [blog.xushufa]( https://blog.xushufa.cn) | vuepress部署网站 |
+| 4     | github  | [tool]( https://github.com/scott180/tool )  	 | [github.io/tool]( https://scott180.github.io/tool )   | [tool.xushufa]( https://tool.xushufa.cn) |  工具网站 |
+| 5     | github  | [docsify-blog]( https://github.com/scott180/docsify-blog )  	 | [github.io/docsify]( https://scott180.github.io/docsify-blog/ )   | [docsify-blog.xushufa]( https://docsify-blog.xushufa.cn) | docsify部署网站 |
+| 6     | **github**  | [gitbook-blog]( https://github.com/scott180/gitbook-blog )  	 | [github.io/gitbook]( https://scott180.github.io/gitbook-blog ) | -- | gitbook部署网站 |
+| 7     | gitlab  | [mkdocs-blog]( https://gitlab.com/xuyq123/mkdocs-blog )     | [gitlab.io/mkdocs]( https://xuyq123.gitlab.io/mkdocs-blog )   | -- | mkdocs部署网站  |
+| 8     | gitlab  | [**MyNotes**]( https://gitlab.com/xuyq123/mynotes )         | [files]( https://gitlab.com/xuyq123/mynotes/-/blob/master/%E6%96%87%E6%A1%A3%E7%9B%AE%E5%BD%95.md )   | -- | **编程笔记** |
+| 9     | gitcode | [**document**]( https://gitcode.net/xu180/document )  			| [note]( https://gitcode.net/xu180/document/-/blob/master/article/%E9%9A%8F%E7%AC%94/%E6%97%A5%E5%B8%B8Note.md )  | -- | 生活随笔 |
+| 10    | npm | [xushufa]( https://www.npmjs.com/~xushufa )  | [img]( https://cdn.jsdelivr.net/npm/xushufa-shu/yan/duo1-1000/0001大.jpg ) 	| -- 		  | 资料管理   |
+| 11     | bitbucket | [**imgs**]( https://bitbucket.org/xu12345/document/src/master/imgs/ )  		| [img]( https://bitbucket.org/xu12345/document/raw/87e65566e45e063244eab491abe2dab0f43de59d/imgs/shufa/%E7%8E%8B%E7%BE%B2%E4%B9%8B-%E5%85%B0%E4%BA%AD%E9%9B%86%E5%BA%8F.jpg ) 	| --   | 图片仓库   |
+| 12    | sourceforge | [xdocument]( https://sourceforge.net/p/xdocument/code/ci/master/tree/ )  | [ReadMe]( https://sourceforge.net/p/xdocument/code/ci/master/tree/README.md ) 	| -- 		  | 图片仓库   |
+
+
+
+<br/>
+
 ### 1.2、网络&笔记本
 
 #### 1.2.1、远程登录
@@ -357,6 +379,33 @@ copyPush
 
 
 ```
+
+#### 1.2.6、github访问不了，配置DNS与IP
+
+
+问题：github网站访问不了，不能推送文件，不能获取项目						<br/>
+方法：本机hosts文件配置DNS与IP                                              <br/>
+步骤：                                                                      <br/>
+1、工具网站DNS查询与IP归属地查询                                            <br/>
+https://tool.chinaz.com/dns/www.github.com                                  <br/>
+https://tool.lu/ip/index.html                                               <br/>
+https://www.itdog.cn/dns/github.com                                         <br/>
+                                                                            <br/>
+输入github.com查到对应IP：                                                  <br/>
+20.27.177.113                                                               <br/>
+20.205.243.166                                                              <br/>
+20.248.137.48                                                               <br/>
+...                                                                         <br/>
+ 
+2、本机hosts文件配置解析                                                    <br/>
+在 `C:\Windows\System32\drivers\etc\hosts` 文件添加一行对应解析映射         <br/>
+`20.27.177.113 github.com`                                                  <br/>
+                                                                            <br/>
+注意：**只需添加一行**，这个ip要是访问不了的话要删掉，换另一个。            <br/>
+如果配置多行的话，域名可能会访问不能解析的ip，因此只配置一行能解析的ip即可。<br/>
+
+
+
 
 ---
 

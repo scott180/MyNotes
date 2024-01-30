@@ -922,13 +922,17 @@ SELECT id,product_id productId,sales  FROM ins_period_sales where create_time > 
 ```
 
 
-### 3.2、中文排序
+### 3.2、指定排序
 
 ```sql
-sql中文排序 
+-- 中文排序 
 SELECT id,name FROM `T_USER` ORDER BY convert(name using gbk)  ASC limit 10,100;
 ```
 
+```sql
+-- 指定字段值排序
+SELECT id,name FROM `T_USER` ORDER BY FIELD( status, 0,2,1,3 ) ASC;
+```
 
 ### 3.3、截取字符串
 
