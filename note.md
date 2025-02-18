@@ -2,7 +2,7 @@
 
 <br />
 
-[blog]( https://xushufa.cn ) &ensp;  [gitlab]( https://gitlab.com/xuyq123/mynotes ) &ensp; [gitee]( https://gitee.com/xy180/MyNotes ) &ensp; [github]( https://github.com/scott180/MyNotes ) &ensp; [xushufa]( https://vuepress-blog.xushufa.cn )
+[xushufa]( https://xushufa.cn ) &ensp;  [gitlab]( https://gitlab.com/xuyq123/mynotes ) &ensp; [gitee]( https://gitee.com/xy180/MyNotes ) &ensp; [github]( https://github.com/scott180/MyNotes ) &ensp; [blog]( https://vuepress-blog.xushufa.cn )
 
 <br />
 
@@ -26,7 +26,7 @@ Ctrl+W  关闭程序
 Ctrl+Z  撤销刚才进行的操作
 Ctrl+Y  恢复刚才进行的操作
 Ctrl+N  新建一个空白文档
-Ctrl+P  打开"打印"对话框
+Ctrl+P  打开打印
 Ctrl+O  打开文档
 
 Ctrl+Shift	输入法切换
@@ -37,19 +37,19 @@ Ctrl+Shift+End	选中当前到末尾所有内容
 Ctrl+Shift+Esc	打开任务管理器
 Ctrl+Shift+Del	浏览器打开清除缓存对话框
 
-Alt+Tab     程序切换（小图标）
-Win+Tab     程序切换（大图标）
+Alt+Tab     程序切换-小图标
+Win+Tab     程序切换-大图标
 
 Win     显示开始菜单
 Win+L   锁定计算机
 Win+E   启动"我的电脑"
 Win+D   快速显示桌面
 
-Win+R   打开"运行"对话框，输入命令开启相关功能
-cmd 			命令行控制台
-reg 			注册表
+Win+R		打开运行-输入命令开启相关功能
+cmd			命令行控制台
+reg			注册表
 mstsc			远程登录
-services.msc 	本地服务
+services.msc		本地服务
 	
 F2   文件改名
 F5   浏览器页面刷新
@@ -76,7 +76,7 @@ Shift+光标+右键	 选中内容
 右击--打开方式--选择默认程序
 
 **3.注册表设置** <br/>
-Win+R 在运行里面输入regedit（注册表编辑器），HEY_CLASS_ROOT下面是所有文件的后缀名文件，找到你想取消关联的后缀名，如.ppt。 <br/>
+Win+R 在运行里面输入regedit（注册表编辑器），`HEY_CLASS_ROOT`下面是所有文件的后缀名文件，找到你想取消关联的后缀名，如.ppt。 <br/>
 单击这个文件夹，右边出现的“数据”一项，双击“（默认）”，打开对话框，将“数据”下面可以填写的部分清除，保持空白，确定。 <br/>
 
 你的电脑里面所有.ppt文件就没有了任何关联和默认程序，再按自己的想法重新关联或默认就行了。 <br/>
@@ -327,9 +327,12 @@ Windows Registry Editor Version 5.00
 
 #### 1.2.5、shell批量推送git
 
+> 批量推送git、压缩打包xushufa部署项目
+
 ```sh
 #!/bin/bash
 #sh push-ca.sh
+#批量推送git
 copyPush(){
 	cp -r /e/Project/gitlab/calligraphy/*.md $data_dir
 	cp -r /e/Project/gitlab/calligraphy/书法字帖 $data_dir
@@ -379,6 +382,75 @@ copyPush
 
 
 ```
+
+```sh
+#!/bin/bash
+#sh zipProject.sh
+#压缩xushufa布署项目。zip有时不能压缩隐藏文件，tar中文乱码。
+zipProject(){
+	# tar -zcvf /e/Project/github/xushufa-project/xushufa.tar.gz /e/Project/github/docsify-blog/
+	# zip -r xu.zip /e/Project/github/docsify-blog/
+	file_name=/e/Project/github/xushufa-project/$(date -d now +%Y%m%d_%H%M%S)_$project_type.$project_name.zip
+	source_dir=/e/Project/$project_type
+	cd $source_dir
+	zip -r $file_name $project_name
+	#zip -r $file_name $project_name/.[^.]*
+	# -r表示目录所有文件。.[^.]*表示所有文件，包含隐藏文件。
+	echo $file_name '...success...'
+}
+
+
+tarProject(){
+	# tar -zcvf /e/Project/github/xushufa-project/xushufa.tar.gz /e/Project/github/docsify-blog/
+	file_name=/e/Project/github/xushufa-project/$(date -d now +%Y%m%d_%H%M%S)_$project_type.$project_name.tar.gz
+	source_dir=/e/Project/$project_type
+	cd $source_dir
+	tar -zcvf $file_name $project_name/
+	echo $file_name '...success...'
+}
+
+#reco-blog 1
+project_name=reco-blog
+project_type=github
+zipProject
+
+#vuepress-blog 2
+project_name=vuepress-blog
+project_type=github
+zipProject
+
+#blog 3
+project_name=blog
+project_type=github
+zipProject
+
+#tool 4
+project_name=tool
+project_type=github
+zipProject
+
+#docsify-blog 5
+project_name=docsify-blog
+project_type=github
+zipProject
+
+#gitbook-blog 6
+project_name=gitbook-blog
+project_type=github
+zipProject
+
+
+#mkdocs-blog 7
+project_name=mkdocs-blog
+project_type=gitlab
+zipProject
+
+
+
+
+```
+
+<br/>
 
 #### 1.2.6、github访问不了，配置DNS与IP
 
@@ -493,7 +565,7 @@ https://www.itdog.cn/dns/github.com                                         <br/
 在时间、空间、具体事物上一般是从左到右、从大到小，比如“年年过年年年好，月月赏月月月圆”。 <br/>
 
 
-最简办法，看最后一个字：三或四声为上，一二声为下。位置：面对门右上左下。古人写字即右向左这是沿承下来的。
+最简办法，看最后一个字：**三四声为上联**，**一二声为下联**。位置：**面对门右上左下**。古人写字即右向左这是沿承下来的。
 
 <br/>
 
@@ -689,11 +761,27 @@ http://localhost:8080/druid/sql.html
 *************************
 
 
+#### 1.4.6、AI助手
+
+| 序号   | 地址        |  备注          |
+| -----  | ----------- |  ------------- |
+| 1      | [文心一言]( https://yiyan.baidu.com/ )                     | 你的智能伙伴             |
+| 2      | [通义千问]( https://tongyi.aliyun.com/qianwen/ )           | 一个不断进化的AI大模型   |
+| 3      | [讯飞星火]( https://xinghuo.xfyun.cn/ )         			  |  认知大模型              |
+| 4      | [ChatGPT]( https://openai.com/blog/chatgpt )          	  |  聊天机器人模型          |
+
+
+
 ## 2、java
 
 ### 2.1、java编程
 
+[calligraphy-boot]( https://gitlab.com/xuyq123/calligraphy-boot )  &ensp; [util]( https://gitlab.com/xuyq123/calligraphy-boot/-/blob/dev_20210728/calligraphy-boot-common/src/main/java/com/xu/calligraphy/boot/common/util/LogisticsUtil.java )
+
 #### 2.1.1、常用方法
+
+> @Data、JSON、@JsonFormat、ThreadPoolTaskExecutor、@MapKey、@Select
+> Map遍历、创建数组、快速添加list、UnsupportOperationException
 
 ```java
 @Data
@@ -751,48 +839,106 @@ List<SettlementProcessInstanceDO> querySettlementProcessInstanceList(@Param("bil
 
 ```
 
+
 ```java
-<dependency>
-    <groupId>net.sf.dozer</groupId>
-    <artifactId>dozer</artifactId>
-    <version>5.5.1</version>
-</dependency>
+
+// java中Map遍历的四种方式
+https://www.cnblogs.com/damoblog/p/9124937.html
+
+Map<String,String> map = new HashMap<String,String>();
+map.put("熊大", "棕色");
+map.put("熊二", "黄色");
 
 
-    /**
-     * 深度复制
-     * @param args
-     */
-    public static void main(String[] args) {
-        Object sourceObject = new Object();
-        Object targetObject = new Object();
-        DozerBeanMapper dozerBeanMapper = new DozerBeanMapper();
-        dozerBeanMapper.map(sourceObject, targetObject);
-    }
+for(Map.Entry<String, String> entry : map.entrySet()){
+    String mapKey = entry.getKey();
+    String mapValue = entry.getValue();
+    System.out.println(mapKey+":"+mapValue);
+}
 
-	
-	
-	
-    /**
-     * 正则分割中文和数字
-     *
-     * @param region
-     * @return
-     */
-    public static List spitRegion(String region) {
-		Pattern REGION_PATTERN = Pattern.compile("[\\u4e00-\\u9fa5]+|\\d+");
-		
-        List<String> list = new ArrayList<>();
-        Matcher m = REGION_PATTERN.matcher(region);
-        while (m.find()) {
-            list.add(m.group());
-        }
-        return list;
-    }
-	
+ map.entrySet().forEach(en->{
+                en.getKey();
+                en.getValue();
+            });
+
+//key
+for(String key : map.keySet()){
+    System.out.println(key);
+}
+//value
+for(String value : map.values()){
+    System.out.println(value);
+}
+
+
+Iterator<Entry<String, String>> entries = map.entrySet().iterator();
+while(entries.hasNext()){
+    Entry<String, String> entry = entries.next();
+    String key = entry.getKey();
+    String value = entry.getValue();
+    System.out.println(key+":"+value);
+}
+
+
+for(String key : map.keySet()){
+    String value = map.get(key);
+    System.out.println(key+":"+value);
+}
+
+
 ```
 
+
+```java
+// 创建数组的四种方法
+int[] a1;
+int[] a2 = {1, 2, 3};
+int[] a3 = new int[]{1, 2, 3};
+
+int[] a4 = new int[3];
+a4[0] = 1;
+a4[2] = 2;
+a4[3] = 3;
+
+```
+
+```java
+// 几个快速添加list的方法
+1. 使用Collections.addAll()方法，前提还是需要手动 new ArrayList
+ArrayList<String> s = new ArrayList();
+Collections.addAll(s,"1","2","3")
+
+2. 使用Arrays.asList(...args) 直接返回一个List
+List<String> s = Arrays.asList("1","2","3")
+// 可能会抛异常 UnsupportOperationException
+
+3. 如果引入了Guava的工具包，可以使用他的Lists.newArrayList(...args)方法
+List<String> list = Lists.newArrayList("1","2","3")
+
+4. 如果是Java9，可以使用自带的List类
+List<String> s = List.of("1","2","3")
+
+```
+
+```
+使用Arrays.asList()报错 UnsupportOperationException 原因
+
+常常使用Arrays.asLisvt()后调用add，remove这些method时出现java.lang.UnsupportedOperationException异常。这是由于：
+Arrays.asLisvt() 返回java.util.Arrays$ArrayList， 而不是ArrayList。
+
+Arrays$ArrayList和ArrayList都是继承AbstractList，remove，add等 method在AbstractList中是默认throw UnsupportedOperationException而且不作任何操作。
+ArrayList override这些method来对list进行操作，但是Arrays$ArrayList没有override remove(int)，add(int)等，所以throw UnsupportedOperationException。
+
+解决方法：
+List<String> list=new ArrayList(Arrays.asList(nameList));
+ 
+```
+
+
+
 #### 2.1.2、lambda表达式
+
+> AtomicInteger、stream/map/filter/mapToInt/reduce/groupingBy/toMap/max、Optional、flatmap、peek
 
 ```java
 
@@ -880,60 +1026,157 @@ basketList.parallelStream().collect(Collectors.groupingBy(item -> item.getAddrTe
 				}
 		);
 		
+// map computeIfAbsent   如果不存在这个 key，则添加到 Map 中
+Map<String,BigDecimal> map = new HashMap<>();
+String key = String.format("%s_%s", salaryDriverDAO.getRegion(), deliveryMonth);	
+map.computeIfAbsent(key, k -> BigDecimal.ZERO);
+map.put(key, map.get(key).add(salaryDriverDAO.getExpectIncomeAmount()));
+
+Map<Integer, List<DamagedProduct>> standardMap = new LinkedHashMap<>();
+standardMap.computeIfAbsent(standardType, k -> new ArrayList<>()).add(damagedProduct);
+
+// summarizingDouble json 对象列表数字求和
+double catePercentageAmount = dayList.stream().map(DeliverySalaryDriverDAO::getCatePlan).collect(Collectors.summarizingDouble(e ->
+                            e.getBigDecimal("catePercentageAmount").doubleValue())).getSum();			 
+```
+
+---
+
+---
+
+```java
+JAVA8 中的flatmap
+
+使用flatMap方法的效果是，各个数组并不是分别映射一个流，而是映射成流的内容，所有使用map(Array::stream)时生成的单个流被合并起来，即扁平化为一个流。
+https://blog.csdn.net/liyantianmin/article/details/96178586
+https://blog.csdn.net/zhuwukai/article/details/82888316
+https://www.jianshu.com/p/ecb8e8f77a89
+
+ public static void main(String[] args) {
+	List<User> uList = Lists.newArrayList();
+	User u1 = new User();
+	u1.setAddr("a1;a2;a3;a4;a5");
+
+	User u2 = new User();
+	u2.setAddr("b1;b2;b3;b4;b5");
+
+	uList.add(u1);
+	uList.add(u2);
+
+	List<String> addrList = uList.stream().map(x -> x.getAddr()).flatMap(x-> Arrays.stream(x.split(";"))).collect(Collectors.toList());
+	//或者
+	List<String> ridStrList = uList.stream().map(x -> x.getAddr()).map(x -> x.split(";")).flatMap(Arrays::stream).collect(Collectors.toList());
+	System.out.println(addrList);
+}
+
+@Data
+@NoArgsConstructor
+public class User{
+	private   String addr;
+}
+
+
+---
+
+
+public static class User {
+        private String name;
+        private List<String> relativeUserList;
+}
+// 获取list中的list字段
+List<String> strings = users.stream()
+  .flatMap(user -> user.getRelativeUserList().stream())
+  .collect(Collectors.toList());
+	
+```
+
+
+```
+Java 8 Stream peek 与 map的区别
+原文链接：https://blog.csdn.net/tckt75433/article/details/81510743
+总结：peek接收一个没有返回值的λ表达式，可以做一些输出，外部处理等。map接收一个有返回值的λ表达式，之后Stream的泛型类型将转换为map参数λ表达式返回的类型。
 
 ```
 
-#### 2.1.3、Map遍历
+
+
+#### 2.1.3、通用工具
+
+> 深度复制、正则分割中文和数字、特殊字符检测、sql注入检测
+
+```java
+<dependency>
+    <groupId>net.sf.dozer</groupId>
+    <artifactId>dozer</artifactId>
+    <version>5.5.1</version>
+</dependency>
+
+
+/**
+ * 深度复制
+ * @param sourceObject
+ * @param targetObject
+ */
+public static void copyPropertiesByDeep(Object sourceObject, Object targetObject) {
+    DozerBeanMapper dozerBeanMapper = new DozerBeanMapper();
+    dozerBeanMapper.map(sourceObject, targetObject);
+}
+
+	
+	
+	
+/**
+ * 正则分割中文和数字
+ *
+ * @param region
+ * @return
+ */
+public static List spitRegion(String region) {
+	Pattern REGION_PATTERN = Pattern.compile("[\\u4e00-\\u9fa5]+|\\d+");
+	
+    List<String> list = new ArrayList<>();
+    Matcher m = REGION_PATTERN.matcher(region);
+    while (m.find()) {
+        list.add(m.group());
+    }
+    return list;
+}
+	
+```
 
 ```java
 
-java中Map遍历的四种方式
-https://www.cnblogs.com/damoblog/p/9124937.html
+    /**
+     * 特殊字符检测
+     *
+     * @param str
+     * @return
+     */
+    public static Boolean filterString(String str) {
+        String regEx = "[`~!@#$%^&*()+=|{}':;'\\[\\].<>/?~！@#￥%……&*（）——+|{}【】‘；：”“’。，、？]";
+        Pattern p = Pattern.compile(regEx);
+        Matcher m = p.matcher(str);
+        return m.replaceAll("").trim().length() != str.length();
+    }
 
-Map<String,String> map = new HashMap<String,String>();
-map.put("熊大", "棕色");
-map.put("熊二", "黄色");
-
-
-for(Map.Entry<String, String> entry : map.entrySet()){
-    String mapKey = entry.getKey();
-    String mapValue = entry.getValue();
-    System.out.println(mapKey+":"+mapValue);
-}
-
- map.entrySet().forEach(en->{
-                en.getKey();
-                en.getValue();
-            });
-
-//key
-for(String key : map.keySet()){
-    System.out.println(key);
-}
-//value
-for(String value : map.values()){
-    System.out.println(value);
-}
-
-
-Iterator<Entry<String, String>> entries = map.entrySet().iterator();
-while(entries.hasNext()){
-    Entry<String, String> entry = entries.next();
-    String key = entry.getKey();
-    String value = entry.getValue();
-    System.out.println(key+":"+value);
-}
-
-
-for(String key : map.keySet()){
-    String value = map.get(key);
-    System.out.println(key+":"+value);
-}
-
-
+    /**
+     * sql注入检测
+     *
+     * @param str
+     * @return
+     */
+    public static Boolean filterStringSql(String str) {
+        Pattern pattern = Pattern.compile("\\b(and|exec|insert|select|drop|grant|alter|delete|update|count|chr|mid|master|truncate|char|declare|or)\\b|(\\*|;|\\+|'|%)");
+        Matcher matcher = pattern.matcher(str.toString().toLowerCase());
+        return matcher.find();
+    }
 ```
 
+
+
 #### 2.1.4、java排序
+
+> Arrays.sort、Collections.sort、new Comparator、compareTo、stream/Comparator/comparing
 
 ```java
 java排序
@@ -1052,106 +1295,23 @@ public static TreeMap<String, List<LogisticsStatisticsDAO>> getCustomSortTreeMap
 	
 ```
 
-#### 2.1.5、flatmap,peek,newArrayList
+#### 2.1.5、死锁Deadlock
 
-```java
-JAVA8 中的flatmap
+```
+--查询一下mysql的事务处理表
+select * from information_schema.INNODB_TRX  
 
-使用flatMap方法的效果是，各个数组并不是分别映射一个流，而是映射成流的内容，所有使用map(Array::stream)时生成的单个流被合并起来，即扁平化为一个流。
-https://blog.csdn.net/liyantianmin/article/details/96178586
-https://blog.csdn.net/zhuwukai/article/details/82888316
-https://www.jianshu.com/p/ecb8e8f77a89
+--杀掉进程
+kill 进程ID
 
- public static void main(String[] args) {
-	List<User> uList = Lists.newArrayList();
-	User u1 = new User();
-	u1.setAddr("a1;a2;a3;a4;a5");
+详情见笔记
+https://gitlab.com/xuyq123/mynotes/-/blob/master/%E6%95%B0%E6%8D%AE%E5%BA%93/mysqlNote.md?ref_type=heads#user-content-36%E6%AD%BB%E9%94%81deadlock
 
-	User u2 = new User();
-	u2.setAddr("b1;b2;b3;b4;b5");
+https://xushufa.cn/docs/bian-cheng/shu-ju-ku/mysqlnote.html
 
-	uList.add(u1);
-	uList.add(u2);
-
-	List<String> addrList = uList.stream().map(x -> x.getAddr()).flatMap(x-> Arrays.stream(x.split(";"))).collect(Collectors.toList());
-	//或者
-	List<String> ridStrList = uList.stream().map(x -> x.getAddr()).map(x -> x.split(";")).flatMap(Arrays::stream).collect(Collectors.toList());
-	System.out.println(addrList);
-}
-
-@Data
-@NoArgsConstructor
-public class User{
-	private   String addr;
-}
-
-
----
-
-
-public static class User {
-        private String name;
-        private List<String> relativeUsers;
-}
-
-List<String> strings = users.stream()
-  .flatMap(user -> user.getRelativeUsers().stream())
-  .collect(Collectors.toList());
-	
 ```
 
 
-```
-Java 8 Stream peek 与 map的区别
-原文链接：https://blog.csdn.net/tckt75433/article/details/81510743
-总结：peek接收一个没有返回值的λ表达式，可以做一些输出，外部处理等。map接收一个有返回值的λ表达式，之后Stream的泛型类型将转换为map参数λ表达式返回的类型。
-
-```
-
-```java
-// 创建数组的四种方法
-int[] a1;
-int[] a2 = {1, 2, 3};
-int[] a3 = new int[]{1, 2, 3};
-
-int[] a4 = new int[3];
-a4[0] = 1;
-a4[2] = 2;
-a4[3] = 3;
-
-```
-
-```java
-几个快速添加list的方法
-1. 使用Collections.addAll()方法，前提还是需要手动 new ArrayList
-ArrayList<String> s = new ArrayList();
-Collections.addAll(s,"1","2","3")
-
-2. 使用Arrays.asList(...args) 直接返回一个List
-List<String> s = Arrays.asList("1","2","3")
-// 可能会抛异常 UnsupportOperationException
-
-3. 如果引入了Guava的工具包，可以使用他的Lists.newArrayList(...args)方法
-List<String> list = Lists.newArrayList("1","2","3")
-
-4. 如果是Java9，可以使用自带的List类
-List<String> s = List.of("1","2","3")
-
-```
-
-```
-使用Arrays.asList()报错 UnsupportOperationException 原因
-
-常常使用Arrays.asLisvt()后调用add，remove这些method时出现java.lang.UnsupportedOperationException异常。这是由于：
-Arrays.asLisvt() 返回java.util.Arrays$ArrayList， 而不是ArrayList。
-
-Arrays$ArrayList和ArrayList都是继承AbstractList，remove，add等 method在AbstractList中是默认throw UnsupportedOperationException而且不作任何操作。
-ArrayList override这些method来对list进行操作，但是Arrays$ArrayList没有override remove(int)，add(int)等，所以throw UnsupportedOperationException。
-
-解决方法：
-List<String> list=new ArrayList(Arrays.asList(nameList));
- 
-```
 
 ---
 
@@ -1169,10 +1329,14 @@ Keymap  Eclipse
 2、调整字体
 font  - Size
 
-3、配置 maven  （Setting For New Projects）
+3、配置 maven
 Maven home directory:   D:/ProgramFiles/apache-maven-3.6.0
 User setting file:      D:\ProgramFiles\apache-maven-3.6.0\conf\settings.xml
 Local repository:       D:\ProgramFiles\apache-maven-localRepository
+
+新项目配置maven
+Settings for New Projects...
+New Projects Setup
 
 4、配置Git命令行
 Terminal - Shell path
@@ -1227,7 +1391,7 @@ Ctrl+h          全局关键词搜索
 Ctrl+f          当前文件查找、替换
 Ctrl+shift+r    全局文件查找
 Ctrl+shift+f    整理代码格式
-Ctrl+shift+x    大小写
+Ctrl+shift+u    大小写
 Ctrl+shift+o    整理导入包
 Alt+insert      快速生成get和set方法、构造方法
 Alt+shift+r     批量重命名
@@ -1411,8 +1575,7 @@ maven常用打包命令
 
 > **公众号**
 
-- 注册了微信公众号及今日头条号：[**无为徐生**]( https://scott180.github.io/calligraphy/%E6%97%A0%E4%B8%BA%E5%BE%90%E7%94%9F )，以后会将书法练习轨迹、程序员笔记以及一些随笔感想更新在此。<br/>
-- 每周一会在无为徐生**微信公众号**同步《书法练习轨迹》，持续更新，敬请关注。
+- 注册了微信公众号及今日头条号：[**无为徐生**]( https://scott180.github.io/calligraphy/%E6%97%A0%E4%B8%BA%E5%BE%90%E7%94%9F )，将书法练习轨迹、程序员笔记以及一些随笔感想更新在此。<br/>
 
 | 无为徐生   | 微信公众号                                               	 |  &ensp; |  今日头条号        |
 | ---------  | ------------------------------------------------------------- |  -      |  ----------        |

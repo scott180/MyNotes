@@ -898,7 +898,11 @@ SELECT * INTO 表2 FROM 表1
 
 ```sql
 --sql将毫秒数字转换为日期
-SELECT FROM_UNIXTIME(operation_time/1000,"%Y-%m-%d %H:%i:%s") operationDate FROM ins_purchase
+SELECT FROM_UNIXTIME(operation_time/1000,"%Y-%m-%d %H:%i:%s") operationDate FROM ins_purchase;
+
+
+---时间格式化
+select date_format(create_time, "%Y-%m-%d %H:%i:%s") from table;
 
 ```
 
@@ -910,6 +914,12 @@ timediff(date_format(create_time, '%H:%i:%s'),'03:00:00') t2,
 (HOUR(timediff(date_format(create_time, '%H:%i:%s'),'03:00:00')) + ROUND(MINUTE(timediff(date_format(create_time, '%H:%i:%s'),'03:00:00'))/60) )
  t3 FROM `ins_car_use_log` where person_liable like '%林%'
  order by create_time desc limit 100;
+ 
+ 
+--时间大于零点零五则是当天，零点到零点零五是昨天
+select CASE  WHEN TIME(b.add_time) > '00:05:00' THEN b.add_time  
+       ELSE DATE_SUB(b.add_time, INTERVAL 1 DAY) 
+   END AS date_of_day from ins_test_order b
 
 ```
 
@@ -919,10 +929,88 @@ select DATE_ADD( now(), INTERVAL -2 DAY ) from dual
 
 SELECT id,product_id productId,sales  FROM ins_period_sales where create_time > DATE_ADD( now(), INTERVAL -2 DAY ) 
 
+
+-- TIMESTAMPDIFF函数来计算两个时间之间的小时数差异
+select  FLOOR((UNIX_TIMESTAMP('2024-05-07 00:00:00')- UNIX_TIMESTAMP('2024-05-06 17:46:00'))/60/60)  from dual
+
+-- HOUR来计算两个时间之间的小时数差异
+SELECT TIMESTAMPDIFF(HOUR, '2024-05-07 00:00:00','2024-05-06 17:46:00')
+
 ```
 
 
-### 3.2、指定排序
+### 3.2、构造每一个小时为一行数据
+
+```sql
+
+-- 计算相隔几天的两个时间相减得到的差值，每一个小时为一行数据。
+
+
+-- 创建一个数字表 
+CREATE TABLE numbers (n INT PRIMARY KEY);  
+INSERT INTO `numbers` (`n`) VALUES (0),(1),(2),(3),(4),(5),(6),(7),(8),(9),(10);
+
+
+-- 设置变量
+SET @sorting_start_time = '2024-05-06 17:46:00'; 
+SET @sorting_end_time = '2024-05-07 23:00:00';  
+
+-- 查看变量
+-- select @sorting_start_time
+ 
+
+-- 每一个小时为一行数据
+
+SELECT  
+    DATE_ADD(@sorting_start_time, INTERVAL n HOUR) AS hour_time  
+FROM numbers n  
+WHERE n <= TIMESTAMPDIFF(HOUR, @sorting_start_time, @sorting_end_time)  
+ORDER BY hour_time
+
+2024-05-06 17:46:00
+2024-05-06 18:46:00
+2024-05-06 19:46:00
+2024-05-06 20:46:00
+2024-05-06 21:46:00
+2024-05-06 22:46:00
+
+
+-- 每一个小时为一行数据，日期与小时分开、小时段
+
+select sorting_work_date,
+CONCAT(case when current_hour_val<=9 then ( CONCAT("0" , current_hour_val,':',begin_min_val) )  
+			else ( CONCAT("" , current_hour_val,':',begin_min_val) ) end,'-',
+ case when current_hour_val<=8 then ( CONCAT("0" , current_hour_val+1,':',begin_min_val) ) 
+			when current_hour_val=23 then ( CONCAT("00:",begin_min_val) )  
+else ( CONCAT("" , current_hour_val+1,':',begin_min_val) ) end,'') as time_slot
+ from (
+
+select substring(hour_time,1,10) as sorting_work_date,
+CAST(substring(hour_time,12,2) AS SIGNED) AS current_hour_val,
+substring(hour_time,15,2) as begin_min_val
+from (
+SELECT  
+    DATE_ADD(@sorting_start_time, INTERVAL n HOUR) AS hour_time  
+FROM numbers n  
+WHERE n <= TIMESTAMPDIFF(HOUR, @sorting_start_time, @sorting_end_time)  
+ORDER BY hour_time
+) a
+
+) b
+
+
+2024-05-06	17:46-18:46
+2024-05-06	18:46-19:46
+2024-05-06	19:46-20:46
+2024-05-06	20:46-21:46
+2024-05-06	21:46-22:46
+2024-05-06	22:46-23:46
+
+
+```
+
+
+### 3.3、指定排序
 
 ```sql
 -- 中文排序 
@@ -934,7 +1022,7 @@ SELECT id,name FROM `T_USER` ORDER BY convert(name using gbk)  ASC limit 10,100;
 SELECT id,name FROM `T_USER` ORDER BY FIELD( status, 0,2,1,3 ) ASC;
 ```
 
-### 3.3、截取字符串
+### 3.4、截取字符串
 
 ```sql
 -- SUBSTRING  从指定角标开始截取
@@ -977,20 +1065,20 @@ MID(str, pos, len)
 ```
 
 
-### 3.4、分组取最值
+### 3.5、分组取最值
 
 ```sql
-分组取最值
+-- 分组取最值
 select * from (select * from ins_delivery_region_sort order by update_time desc limit 99999999) so group by region
 ```
 
 ```sql
-新增或修改数据
+-- 新增或修改数据
 Insert into fd_supplier VALUES (null,#{supplier_id},#{s_code}) on duplicate key update s_code=#{s_code}
 ```
 
 
-### 3.5、修改root密码
+### 3.6、修改root密码
 
 ```js
 	
@@ -1012,27 +1100,58 @@ mysql> exit;
 ```
 
 
-### 3.6、Deadlock found
+### 3.7、死锁Deadlock
 
 ```js
-https://blog.csdn.net/qq_44240587/article/details/108400666   死锁
 Mysql报Deadlock found when trying to get lock; try restarting transaction问题解决!!
+https://blog.csdn.net/qq_44240587/article/details/108400666   
 
-
-行级锁在使用的时候并不是直接锁掉这行记录,而是锁索引
+行级锁在使用的时候并不是直接锁掉这行记录,而是锁索引.
 如果一条sql用到了主键索引(mysql主键自带索引),mysql会锁住主键索引;
 如果一条sql操作了非主键索引,mysql会先锁住非主键索引,再锁定主键索引.
 
 
+--查询一下mysql的事务处理表
 select * from information_schema.INNODB_TRX  
 
+--杀掉进程
 kill 进程ID
 
-  
+
+```
+
+```java
+如何检测锁定表（由LOCK TABLE锁定）
+https://www.toutiao.com/article/7237364692283458106
+
+SHOW ENGINE INNODB STATUS;
+该命令会输出当前 InnoDB 存储引擎的详细状态信息，其中包括事务、锁定和死锁等信息。
+
+SHOW OPEN TABLES;
+该命令会返回一个表格，其中显示了所有打开的表的详细信息，包括库名、表名、表类型、锁类型等。
+
+
+```
+
+```
+mysql数据库死锁：Deadlock found when trying to get lock; try restarting transaction
+https://www.w3cschool.cn/article/3739209.html
+
+减少死锁：
+使用事务，不使用 lock tables 。
+保证没有长事务。
+操作完之后立即提交事务，特别是在交互式命令行中。
+如果在用 (SELECT ... FOR UPDATE or SELECT ... LOCK IN SHARE MODE)，尝试降低隔离级别。
+修改多个表或者多个行的时候，将修改的顺序保持一致。
+创建索引，可以使创建的锁更少。
+最好不要用 (SELECT ... FOR UPDATE or SELECT ... LOCK IN SHARE MODE)。
+如果上述都无法解决问题，那么尝试使用 lock tables t1, t2, t3 锁多张表
+
+
 ```
 
 
-### 3.7、文档
+### 3.8、文档
 
 - [linux笔记]( https://gitlab.com/xuyq123/mynotes/-/blob/master/%E8%BF%90%E7%BB%B4/linuxNote-x.md )
 
