@@ -2,7 +2,7 @@
 
 <br />
 
-`网址` &ensp; [xushufa]( https://xushufa.cn ) &ensp; [blog]( https://gitlab.com/xuyq123/mkdocs-blog )
+`网址` &ensp; [blog]( https://scott180.github.io/reco-blog ) &ensp; [blog]( https://gitlab.com/xuyq123/mkdocs-blog )
 
 ## 1、概述
 

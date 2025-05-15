@@ -4,7 +4,7 @@
 
 `md2pdf`  `pandoc`  `Typora`  `MarkText`  `PDFPatcher`  --20220903
 
-> [xushufa]( https://xushufa.cn ) &ensp; [gitlab]( https://gitlab.com/xuyq123/mynotes ) &ensp; [gitee]( https://gitee.com/xy180/MyNotes ) 
+> [blog]( https://scott180.github.io/reco-blog ) &ensp; [gitlab]( https://gitlab.com/xuyq123/mynotes ) &ensp; [gitee]( https://gitee.com/xy180/MyNotes ) 
 
 
 
@@ -43,7 +43,7 @@ markdown相关操作，格式转换与项目布署。
 
 - gitlab、github、gitee布署`mkdocs`主题仓库
 - git平台`docsify`布署markdown文件
-- `vuepress`构建项目 https://xushufa.cn
+- `vuepress`构建项目 https://scott180.github.io/reco-blog
 - `gitbook`部署博客  https://scott180.github.io/gitbook-blog
 
 

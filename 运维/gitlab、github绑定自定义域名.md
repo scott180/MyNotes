@@ -2,7 +2,7 @@
 
 <br />
 
-`网址` &ensp; [xushufa]( https://xushufa.cn ) &ensp; [blog]( https://scott180.github.io/vuepress-blog )
+`网址` &ensp; [blog]( https://scott180.github.io/reco-blog ) &ensp; [blog]( https://scott180.github.io/vuepress-blog )
 
 ## github绑定自定义域名 
 

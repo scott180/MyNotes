@@ -6,7 +6,7 @@
 
 ```js
 压缩包，免安装文件，安装mysql。参考：
-http://xushufa.cn
+https://scott180.github.io/reco-blog
 http://blog.csdn.net/wengengeng/article/details/52013650
 https://www.cnblogs.com/jyjia/archive/2019/03/07/10490013.html
 
@@ -1155,8 +1155,8 @@ https://www.w3cschool.cn/article/3739209.html
 
 - [linux笔记]( https://gitlab.com/xuyq123/mynotes/-/blob/master/%E8%BF%90%E7%BB%B4/linuxNote-x.md )
 
-- [数据库隔离级别]( https://xushufa.cn/docs/bian-cheng/shu-ju-ku/shu-ju-ku-ge-chi-ji-bie.html )
+- [数据库隔离级别]( https://scott180.github.io/reco-blog/docs/bian-cheng/shu-ju-ku/shu-ju-ku-ge-chi-ji-bie.html )
 
-- [mysql开启log-bin日志]( https://xushufa.cn/docs/bian-cheng/shu-ju-ku/mysqlkai-qi-log-binri-zhi.html )
+- [mysql开启log-bin日志]( https://scott180.github.io/reco-blog/docs/bian-cheng/shu-ju-ku/mysqlkai-qi-log-binri-zhi.html )
 
 

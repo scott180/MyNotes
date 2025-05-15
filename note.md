@@ -2,7 +2,7 @@
 
 <br />
 
-[xushufa]( https://xushufa.cn ) &ensp;  [gitlab]( https://gitlab.com/xuyq123/mynotes ) &ensp; [gitee]( https://gitee.com/xy180/MyNotes ) &ensp; [github]( https://github.com/scott180/MyNotes ) &ensp; [blog]( https://vuepress-blog.xushufa.cn )
+[note]( https://scott180.github.io/reco-blog ) &ensp;  [gitlab]( https://gitlab.com/xuyq123/mynotes ) &ensp; [gitee]( https://gitee.com/xy180/MyNotes ) &ensp; [github]( https://github.com/scott180/MyNotes ) &ensp; [blog]( https://xuyq123.gitlab.io/mkdocs-blog )
 
 <br />
 
@@ -192,20 +192,20 @@ gitlab docsify主题仓库
 #### 1.1.5、部署网站
 
 
-| 序号  | 平台    | 仓库地址    |  git静态页面   | 域名  | 说明 |
-| ----- | -----   | ----------- |  ------------- | ----  | ---- |
-| 1     | github  | [**reco-blog**]( https://github.com/scott180/reco-blog )  	      | [github.io/reco-blog]( https://scott180.github.io/reco-blog )         | [xushufa]( https://xushufa.cn) |  vuepress-reco部署网站    |
-| 2     | github  | [**vuepress-blog**]( https://github.com/scott180/vuepress-blog )  | [github.io/vuepress-blog]( https://scott180.github.io/vuepress-blog ) | [vuepress-blog.xushufa]( https://vuepress-blog.xushufa.cn) | vuepress部署网站 |
-| 3     | github  | [blog]( https://github.com/scott180/blog )  	 | [github.io/blog]( https://scott180.github.io/blog )   | [blog.xushufa]( https://blog.xushufa.cn) | vuepress部署网站     |
-| 4     | github  | [tool]( https://github.com/scott180/tool )  	 | [github.io/tool]( https://scott180.github.io/tool )   | [tool.xushufa]( https://tool.xushufa.cn) | 工具网站             |
-| 5     | github  | [docsify-blog]( https://github.com/scott180/docsify-blog )  	  | [github.io/docsify]( https://scott180.github.io/docsify-blog/ )   | [docsify-blog.xushufa]( https://docsify-blog.xushufa.cn)       | docsify部署网站  |
-| 6     | **github**  | [gitbook-blog]( https://github.com/scott180/gitbook-blog )    | [github.io/gitbook]( https://scott180.github.io/gitbook-blog )    | -- | gitbook部署网站 |
-| 7     | gitlab      | [mkdocs-blog]( https://gitlab.com/xuyq123/mkdocs-blog ) | [gitlab.io/mkdocs]( https://xuyq123.gitlab.io/mkdocs-blog )             | -- | mkdocs部署网站  |
-| 8     | gitlab      | [**MyNotes**]( https://gitlab.com/xuyq123/mynotes )     | [files]( https://gitlab.com/xuyq123/mynotes/-/blob/master/%E6%96%87%E6%A1%A3%E7%9B%AE%E5%BD%95.md )              | -- | **编程笔记** |
-| 9     | gitcode     | [**document**]( https://gitcode.net/xu180/document )  	| [note]( https://gitcode.net/xu180/document/-/blob/master/article/%E9%9A%8F%E7%AC%94/%E6%97%A5%E5%B8%B8Note.md )  | -- | 生活随笔     |
-| 10    | npm         | [xushufa]( https://www.npmjs.com/~xushufa )             | [img]( https://cdn.jsdelivr.net/npm/xushufa-shu/yan/duo1-1000/0001大.jpg ) 	                                   | -- | 资料管理     |
-| 11    | bitbucket   | [**imgs**]( https://bitbucket.org/xu12345/document/src/master/imgs/ )    | [img]( https://bitbucket.org/xu12345/document/raw/87e65566e45e063244eab491abe2dab0f43de59d/imgs/shufa/%E7%8E%8B%E7%BE%B2%E4%B9%8B-%E5%85%B0%E4%BA%AD%E9%9B%86%E5%BA%8F.jpg )  | --   | 图片仓库   |
-| 12    | sourceforge | [xdocument]( https://sourceforge.net/p/xdocument/code/ci/master/tree/ )  | [readMe]( https://sourceforge.net/p/xdocument/code/ci/master/tree/README.md ) 	               | -- | 图片仓库     |
+| 序号  | 平台    | 仓库地址    |  git静态页面   |  说明 |
+| ----- | -----   | ----------- |  ------------- |  ---- |
+| 1     | github  | [**reco-blog**]( https://github.com/scott180/reco-blog )  	      | [github.io/reco-blog]( https://scott180.github.io/reco-blog )         |  vuepress-reco部署网站 |
+| 2     | github  | [**vuepress-blog**]( https://github.com/scott180/vuepress-blog )  | [github.io/vuepress-blog]( https://scott180.github.io/vuepress-blog ) |  vuepress部署网站      |
+| 3     | github  | [blog]( https://github.com/scott180/blog )  					  | [github.io/blog]( https://scott180.github.io/blog )   				  |  vuepress部署网站      |
+| 4     | github  | [tool]( https://github.com/scott180/tool )  	 				  | [github.io/tool]( https://scott180.github.io/tool )                   |  工具网站              |
+| 5     | github  | [docsify-blog]( https://github.com/scott180/docsify-blog )  	  | [github.io/docsify]( https://scott180.github.io/docsify-blog/ )       |  docsify部署网站       |
+| 6     | **github**  | [gitbook-blog]( https://github.com/scott180/gitbook-blog )    | [github.io/gitbook]( https://scott180.github.io/gitbook-blog )        |  gitbook部署网站 |
+| 7     | gitlab      | [mkdocs-blog]( https://gitlab.com/xuyq123/mkdocs-blog ) | [gitlab.io/mkdocs]( https://xuyq123.gitlab.io/mkdocs-blog )                 | mkdocs部署网站  |
+| 8     | gitlab      | [**MyNotes**]( https://gitlab.com/xuyq123/mynotes )     | [files]( https://gitlab.com/xuyq123/mynotes/-/blob/master/%E6%96%87%E6%A1%A3%E7%9B%AE%E5%BD%95.md )              |  **编程笔记** |
+| 9     | gitcode     | [**document**]( https://gitcode.net/xu180/document )  	| [note]( https://gitcode.net/xu180/document/-/blob/master/article/%E9%9A%8F%E7%AC%94/%E6%97%A5%E5%B8%B8Note.md )  |  生活随笔     |
+| 10    | npm         | [xushufa]( https://www.npmjs.com/~xushufa )             | [img]( https://cdn.jsdelivr.net/npm/xushufa-shu/yan/duo1-1000/0001大.jpg ) 	                                   |  资料管理     |
+| 11    | bitbucket   | [**imgs**]( https://bitbucket.org/xu12345/document/src/master/imgs/ )    | [img]( https://bitbucket.org/xu12345/document/raw/87e65566e45e063244eab491abe2dab0f43de59d/imgs/shufa/%E7%8E%8B%E7%BE%B2%E4%B9%8B-%E5%85%B0%E4%BA%AD%E9%9B%86%E5%BA%8F.jpg )  | 图片仓库   |
+| 12    | sourceforge | [xdocument]( https://sourceforge.net/p/xdocument/code/ci/master/tree/ )  | [readMe]( https://sourceforge.net/p/xdocument/code/ci/master/tree/README.md ) 	               |  图片仓库     |
 
 
 
@@ -739,23 +739,23 @@ http://localhost:8080/druid/sql.html
 
 | 序号   | 地址        |  备注          |
 | -----  | ----------- |  ------------- |
-| 1      | [json]( https://tool.xushufa.cn/json )                     | json 格式化工具             |
-| 2      | [yaml解析]( https://tool.xushufa.cn/yaml-parse )           | yaml解析为json              |
-| 3      | [Json2Excel]( https://tool.xushufa.cn/Json2Excel )         | Json转Excel文件             |
-| 4      | [时间毫秒值转换]( https://tool.xushufa.cn/time-format )    | 时间毫秒值转换              |
+| 1      | [json]( https://scott180.github.io/tool/json )                     | json 格式化工具             |
+| 2      | [yaml解析]( https://scott180.github.io/tool/yaml-parse )           | yaml解析为json              |
+| 3      | [Json2Excel]( https://scott180.github.io/tool/Json2Excel )         | Json转Excel文件             |
+| 4      | [时间毫秒值转换]( https://scott180.github.io/tool/time-format )    | 时间毫秒值转换              |
 |        | 解码编码                                                   |                             |
-| 5      | [url解码]( https://tool.xushufa.cn/url-encode )            | url解码编码                 |
-| 6      | [unicode解码]( https://tool.xushufa.cn/unicode-encode )    | unicode解码编码             |
-| 7      | [文字转二维码]( https://tool.xushufa.cn/words-QRcode )     | 文字转二维码                |
-| 8      | [二维码生成扫描识别]( https://tool.xushufa.cn/HtmlQRCode ) | 二维码生成扫描识别          |
+| 5      | [url解码]( https://scott180.github.io/tool/url-encode )            | url解码编码                 |
+| 6      | [unicode解码]( https://scott180.github.io/tool/unicode-encode )    | unicode解码编码             |
+| 7      | [文字转二维码]( https://scott180.github.io/tool/words-QRcode )     | 文字转二维码                |
+| 8      | [二维码生成扫描识别]( https://scott180.github.io/tool/HtmlQRCode ) | 二维码生成扫描识别          |
 |        | markdown                                                   |                             |
-| 9      | [md2wx]( https://tool.xushufa.cn/md2wx/docs )              | 在线Markdown微信格式化工具            |
-| 10     | [editormd]( https://tool.xushufa.cn/markdown-editormd )    | 开源的、可嵌入的 Markdown 在线编辑器  |
-| 11     | [markthing]( https://tool.xushufa.cn/markdown-markthing )  | 一个MarkDown编辑器                    |
-| 12     | [mpeditor]( https://tool.xushufa.cn/markdown-mpeditor )    | 专注于微信公众号的编辑阅读器          |
+| 9      | [md2wx]( https://scott180.github.io/tool/md2wx/docs )              | 在线Markdown微信格式化工具            |
+| 10     | [editormd]( https://scott180.github.io/tool/markdown-editormd )    | 开源的、可嵌入的 Markdown 在线编辑器  |
+| 11     | [markthing]( https://scott180.github.io/tool/markdown-markthing )  | 一个MarkDown编辑器                    |
+| 12     | [mpeditor]( https://scott180.github.io/tool/markdown-mpeditor )    | 专注于微信公众号的编辑阅读器          |
 |        | 项目布署                                                   |                                       |
 | 13     | [tool]( https://github.com/scott180/tool )                 | github仓库                            |
-| 14     | [xushufa]( https://xushufa.cn )                            | 个人网站                              |
+| 14     | [blog]( https://scott180.github.io/reco-blog )             | 个人网站                              |
 
 
 *************************
@@ -769,6 +769,7 @@ http://localhost:8080/druid/sql.html
 | 2      | [通义千问]( https://tongyi.aliyun.com/qianwen/ )           | 一个不断进化的AI大模型   |
 | 3      | [讯飞星火]( https://xinghuo.xfyun.cn/ )         			  |  认知大模型              |
 | 4      | [ChatGPT]( https://openai.com/blog/chatgpt )          	  |  聊天机器人模型          |
+| 5      | [deepseek]( https://chat.deepseek.com  )          	      |  探索未至之境            |
 
 
 
@@ -1518,6 +1519,15 @@ Settings--Proxy
 
 ```
 
+```
+导出所有数据，一键导出集合、接口和环境变量
+1、浏览器登录postman，进入 https://web.postman.co/me/export  页面
+2、点击 Export Data
+3、刷新页面，成功后会发生邮件，有下载链接
+
+
+```
+
 ---
 
 ### 2.4、springboot项目打包布署
@@ -1587,11 +1597,11 @@ maven常用打包命令
 
 - 生活随笔-编程笔记-书法练习轨迹
 
-| 徐书法 | 地址        |  备注          |
+| 博客   | 地址        |  备注          |
 | -----  | ----------- |  ------------- |
-| 1      | [xushufa]( https://xushufa.cn )                  	    | `vuepress-theme-reco`构建的博客网站。|
-| 2      | [vuepress-blog]( https://vuepress-blog.xushufa.cn )  	| `vuepress`构建的博客网站。           |
-| 3      | [mkdocs-blog]( https://xuyq123.gitlab.io/mkdocs-blog )   | `mkdocs`构建的博客网站。             |
+| 1      | [reco-blog]( https://scott180.github.io/reco-blog )          | `vuepress-theme-reco`构建的博客网站。|
+| 2      | [vuepress-blog]( https://scott180.github.io/vuepress-blog )  | `vuepress`构建的博客网站。           |
+| 3      | [mkdocs-blog]( https://xuyq123.gitlab.io/mkdocs-blog )   	| `mkdocs`构建的博客网站。             |
 
 ***
 

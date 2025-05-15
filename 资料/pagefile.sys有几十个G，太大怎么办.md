@@ -6,7 +6,7 @@ pagefile.sys是虚拟内存文件，目地是使用一部分硬盘空间来充�
 一般来说，pagefile.sys是不可以删除的，但是我们可以将该文件从一个磁盘转移到另外的磁盘中。 <br />
 
 参考&ensp; [pagefile.sys怎么删除]( https://www.cnblogs.com/tianma3798/p/4846196.html ) &ensp; [pagefiles.sys文件的调整与删除]( https://blog.csdn.net/weixin_44014976/article/details/102808430 ) <br />
-网址&ensp; [blog]( https://xushufa.cn ) &ensp;  [gitlab]( https://gitlab.com/xuyq123/mynotes )
+网址&ensp; [blog]( https://scott180.github.io/reco-blog) &ensp;  [gitlab]( https://gitlab.com/xuyq123/mynotes )
 
 
 ## 文件移动

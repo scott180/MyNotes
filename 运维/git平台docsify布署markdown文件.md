@@ -2,7 +2,7 @@
 
 <br />
 
-`网址` &ensp; [xushufa]( https://xushufa.cn ) &ensp; [blog]( https://github.com/scott180/docsify-blog )
+`网址` &ensp; [blog]( https://scott180.github.io/reco-blog ) &ensp; [blog]( https://github.com/scott180/docsify-blog )
 
 ## 本地安装
 

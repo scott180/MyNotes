@@ -5,7 +5,7 @@
 - [x]  2017.08.22--now
 `xyq` `linux` `note`
 
-> [blog]( https://xushufa.cn ) &ensp; [gitlab]( https://gitlab.com/xuyq123/mynotes ) &ensp; [gitee]( https://gitee.com/xy180/MyNotes ) 
+> [blog]( https://scott180.github.io/reco-blog ) &ensp; [gitlab]( https://gitlab.com/xuyq123/mynotes ) &ensp; [gitee]( https://gitee.com/xy180/MyNotes ) 
 
 
 ## 1 常用命令
@@ -1212,11 +1212,11 @@ LC_ALL=en_US.UTF-8
 
 生活随笔-编程笔记-书法练习轨迹
 
-| 徐书法 | 地址        |  备注          |
+| 博客   | 地址        |  备注          |
 | -----  | ----------- |  ------------- |
-| 1      | [xushufa]( https://xushufa.cn )                  	    | `vuepress-theme-reco`构建的博客网站。|
-| 2      | [vuepress-blog]( https://vuepress-blog.xushufa.cn )  	| `vuepress`构建的博客网站。           |
-| 3      | [mkdocs-blog]( https://xuyq123.gitlab.io/mkdocs-blog )   | `mkdocs`构建的博客网站。             |
+| 1      | [reco-blog]( https://scott180.github.io/reco-blog )          | `vuepress-theme-reco`构建的博客网站。|
+| 2      | [vuepress-blog]( https://scott180.github.io/vuepress-blog )  | `vuepress`构建的博客网站。           |
+| 3      | [mkdocs-blog]( https://xuyq123.gitlab.io/mkdocs-blog )   	| `mkdocs`构建的博客网站。             |
 
 ***
 
