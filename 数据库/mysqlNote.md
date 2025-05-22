@@ -1159,4 +1159,6 @@ https://www.w3cschool.cn/article/3739209.html
 
 - [mysql开启log-bin日志]( https://scott180.github.io/reco-blog/docs/bian-cheng/shu-ju-ku/mysqlkai-qi-log-binri-zhi.html )
 
+- [mysql之explan索引优化说明]( https://gitlab.com/xuyq123/mynotes/-/blob/master/数据库/mysql之explan索引优化说明.md )
+
 
