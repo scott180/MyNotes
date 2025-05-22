@@ -189,7 +189,55 @@ gitlab docsify主题仓库
 
 <br/>
 
-#### 1.1.5、部署网站
+#### 1.1.5、bat脚本
+
+```
+具有 .bat 文件扩展名的文件是 Windows 批处理文件。它是一个纯文本文件，包含用于重复任务或逐个运行脚本组的各种命令。
+所有类型的软件都将 bat 文件用于各种目的，例如复制或删除文件、运行应用程序以及关闭进程。
+下面是 bat 文件的另一个示例，该文件使用 ping 命令来查看计算机是否可以访问具有该特定 IP 地址的路由器：
+
+ping 192.168.1.1
+pause
+
+```
+
+```java
+Win+R		打开运行-输入命令开启相关功能
+cmd			命令行控制台
+
+
+Windows批处理(cmd/bat)常用命令
+https://www.cnblogs.com/hwrex/p/18663235
+https://www.cnblogs.com/xpwi/p/9626959.html
+
+cd 	显示当前目录名或改变当前目录
+md 	创建目录
+dir 显示目录中的文件和子目录列表
+
+echo 		显示消息或开启/关闭回显
+pause		暂停并等待用户按键
+ipconfig	显示、修改TCP/IP设置
+
+```
+
+```bat
+:: StartRedis.bat
+echo "启动redis"
+D: & cd D:\ProgramFiles\Redis-x64-3.2.100
+redis-server.exe redis.windows.conf
+```
+
+
+```bat
+echo "启动Ollama"
+cd C:\Users\Administrator\AppData\Local\Programs\Ollama
+Start ollama
+```
+
+<br/>
+
+
+#### 1.1.6、部署网站
 
 
 | 序号  | 平台    | 仓库地址    |  git静态页面   |  说明 |
