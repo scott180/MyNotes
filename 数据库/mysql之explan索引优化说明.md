@@ -12,15 +12,14 @@ expain出来的信息有10列，分别是id、select_type、table、type、possi
 id:选择标识符                                    <br/>
 **select_type**:表示查询的类型                   <br/>
 table:输出结果集的表                             <br/>
-partitions:匹配的分区                            <br/>
 **type**:表示表的连接类型                        <br/>
 possible_keys:表示查询时，可能使用的索引         <br/>
 key:表示实际使用的索引                           <br/>
 key_len:索引字段的长度                           <br/>
 ref:列与索引的比较                               <br/>
 rows:扫描出的行数(估算的行数)                    <br/>
-filtered:按表条件过滤的行百分比                  <br/>
 **Extra**:执行情况的描述和说明                   <br/>
+
 
 ```mysql
 mysql> explain select * from actor;
@@ -97,9 +96,11 @@ Impossible where：这个值强调了where语句会导致没有符合条件的�
 
 Select tables optimized away：这个值意味着仅通过使用索引，优化器可能仅从聚合函数结果中返回一行
 
+<br>
+
 ---
----
----
+
+<br>
 
 > id
 
@@ -160,8 +161,8 @@ key列显示MySQL实际决定使用的键（索引），必然包含在possible_
 EXPLAIN不会告诉你关于触发器、存储过程的信息或用户自定义函数对查询的影响情况  <br/>
 EXPLAIN不考虑各种Cache                                                       <br/>
 EXPLAIN不能显示MySQL在执行查询时所作的优化工作                               <br/>
-部分统计信息是估算的，并非精确值                                             <br/>
-EXPALIN只能解释SELECT操作，其他操作要重写为SELECT后查看执行计划。            <br/>
+EXPLAIN部分统计信息是估算的，并非精确值                                      <br/>
+EXPALIN只能解释SELECT操作，其他操作要重写为SELECT后查看执行计划              <br/>
 
 访问类型type从最好到最坏依次是：  <br/>
 system ——> const ——> eq_ref ——> ref ——> fulltext ——> ref_or_null ——> index_merge ——> unique_subquery ——> index_subquery ——> range ——> index ——> ALL   <br/>
