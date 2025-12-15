@@ -21,7 +21,7 @@ rows:扫描出的行数(估算的行数)                    <br/>
 **Extra**:执行情况的描述和说明                   <br/>
 
 
-```mysql
+```java
 mysql> explain select * from actor;
 +----+-------------+-------+------+---------------+------+---------+------+------+-------+
 | id | select_type | table | type | possible_keys | key  | key_len | ref  | rows | Extra |

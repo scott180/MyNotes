@@ -132,8 +132,8 @@ gitlab    https://gitlab.com/-/ide/project/gitlab-org/gitlab/edit/master/-/doc/u
 
 
 markdown软件
-typora	https://www.typora.io/
-Dillinger https://dillinger.io/
+typora		https://www.typora.io/
+Dillinger 	https://dillinger.io/
 https://blog.csdn.net/davidhzq/article/details/100815332
 
 ```
@@ -164,7 +164,7 @@ markdown表格宽度设置
 
 ```
 gitlab、github、gitee布署mkdocs主题仓库
-https://gitlab.com/xuyq123/mynotes
+	https://gitlab.com/xuyq123/mynotes
 
 gitlab mkdocs主题仓库   
 	https://gitlab.com/xuyq123/plain-mkdocs   
@@ -176,7 +176,7 @@ gitlab mkdocs主题仓库
 ---	
 	
 git平台docsify布署markdown文件
-https://github.com/scott180/MyNotes
+	https://github.com/scott180/MyNotes
 
 gitlab docsify主题仓库 	
 	https://gitlab.com/xuyq123/plain-docsify 
@@ -220,7 +220,7 @@ ipconfig	显示、修改TCP/IP设置
 
 ```
 
-```bat
+```c
 :: StartRedis.bat
 echo "启动redis"
 D: & cd D:\ProgramFiles\Redis-x64-3.2.100
@@ -228,7 +228,7 @@ redis-server.exe redis.windows.conf
 ```
 
 
-```bat
+```c
 echo "启动Ollama"
 cd C:\Users\Administrator\AppData\Local\Programs\Ollama
 Start ollama
@@ -240,16 +240,16 @@ Start ollama
 #### 1.1.6、部署网站
 
 
-| 序号  | 平台    | 仓库地址    |  git静态页面   |  说明 |
-| ----- | -----   | ----------- |  ------------- |  ---- |
-| 1     | github  | [**reco-blog**]( https://github.com/scott180/reco-blog )  	      | [github.io/reco-blog]( https://scott180.github.io/reco-blog )         |  vuepress-reco部署网站 |
-| 2     | github  | [**vuepress-blog**]( https://github.com/scott180/vuepress-blog )  | [github.io/vuepress-blog]( https://scott180.github.io/vuepress-blog ) |  vuepress部署网站      |
-| 3     | github  | [blog]( https://github.com/scott180/blog )  					  | [github.io/blog]( https://scott180.github.io/blog )   				  |  vuepress部署网站      |
-| 4     | github  | [tool]( https://github.com/scott180/tool )  	 				  | [github.io/tool]( https://scott180.github.io/tool )                   |  工具网站              |
-| 5     | github  | [docsify-blog]( https://github.com/scott180/docsify-blog )  	  | [github.io/docsify]( https://scott180.github.io/docsify-blog/ )       |  docsify部署网站       |
-| 6     | **github**  | [gitbook-blog]( https://github.com/scott180/gitbook-blog )    | [github.io/gitbook]( https://scott180.github.io/gitbook-blog )        |  gitbook部署网站 |
-| 7     | gitlab      | [mkdocs-blog]( https://gitlab.com/xuyq123/mkdocs-blog ) | [gitlab.io/mkdocs]( https://xuyq123.gitlab.io/mkdocs-blog )                 | mkdocs部署网站  |
-| 8     | gitlab      | [**MyNotes**]( https://gitlab.com/xuyq123/mynotes )     | [files]( https://gitlab.com/xuyq123/mynotes/-/blob/master/%E6%96%87%E6%A1%A3%E7%9B%AE%E5%BD%95.md )              |  **编程笔记** |
+| 序号  | 平台        | 仓库地址    |  git静态页面   |  说明 |
+| ----- | -----       | ----------- |  ------------- |  ---- |
+| 1     | github      | [**reco-blog**]( https://github.com/scott180/reco-blog )  	      | [github.io/reco-blog]( https://scott180.github.io/reco-blog )         |  vuepress-reco部署网站 |
+| 2     | github      | [**vuepress-blog**]( https://github.com/scott180/vuepress-blog )  | [github.io/vuepress-blog]( https://scott180.github.io/vuepress-blog ) |  vuepress部署网站      |
+| 3     | github      | [blog]( https://github.com/scott180/blog )  					  | [github.io/blog]( https://scott180.github.io/blog )   				  |  vuepress部署网站      |
+| 4     | github      | [tool]( https://github.com/scott180/tool )  	 				  | [github.io/tool]( https://scott180.github.io/tool )                   |  工具网站              |
+| 5     | github      | [docsify-blog]( https://github.com/scott180/docsify-blog )  	  | [github.io/docsify]( https://scott180.github.io/docsify-blog/ )       |  docsify部署网站       |
+| 6     | github      | [gitbook-blog]( https://github.com/scott180/gitbook-blog )        | [github.io/gitbook]( https://scott180.github.io/gitbook-blog )        |  gitbook部署网站       |
+| 7     | gitlab      | [mkdocs-blog]( https://gitlab.com/xuyq123/mkdocs-blog ) | [gitlab.io/mkdocs]( https://xuyq123.gitlab.io/mkdocs-blog )                     |  mkdocs部署网站        |
+| 8     | **gitlab**  | [**MyNotes**]( https://gitlab.com/xuyq123/mynotes )     | [files]( https://gitlab.com/xuyq123/mynotes/-/blob/master/%E6%96%87%E6%A1%A3%E7%9B%AE%E5%BD%95.md )              |  **编程笔记** |
 | 9     | gitcode     | [**document**]( https://gitcode.net/xu180/document )  	| [note]( https://gitcode.net/xu180/document/-/blob/master/article/%E9%9A%8F%E7%AC%94/%E6%97%A5%E5%B8%B8Note.md )  |  生活随笔     |
 | 10    | npm         | [xushufa]( https://www.npmjs.com/~xushufa )             | [img]( https://cdn.jsdelivr.net/npm/xushufa-shu/yan/duo1-1000/0001大.jpg ) 	                                   |  资料管理     |
 | 11    | bitbucket   | [**imgs**]( https://bitbucket.org/xu12345/document/src/master/imgs/ )    | [img]( https://bitbucket.org/xu12345/document/raw/87e65566e45e063244eab491abe2dab0f43de59d/imgs/shufa/%E7%8E%8B%E7%BE%B2%E4%B9%8B-%E5%85%B0%E4%BA%AD%E9%9B%86%E5%BA%8F.jpg )  | 图片仓库   |
@@ -787,23 +787,24 @@ http://localhost:8080/druid/sql.html
 
 | 序号   | 地址        |  备注          |
 | -----  | ----------- |  ------------- |
-| 1      | [json]( https://scott180.github.io/tool/json )                     | json 格式化工具             |
-| 2      | [yaml解析]( https://scott180.github.io/tool/yaml-parse )           | yaml解析为json              |
-| 3      | [Json2Excel]( https://scott180.github.io/tool/Json2Excel )         | Json转Excel文件             |
-| 4      | [时间毫秒值转换]( https://scott180.github.io/tool/time-format )    | 时间毫秒值转换              |
-|        | 解码编码                                                   |                             |
-| 5      | [url解码]( https://scott180.github.io/tool/url-encode )            | url解码编码                 |
-| 6      | [unicode解码]( https://scott180.github.io/tool/unicode-encode )    | unicode解码编码             |
-| 7      | [文字转二维码]( https://scott180.github.io/tool/words-QRcode )     | 文字转二维码                |
-| 8      | [二维码生成扫描识别]( https://scott180.github.io/tool/HtmlQRCode ) | 二维码生成扫描识别          |
-|        | markdown                                                   |                             |
-| 9      | [md2wx]( https://scott180.github.io/tool/md2wx/docs )              | 在线Markdown微信格式化工具            |
-| 10     | [editormd]( https://scott180.github.io/tool/markdown-editormd )    | 开源的、可嵌入的 Markdown 在线编辑器  |
-| 11     | [markthing]( https://scott180.github.io/tool/markdown-markthing )  | 一个MarkDown编辑器                    |
-| 12     | [mpeditor]( https://scott180.github.io/tool/markdown-mpeditor )    | 专注于微信公众号的编辑阅读器          |
-|        | 项目布署                                                   |                                       |
-| 13     | [tool]( https://github.com/scott180/tool )                 | github仓库                            |
-| 14     | [blog]( https://scott180.github.io/reco-blog )             | 个人网站                              |
+| 1      | [json]( https://scott180.github.io/tool/json )                     | json 格式化工具             			|
+| 2      | [yaml解析]( https://scott180.github.io/tool/yaml-parse )           | yaml解析为json              			|
+| 3      | [Json2Excel]( https://scott180.github.io/tool/Json2Excel )         | Json转Excel文件             			|
+| 4      | [时间毫秒值转换]( https://scott180.github.io/tool/time-format )    | 时间毫秒值转换              			|
+| 5      | [sql转驼峰字段]( https://scott180.github.io/tool/sql2javaFiled )   | sql转java驼峰字段            			|
+|        | 解码编码                                                   		  |                             			|
+| 6      | [url解码]( https://scott180.github.io/tool/url-encode )            | url解码编码                 			|
+| 7      | [unicode解码]( https://scott180.github.io/tool/unicode-encode )    | unicode解码编码             			|
+| 8      | [文字转二维码]( https://scott180.github.io/tool/words-QRcode )     | 文字转二维码                			|
+| 9      | [二维码生成扫描识别]( https://scott180.github.io/tool/HtmlQRCode ) | 二维码生成扫描识别          			|
+|        | markdown                                                           |                             			|
+| 10     | [md2wx]( https://scott180.github.io/tool/md2wx/docs )              | 在线Markdown微信格式化工具              |
+| 11     | [editormd]( https://scott180.github.io/tool/markdown-editormd )    | 开源的、可嵌入的 Markdown 在线编辑器    |
+| 12     | [markthing]( https://scott180.github.io/tool/markdown-markthing )  | 一个MarkDown编辑器                      |
+| 13     | [mpeditor]( https://scott180.github.io/tool/markdown-mpeditor )    | 专注于微信公众号的编辑阅读器            |
+|        | 项目布署                                                           |                                         |
+| 14     | [tool]( https://github.com/scott180/tool )                         | github仓库                              |
+| 15     | [note]( https://gitlab.com/xuyq123/mynotes )                       | 个人笔记                                |
 
 
 *************************
@@ -825,7 +826,7 @@ http://localhost:8080/druid/sql.html
 
 ### 2.1、java编程
 
-[calligraphy-boot]( https://gitlab.com/xuyq123/calligraphy-boot )  &ensp; [util]( https://gitlab.com/xuyq123/calligraphy-boot/-/blob/dev_20210728/calligraphy-boot-common/src/main/java/com/xu/calligraphy/boot/common/util/LogisticsUtil.java )
+[mynotes ]( https://gitlab.com/xuyq123/mynotes ) &ensp; [calligraphy-boot]( https://github.com/scott180/calligraphy-boot )  &ensp; [util]( https://gitlab.com/xuyq123/calligraphy-boot/-/blob/dev_20210728/calligraphy-boot-common/src/main/java/com/xu/calligraphy/boot/common/util/LogisticsUtil.java )
 
 #### 2.1.1、常用方法
 
@@ -862,6 +863,32 @@ ThreadPoolTaskExecutor
 CountDownLatch
 CyclicBarrier 
 
+```
+
+```java
+
+//异步调用,设置子线程共享
+ ServletRequestAttributes servletRequestAttributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
+ CompletableFuture<String> future = CompletableFuture.supplyAsync(() -> {
+     RequestContextHolder.setRequestAttributes(servletRequestAttributes, true);//设置子线程共享
+     log.info("combinationThread_{}", id);
+    
+     return null;
+ });
+
+ 
+ ServletRequestAttributes servletRequestAttributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
+ CompletableFuture<String> future = CompletableFuture.supplyAsync(() -> {
+     RequestContextHolder.setRequestAttributes(servletRequestAttributes, false);//是否支持子线程继承上下文
+     try {
+         Thread.sleep(2000L);
+     } catch (InterruptedException e) {
+         e.printStackTrace();
+     }
+     logger.info("uploadCreatePurchase_receiptByWarehouse_{}",JSON.toJSON(receiptByWarehouseSubmitRO));
+     return null;
+ }); 
+				
 ```
 
 ```java
@@ -1151,7 +1178,7 @@ Java 8 Stream peek 与 map的区别
 
 #### 2.1.3、通用工具
 
-> 深度复制、正则分割中文和数字、特殊字符检测、sql注入检测
+> 深度复制、正则分割中文和数字、特殊字符检测、sql注入检测、时间转化
 
 ```java
 <dependency>
@@ -1219,6 +1246,62 @@ public static List spitRegion(String region) {
         Matcher matcher = pattern.matcher(str.toString().toLowerCase());
         return matcher.find();
     }
+```
+
+---
+
+```java
+
+public static final DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+public static final DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+
+    /**
+     * 线程安全日期转字符串
+     * @param date
+     * @return
+     */
+    public static String formatterDate(Date date) {
+        LocalDateTime localDateTime = date.toInstant()
+                .atZone(ZoneId.systemDefault())
+                .toLocalDateTime();
+        return localDateTime.format(dateFormatter);
+    }
+
+    /**
+     * 线程安全时间转字符串
+     * @param date
+     * @return
+     */
+    public static String formatterTime(Date date) {
+        LocalDateTime localDateTime = date.toInstant()
+                .atZone(ZoneId.systemDefault())
+                .toLocalDateTime();
+        return localDateTime.format(dateTimeFormatter);
+    }
+
+    /**
+     * 线程安全字符串转日期
+     * @param dateString
+     * @return
+     */
+    public static Date formatterString2Time(String dateString) {
+        LocalDate localDate = LocalDate.parse(dateString, dateFormatter);
+        return Date.from(localDate.atStartOfDay(ZoneId.systemDefault()).toInstant());
+    }
+
+    /**
+     * 线程安全字符串转时间
+     * @param dateString
+     * @return
+     */
+    public static Date formatterString2Date(String dateString) {
+        // 解析字符串到LocalDateTime
+        LocalDateTime localDateTime = LocalDateTime.parse(dateString, dateTimeFormatter);
+
+        // 将LocalDateTime转换为Date
+        return Date.from(localDateTime.atZone(ZoneId.systemDefault()).toInstant());
+    }
+
 ```
 
 
@@ -1356,7 +1439,7 @@ kill 进程ID
 详情见笔记
 https://gitlab.com/xuyq123/mynotes/-/blob/master/%E6%95%B0%E6%8D%AE%E5%BA%93/mysqlNote.md?ref_type=heads#user-content-36%E6%AD%BB%E9%94%81deadlock
 
-https://xushufa.cn/docs/bian-cheng/shu-ju-ku/mysqlnote.html
+https://scott180.github.io/reco-blog/docs/bian-cheng/shu-ju-ku/mysqlnote.html
 
 ```
 
@@ -1559,6 +1642,21 @@ tests["success"] = jsonData.code === 200;
 postman.setGlobalVariable("authorityToken", jsonData.data.token);
  
 
+
+pm.environment.set("variable_key", value)：设置环境变量；
+pm.collectionVariables.set("variable_key", value)：设置集合变量；
+pm.variables.set("variable_key", value)：通用方式，自动识别作用域；
+pm.globals.set("variable_key", value)：设置全局变量。
+
+
+const response = pm.response.json();
+console.log(response);
+if (response.code===0) {
+    pm.globals.set("authorityToken", response.data.token);
+}
+
+
+
 postman 出现Error: connect ECONNREFUSED 127.0.0.1:端口
 https://blog.csdn.net/weixin_45993202/article/details/109072188
 
@@ -1573,6 +1671,30 @@ Settings--Proxy
 2、点击 Export Data
 3、刷新页面，成功后会发生邮件，有下载链接
 
+
+
+```
+
+<br>
+
+```c
+Insomnia  一款非常实用的开源 API 调试工具
+
+官网
+https://insomnia.rest/download
+https://github.com/Kong/insomnia/
+
+下载
+https://www.newbe.pro/Mirrors/Mirrors-insomnia  
+Insomnia.Core-11.4.0.exe
+
+账号
+https://app.insomnia.rest/app/settings/account
+
+
+
+Reqable 高性能+免费+抓包一体化
+https://reqable.com/zh-CN/
 
 ```
 
@@ -1625,7 +1747,7 @@ maven常用打包命令
 
 | 平台           | 链接           |
 | -------------- | -------------- |
-|  **项目仓库**  | [gitlab]( https://gitlab.com/xuyq123/mynotes ) &ensp; [gitcode]( https://gitcode.net/xu180/MyNotes ) &ensp; [github]( https://github.com/scott180/MyNotes )  &ensp; [bitbucket]( https://bitbucket.org/xu12345/calligraphy ) &ensp; [gitee]( https://gitee.com/xy180/MyNotes ) &ensp; [sourceforge]( https://sourceforge.net/p/calligraphy/code )  &ensp; [vuepress]( https://scott180.github.io/vuepress-blog )    |
+|  **项目仓库**  | [gitlab]( https://gitlab.com/xuyq123/mynotes ) &ensp; [github]( https://github.com/scott180/MyNotes )  &ensp; [bitbucket]( https://bitbucket.org/xu12345/calligraphy ) &ensp; [gitee]( https://gitee.com/xy180/MyNotes ) &ensp; [sourceforge]( https://sourceforge.net/p/calligraphy/code )  &ensp; [vuepress]( https://scott180.github.io/vuepress-blog )    |
 |  **资讯账号**  | [微信公众号]( https://mp.weixin.qq.com/s/HmdDsCaeumuZg_DfitIdlw ) &ensp; [头条]( https://www.toutiao.com/c/user/token/MS4wLjABAAAA2_bWhiknCbcKNu4c6VTM2B7m2vr7zBrh0x6fSyOrtGU ) &ensp;  [豆瓣]( https://www.douban.com/people/80730595/photos ) &ensp;  [知乎]( https://www.zhihu.com/people/xu-xian-sheng-72-29/posts )     |
 |  **个人邮箱**  | 1021151991@qq.com   |
 

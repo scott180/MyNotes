@@ -13,7 +13,7 @@
 
 docsify 可以快速帮你生成文档网站。不同于GitBook、Hexo的地方是它不会生成静态的 .html 文件，所有转换工作都是在运行时。
 
-布署文档：[git平台docsify布署markdown文件]( https://xushufa.cn/docs/bian-cheng/yun-wei/gitping-tai-docsifybu-shu-markdownwen-jian.html )
+布署文档：[git平台docsify布署markdown文件]( https://scott180.github.io/reco-blog/docs/bian-cheng/yun-wei/gitping-tai-docsifybu-shu-markdownwen-jian.html )
 
 
 | 名称       | 仓库                                                			        |  备注            |
@@ -27,7 +27,7 @@ docsify 可以快速帮你生成文档网站。不同于GitBook、Hexo的地方�
 
 在git平台创建mkdocs主题仓库，自动将markdown文件生成静态网页。 
 
-布署文档：[gitlab、github、gitee布署mkdocs主题仓库]( https://xushufa.cn/docs/bian-cheng/yun-wei/gitlab-github-giteebu-shu-mkdocszhu-ti-cang-ku.html )
+布署文档：[gitlab、github、gitee布署mkdocs主题仓库]( https://scott180.github.io/reco-blog/docs/bian-cheng/yun-wei/gitlab-github-giteebu-shu-mkdocszhu-ti-cang-ku.html )
 
 
 | 仓库   | 地址                                               			      |  备注             			                 |
@@ -44,7 +44,7 @@ docsify 可以快速帮你生成文档网站。不同于GitBook、Hexo的地方�
 
 GitBook可以看作个人的一本电子书。它用MarkDown编写，可以自动生成网页或者PDF等，生成网页可以通过插件配置目录和搜索功能等。
 
-布署文档：[gitbook部署博客]( https://xushufa.cn/docs/bian-cheng/yun-wei/gitbookbu-shu-bo-ke.html )
+布署文档：[gitbook部署博客]( https://scott180.github.io/reco-blog/docs/bian-cheng/yun-wei/gitbookbu-shu-bo-ke.html )
 
 
 应用：
@@ -60,7 +60,7 @@ Vue 驱动的静态网站生成器
 官网： [vuepress]( https://vuepress.vuejs.org/zh/ ) &ensp; [vuepress-next]( https://github.com/vuepress/vuepress-next ) <br>
 应用： [github]( https://github.com/scott180/vuepress-blog ) &ensp; [vuepress-blog]( https://scott180.github.io/vuepress-blog ) 
 
-布署文档：[vuepress构建项目]( https://xushufa.cn/docs/bian-cheng/yun-wei/vuepressgou-jian-xiang-mu.html )
+布署文档：[vuepress构建项目]( https://scott180.github.io/reco-blog/docs/bian-cheng/yun-wei/vuepressgou-jian-xiang-mu.html )
 
 
 
@@ -71,7 +71,7 @@ Vue 驱动的静态网站生成器
 官网：[vuepress-theme-reco]( https://vuepress-theme-reco.recoluan.com/views/1.x/configJs.html )  &ensp; [vuepress-reco]( https://github.com/vuepress-reco/vuepress-theme-reco-1.x ) <br>
 应用：[github]( https://github.com/scott180/reco-blog ) &ensp; [reco-blog]( https://scott180.github.io/reco-blog )
 
-布署文档：[vuepress构建项目：vuepress-theme-reco]( https://xushufa.cn/docs/bian-cheng/yun-wei/vuepressgou-jian-xiang-mu.html#%E4%BA%8C%E3%80%81vuepress-theme-reco )
+布署文档：[vuepress构建项目：vuepress-theme-reco]( https://scott180.github.io/reco-blog/docs/bian-cheng/yun-wei/vuepressgou-jian-xiang-mu.html#%E4%BA%8C%E3%80%81vuepress-theme-reco )
 
 
 
@@ -124,7 +124,7 @@ Netlify Next.js Blog Template designed by Bejamas
 docsify/mkdocs/gitbook  这三个比较类似，布署简单，但是主题也单调简约，插件不是很多。 <br>
 [vuepress]( https://vuepress.vuejs.org/zh/ )/vuepres-theme-reco 非常优秀的静态博客搭建方法，界面美观，功能齐全。就是安装布署的时候可能会有版本兼容问题。 <br>
 
-另外在github/gitlab/gitee 的平台上搭建好静态博客，如要绑定域名，可查看文档：[gitlab、github绑定自定义域名]( https://xushufa.cn/docs/bian-cheng/yun-wei/gitlab-githubbang-ding-zi-ding-yi-yu-ming.html ) 。
+另外在github/gitlab/gitee 的平台上搭建好静态博客，如要绑定域名，可查看文档：[gitlab、github绑定自定义域名]( https://scott180.github.io/reco-blog/docs/bian-cheng/yun-wei/gitlab-githubbang-ding-zi-ding-yi-yu-ming.html ) 。
 
 ---
 

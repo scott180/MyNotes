@@ -749,7 +749,7 @@ wget http://127.0.0.1:8080
 查看某一个ip地址是否能够连通
 ping + ip 
 ping 114.80.67.193
-ping xushufa.cn
+ping baidu.com
 
 查看某一个机器上的某一个端口是否可以访问
 telnet ip port

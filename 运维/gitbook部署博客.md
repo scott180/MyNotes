@@ -68,7 +68,7 @@ book.json
     "links": {
         "sidebar": {
             "github": "https://github.com/scott180/gitbook-blog",
-            "xushufa": "https://xushufa.cn"
+            "xushufa": "https://scott180.github.io/reco-blog"
         }
     },
     "plugins": ["-sharing", "sharing-plus", "lightbox", "page-toc-button","expandable-chapters"],
@@ -105,7 +105,7 @@ book.json
     "links": {
         "sidebar": {
             "github": "https://github.com/scott180/calligraphy",
-            "xushufa": "https://xushufa.cn"
+            "xushufa": "https://scott180.github.io/reco-blog"
         }
     },
     "plugins": ["theme-beauty"],

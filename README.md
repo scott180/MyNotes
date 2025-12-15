@@ -16,9 +16,9 @@
 
 | 序号 | 名称 | 地址        |
 | ---- | ---- | ----------- |
-| 1    | 笔记 | [**gitlab**]( https://gitlab.com/xuyq123/MyNotes ) &ensp; [gitee]( https://gitee.com/xy180/MyNotes ) &ensp; [github]( https://github.com/scott180/MyNotes )            |  
-| 2    | 文档 |  [document]( https://gitlab.com/xuyq123/document ) &ensp; [sourceforge]( https://sourceforge.net/p/xdocument/code/ci/master/tree )         |
-| 3    | 博客 |  [mkdocs-blog]( https://gitlab.com/xuyq123/mkdocs-blog ) &ensp;  [reco-blog]( https://github.com/scott180/reco-blog )         |  
+| 1    | 笔记 | [**gitlab**]( https://gitlab.com/xuyq123/MyNotes ) &ensp; [gitee]( https://gitee.com/xy180/MyNotes ) &ensp; [github]( https://github.com/scott180/MyNotes ) &ensp; [AI]( https://gitlab.com/xuyq123/mynotes/-/blob/master/AI%E7%AC%94%E8%AE%B0.md )   |  
+| 2    | 文档 | [document]( https://gitlab.com/xuyq123/document ) &ensp; [sourceforge]( https://sourceforge.net/p/xdocument/code/ci/master/tree )                             |
+| 3    | 博客 | [mkdocs-blog]( https://gitlab.com/xuyq123/mkdocs-blog ) &ensp;  [reco-blog]( https://github.com/scott180/reco-blog )                                          |  
 
 ---
 

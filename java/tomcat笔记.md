@@ -11,7 +11,7 @@
 | 软件                              | 下载地址   |
 | --------                          | -----      |
 | tomcat   | [tomcat官网]( https://archive.apache.org/dist/tomcat/ ) &ensp; ([云盘]( https://pan.baidu.com/s/1yPhAfIcACTGkpIOYlEds1g )  密码: j9ug ) |
-| eclipse  | [eclipse官方下载]( http://www.eclipse.org/downloads/packages ) &ensp; [版本说明]( https://blog.xushufa.cn ) |
+| eclipse  | [eclipse官方下载]( http://www.eclipse.org/downloads/packages ) &ensp; [版本说明]( https://scott180.github.io/reco-blog ) |
 
 ```
 tomcat环境变量配置
