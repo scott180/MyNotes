@@ -28,13 +28,13 @@
 | [Github仓库]( https://github.com/Eternaldeath/AIProductHome )        			 | 收集各种 AI 商业或开源产品        |
 | [飞书文档]( https://tauacgr5lqv.feishu.cn/wiki/NtiKwCV0yigtjVkYvTgcxZbZnxb )   | AI工具库                          |
 
-
 ### AI写作工具
 
 | 写作        |  说明          |
 | ----------- |  ------------- |
 | [蛙蛙写作]( https://wawawriter.com/app/general-write )   						 | AI写小说、剧本，一键成文          |
 | [笔灵AI]( https://ibiling.cn/ )   					                    	 | 全能型AI写作工具                  |
+
 
 
 ## 应用
@@ -60,7 +60,7 @@
 
 | 地址        |  说明          |
 | ----------- |  ------------- |
-| [微信]( https://mp.weixin.qq.com  )                                      | 微信公众平台  					 |
+| [公众号]( https://mp.weixin.qq.com  )                                    | 微信公众平台  					 |
 | [md2wx格式化]( https://scott180.github.io/tool/md2wx/docs/  )            | Markdown微信格式化  		     |
 | [mpeditor]( https://scott180.github.io/tool/markdown-mpeditor/  )        | 微信公众号的编辑阅读器mpeditor  |
 
