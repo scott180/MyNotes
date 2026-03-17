@@ -29,6 +29,15 @@ PATH
 node --version
 npm -v
 
+
+切换版本
+nvm use 18
+
+
+# 安装 pnpm 获得更快体验
+npm install -g pnpm
+pnpm set registry https://registry.npmmirror.com
+
 ```
 
 
@@ -49,7 +58,7 @@ npm root -g
 
 
 设置镜像源
-npm config set registry https://registry.npm.taobao.org --global
+npm config set registry https://registry.npmmirror.com --global
 npm config set disturl https://npm.taobao.org/dist --global
 
 ```
@@ -67,7 +76,7 @@ npm i vue -g  // g表示global
 
 
 使用淘宝定制的 cnpm (gzip 压缩支持) 命令行工具代替默认的 npm
-npm install -g cnpm --registry=https://registry.npm.taobao.org
+npm install -g cnpm --registry=https://registry.npmmirror.com
 
 全局安装vue-cli
 cnpm install --global vue-cli

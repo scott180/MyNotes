@@ -36,11 +36,11 @@
 
 ## 4、清理受保护的操作系统文件
 	
-- [ ] 打开计算机或此电脑，点击【文件夹选项】--【查看】--【高级设置】，不勾选【隐藏受保护的操作系统文件(推荐)】。
+> 打开计算机或此电脑，点击【文件夹选项】--【查看】--【高级设置】，不勾选【隐藏受保护的操作系统文件(推荐)】。
 
+<br/>
 
-
-- [ ] 清理 System Volume Information
+> 清理 System Volume Information
 	
 - SystemVolumeInformation文件夹是一个隐藏的系统文件夹，"系统还原"工具使用该文件夹来存储它的信息和还原点。<br>
 - System Volume Information怎么删除  参考 http://www.win7zhijia.cn/win10jc/win10_46768.html <br>
@@ -53,10 +53,10 @@
 
 
 
-- [ ] 清理 pagefile.sys
+> 清理 pagefile.sys
 
 - pagefile.sys是虚拟内存文件，目地是使用一部分硬盘空间来充当内存使用。当一个程序请求的内存空间大于物理内存时，就需要pagefile.sys文件来提供较大的虚拟内存，从而满足程序对大内存的需求。<br>
-- 一般来说，pagefile.sys是不可以删除的，但是我们可以将该文件从一个磁盘转移到另外的磁盘中。 参考	[blog.xushufa.cn]( https://blog.xushufa.cn/%E7%BC%96%E7%A8%8B/%E8%B5%84%E6%96%99/pagefile.sys%E6%9C%89%E5%87%A0%E5%8D%81%E4%B8%AAG%EF%BC%8C%E5%A4%AA%E5%A4%A7%E6%80%8E%E4%B9%88%E5%8A%9E.html ) <br>
+- 一般来说，pagefile.sys是不可以删除的，但是我们可以将该文件从一个磁盘转移到另外的磁盘中。 参考	[pagefile.sys]( https://mp.weixin.qq.com/s/Aaz47PC838Yt24CLlZIo5A ) <br>
 
 
 

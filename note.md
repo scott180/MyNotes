@@ -2,7 +2,7 @@
 
 <br />
 
-[note]( https://scott180.github.io/reco-blog ) &ensp;  [gitlab]( https://gitlab.com/xuyq123/mynotes ) &ensp; [gitee]( https://gitee.com/xy180/MyNotes ) &ensp; [github]( https://github.com/scott180/MyNotes ) &ensp; [blog]( https://xuyq123.gitlab.io/mkdocs-blog )
+[note]( https://scott180.github.io/reco-blog ) &ensp;  [git]( https://bitbucket.org/xu12345/mynotes ) &ensp; [gitee]( https://gitee.com/xy180/MyNotes ) &ensp; [github]( https://github.com/scott180/MyNotes ) &ensp; [blog]( https://xuyq123.gitlab.io/mkdocs-blog )
 
 <br />
 
@@ -165,11 +165,9 @@ markdown表格宽度设置
 ```
 gitlab、github、gitee布署mkdocs主题仓库
 	https://gitlab.com/xuyq123/mynotes
+	https://gitee.com/xy180/MyNotes/tree/master
 
 gitlab mkdocs主题仓库   
-	https://gitlab.com/xuyq123/plain-mkdocs   
-	https://xuyq123.gitlab.io/plain-mkdocs 
-
 	https://gitlab.com/xuyq123/myblog-mkdocs   
 	https://xuyq123.gitlab.io/myblog-mkdocs	
 	
@@ -179,9 +177,6 @@ git平台docsify布署markdown文件
 	https://github.com/scott180/MyNotes
 
 gitlab docsify主题仓库 	
-	https://gitlab.com/xuyq123/plain-docsify 
-	https://xuyq123.gitlab.io/plain-docsify/
-	
 	https://gitlab.com/xuyq123/myblog-mkdocs
 	https://xuyq123.gitlab.io/myblog-docsify/	
 	
@@ -918,7 +913,7 @@ List<SettlementProcessInstanceDO> querySettlementProcessInstanceList(@Param("bil
 
 ```java
 
-// java中Map遍历的四种方式
+// java中Map循环遍历的四种方式
 https://www.cnblogs.com/damoblog/p/9124937.html
 
 Map<String,String> map = new HashMap<String,String>();

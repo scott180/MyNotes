@@ -11,7 +11,7 @@
 | [deepseek]( https://chat.deepseek.com  )       | 探索未至之境                  |
 | [豆包]( https://www.doubao.com/chat/  )        | 字节豆包                      |
 | [腾讯混元]( https://hunyuan.tencent.com )      | 由腾讯公司全链路自研AI问答    |
-| [通义千问]( https://tongyi.aliyun.com/)        | 阿里巴巴达摩院推出的AI大模型  |
+| [通义千问]( https://tongyi.aliyun.com )        | 阿里巴巴达摩院推出的AI大模型  |
 | [文心一言]( https://yiyan.baidu.com/welcome )  | 百度大模型                    |
 | [讯飞星火]( https://passport.xfyun.cn )        | 人工智能大模型                |
 | [ChatGPT]( https://openai.com/blog/chatgpt )   | openai聊天机器人模型          |
