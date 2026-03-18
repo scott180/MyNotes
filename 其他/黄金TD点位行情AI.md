@@ -11,7 +11,7 @@
 
 ---
 
-文档地址： [黄金TD点位行情AI]( https://github.com/scott180/MyNotes/blob/master/%E5%85%B6%E4%BB%96/%E9%BB%84%E9%87%91TD%E7%82%B9%E4%BD%8D%E8%A1%8C%E6%83%85AI.md ) &ensp; [股市技术指标]( https://bitbucket.org/xu12345/mynotes/src/master/%E5%85%B6%E4%BB%96/%E9%BB%84%E9%87%91TD%E7%82%B9%E4%BD%8D%E8%A1%8C%E6%83%85AI.md )
+文档地址： [黄金TD点位行情AI]( https://github.com/scott180/MyNotes/blob/master/%E5%85%B6%E4%BB%96/%E9%BB%84%E9%87%91TD%E7%82%B9%E4%BD%8D%E8%A1%8C%E6%83%85AI.md ) &ensp; [股市技术指标]( https://bitbucket.org/xu12345/mynotes/src/master/%E5%85%B6%E4%BB%96/%E8%82%A1%E5%B8%82%E6%8A%80%E6%9C%AF%E6%8C%87%E6%A0%87.md )
 
 财经网站： [金投网]( https://quote.cngold.org/gjs/jjs_hjtd.html ) &ensp;  [新浪财经]( https://finance.sina.com.cn/futures/quotes/AUTD.shtml ) &ensp;  [东方财务网]( https://quote.eastmoney.com/q/118.AUTD.html ) &ensp; [金十数据]( https://www.jin10.com )
 
@@ -29,13 +29,13 @@
 
 | 排名 | 产品名称 | 开发商 | 核心定位 | 必用理由 (2026版) | 访问链接 |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| **1** | **豆包 **(Doubao) | 字节跳动 | **国民级生活伴侣** | **交互最自然**。语音对话像真人，擅长短视频脚本、生活规划、情感陪伴。免费额度高，学生/大众首选。 | [https://www.doubao.com](https://www.doubao.com) |
-| **2** | **通义千问 **(Qwen) | 阿里巴巴 | **办公与全能旗舰** | **文档处理最强**。深度集成阿里生态，支持超长上下文（千万字级），擅长解析复杂PDF/Excel，代码与写作均衡。 | [https://tongyi.aliyun.com](https://tongyi.aliyun.com) |
+| **1** | **豆包**(Doubao) | 字节跳动 | **国民级生活伴侣** | **交互最自然**。语音对话像真人，擅长短视频脚本、生活规划、情感陪伴。免费额度高，学生/大众首选。 | [https://www.doubao.com](https://www.doubao.com) |
+| **2** | **通义千问**(Qwen) | 阿里巴巴 | **办公与全能旗舰** | **文档处理最强**。深度集成阿里生态，支持超长上下文（千万字级），擅长解析复杂PDF/Excel，代码与写作均衡。 | [https://tongyi.aliyun.com](https://tongyi.aliyun.com) |
 | **3** | **腾讯元宝** | 腾讯 | **微信生态助手** | **资讯与社交整合**。基于混元大模型，可直接搜索微信公众号文章，生成PPT，与腾讯文档/会议无缝联动。 | [https://yuanbao.tencent.com](https://yuanbao.tencent.com) |
 | **4** | **Kimi 智能助手** | 月之暗面 | **长文本阅读专家** | **读论文/财报神器**。原生支持百万字级上下文，上传整本书或法律合同，能精准定位细节并总结，学术/金融圈必备。 | [https://kimi.moonshot.cn](https://kimi.moonshot.cn) |
-| **5** | **DeepSeek **(深度求索) | 深度求索 | **理科与代码极客** | **逻辑推理性价比之王**。数学推导、代码生成能力对标国际顶尖，API价格极低，程序员和科研人员的“平替”首选。 | [https://www.deepseek.com](https://www.deepseek.com) |
+| **5** | **DeepSeek**(深度求索) | 深度求索 | **理科与代码极客** | **逻辑推理性价比之王**。数学推导、代码生成能力对标国际顶尖，API价格极低，程序员和科研人员的“平替”首选。 | [https://www.deepseek.com](https://www.deepseek.com) |
 | **6** | **文心一言** | 百度 | **中文知识库** | **百科与搜索增强**。依托百度搜索引擎，中文常识、热点新闻回答准确，多模态（画图/语音）功能丰富。 | [https://yiyan.baidu.com](https://yiyan.baidu.com) |
-| **7** | **智谱清言 **(GLM) | 智谱AI | **学术与Agent工具** | **自主任务执行**。基于GLM-5模型，擅长调用工具（如联网搜索、代码解释器）完成复杂任务，学术严谨性高。 | [https://chatglm.cn](https://chatglm.cn) |
+| **7** | **智谱清言**(GLM) | 智谱AI | **学术与Agent工具** | **自主任务执行**。基于GLM-5模型，擅长调用工具（如联网搜索、代码解释器）完成复杂任务，学术严谨性高。 | [https://chatglm.cn](https://chatglm.cn) |
 | **8** | **讯飞星火** | 科大讯飞 | **语音与教育专家** | **语音交互与翻译**。录音转文字准确率极高，适合会议记录、口语陪练、教育辅导场景。 | [https://xinghuo.xfyun.cn](https://xinghuo.xfyun.cn) |
 
 ---
