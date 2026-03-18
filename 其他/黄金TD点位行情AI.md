@@ -1,6 +1,6 @@
 # 黄金TD点位行情AI
 
-## 黄金TD点位行情
+## 一、黄金TD点位行情
 
 询问AI：**今日黄金TD（积存金）短线点位行情预测和日内区间**。结果如下：
 
@@ -9,12 +9,17 @@
 | ---------------- | --------- | --------- | --------- | --------- | --------- | --------- | ----------  | ---------- | --------- |  ---------- | --------- |
 | 2026-03-18 12:40 | 1107-1118 | 1105–1117 | 1107-1117 | 1105-1120 | 1107-1117 | 1100–1122 | 1105—1118.5 | 1105-1125  | 1107-1117 |  1107-1117  | -- |
 
-文档地址： [github]( https://github.com/scott180/MyNotes/blob/master/%E5%85%B6%E4%BB%96/%E9%BB%84%E9%87%91TD%E7%82%B9%E4%BD%8D%E8%A1%8C%E6%83%85AI.md ) &ensp; [bitbucket]( https://bitbucket.org/xu12345/mynotes/src/master/%E5%85%B6%E4%BB%96/%E9%BB%84%E9%87%91TD%E7%82%B9%E4%BD%8D%E8%A1%8C%E6%83%85AI.md )
+---
+
+文档地址： [黄金TD点位行情AI]( https://github.com/scott180/MyNotes/blob/master/%E5%85%B6%E4%BB%96/%E9%BB%84%E9%87%91TD%E7%82%B9%E4%BD%8D%E8%A1%8C%E6%83%85AI.md ) &ensp; [股市技术指标]( https://bitbucket.org/xu12345/mynotes/src/master/%E5%85%B6%E4%BB%96/%E9%BB%84%E9%87%91TD%E7%82%B9%E4%BD%8D%E8%A1%8C%E6%83%85AI.md )
+
+财经网站： [金投网]( https://quote.cngold.org/gjs/jjs_hjtd.html ) &ensp;  [新浪财经]( https://finance.sina.com.cn/futures/quotes/AUTD.shtml ) &ensp;  [东方财务网]( https://quote.eastmoney.com/q/118.AUTD.html ) &ensp; [金十数据]( https://www.jin10.com )
+
 
 ---
 
 
-## 国产AI对话助手
+## 二、国产AI对话助手
 
 截至2026年3月，国内AI对话助手市场已形成“**国民级全能型**”与“**垂直专业型**”并存的格局。除了你提到的**通义千问**和**豆包**，还有多款在特定场景下表现极佳的竞品。
 
@@ -75,7 +80,7 @@
 ---
 
 
-## 国外主流AI对话助手
+## 三、国外主流AI对话助手
 
 截至2026年3月，国外（非中国大陆）的AI对话助手市场呈现出“**三超多强**”的格局，由美国科技巨头主导，同时涌现出一批在特定领域（如编程、搜索、隐私）极具竞争力的独立产品。
 
