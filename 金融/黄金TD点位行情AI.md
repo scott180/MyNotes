@@ -1,5 +1,10 @@
 # 黄金TD点位行情AI
 
+财经网站： [金投网]( https://quote.cngold.org/gjs/jjs_hjtd.html ) &ensp;  [新浪财经]( https://finance.sina.com.cn/futures/quotes/AUTD.shtml ) &ensp;  [东方财务网]( https://quote.eastmoney.com/q/118.AUTD.html ) &ensp; [金十数据]( https://www.jin10.com )
+
+文档地址： [黄金TD点位行情AI]( https://github.com/scott180/MyNotes/blob/master/%E9%87%91%E8%9E%8D/%E9%BB%84%E9%87%91TD%E7%82%B9%E4%BD%8D%E8%A1%8C%E6%83%85AI.md ) &ensp; [股市技术指标]( https://bitbucket.org/xu12345/mynotes/src/master/%E9%87%91%E8%9E%8D/%E8%82%A1%E5%B8%82%E6%8A%80%E6%9C%AF%E6%8C%87%E6%A0%87.md ) &ensp; [一周积存金交易分析]( https://bitbucket.org/xu12345/mynotes/src/master/%E9%87%91%E8%9E%8D/%E4%B8%80%E5%91%A8%E7%A7%AF%E5%AD%98%E9%87%91%E4%BA%A4%E6%98%93%E5%88%86%E6%9E%90-20260312.md )
+
+
 ## 一、黄金TD点位行情
 
 询问AI：**今日黄金TD（积存金）短线点位行情预测和日内区间**。结果如下：
@@ -7,14 +12,38 @@
 
 | 时间 			   | [千问]( https://tongyi.aliyun.com )  | [豆包]( https://www.doubao.com ) | [文心]( https://yiyan.baidu.com )      | [kimi]( https://kimi.moonshot.cn )      | [deepseek]( https://www.deepseek.com )  | [chatgpt]( https://chatgpt.com )  | [gemini]( https://gemini.google.com )  | [perplexity]( https://www.perplexity.ai ) | [grok]( https://grok.com )  | 综合 | 实际      |
 | ---------------- | --------- | --------- | --------- | --------- | --------- | --------- | ----------  | ---------- | --------- |  ---------- | --------- |
-| 2026-03-18 12:40 | 1107-1118 | 1105–1117 | 1107-1117 | 1105-1120 | 1107-1117 | 1100–1122 | 1105—1118.5 | 1105-1125  | 1107-1117 |  1107-1117  | -- |
+| 2026-03-18 12:40 | 1107-1118 | 1105–1117 | 1107-1117 | 1105-1120 | 1107-1117 | 1100–1122 | 1105—1118.5 | 1105-1125  | 1107-1117 |  1107-1117  | 1074.64-1117.25 |
+
+- AI的回答仅供参考，不构成投资建议。
+
+
+```
+黄金TD（AuT+D）上海黄金交易所（SGE）的现货延期交收合约 
+3月17日夜盘～3月19日日盘 逐时段精确高低点
+
+1）3月17日夜盘（20:00–02:30，算3月18日交易日）
+最高：1117.25
+最低：1107.43
+
+2）3月18日日盘（09:00–15:30）
+最高：1115.64
+最低：1110.50
+
+3）3月18日夜盘（20:00–02:30，算3月19日交易日）
+最高：1115.64
+最低：1074.64
+
+4）3月19日日盘（09:00–15:30）
+最高：1096.66
+最低：1074.64
 
 ---
 
-文档地址： [黄金TD点位行情AI]( https://github.com/scott180/MyNotes/blob/master/%E5%85%B6%E4%BB%96/%E9%BB%84%E9%87%91TD%E7%82%B9%E4%BD%8D%E8%A1%8C%E6%83%85AI.md ) &ensp; [股市技术指标]( https://bitbucket.org/xu12345/mynotes/src/master/%E5%85%B6%E4%BB%96/%E8%82%A1%E5%B8%82%E6%8A%80%E6%9C%AF%E6%8C%87%E6%A0%87.md )
+汇总速查
+3月18日全天（夜盘+日盘）：1107.43 ~ 1117.25
+3月19日全天（夜盘+日盘）：1074.64 ~ 1115.64
 
-财经网站： [金投网]( https://quote.cngold.org/gjs/jjs_hjtd.html ) &ensp;  [新浪财经]( https://finance.sina.com.cn/futures/quotes/AUTD.shtml ) &ensp;  [东方财务网]( https://quote.eastmoney.com/q/118.AUTD.html ) &ensp; [金十数据]( https://www.jin10.com )
-
+```
 
 ---
 
