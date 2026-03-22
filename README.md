@@ -10,13 +10,13 @@
 
 **技术还可以的程序猿。**
 
-会 `java`  `linux`  `mysql` `redis` ...  <br/>
-用 `git` `idea` `postman` `markdown` ...  <br/>
+会 `java`  `linux`  `mysql` `redis` `js` ...  <br/>
+用 `git` `idea` `postman` `markdown` `ai` ...  <br/>
 
 
 | 序号 | 名称 | 地址        |
 | ---- | ---- | ----------- |
-| 1    | 笔记 | [**git**]( https://bitbucket.org/xu12345/MyNotes ) &ensp; [gitee]( https://gitee.com/xy180/MyNotes ) &ensp; [github]( https://github.com/scott180/MyNotes ) &ensp; [AI]( https://bitbucket.org/xu12345/mynotes/src/master/AI%E7%AC%94%E8%AE%B0.md )   |  
+| 1    | 笔记 | [**git**]( https://bitbucket.org/xu12345/MyNotes ) &ensp; [gitee]( https://gitee.com/xy180/MyNotes ) &ensp; [github]( https://github.com/scott180/MyNotes )   |  
 | 2    | 文档 | [document]( https://bitbucket.org/xu12345/document ) &ensp; [sourceforge]( https://sourceforge.net/p/xdocument/code/ci/master/tree )                             |
 | 3    | 博客 | [mkdocs-blog]( https://github.com/scott180/mkdocs-blog ) &ensp;  [reco-blog]( https://github.com/scott180/reco-blog )                                          |  
 

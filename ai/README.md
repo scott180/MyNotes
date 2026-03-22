@@ -4,7 +4,7 @@
  
 ---
 
-## AI模型
+## 模型
 
 | AI          |  说明          |
 | ----------- |  ------------- |
@@ -30,3 +30,10 @@
 [Foundations-of-LLMs]( https://github.com/ZJU-LLMs/Foundations-of-LLMs )
 
 ---
+
+
+| 工具库      |  说明          |
+| ----------- |  ------------- |
+| [AIGC工具导航]( https://www.aigc.cn/favorites/ai-writing-tools )      	     | 生成式人工智能工具导航            |
+| [Github仓库]( https://github.com/Eternaldeath/AIProductHome )        			 | 收集各种 AI 商业或开源产品        |
+| [飞书文档]( https://tauacgr5lqv.feishu.cn/wiki/NtiKwCV0yigtjVkYvTgcxZbZnxb )   | AI工具库                          |
