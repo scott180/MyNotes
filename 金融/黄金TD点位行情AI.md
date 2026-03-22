@@ -1,14 +1,14 @@
 # 黄金TD点位行情AI
 
 
-财经网站： [金投网]( https://quote.cngold.org/gjs/jjs_hjtd.html ) &ensp;  [新浪财经]( https://finance.sina.com.cn/futures/quotes/AUTD.shtml ) &ensp;  [东方财务网]( https://quote.eastmoney.com/q/118.AUTD.html ) &ensp; [金十数据]( https://www.jin10.com ) &ensp; [tradingview]( https://cn.tradingview.com/ideas/ ) &ensp; [英为财情]( https://cn.investing.com/currencies/us-dollar-index ) &ensp;  [京东金融]( https://jdjr.jd.com/ )
+财经网站： [金投网]( https://quote.cngold.org/gjs/jjs_hjtd.html ) &ensp; [新浪财经]( https://finance.sina.com.cn/futures/quotes/AUTD.shtml ) &ensp; [东方财务网]( https://quote.eastmoney.com/q/118.AUTD.html ) &ensp; [金十数据]( https://www.jin10.com ) &ensp; [英为财情]( https://cn.investing.com/currencies/us-dollar-index ) &ensp; [tradingview]( https://cn.tradingview.com/ideas/ ) &ensp; [京东金融]( https://jdjr.jd.com/ )
 
-文档地址： [黄金交易笔记]( https://gitea.com/xuyq/MyNotes/src/branch/master/%E9%87%91%E8%9E%8D/%E9%BB%84%E9%87%91%E4%BA%A4%E6%98%93%E7%AC%94%E8%AE%B0.md ) &ensp; [黄金TD点位行情AI]( https://github.com/scott180/MyNotes/blob/master/%E9%87%91%E8%9E%8D/%E9%BB%84%E9%87%91TD%E7%82%B9%E4%BD%8D%E8%A1%8C%E6%83%85AI.md ) &ensp; [股市技术指标]( https://bitbucket.org/xu12345/mynotes/src/master/%E9%87%91%E8%9E%8D/%E8%82%A1%E5%B8%82%E6%8A%80%E6%9C%AF%E6%8C%87%E6%A0%87.md ) &ensp; [一周积存金交易分析]( https://bitbucket.org/xu12345/mynotes/src/master/%E9%87%91%E8%9E%8D/%E4%B8%80%E5%91%A8%E7%A7%AF%E5%AD%98%E9%87%91%E4%BA%A4%E6%98%93%E5%88%86%E6%9E%90-20260312.md )
+文档地址： [黄金交易笔记]( https://gitea.com/xuyq/MyNotes/src/branch/master/%E9%87%91%E8%9E%8D/%E9%BB%84%E9%87%91%E4%BA%A4%E6%98%93%E7%AC%94%E8%AE%B0.md ) &ensp; [股市技术指标]( https://bitbucket.org/xu12345/mynotes/src/master/%E9%87%91%E8%9E%8D/%E8%82%A1%E5%B8%82%E6%8A%80%E6%9C%AF%E6%8C%87%E6%A0%87.md ) &ensp; [黄金TD点位行情AI]( https://github.com/scott180/MyNotes/blob/master/%E9%87%91%E8%9E%8D/%E9%BB%84%E9%87%91TD%E7%82%B9%E4%BD%8D%E8%A1%8C%E6%83%85AI.md ) &ensp; [一周积存金交易分析]( https://bitbucket.org/xu12345/mynotes/src/master/%E9%87%91%E8%9E%8D/%E4%B8%80%E5%91%A8%E7%A7%AF%E5%AD%98%E9%87%91%E4%BA%A4%E6%98%93%E5%88%86%E6%9E%90-20260312.md )
 
-AI助手： [千问]( https://www.qianwen.com ) &ensp; [豆包]( https://www.doubao.com ) &ensp; [文心]( https://yiyan.baidu.com ) &ensp; [kimi]( https://kimi.moonshot.cn ) &ensp; [deepseek]( https://www.deepseek.com ) |  [chatgpt]( https://chatgpt.com ) &ensp; [gemini]( https://gemini.google.com ) &ensp;  [perplexity]( https://www.perplexity.ai ) &ensp; [grok]( https://grok.com )
+AI助手： [千问]( https://www.qianwen.com ) &ensp; [豆包]( https://www.doubao.com ) &ensp; [文心]( https://yiyan.baidu.com ) &ensp; [kimi]( https://kimi.moonshot.cn ) &ensp; [deepseek]( https://www.deepseek.com )  &ensp;  [chatgpt]( https://chatgpt.com ) &ensp; [gemini]( https://gemini.google.com ) &ensp; [perplexity]( https://www.perplexity.ai ) &ensp; [grok]( https://grok.com )
 
 
-k线图：[黄金TD]( https://quote.cngold.org/gjs/jjs_hjtd.html ) &ensp; [伦敦金]( https://finance.sina.com.cn/futures/quotes/XAU.shtml ) &ensp;  [国际暗金]( https://m.cngold.org/quote/gjs/gjhj_gjaj.html ) &ensp; [美元指数]( https://cn.investing.com/currencies/us-dollar-index ) &ensp; [黄金etf持仓量]( https://data.eastmoney.com/pmetal/etf/by.html ) &ensp; [汇率表]( https://www.huilvbiao.com/gold )
+k线图：[黄金TD]( https://quote.cngold.org/gjs/jjs_hjtd.html ) &ensp; [伦敦金]( https://finance.sina.com.cn/futures/quotes/XAU.shtml ) &ensp; [国际暗金]( https://m.cngold.org/quote/gjs/gjhj_gjaj.html ) &ensp; [美元指数]( https://cn.investing.com/currencies/us-dollar-index ) &ensp; [黄金etf持仓量]( https://data.eastmoney.com/pmetal/etf/by.html ) &ensp; [汇率表]( https://www.huilvbiao.com/gold )
 
 
 
